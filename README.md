@@ -9,7 +9,7 @@ open your teminal
 
 ```bash
 cd your_work_dir
-git clone [https://github.com/Show3567/FRE-Training.git](https://github.com/Show3567/FRE-Training)
+git clone https://github.com/Show3567/FRE-Training.git
 cd SEP-Training
 ```
 
