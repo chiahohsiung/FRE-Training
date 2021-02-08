@@ -1,8 +1,8 @@
 # FRE-Training
 
-This is a repo to record the SEP-FRE-TRAINING assignments and notes.
+This is a repo to record the FRE-TRAINING assignments and notes.
 
-## How to record your SEP-TRAINING assignments by using this repo:
+## How to record your FEE-TRAINING assignments by using this repo:
 
 ### Clone this repo:
 open your teminal
@@ -10,7 +10,6 @@ open your teminal
 ```bash
 cd your_work_dir
 git clone https://github.com/Show3567/FRE-Training.git
-cd SEP-Training
 ```
 
 ### Create your feature branch to implement the assignment.
