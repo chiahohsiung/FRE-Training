@@ -2,9 +2,9 @@
 
 This is a repo to record the FRE-TRAINING assignments and notes.
 
-## How to record your FEE-TRAINING assignments by using this repo:
+## How to record your FEE-TRAINING assignments by using this repo
 
-### Clone this repo:
+### Clone this repo
 
 open your teminal
 
@@ -13,7 +13,7 @@ cd your_work_dir
 git clone https://github.com/Show3567/FRE-Training.git
 ```
 
-### Create your feature branch to implement the assignment.
+### Create your feature branch to implement the assignment
 
 ```bash
 git branch by_your_name/notes
