@@ -1,0 +1,22 @@
+.content-wrappers {
+  width: 80%;
+  margin: auto;
+}
+
+h1 {
+  color:rgb(81, 103, 173);
+}
+
+a {
+  text-decoration-line: none;
+}
+
+button {
+  padding: 7px 40px;
+  font-size: 14px;
+  border-color: transparent;
+}
+
+button:hover{
+  background-color: yellowgreen;
+}
