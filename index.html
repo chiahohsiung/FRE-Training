@@ -1,13 +1,54 @@
-<!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Demo</title>
+    </head>
+    <body>
+        <!-- <ul id="list">
+            <li class="item">First Item</li>
+            <li class="item">Second Item</li>
+            <li class="item">Third Item</li>
+        </ul> -->
 
-    <h1>Hello World</h1>
-    <script src="./index.js"></script>
-</body>
+        <div id="container">
+            <h1>welcome to antra</h1>
+        </div>
+        
+        <script>
+            const container = document.getElementById('container');
+
+            const gethtmlcollection = document.getElementsByTagName('h1');
+            const getnodelist = document.querySelectorAll('h1');
+            
+            console.log('1st round console.log: ', gethtmlcollection, getnodelist);
+
+            container.innerHTML += '<h1>hello world</h1>';
+
+            console.log('2nd round console.log: ', gethtmlcollection, getnodelist);
+
+
+            // //get UL element
+            // const list = document.getElementById("list");
+
+            // //Get items by class name (two ways)
+            // const itemsByClassName = document.getElementsByClassName("item");
+            // const itemsByQuerySelector = document.querySelectorAll(".item");
+
+            // console.log(
+            //     "First console log",
+            //     itemsByClassName,
+            //     itemsByQuerySelector
+            // );
+            // console.log('');
+            // //adding the fourth element
+            // list.innerHTML += `<li class="item">Fourth Item</li>`;
+
+            // console.log(
+            //     "Second console log",
+            //     itemsByClassName,
+            //     itemsByQuerySelector
+            // );
+        </script>
+    </body>
 </html>
