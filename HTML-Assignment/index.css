@@ -1,0 +1,129 @@
+*{
+  margin: 0;
+  padding: 0;
+}
+
+.signup-form{
+  width: 400px;
+  margin: auto;
+  padding: 10px 0px 10px 0px;
+  text-align: center;
+}
+
+h1{
+  font-family: "Trebuchet MS";
+}
+
+.contatiner {
+  width: 400px;
+  margin: auto;
+}
+
+form{
+  padding: 10px;
+}
+
+input{
+  height: 30px;
+  border-radius: 4px;
+  border: none;
+  box-shadow: 0px 0px 0px 2px rgba(0,0,0,0.3);  
+  padding: 5px;
+  font-family: "Trebuchet MS";
+  font-size: 16px;
+}
+
+input:focus {
+  outline-color:  #9ecdff;
+  border-color: #9ecaed;
+  box-shadow: 0 0 10px #9ecaed;
+}
+
+input[type="checkbox"]{
+  border: none;
+  box-shadow: none;
+  height: 12px;
+}
+
+input[type="checkbox"]:focus {
+  outline-color:  #9ecdff;
+  border-color: #9ecaed;
+  box-shadow: 0 0 10px #9ecaed;
+}
+
+#first-name, 
+#password {
+  width: 46%;
+  margin-right: 10px;
+  margin-top: 10px; 
+}
+
+#last-name,
+#confirm-password {
+  float:right;
+  margin-top: 10px;
+  width: 46%;
+}
+
+#mobile-number{
+  width: 98%;
+  margin-top: 10px;
+}
+
+#email {
+  width: 98%;
+  margin-top: 10px;
+}
+
+.terms-conditions-box{
+  display: inline;
+  font-family: "Trebuchet MS";
+  font-size: 14px;
+  font-weight: bold;
+  width: 20%;
+  margin-top: 20px;
+}
+
+#policy-agree{
+  margin-top: 20px;
+}
+
+p {
+  display: inline;
+  float: right;
+  font-family: "Trebuchet MS";
+  font-size: 10px;
+  width: 75%;
+  margin-top: 14px;
+  margin-bottom: 10px;
+}
+
+#register-img{
+  height: 16px;
+  width: 50px;
+  vertical-align: bottom;
+}
+
+#register-btn{
+  float: left;
+  width: 48%;
+  height: 35px;
+  font-size: 16px;
+  background-color: rgb(39, 122, 230);
+  color: white;
+  border-radius: 6px;
+  border: none;
+  font-family: "Trebuchet MS";
+}
+
+#sign-in-btn{
+  float: right;
+  width: 48%;
+  height: 35px;
+  font-size: 16px;
+  background-color: rgb(44, 168, 54);
+  color: white;
+  border-radius: 6px;
+  border: none;
+  font-family: "Trebuchet MS";
+}

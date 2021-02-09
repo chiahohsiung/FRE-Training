@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, intial-scale=1.0" />
+    <title>HTML Assignment</title>
+    <link rel="stylesheet" href="./index.css" />
+  </head>
+  <body>
+    <div class="signup-form"> <h1 class="sign-up">Sign Up</h1></div>
+    <div class="contatiner">
+      <form>
+          <input type="text" name="first-name" id="first-name" placeholder="First Name"> 
+          <input type="text" name="last-name" id="last-name" placeholder="Last Name"> 
+          <input type="text" name="mobile-number" id="mobile-number" placeholder="Mobile No."> 
+          <input type="text" name="email" id="email" placeholder="Email Address"> 
+          <input type="text" name="password" id="password" placeholder="Password"> 
+          <input type="text"name="confirm-password" id="confirm-password" placeholder="Confirm Password">
+          <div class="terms-conditions-box">
+            <input type="checkbox" name="policy-agree" id="policy-agree"> 
+            <label for="policy-agree" id="policy-agree-text">I Agree</label>
+          </div >
+            <p>By clicking <img src="images/register.png" alt="Register" id="register-img">, you agree to the <a href="terms-condition-url">Terms and Conditions</a> set out by this site, including our Cookie Use.</p>
+            <button id="register-btn" type="submit">Register</button>
+            <button id="sign-in-btn">Sign In</button>      
+      </form>
+    </div>
+    <script src="./index.js"></script>
+  </body>
+</html>
