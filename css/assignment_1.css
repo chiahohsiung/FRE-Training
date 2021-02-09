@@ -1,0 +1,108 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Lato', sans-serif;
+    letter-spacing: .2px;
+}
+a{
+    text-decoration: none;
+    color: rgb(47, 116, 206);
+}
+header{
+    max-width: 800px;
+    width: 90%;
+    margin: 0 auto;
+    margin-top: 20px;
+}
+.logo{
+    width: 200px;
+}
+.logo img{
+    width: 100%;
+}
+h1,h2{
+    margin-top: 40px;
+    text-align: center;
+}
+.container{
+    max-width: 800px;
+    width: 90%;
+    margin: 0 auto;
+    margin-top: 70px;
+}
+.instructions{
+    max-width: 500px;
+    width: 100%;
+    margin: 0 auto;
+}
+h3{
+    margin-top: 40px;
+}
+.instructions-list{
+    max-width: 500px;
+    width: 90%;
+    margin: 0 auto;
+    margin-top: 10px;
+    margin-left: 15px;
+}
+
+form{
+    /* border: 1px solid red; */
+    max-width: 400px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+}
+input{
+    border: 1px solid rgba(0,0,0,.1);
+    height: 35px;
+    margin-top: 12px;
+    padding-left: 5px;
+    border-radius: 5px;
+}
+input[type="checkbox"]{
+    height: 12px;
+    cursor: pointer;
+}
+input[type="submit"]{
+    text-align: center;
+    cursor: pointer;
+    color: #fff;
+    font-size: 16px;
+    border-radius: 5px;
+}
+.checkbox-container label{
+    margin-left:-10px;
+    font-weight: bold;
+    cursor: pointer;
+}
+.two-col-row{
+    display: flex;
+    justify-content: space-between;
+}
+.two-col-row input{
+    width: 46%;
+}
+.conditions-container{
+    margin-top: 20px;
+}
+.two-col-row .checkbox-container{
+    width: 30%;
+}
+span{
+    background-color: rgb(47, 116, 206);
+    border-radius: 3px;
+    padding: 1px 2px;
+    color: #fff;
+    font-weight: 500;
+}
+.two-col-row p{
+    width: 70%;
+    font-size: 12px;
+}
+#register-btn{
+    background-color: rgb(47, 116, 206);
+}
+#sign-in-btn{
+    background-color: rgb(58, 149, 93);
+}
