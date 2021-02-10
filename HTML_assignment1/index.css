@@ -1,7 +1,98 @@
 * {
   margin: 0;
+  font-family: "Roboto", sans-serif;
+}
+body {
+  box-sizing: border-box;
+}
+.container {
+  position: fixed;
+  display: flex;
+  text-align: center;
+  align-items: center;
+  top: 50%;
+  left: 50%;
+  width: 100%;
+  max-width: 35rem;
+  transform: translate(-50%, -50%);
+}
+.form__signup {
+  padding: 2%;
+  width: 100%;
+}
+.container {
+  display: flex;
+  flex-direction: column;
+  padding: auto;
+}
+.container__header {
+  padding: 1rem;
+  font-size: 1.5rem;
+}
+.form__row {
+  display: flex;
+}
+.form__row--width {
+  flex-direction: column;
+  flex: 1;
+}
+.form__input,
+.form__btn {
+  flex: 1;
+  margin: 0.3rem;
+  padding: 0.8rem;
+  border-radius: 4px;
+  border: 1px solid #d1cfcf;
+}
+.form__btn {
+  border: none;
+  color: white;
+  font-size: 14px;
+}
+.form__checkbox {
+  align-items: center;
+  padding: 0.7rem;
+  width: 150px;
+}
+.form__terms {
+  align-items: center;
+  font-size: 0.9rem;
+}
+.form__btn--termsregister {
+  background-color: rgb(66, 133, 244);
+  padding: 0.2rem;
+  display: inline-block;
+}
+.form__anchor {
+  text-decoration: none;
+  color: rgb(66, 133, 244);
+}
+.form__btn--register {
+  background-color: rgb(66, 133, 244);
+}
+.form__btn--signin {
+  background-color: rgb(0, 200, 82);
 }
 
-.form-signup {
-  text-align: center;
+@media (max-width: 600px) {
+  .form__signup .form__row {
+    flex-direction: column;
+  }
+  .form__checkbox label {
+    display: none;
+  }
+  .form__row--check {
+    flex-direction: row !important;
+  }
+  .form__checkbox {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .container {
+    width: 90%;
+  }
+  .container__header {
+    font-size: 1.2rem;
+  }
 }
