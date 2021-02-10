@@ -4,6 +4,8 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Lato&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
   <script src="index.js"></script>
   <title>Document</title>
@@ -11,23 +13,36 @@
 <body>
   <img src="./static/image/antra_logo.jpg" alt="Antra logo">
   <div class='content-wrappers'>
-    <h1>Sign Up</h1>
+    <div class="form-row">
+      <h1 class="title">Sign Up</h1>
+    </div>
     <form action="POST">
-      <input class="name" type="text" placeholder="First Name">
-      <input class="name" type="text" placeholder="Last Name">
-      <input class="phone" type="text" placeholder="Mobile No.">
-      <input class="email" type="text" placeholder="Email Address">
-      <input class="password" type="password" placeholder="Password">
-      <input class="password" type="password" placeholder="Confirm Password">
+      <div class="form-row">
+        <input class="name" type="text" placeholder="First Name">
+        <input class="name" type="text" placeholder="Last Name">
+      </div>
+      <div class="form-row">
+        <input class="phone" type="text" placeholder="Mobile No.">
+      </div>
+      <div class="form-row">
+        <input class="email" type="text" placeholder="Email Address">
+      </div>
+      <div class="form-row">
+        <input class="password" type="password" placeholder="Password">
+        <input class="password" type="password" placeholder="Confirm Password">
+      </div>
       <div class="checkbox">
         <input type="checkbox" name="agreement" id="agreement">
         <label for="agreement">I Agree</label>
-        <p id="terms">By clicking <a>Register</a>, you agree to the <a href="#">Terms and Conditions</a> set out by this site, including our Cookie Use.</p>
+        <p id="terms">
+          By clicking 
+          <span class="btn-submit">Register</span>
+          , you agree to the 
+          <a href="#">Terms and Conditions</a>
+           set out by this site, including our Cookie Use.</p>
       </div>
-      
-
-      <button type="submit">Register</button>
-      <button>Sign In</button>
+      <button class="btn-submit" type="submit">Register</button>
+      <button class="btn-primary">Sign In</button>
     </form>
   </div>
 
