@@ -1,0 +1,52 @@
+form {
+    width: 65%;
+    max-width: 600px;
+    margin: 15px auto;
+    padding: 10px;
+}
+a {
+    text-decoration: none;
+}
+form>h1 {
+    text-align: center;
+}
+form>div {
+    margin-bottom: 15px;
+    display: flex;
+}
+input {
+    border-radius: 5px;
+    padding: 10px;
+}
+.input {
+    justify-content: space-between;
+}
+.one>input{
+    width: 100%;
+}
+.two>input {
+    width: 45%;
+}
+.check {
+    width: 200px;
+}
+span {
+    padding: 5px;
+    background-color: rgb(72,144,205);
+    color: white;
+}
+.form_control{
+    justify-content: space-evenly;
+}
+.form_control input{
+    width: 30%;
+    color: white;
+    font-size: 20px;
+    font-weight: bolder;
+}
+input[type="button"]{
+    background-color: rgb(98,188,98);
+}
+input[type="submit"]{
+    background-color: rgb(72,144,205);
+}
