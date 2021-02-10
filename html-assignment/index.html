@@ -28,18 +28,21 @@
     <input name="confirm" type="password" aria-label="Password" placeholder="Confirm Password" />
    </div>
    
-   <div>
-     <input name="disclaimer" type="checkbox" aria-label="TDisclaimer"/>
-     <label>I Agree</label>
-     <span>
-      By clicking "Register", you agree to the 
-      Terms and Conditions set out by this site, 
+   <div class="disclaimer">
+    <div class="check-ctn">
+     <input name="disclaimer" type="checkbox" aria-label="TDisclaimer" />
+     <span>I Agree</span>
+    </div>
+     
+     <div class="text-ctn">
+      By clicking <p>Register</p>, you agree to the 
+      <a href="">Terms and Conditions</a> set out by this site, 
       including our Cookie Use.
-     </span>
+     </div>
    </div>
-   <div>
-    <button>Register</button>
-    <button>Sign In</button>
+   <div class="btn-ctn">
+    <button id="register">Register</button>
+    <button id="sign-in">Sign In</button>
    </div>
   
   </form>
