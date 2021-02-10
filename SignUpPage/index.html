@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="app.css">
+    <title>SignUp</title>
+</head>
+
+
+<body>
+    <main class="form">
+        <form action="/" method="post">
+            <header id="SignUp">Sign Up</header>
+            <div class="row-1">
+                <div class="field-wrap">
+                    <label for="FirstName"></label>
+                    <input type="text" id="FirstName" placeholder="First Name" name="FirstName" autocomplete="off"
+                        required>
+                </div>
+                <div class="field-wrap">
+                    <label for="LastName"></label>
+                    <input type="text" id="LastName" placeholder="Last Name" name="LastName" autocomplete="off"
+                        required>
+                </div>
+            </div>
+            <div class="row">
+                <div class="field-wrap">
+                    <label for="MobileNo"></label>
+                    <input type="text" id="MobileNo" placeholder="Mobile No." name="MobileNo" required>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="field-wrap">
+                    <label for="Email"></label>
+                    <input type="email" id="Email" placeholder="Email Address" name="Email" required>
+                </div>
+            </div>
+
+
+            <div class="row-1">
+                <div class="field-wrap">
+                    <label for="Password"></label>
+                    <input type="password" id="Password" placeholder="Password" name="Password" required>
+                </div>
+                <div class="field-wrap">
+                    <input type="password" id="ConfirmPassword" placeholder="Confirm Password" name="ConfirmPassword"
+                        required>
+                </div>
+            </div>
+            <div class="row-2">
+                <div class="check">
+                    <input type="checkbox" id="isAgree" name="isAgree" required>
+                    <label for="isAgree"> I Agree</label>
+                </div>
+                <div class="description">
+                    <p>By clicking <span id="Register">Register</span>, you agree to the
+                        <a href="#" class="con-terms">Terms and
+                            Conditions</a>
+                        set out by this site, including our Cookie Use.
+                    </p>
+                </div>
+            </div>
+
+            <div class="row-6">
+                <a href="#" class="button btn-register">Register</a>
+                <a href="#" class="button btn-signIn">Sign In</a>
+            </div>
+        </form>
+    </main>
+</body>
+
+</html>
