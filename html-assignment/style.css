@@ -44,6 +44,9 @@ input {
 .check-ctn {
     margin: 5px;
 }
+.text-ctn {
+    line-height: 1.43rem;
+}
 
 #register {
     background-color: hsla(218, 61%, 53%, 0.947);
