@@ -1,6 +1,9 @@
 .content-wrappers {
   width: 80%;
   margin: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 h1 {
@@ -11,6 +14,10 @@ a {
   text-decoration-line: none;
 }
 
+form {
+  align-content: center;
+}
+
 button {
   padding: 7px 40px;
   font-size: 14px;
@@ -19,4 +26,45 @@ button {
 
 button:hover{
   background-color: yellowgreen;
+}
+
+::placeholder{
+  color: rgba(179, 199, 199, 80%);
+}
+input {
+  padding-top: 15px;
+  padding-bottom: 15px;
+  font-size: medium;
+  font-weight: bold;
+  color: rgb(75, 71, 71);
+  border-radius: 5px;
+  border: 2px solid rgb(177, 193, 212);
+  margin: 5px;
+  transition: 0.2s;
+  outline: none;
+}
+
+input:focus{
+  box-shadow: 0 0 6px rgb(35 173 255);
+}
+
+.name, .password {
+  width: 42.5%;
+  display: inline-block;
+}
+.phone, .email {
+  width: 90%;
+  display: block;
+}
+.checkbox {
+  display: block;
+}
+label {
+  font-size: large;
+  font-weight: bold;
+}
+#terms {
+  display: inline-block;
+  width: 400px;
+  padding-left: 20px;
 }
