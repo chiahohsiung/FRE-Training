@@ -1,0 +1,136 @@
+h1 {
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: lighter;
+}
+
+form {
+    text-align: center;
+    width: 100%;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+span {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 11px;
+    display: inline-block;
+    width: 315px;
+    text-align: left;
+    position: relative;
+    left: 30px;
+
+}
+
+label {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 11px;
+    font-weight: bold;
+    position: relative;
+    right: 58px;
+    bottom: 6px
+}
+
+.register {
+    background-color: steelblue; /* dodgerblue */
+    color: white;
+    border: none;
+}
+
+#small_register {
+    border-radius: .20em;
+    padding-left: 5px;
+    padding-right: 5px;
+    font-size: 10px;
+}
+
+.inputs {
+    padding: 7px;
+    margin-bottom: 10px;
+    border-radius: .3em;
+    border: 1px solid lightgray
+}
+
+.twins {
+    margin-right: 10px;
+}
+
+.long {
+    width: 430px
+}
+
+.quads {
+    width: 200px; /* 234px */
+}
+
+.buttons {
+    width: 218px;
+    border: none;
+    padding: 7px;
+    margin-top: 2px;
+    margin-bottom: 10px;
+    border-radius: .3em;
+    color: white
+}
+
+#signup {
+    background-color: #4CAF50; /* mediumseagreen or limegreen */
+}
+
+#TandC {
+    color: steelblue;
+    text-decoration: none;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+#check {
+    font-family: Arial, Helvetica, sans-serif;
+    position: relative;
+    right: 60px;
+    bottom: 4px
+}
+
+
+@media screen and (max-width: 530px) {
+  .inputs {
+    width: 234px; /* when the viewport is 530px or smaller */
+}
+
+/* fine print span element */
+@media screen and (max-width: 530px) {
+  span {
+    /* width: 365px; when the viewport is 530px or smaller */
+    width: 130px;
+    text-align: justify;
+}
+
+@media screen and (max-width: 530px) {
+  .twins {
+    margin-left: 15px; /* when the viewport is between 530px or smaller and 283px or larger */
+}
+
+/* galaxy fold device */
+@media screen and (min-width: 280px) {
+  .twins {
+    margin-left: 7px; /* when the viewport is between 530px or smaller and 283px or larger */
+}
+
+/* @media screen and (max-width: 530px) {
+  .buttons {
+    display: block;
+    position: relative;
+    left: 100px
+} */
+
+@media screen and (max-width: 476px) {
+  .buttons {
+    width: 250px;
+}
+
+@media screen and (max-width: 310px) {
+  label, #check {
+    position: relative;
+    right: 35px;
+    bottom: 25px
+}
+
