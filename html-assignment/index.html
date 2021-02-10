@@ -8,7 +8,42 @@
  <title>HTML Assignment</title>
 </head>
 <body>
- 
+  
+  <form class="signup-form" id="signup-form" aria-label="Sign Up Form">
+   <header>
+    <h1>Sign Up</h1>
+   </header>
+   <div class="top">
+    <input name="first" type="text" aria-label="First Name" placeholder="First Name" />
+    <input name="last" type="text" aria-label="Last Name" placeholder="Last Name" />
+  </div>
+   
+   <div class="middle">
+    <input name="mobile" type="text" aria-label="Mobile Number" placeholder="Mobile No." />
+    <input name="email" type="email" aria-label="Email Address" placeholder="Email Address" />
+   </div>
+   
+   <div class="bottom">
+    <input name="password" type="password" aria-label="Password" placeholder="Password" />
+    <input name="confirm" type="password" aria-label="Password" placeholder="Confirm Password" />
+   </div>
+   
+   <div>
+     <input name="disclaimer" type="checkbox" aria-label="TDisclaimer"/>
+     <label>I Agree</label>
+     <span>
+      By clicking "Register", you agree to the 
+      Terms and Conditions set out by this site, 
+      including our Cookie Use.
+     </span>
+   </div>
+   <div>
+    <button>Register</button>
+    <button>Sign In</button>
+   </div>
+  
+  </form>
+  
  
 </body>
 </html>
