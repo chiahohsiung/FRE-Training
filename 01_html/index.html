@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" type="text/css" href="./style.css">
+  <title>Antra - Sign up</title>
+</head>
+<body>
+  <div id="container">
+    <label for="sign_up"><h1>Sign Up</h1></label>
+    <br /><p></p>
+    <form>
+      <!-- Main form contents -->
+      <div class="div_form_col_space">
+        <input name="first_name" placeholder="First Name" class="input_column" />
+        <input name="last_name" placeholder="Last Name" class="input_column"/>
+      </div>
+      <div>
+        <input name="mobile_number" placeholder="Mobile No." class="input_expand" />       
+      </div>
+      <div>
+        <input name="email_address" placeholder="Email Address" class="input_expand" />
+      </div>
+      <div class="div_form_col_space">
+        <input name="password" placeholder="Password" class="input_column">
+        <input name="confirm_password" placeholder="Confirm Password" class="input_column" />
+      </div>
+      <!-- End main form contents -->
+      
+      <!-- Condition contents -->
+      <div class="container_agreement">
+        <div class="container_agreement_child partial">
+          <label for="agree_checkbox">
+            <input name="check" type="checkbox" class="checkbox_align" />
+            <strong class="checkbox_align">I Agree</strong>
+          </label>
+        </div>
+        <div class ="container_agreement_child">
+          By clicking <span class="register_button">Register</span>, you agree to the <a href="">Terms and Conditions</a> set out by this site, including our Cookie Use.
+        </div>
+      </div>
+      <!-- End condition contents -->
+
+      <!-- Register and sign in button -->
+      <div>
+        <button name="register_button" class="register_button">Register</button>
+        <button name="sign_in" class="sign_in_button">Sign In</button>
+      </div>
+      <!-- End buttons -->
+
+    </form>
+  </div>
+  
+</body>
+</html>
