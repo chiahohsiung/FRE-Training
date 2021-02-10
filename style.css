@@ -1,0 +1,95 @@
+h1{
+    text-align: center;
+}
+
+div {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    width: 70%;
+    margin:auto;
+}
+span{
+    padding: 4px;
+    margin: 0;
+    display: inline-block;
+    border-color: grey;
+    border-radius: 5px;
+    font-family: sans-serif;
+    display: inline-flex;
+    justify-content: space-around;
+    font-size:80%;
+}
+
+a{
+    color:cornflowerblue
+}
+
+#confirm-area{
+    width:60%;
+    justify-content: end;
+}
+#check-area{
+    width:30%;
+    justify-content: start;
+}
+
+input{
+    padding: 15px;
+    margin: 5px 5px 5px 5px;
+    display: inline-block;
+    border-color: rgb(216, 200, 200);
+    border-radius: 10px;
+    border-style: solid;
+    font-family: sans-serif;
+    outline:none;
+}
+
+input:focus{
+    border-color:cornflowerblue;
+    box-shadow:0 0 5px  rgb(80, 131, 80);
+}
+
+.nameInfo{
+    width: 45%;
+}
+
+.otherInfo{
+    width: 100%;
+}
+
+input[type="password"]{
+    width: 45%;
+}
+
+input[type="checkbox"]{
+    width: auto;
+}
+
+
+button{
+    width: 45%;
+    padding: 15px;
+    margin: 5px 5px 5px 5px;
+    display: inline-block;
+    border-color: grey;
+    border-radius: 10px;
+    font-family: sans-serif;
+    font-size: 25px;
+    outline:none;
+}
+
+#register{
+    background-color: rgb(128, 128, 221);
+    font-style: bold;
+    color:white;
+    border:none;
+}
+
+#sign-in{
+    background-color: rgb(54, 182, 82);
+    font-style: bold;
+    color:white;
+    border:none;
+}

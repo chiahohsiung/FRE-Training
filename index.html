@@ -2,11 +2,36 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <title>ZhesongWu Branch</title>
-  <base href="/">
+  <title>HTML Assignment</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body>
+    <h1>Sign Up</h1>
+    <form autocomplete="off">
+        <div id="input-area">
+            <input type="text" class="nameInfo" placeholder="First Name">
+            <input type="text" class="nameInfo" placeholder="Last Name">
+            <input type="text" class="otherInfo" placeholder="Mobile No.">
+            <input type="text" class="otherInfo" placeholder="Email Address">
+            <input type="password" placeholder="Password">
+            <input type="password" placeholder="Confirm Password">
+        </div>
+        
+        <div id="agree-area">
+            <div id="check-area">
+                <input type="checkbox"><label><b>I Agree</b></label>
+            </div>
+            <div id="confrim-area">
+                <p id="notice">By Clicking <span id="register">Register</span>, you agree to the <a href="#">Terms & Privacy</a> set out by this site, including our Cookie Use</p>
+            </div>
+        </div>
+        
+        <div id="submit-area">
+            <button id="register">Register</button>
+            <button id="sign-in">Sign In</button>
+        </div>
+    </form>
+
 </body>
 </html>
