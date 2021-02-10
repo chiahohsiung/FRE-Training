@@ -1,0 +1,35 @@
+#signinButton {
+    color: white;
+    background-color: rgb(92, 184, 92);
+
+}
+
+
+#registerButton {
+
+    color: white;
+    background-color: rgb(66, 139, 202);
+
+}
+
+#registertext {
+    color: white;
+    background-color: rgb(66, 139, 202);
+    border: 1px solid transparent;
+    border-radius: 2px
+}
+
+#termtext {
+    color: rgb(109, 165, 214);
+
+}
+
+#agreecheck {
+
+    border: 2px solid black;
+}
+
+#pagelayer {
+    width: 1024px;
+    height: 800px
+}
