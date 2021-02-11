@@ -1,0 +1,124 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+* {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+    font-family: Arial, Helvetica, sans-serif;
+}
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+    display: block;
+}
+html {
+    height: 100vw;
+}
+body {
+    line-height: 1;
+}
+ol,
+ul {
+    list-style: none;
+}
+blockquote,
+q {
+    quotes: none;
+}
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+    content: "";
+    content: none;
+}
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+/* Header */
+
+.header,
+.footer {
+    position: fixed;
+    background-color: black;
+    padding: 1.5rem;
+    width: 100vw;
+}
+.header_list_ctn,
+.main_intro-content,
+.main_content,
+.footer_list_ctn {
+    width: 80%;
+    margin: 0 auto;
+}
+
+.header_list_item,
+.footer_list_item {
+    color: #fff;
+    display: inline;
+    padding: 1rem;
+}
+
+/* Main */
+.main {
+    top: 4rem;
+    position: fixed;
+    width: 100vw;
+}
+.main_intro-content_wrapper {
+    background-color: #c6bfbf;
+    padding: 2rem;
+    margin: auto;
+}
+
+p.main_intro-content_text,
+a.main_intro-content_text {
+    font-size: 14px;
+}
+
+.main_title {
+    font-size: 2rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+}
+.main_content {
+    display: flex;
+    padding: 0.5rem;
+}
+
+.main_content_col {
+    flex: 1;
+    margin: 1rem;
+}
+
+/* Footer */
+.footer {
+    bottom: 0;
+    background-color: #0b4d14;
+}
+.footer_list_ctn {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    margin: auto;
+}
+.footer_list_item {
+    flex: 1;
+}
