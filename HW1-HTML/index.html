@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="author" content="Hao Yan">
+        <meta name="description" content="HTML Assignment - Sign Up page">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="./index.css">
+        <title>Sign Up Page</title>
+    </head>
+
+    <body>
+        <div class="form">
+            <form class="signupform">        
+                <div class="title">
+                    <h1>Sign Up</h1>
+                </div>
+
+                <div class="inforinput">
+                    <input type="text" id="fname" name="fname" class="left-input" placeholder="First Name" required>
+                    <input type="text" id="lname" name="lname" class="right-input" placeholder="Last Name" required>
+                </div>
+
+                <div class="inforinput">
+                    <input type="text" id="mobile" name="mobile" class="full-input" placeholder="Mobile No." required>
+                </div>
+
+                <div class="inforinput">
+                    <input type="text" id="email" name="email" class="full-input" placeholder="Email Address" required>
+                </div>
+
+                <div class="inforinput">
+                    <input type="password" id="psw" name="psw" class="left-input" placeholder="Password" required>
+                    <input type="password" id="psw-confirm" name="psw-confirm" class="right-input" placeholder="Confirm Password" required>
+                </div>
+
+                <div class="acknowledgement">
+                    <lable class="ack-check">
+                        <input type="checkbox" name="agree"> I Agree
+                    </lable>
+
+                    <p class="ack-description">
+                        By clicking <span class="reg-wrapper">Register</span>, you agree to the <a href="">Terms and Conditions</a> set out by this site. Including our Cookie Use.
+                    </p>
+                </div>
+
+                <div class="inforinput">
+                    <button type="submit" class="signupbtn">Register</button>
+                    <button type="button" class="signinbtn">Sign In</button>
+                </div>
+            </form>
+        </div>
+    </body>
+</html>

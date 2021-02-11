@@ -1,0 +1,106 @@
+* {
+    margin: 0;
+    padding: 5px;
+    box-sizing: border-box;
+}
+
+div.form {
+    width: 100%;
+    height: auto;
+    text-align: center;
+    position: absolute;
+    margin: auto;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+div.title {
+    font-family: sans-serif;
+    padding-bottom: 0;
+}
+
+.signupform {
+    width: 50%;
+    height: 350px;
+    margin: auto;
+}
+
+.inforinput {
+    width: 100%;
+    height: 45px;
+}
+
+.left-input, .right-input {
+    width: 48%;
+    height: 35px;
+}
+
+.left-input, .right-input, .full-input {
+    border: 1px solid gray;
+    border-radius: 5px;
+}
+
+.left-input {
+    float: left;
+}
+
+.right-input {
+    margin-left: 4%;
+}
+
+.full-input {
+    width: 100%;
+    height: 35px;
+}
+
+input:focus {
+    border-color: #62b9ff;
+    outline: 0;
+    -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075),0 0 8px rgba(69, 135, 189, 0.6);
+    box-shadow: inset 0 1px 1px rgba(0,0,0,.075),0 0 8px rgba(69, 135, 189, 0.6);
+}
+
+.signupbtn, .signinbtn {
+    height: 40px;
+    border-radius: 5px;
+    border: none;
+    width: 48%;
+}
+
+.signupbtn {
+    float: left;
+    background-color: rgb(62, 144, 221);
+    color: white;
+}
+
+.signinbtn {
+    background-color: rgb(70, 204, 126);
+    color: white;
+    margin-left: 4%;
+}
+
+.acknowledgement {
+    padding: 0;
+    width: 100%;
+    height: 45px;
+}
+
+.ack-check {
+    float: left;
+}
+
+.ack-description {
+    font-size: 1em;
+    text-align: left;
+    padding-left: 30%;
+    padding-right: 0;
+}
+
+.reg-wrapper {
+    border: none;
+    background-color: rgb(62, 144, 221);
+    border-radius: 2px;
+    padding: 2px;
+    color: white;
+}
