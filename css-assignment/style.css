@@ -78,7 +78,7 @@ table {
 
 /* Main */
 .main {
-    top: 4rem;
+    top: 3.75rem;
     position: fixed;
     width: 100vw;
 }
@@ -114,7 +114,6 @@ a.main_intro-content_text {
     background-color: #0b4d14;
 }
 .footer_list_ctn {
-    position: relative;
     display: flex;
     justify-content: space-between;
     margin: auto;
