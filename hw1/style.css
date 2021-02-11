@@ -1,0 +1,102 @@
+.form-container {
+    display: flex;
+    flex-direction: column;
+    width: 600px;
+    margin: 50px auto;
+    box-sizing: border-box;
+}
+
+h2 {
+    font-size: 2rem;
+    text-align: center;
+}
+
+.input-line {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    height: 45px;
+    margin: 7px auto;
+}
+
+.form-control {
+    border-radius: 5px;
+    border: 2px solid whitesmoke;
+    width: 46%;
+    text-indent: 1rem;
+    font-size: 1rem;
+}
+
+.long {
+    width: 100%;
+}
+
+::placeholder {
+    color: grey;
+}
+
+.form-control:focus {
+    outline: none;
+    border: 1px solid lightskyblue;
+    box-shadow: 0 0 5px lightskyblue;
+}
+
+.cbox-line {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    height: 45px;
+    margin: 7px auto;
+    font-size: 0.9rem;
+    vertical-align: middle;
+}
+
+.cbox-line label {
+    font-weight: bold;
+    width: 20%;
+    margin: auto;
+}
+
+.cbox-line span {
+    width: 75%;
+    margin: auto;
+}
+
+.cbox-line b {
+    display: inline-block;
+    background-color: #428BCA;
+    color: white;
+    width: 15%;
+    border-radius: 3px;
+    font-size: 0.5rem;
+    text-align: center;
+}
+
+.cbox-line a {
+    color: #428BCA;
+    text-decoration: none;
+}
+
+.btn-line {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    height: 45px;
+    margin: 7px auto;
+}
+
+.btn-line button {
+    width: 45%;
+    color: white;
+    font-size: large;
+    border-radius: 5px;
+    border: none;
+}
+#register {
+    background-color: #428BCA;
+}
+
+#sign-in {
+    background-color: #5CB85C;
+}
+
