@@ -21,7 +21,7 @@ div.title {
 }
 
 .signupform {
-    width: 100%;
+    width: 75%;
     height: 350px;
     margin: auto;
 }
@@ -39,6 +39,7 @@ div.title {
 .left-input, .right-input, .full-input {
     border: 1px solid gray;
     border-radius: 5px;
+    font-size: 0.7em;
 }
 
 .left-input {
@@ -91,7 +92,7 @@ input:focus {
 }
 
 .ack-description {
-    font-size: 0.8em;
+    font-size: 0.7em;
     text-align: left;
     padding-left: 30%;
     padding-right: 0;
