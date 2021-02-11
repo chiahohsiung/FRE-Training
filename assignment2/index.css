@@ -1,0 +1,39 @@
+*{
+    font-family: sans-serif;
+}
+
+header{
+    background-color: gray;
+}
+
+.menu{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding:0 20px;
+    color:white;
+    height: 50px;
+}
+.menu ul{
+    display: flex;
+    flex-direction: row;
+}
+
+
+
+.title-container{
+    background-color: #c6bfbf;
+    padding:20px 100px;
+}
+.article-container{
+    display: flex;
+    flex-direction: row;
+    padding: 10px 100px;
+}
+.article-container p{
+    padding:10px;
+}
+
+footer{
+    background-color: #0b4d14;
+}
