@@ -21,7 +21,7 @@ div.title {
 }
 
 .signupform {
-    width: 50%;
+    width: 100%;
     height: 350px;
     margin: auto;
 }
@@ -32,7 +32,7 @@ div.title {
 }
 
 .left-input, .right-input {
-    width: 48%;
+    width: 49%;
     height: 35px;
 }
 
@@ -46,7 +46,7 @@ div.title {
 }
 
 .right-input {
-    margin-left: 4%;
+    margin-left: 2%;
 }
 
 .full-input {
@@ -65,7 +65,7 @@ input:focus {
     height: 40px;
     border-radius: 5px;
     border: none;
-    width: 48%;
+    width: 49%;
 }
 
 .signupbtn {
@@ -77,7 +77,7 @@ input:focus {
 .signinbtn {
     background-color: rgb(70, 204, 126);
     color: white;
-    margin-left: 4%;
+    margin-left: 2%;
 }
 
 .acknowledgement {
@@ -91,7 +91,7 @@ input:focus {
 }
 
 .ack-description {
-    font-size: 1em;
+    font-size: 0.8em;
     text-align: left;
     padding-left: 30%;
     padding-right: 0;
