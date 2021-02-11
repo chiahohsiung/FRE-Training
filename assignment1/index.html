@@ -7,31 +7,37 @@
     <link rel="stylesheet" href="./index.css">
 </head>
 <body>
-    <form action="">
-        <div class="container">
-            <h1 class="title"> Sign Up</h1>
+        
+        <h1 class="title"> Sign Up</h1>
 
-            <div class="div-name">
-                <input type="text" id="firstname" placeholder="First Name">
-                <input type="text" id="lastname" placeholder="Last Name">
+        <div class="container">
+            <form action="">
+
+            <div class="flex">
+                <input type="text" class="input_text" placeholder="First Name">
+                <input type="text" class="input_text" placeholder="Last Name">
             </div>
-           
-            <div><input type="text" placeholder="Mobile No."></div>
-            <div><input type="text" placeholder="Email Address"></div>
-            <div class="div-password">
-                <input id= "password" type="password" placeholder="Password">
-                <input id= "confirm-password" type="password" placeholder="Confirm Password">    
+            <div class="flex">
+                <input type="text" class="input_text" placeholder="Mobile No.">
             </div>
-            <div class="div-checkbox">
-                <div><input type="checkbox" name="I agree" id="I Agree" /><b>I agree</b></div>
-                <div> By clicking <button class="button small-button">Register</button>, you agree to the <a  href=""> Terms and Conditions</a> set out by this site, including our Cookie use.</div>
+            <div class="flex"> <input type="text" class="input_text" placeholder="Email Address">
+            </div>
+
+            <div class="flex">
+                <input class="input_text" type="password" placeholder="Password">
+                <input class="input_text" type="password" placeholder="Confirm Password">    
+            </div>
+            <div class="flex">
+                <div class="checkbox"><input type="checkbox"/><b>I agree</b></div>
+                <div class="flex_item"> By clicking <span class="register_text">Register</span>, you agree to the <a  class="term_text" href=""> Terms and Conditions</a> set out by this site, including our Cookie use.</div>
             </div>   
-            <div class="div-button">
-                <button class="button" id="register">Register</button>
-                <button class="button" id="signIn">Sign In</button>
+            <div class="flex">
+                <button class="button register_button">Register</button>
+                <button class="button signin_button" >Sign In</button>
             </div>
-            
+        </form>
+
         </div>
-    </form>
+
 </body>
 </html>

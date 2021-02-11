@@ -1,76 +1,78 @@
 * {
     box-sizing: border-box;
-    margin:5px 0 0 0;
 }
 
 .container{
     padding: 15px;
     display: flex;
     width: 100%;
-    flex-direction: column;
+    height: auto;
+    justify-content: center;
 }
 
 .title {
     text-align: center;
 }
 
-input[type=text],input[type=password] {
-    width: 100%;
+.input_text{
+    flex:2;
+    margin: 8px;
     height: 50px;
     padding: 15px;
-    float:left;
-    font-size: 20px;
-    display:block;
+    border-radius: 5px;
+    border: 1px solid;
+    font-size: 25px;
 }
 
-.div-name, .div-password,.div-button, .div-checkbox{
+
+.flex{
     display: flex;
     flex-direction: row;    
-    justify-content: space-between;
-    margin:5px 0;
-
-}
-
-div #firstname, div #password, div #register{
-    margin:0 20px 0 0;
-}
-
-div #lastname, div #confirm-password,div #signin{
-    margin:0 0 0 20px;
-}
-
-a{
-    color:rgb(0, 0, 255);
+    flex-wrap: wrap;
+    justify-content: center;
 }
 
 .button{
-    width:50%;
-    margin: 5px 0px;
+    margin: 5px;
     font-size: 20px;
     height:50px;
     border-radius: 4px;
     border: 0px;
     color:white;
+    flex:2;
 }
 
-/* .checkbox{
-    display:flex;
-    direction: row;
-    justify-content: space-between;
-} */
+.checkbox{
+    height:20px;
+    width:10%;
+    flex:1
+}
 
-#register{
+.register_button{
     background-color: rgb(62, 141, 226);
 }
-#signIn{
+.signin_button{
     background-color: rgb(83, 165, 83);
 }
 
-.small-button{
+.register_text{
     height:100%;
-    width: fit-content;
+    color:white;
     background-color: rgb(62, 141, 226);
-    font-size: 12px;
+    font-size: 14px;
+    padding-inline: 8px;
+    padding-block:4px;
+    border-radius: 4px;
+}
+
+.term_text{
+    text-decoration: none;
+    color:rgb(0, 0, 255);
+}
+
+.flex_item{
+    flex:2;
+    margin:8px;
 }
 
 
