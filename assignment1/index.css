@@ -1,0 +1,80 @@
+* {
+    box-sizing: border-box;
+    margin:5px 0 0 0;
+}
+
+/* form{
+    margin: 20px;
+}  */
+
+.container{
+    padding: 15px;
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+}
+
+.title {
+    text-align: center;
+}
+
+input[type=text],input[type=password] {
+    width: 100%;
+    height: 50px;
+    padding: 15px;
+    float:left;
+    font-size: 20px;
+    display:block;
+}
+
+.div-name, .div-password,.div-button{
+    display: flex;
+    flex-direction: row;    
+}
+
+div #firstname, div #password, div #register{
+    margin:0 20px 0 0;
+}
+
+div #lastname, div #confirm-password,div #signin{
+    margin:0 0 0 20px;
+}
+
+a{
+    color:rgb(0, 0, 255);
+}
+
+.button{
+    width:50%;
+    margin: 5px 0px;
+    font-size: 20px;
+    height:50px;
+    border-radius: 4px;
+    border: 0px;
+    color:white;
+}
+
+.checkbox{
+    display:flex;
+    direction: row;
+    justify-content: space-between;
+}
+
+#register{
+    background-color: rgb(62, 141, 226);
+}
+#signIn{
+    background-color: rgb(83, 165, 83);
+}
+
+.small-button{
+    height:100%;
+    width: fit-content;
+    background-color: rgb(62, 141, 226);
+    font-size: 12px;
+}
+
+
+
+
+
