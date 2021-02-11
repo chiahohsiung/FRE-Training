@@ -1,0 +1,82 @@
+*{
+    font-family: sans-serif;
+}
+.title{
+    text-align: center;
+    font-size: x-large;
+}
+.container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50wh;
+    height: auto;
+}
+
+.flex_row{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.flex_item{
+    margin: 8px;
+    flex: 2;
+}
+
+.input_text{
+    height: 40px;
+    flex: 2;
+    margin: 8px;
+    font-size: large;
+    padding-left: 10px;
+    border: 2px solid;
+    border-radius: 5px;
+    border-color: rgb(216, 212, 212) ;
+}
+
+.check_box{
+    height: 20px;
+    flex:1;
+    width: 10%;
+    font-weight: bold;
+}
+.term_condition_text{
+    font-family: serif;
+}
+ .register_text{
+    background-color: rgb(99, 99, 235);
+    color: white;
+    padding-inline: 8px;
+    padding-block: 2px;
+    border-radius: 5px;
+}
+
+.terms_link{
+    text-decoration: none;
+    color: rgb(125, 179, 226);
+}
+
+.buttons{
+    flex: 2;
+    height: 50px;
+    font-size: large;
+    margin-inline: 20px;
+    color: white;
+    border-radius: 5px;
+    border-color: transparent;
+}
+
+.register_button{
+    background-color: rgb(99, 99, 235);
+}
+
+.sign_in_button{
+    background-color: rgb(3, 168, 3);
+}
+
+
+
