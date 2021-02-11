@@ -1,0 +1,108 @@
+*{
+    box-sizing: inherit;
+    margin:0;
+    padding:0;
+}
+
+body{
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+header {
+    text-align: center;
+    margin: 20px;
+}
+
+.form-container{
+    position: fixed;
+    width: 100%;
+    max-width: 50em;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.form-signup{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    margin: 5px 5px;
+}
+
+.form-signup .form-row{
+    display: flex;
+    margin: 5px;
+}
+
+.form-signup .form-row .form-item{
+    flex: 1 1;
+    margin: 0.5rem 0.5rem;
+}
+
+.form-item input{
+    padding: 1rem;
+    width: 100%;
+    border-radius: 5px;
+    border: 1px solid grey;
+}
+
+.form-item input:focus{
+    background-color: whitesmoke;
+}
+
+.form-item button{
+    padding: 1rem;
+    width: 100%;
+    border-radius: 5px;
+    border: 1px solid grey;
+}
+
+.agreement-wrapper{
+    display: flex;
+    font-size: 0.9rem;
+    margin-top: 5px;
+}
+
+
+.form-row .check-agree{
+    flex: 1 1 45%;
+    text-align: left;
+    line-height: 2rem; 
+    min-width: 2rem;
+}
+
+label[for=agree]{
+    font-weight: bold;
+}
+
+.form-row .terms .badge{
+    background-color: #4288fa;
+    display: inline-block;
+    color: whitesmoke;
+    padding:5px 5px;
+    border-radius: 3px;
+}
+
+.badge{
+    font-size: 0.8rem;
+}
+
+button[type=submit]{
+    background-color: #4288fa;
+    color: whitesmoke;
+}
+
+button[type=button]{
+    background-color: #00be4c;
+    color: whitesmoke;
+}
+
+
+@media (max-width:600px){
+    .form-signup .form-row{
+        flex-direction: column;
+    }
+}
+
+
