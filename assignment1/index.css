@@ -3,10 +3,6 @@
     margin:5px 0 0 0;
 }
 
-/* form{
-    margin: 20px;
-}  */
-
 .container{
     padding: 15px;
     display: flex;
@@ -27,9 +23,12 @@ input[type=text],input[type=password] {
     display:block;
 }
 
-.div-name, .div-password,.div-button{
+.div-name, .div-password,.div-button, .div-checkbox{
     display: flex;
     flex-direction: row;    
+    justify-content: space-between;
+    margin:5px 0;
+
 }
 
 div #firstname, div #password, div #register{
@@ -54,11 +53,11 @@ a{
     color:white;
 }
 
-.checkbox{
+/* .checkbox{
     display:flex;
     direction: row;
     justify-content: space-between;
-}
+} */
 
 #register{
     background-color: rgb(62, 141, 226);
