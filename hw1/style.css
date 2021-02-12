@@ -1,33 +1,35 @@
 .form-container {
     display: flex;
     flex-direction: column;
-    width: 600px;
-    margin: 50px auto;
     box-sizing: border-box;
 }
 
-h2 {
+p {
     font-size: 2rem;
+    font-weight: bold;
     text-align: center;
 }
 
-.input-line {
+.line {
     display: flex;
     justify-content: space-between;
     width: 100%;
-    height: 45px;
-    margin: 7px auto;
+    height: 48px;
+    margin: 6px auto;
 }
 
 .form-control {
     border-radius: 5px;
     border: 2px solid whitesmoke;
-    width: 46%;
     text-indent: 1rem;
     font-size: 1rem;
 }
 
-.long {
+.col-6 {
+    width: 46%;
+}
+
+.col-12 {
     width: 100%;
 }
 
@@ -41,28 +43,26 @@ h2 {
     box-shadow: 0 0 5px lightskyblue;
 }
 
-.cbox-line {
+.cbox-container {
     display: flex;
     justify-content: space-between;
     width: 100%;
-    height: 45px;
-    margin: 7px auto;
+    margin: 6px auto;
     font-size: 0.9rem;
-    vertical-align: middle;
 }
 
-.cbox-line label {
+.cbox-container label {
     font-weight: bold;
     width: 20%;
     margin: auto;
 }
 
-.cbox-line span {
+.cbox-container span {
     width: 75%;
     margin: auto;
 }
 
-.cbox-line b {
+.cbox-container b {
     display: inline-block;
     background-color: #428BCA;
     color: white;
@@ -72,26 +72,19 @@ h2 {
     text-align: center;
 }
 
-.cbox-line a {
+.cbox-container a {
     color: #428BCA;
     text-decoration: none;
 }
 
-.btn-line {
-    display: flex;
-    justify-content: space-between;
-    width: 100%;
-    height: 45px;
-    margin: 7px auto;
-}
-
-.btn-line button {
+.btn-container button {
     width: 45%;
     color: white;
-    font-size: large;
+    font-size: 1.2rem;
     border-radius: 5px;
     border: none;
 }
+
 #register {
     background-color: #428BCA;
 }
@@ -100,3 +93,79 @@ h2 {
     background-color: #5CB85C;
 }
 
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+
+    :root {
+        font-size: 2.5vw;
+    }
+    
+    .form-container {
+        width: 84vw;
+        margin: 7vw auto;
+    }
+
+    .line {
+        flex-wrap: wrap;
+        height: auto;
+        margin: auto;
+    }
+
+    .form-control {
+        width: 100%;
+        height: 8vw;
+        margin: 1vw auto;
+    }
+
+    .cbox-container {
+        flex-wrap: wrap;
+        margin: 1vw auto;
+    }
+
+    .cbox-container label {
+        width: 100%;
+        text-align: center;
+    }
+    
+    .cbox-container span {
+        width: 100%;
+    }
+
+    .btn-container button {
+        width: 75%;
+        height: 8vw;
+        margin: 1vw auto;
+    }
+}
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) {
+    .form-container {
+        width: 480px;
+        margin: 40px auto;
+    }
+}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {
+    .form-container {
+        width: 480px;
+        margin: 40px auto;
+    }
+}
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {
+    .form-container {
+        width: 600px;
+        margin: 50px auto;
+    }
+}
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {
+    .form-container {
+        width: 600px;
+        margin: 50px auto;
+    }
+}
