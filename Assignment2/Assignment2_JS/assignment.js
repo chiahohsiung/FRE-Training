@@ -69,12 +69,12 @@ const itsType = (i) => {
 const matrix = (n) => {
     let matrix = [];
     let i = 0, j = 0;
-    for (i < n; ++i) {
+    for (;i < n; ++i) {
         matrix[i] = [];
     }
     i = 0;
-    for (i < n; ++i) {
-        for (j < n; ++j) {
+    for (;i < n; ++i) {
+        for (;j < n; ++j) {
             if (i === j) {
                 matrix[i][j] = 1;
             }
