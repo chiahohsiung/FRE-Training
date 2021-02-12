@@ -96,4 +96,28 @@ const longest_word = (string) => {
     let longest = result[0].word
     return longest
 }
-console.log(longest_word("the quick brown fox"))
+// console.log(longest_word("Web Development Tutorial"))
+/**
+ * 7. Write a JavaScript function that accepts a string as a parameter
+ * and counts the number of vowels within the string.
+ * Note : As the letter 'y' can be regarded as both a vowel and a consonant, we do not count 'y' as a vowel here.
+ * Example string : 'The quick brown fox' Expected Output : 5
+ */
+
+const how_many_vowels = (
+    string,
+    vowels = { a: "a", e: "e", i: "i", o: "o", u: "u" }
+) => {
+    const cleanString = string
+        .trim()
+        .split(" ")
+        .join("")
+        .toLowerCase()
+    let count = 0
+    for (let i = 0; i < cleanString.length; i++) {
+        const letter = cleanString[i]
+        if (vowels[letter]) count++
+    }
+    return count
+}
+console.log(how_many_vowels("The quick brown fox"))
