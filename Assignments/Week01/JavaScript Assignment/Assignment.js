@@ -1,4 +1,4 @@
-// Q1.
+// Q1.")
 const reverse = (number) => {
   let arr = (number + "").split("");
   let reducer = (accum, curr) => curr + accum;
@@ -6,7 +6,7 @@ const reverse = (number) => {
 };
 console.log(`Q1: reverser ${123} => ${reverse(123)}`);
 
-// Q2
+console.log("\n Q2");
 const isPalindrome = (string) => {
   const len = string.length - 1;
   for (let i = 0; i < len / 2; i++) {
@@ -18,7 +18,7 @@ const isPalindrome = (string) => {
 };
 console.log(`Q2 is 'murum a palindrome: ${isPalindrome("murum")}`);
 
-// Q3
+console.log("\n Q3");
 const stringPermutations = (string) => {
   const arr = string.split("");
   let result = [];
@@ -29,7 +29,7 @@ const stringPermutations = (string) => {
 };
 console.log(stringPermutations("mark"));
 
-// Q4
+console.log("\n Q4");
 const alphabetical = (string) => {
   arr = string.split("").sort(function (a, b) {
     return a.charCodeAt(0) - b.charCodeAt(0);
@@ -41,7 +41,7 @@ const alphabetical = (string) => {
 };
 console.log(`mamawang in alphabetical order is ${alphabetical("mamawang")}`);
 
-// Q5
+console.log("\n Q5");
 const capitalizeWord = (string) => {
   let result = "";
 
@@ -54,7 +54,7 @@ const capitalizeWord = (string) => {
 };
 console.log(capitalizeWord("she sells sea shells on the sea shore"));
 
-// Q6
+console.log("\n Q6");
 const longestWord = (string) => {
   const words = string.split(" ").sort((a, b) => b.length - a.length);
   return words[0];
@@ -63,7 +63,7 @@ console.log(
   `Longest word in string "Tom and Jerry" is${longestWord("Tom and Jerry")}`
 );
 
-// Q7
+console.log("\n Q7");
 const noVowels = (string) => {
   const vowels = ["a", "e", "i", "o", "u"];
   const arr = string.split("").filter((a) => vowels.indexOf(a) !== -1);
@@ -75,7 +75,7 @@ console.log(
   )}`
 );
 
-// Q8
+console.log("\n Q8");
 const isPrime = (number) => {
   let takeout = [];
   for (let i = 2; i < number / 2; i++) {
@@ -100,13 +100,13 @@ const multiples = (num, till) => {
 
 console.log(`is 97 prime? ${isPrime(97) ? "yes" : "no"}`);
 
-//Q9
+console.log("\nQ9");
 const whatAmI = (obj) => {
   return typeof obj;
 };
 console.log(whatAmI(function () {}));
 
-// Q10
+console.log("\n Q10");
 const identity = (n) => {
   let matrix = [];
   for (let i = 0; i < n; i++) {
@@ -122,7 +122,7 @@ const identity = (n) => {
 console.log(`identity matrix of size 5 is: `);
 console.log(identity(5));
 
-//Q11
+console.log("\nQ11");
 const secondEverything = (numbers) => {
   numbers.sort();
   console.log(numbers[1]);
@@ -134,7 +134,7 @@ console.log(
   )}`
 );
 
-//Q12
+console.log("\nQ12");
 const isPerfect = (number) => {
   let divisors = [];
   for (let i = 1; i < number / 2; i++) {
@@ -166,7 +166,7 @@ const properMultiples = (num, till) => {
 
 console.log(`is 8128 a perfect number? ${isPerfect(8128) ? "yes" : "no"}`);
 
-// Q13
+console.log("\n Q13");
 const factors = (number) => {
   let factors = [];
   for (let i = 1; i < number / 2; i++) {
@@ -181,7 +181,7 @@ const factors = (number) => {
 };
 console.log(`The factors of 90 are ${factors(90)}`);
 
-//Q14
+console.log("\nQ14");
 const convertToCoins = (total) => {
   const coins = [25, 10, 5, 2, 1];
   let index = 0;
@@ -198,7 +198,7 @@ const convertToCoins = (total) => {
 };
 console.log(`67 in coins is ${convertToCoins(67)}`);
 
-// Q15
+console.log("\n Q15");
 const bn = () => {
   const prompt = require("readline").createInterface({
     input: process.stdin,
@@ -218,9 +218,10 @@ const bn = () => {
     });
   });
 };
+
 // bn();
 
-// Q16
+console.log("\n Q16");
 const uniqueChars = (string) => {
   let list = string.split("");
 
@@ -240,7 +241,7 @@ console.log(
   )}`
 );
 
-// Q17
+console.log("\n Q17");
 const occurences = (string) => {
   let occur = {};
   let arr = string.split("").filter((ch) => ch !== " ");
@@ -260,7 +261,7 @@ console.log(
   occurences("The occurences of each character in this very string is")
 );
 
-// Q18
+console.log("\n Q18");
 const binarySearch = (arr, target, left, right) => {
   if (left > right) {
     if (arr[left] !== target) return -1;
@@ -285,7 +286,7 @@ console.log(
   )}`
 );
 
-//Q19
+console.log("\nQ19");
 const largerThanNum = (arr, number) => {
   return arr.filter((num) => num > number);
 };
@@ -296,7 +297,7 @@ console.log(
   )}`
 );
 
-//Q20
+console.log("\nQ20");
 const generateId = (length) => {
   let str = "";
   for (let i = 0; i < length; i++) {
@@ -308,7 +309,7 @@ const generateId = (length) => {
 
 console.log(`A random string of length 12 is ${generateId(12)}`);
 
-// Q21
+console.log("\n Q21");
 const getSubsetsOfLength = (arr, l) => {
   let result = [];
   arr.map((n, i) => {
@@ -329,7 +330,7 @@ const getSubsetsOfLength = (arr, l) => {
 console.log(`All subsets of length 3 in [ 1, 3, 5, 6, 7, 8, 9, 10, 13] is: `);
 getSubsetsOfLength([1, 3, 5, 6, 7, 8, 9, 10, 13], 3);
 
-// Q22
+console.log("\n Q22");
 const occurencesOfChar = (string, letter) => {
   let list = string.split("");
 
@@ -343,7 +344,7 @@ console.log(
   )}`
 );
 
-//Q23
+console.log("\nQ23");
 const firstNonRepeated = (string) => {
   let arr = string.split("");
   for (let i = 0; i < arr.length; i++) {
@@ -359,7 +360,7 @@ console.log(
   )}`
 );
 
-//Q24
+console.log("\nQ24");
 const bubbleSort = (arr) => {
   for (let i = 0; i < arr.length - 1; i++) {
     for (let j = 0; j < arr.length - i - 1; j++) {
@@ -377,7 +378,7 @@ console.log(
   bubbleSort([12, 345, 4, 546, 122, 84, 98, 64, 9, 1, 3223, 455, 23, 234, 213])
 );
 
-//Q25
+console.log("\nQ25");
 const Longest_Country_Name = (list) => {
   list.sort((a, b) => b.length - a.length);
   return list[0];
@@ -388,9 +389,29 @@ console.log(
   )}`
 );
 
-//Q26
+console.log("\nQ26");
+const longestUniqueSubstr = (string) => {
+  let str = string.split("");
+  let curr = [];
+  let substrings = [];
+  for (let i = 0; i < str.length; i++) {
+    if (curr.indexOf(str[i]) !== -1) {
+      substrings.push(curr);
+      curr = [];
+    } else {
+      //   console.log(curr);
+      curr.push(str[i]);
+    }
+  }
+  substrings.sort((a, b) => b.length - a.length);
+  return substrings[0].reduce((acc, curr) => acc + curr);
+};
+console.log(`The longest unique substring in the string "donaudampfschiffahrtselektrizitätenhauptbetriebswerkbauunterbeamtengesellschaft
+" is ${longestUniqueSubstr(
+  "donaudampfschiffahrtselektrizitätenhauptbetriebswerkbauunterbeamtengesellschaft"
+)}`);
 
-//Q27
+console.log("\nQ27");
 const longestPalin = (string) => {
   let arr = string.split("");
   let palindromes = [];
@@ -409,13 +430,12 @@ const longestPalin = (string) => {
 console.log(
   `The longest substring in the string "banana" is ${longestPalin("bananas")}`
 );
-//Q28
+
+console.log("\nQ28");
 const me = (callMe) => callMe("I have been called by another function");
 me(console.log);
 
-//Q29
+console.log("\nQ29");
 const getFnName = (func) =>
   console.log(`This function is called: ${func.name}`);
 getFnName(Array.prototype.toString);
-
-// console.log(here.myFilter((ele) => ele % 2 === 0));
