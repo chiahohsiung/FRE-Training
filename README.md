@@ -19,3 +19,11 @@ git branch by_your_name/notes
 git checkout by_your_name/notes
 implement the assignment under this feature branch.
 ```
+
+### VS Code Shortcut
+
+Create HTML template: Type ! or doc, then enter
+Comment out code: Select the code, then Ctrl+/ (same to uncomment)
+Block comment: Shift+Alt+A
+Change the default key binds: Ctrl+Shift+P->keyboard->open keyboard shortcut
+

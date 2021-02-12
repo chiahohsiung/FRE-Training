@@ -1,5 +1,9 @@
+* {
+    box-sizing: border-box;
+}
+
 form {
-    width: 65%;
+    width: 90%;
     max-width: 600px;
     margin: 15px auto;
     padding: 10px;
