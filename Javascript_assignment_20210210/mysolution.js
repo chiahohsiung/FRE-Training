@@ -8,8 +8,8 @@ function reverseNum(num) {
     return +(num.toString().split("").reverse().join(""));
 }
 
-//let x = 23578;
-//console.log(reverseNum(x));
+let x = 23578;
+console.log(reverseNum(x));
 
 
 /***********************************************************************
@@ -28,7 +28,7 @@ function palindrome(str) {
     
 }
 
-//console.log(palindrome("madam"));
+console.log(palindrome("madam"));
 
 
 /******************************************************************************
@@ -46,7 +46,7 @@ function combinationOfString(str){
 
 }
 
-//console.log(combinationOfString('dog'));
+console.log(combinationOfString('dog'));
 
 /***********************************************************************************
 4. Write a JavaScript function that returns a passed string with letters in alphabetical order. 
@@ -59,7 +59,7 @@ function sortString(str){
     return str.split('').sort().join('');
 }
 
-//console.log(sortString('webmaster'));
+console.log(sortString('webmaster'));
 
 /************************************************************************************
 5. Write a JavaScript function that accepts a string as a parameter and converts the first letter of each word of the string in upper case. 
@@ -75,7 +75,7 @@ function convertUpper (str) {
     return array.join(' ');
 }
 
-//console.log(convertUpper('the quick brown fox'));
+console.log(convertUpper('the quick brown fox'));
 
 /*************************************************************************************
 6. Write a JavaScript function that accepts a string as a parameter and find the longest word within the string. 
@@ -89,7 +89,7 @@ function longestWord(str){
     return word;
 }
 
-//console.log(longestWord('Web Development Tutorial'));
+console.log(longestWord('Web Development Tutorial'));
 
 /****************************************************************************************
 7. Write a JavaScript function that accepts a string as a parameter and counts the number of vowels within the string. 
@@ -120,7 +120,7 @@ function countVowels(str){
 
 }
 
-//console.log(countVowels('The quick brown fox'));
+console.log(countVowels('The quick brown fox'));
 
 
 /*****************************************************************************************
@@ -143,7 +143,7 @@ function checkPrime(num) {
 }
 
 
-//console.log(checkPrime(123));
+console.log(checkPrime(123));
 
 
 /**************************************************************************************
@@ -156,7 +156,7 @@ function checkType(argument) {
 }
 
 
-//console.log(checkType({}));
+console.log(checkType({}));
 
 
 /**********************************************************************************
@@ -193,7 +193,7 @@ function perfectNumber(num){
 }
 
 
-//console.log(perfectNumber(28));
+console.log(perfectNumber(28));
 
 
 /*****************************************************************************
@@ -217,7 +217,7 @@ function uniqueChars(str){
 }
 
 
-//console.log(uniqueChars("thequickbrownfoxjumpsoverthelazydog"));
+console.log(uniqueChars("thequickbrownfoxjumpsoverthelazydog"));
 
 
 /********************************************************************************
@@ -242,7 +242,7 @@ function letterOccurrance(str){
 }
 
 
-//console.log(letterOccurrance("the quick brown fox jumps over the lazy dog"));
+console.log(letterOccurrance("the quick brown fox jumps over the lazy dog"));
 
 
 
@@ -264,8 +264,8 @@ function binarySearch(array, target, offset) {
     }
 }
 
-//let bSearchArray = [1, 3, 3, 6, 7, 8, 9, 12, 44, 45, 76];
-//console.log(binarySearch(bSearchArray, 11, 0));
+let bSearchArray = [1, 3, 3, 6, 7, 8, 9, 12, 44, 45, 76];
+console.log(binarySearch(bSearchArray, 11, 0));
 
 
 /****************************************************************************
@@ -283,7 +283,7 @@ function filterArray(array, num){
     return newArray;
 }
 
-//console.log(filterArray(arrayToFilter, 8));
+console.log(filterArray(arrayToFilter, 8));
 
 
 /************************************************************************************
@@ -322,7 +322,7 @@ function charCount(str, char) {
     return count;
 }
 
-//console.log(charCount('microsoft.com', 'o'));
+console.log(charCount('microsoft.com', 'o'));
 
 
 /***********************************************************************************
@@ -349,7 +349,7 @@ function notRepeatedCharracter(str) {
     return false;
 }
 
-//console.log(notRepeatedCharracter('abacddbec'));
+console.log(notRepeatedCharracter('abacddbec'));
 
 
 /*************************************************************************************
@@ -383,7 +383,7 @@ function longestCountryName(array){
     return country;
 }
 
-//console.log(longestCountryName(["Australia", "Germany", "United States of America"]));
+console.log(longestCountryName(["Australia", "Germany", "United States of America"]));
 
 /********************************************************************************************
 26. Write a JavaScript function to find longest substring in a given a string without repeating characters. 
@@ -480,7 +480,7 @@ function square(x){
     return x*x;
 }
 
-//console.log(test(2, square));
+console.log(test(2, square));
 
 /**************************************************************************************
 29. Write a JavaScript function to get the function name. 
@@ -496,4 +496,4 @@ function foo(){
     return true;
 }
 
-//console.log(funName(foo));
+console.log(funName(foo));
