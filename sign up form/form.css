@@ -103,20 +103,12 @@ span.register {
     vertical-align: middle;
 }
 
-.agree-checkbox label {
-    margin-right: 20px;
+.agree-checkbox{
+    width: 20%;
+    float: left;
 }
 
-/* .agree-checkbox{
-    display: inline-block;
-    margin-right: 10px;
+.terms{
+    width: 70%;
+    float: right;
 }
-
-.terms {
-    display: inline-block;
-} */
-
-.agree-checkbox div {
-    display: inline-block;
-}
-
