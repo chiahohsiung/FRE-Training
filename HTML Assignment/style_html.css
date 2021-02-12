@@ -1,0 +1,86 @@
+*{
+    margin: 0;
+    padding: 0;
+    width: 100%;
+}
+body {
+    height:100%;
+    width:100%;
+}
+.container{
+    position: absolute;
+    font-size: 20px;
+    width: 60%;
+    height: 40%;
+    top: 25%;
+    left: 50%;
+    transform: translate(-50%, -25%);
+    text-align: center;
+}
+.container_form{
+    display: flex;
+    flex-wrap: wrap;
+    margin-top:20px;
+}
+[class^="input-"]{
+    height:50px;
+    margin-left: 33px;
+    margin-right: 30px;
+    padding:10px;
+    border-color: lightgrey;
+    border-width: 1px;
+    border-radius: 10px;
+    font-size: 20px;
+}
+.input-col-1{
+    width:calc(100%);
+}
+.input-col-2{
+    width:calc(100%/2.5);
+}
+.form_check{
+    display: flex;
+    text-align: left;
+    width: calc(100%/5);
+}
+.form_checkbox{
+    height: 20px;
+}
+.form_policy{
+    width: calc(100%/1.5);
+    text-align: left;
+}
+
+button{
+    height:50px;
+    margin-left: 28px;
+    margin-right: 28px;
+    padding:10px;
+    border-color: lightgrey;
+    border-width: 1px;
+    border-radius: 10px;
+    width:calc(100%/2.3);
+    font-size: 20px;
+}
+.register_button{
+    background-color:rgb(62, 83, 204);
+    color:white;
+}
+.sign_in_button{
+    background-color: rgb(115, 202, 115);
+    color:white;
+}
+span{
+    background-color: rgb(62, 83, 204);
+    color:white;
+    padding: 5px;
+}
+
+@media (max-width: 600px){
+    .input-col-md-1 {
+        width:calc(100%/2.5);
+    }
+    .input-col-md-2{
+        width:calc(100%/5);
+    }
+}
