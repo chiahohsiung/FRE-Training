@@ -1,0 +1,101 @@
+body{
+	margin: 0;
+	padding: 0;
+	font-family: "Courier New";
+	background-size:cover;
+	background-position: center;
+}
+.sign-up-form{
+	width: 500px;
+	box-shadow: 0 0 3px 0 rgba(0, 0, 0, 0.3);
+	background: #fff;
+	padding: 20px;
+	margin: 8% auto 0;
+	
+	
+}
+
+h1{
+    font-family: "Courier New";
+	text-align: center;
+  }
+.left{
+	border-radius: 5px;
+	padding: 10px;
+	margin:10px 0;
+	border:1px solid #999;
+	width: 42%;
+	font-family: "Courier New";
+
+}
+.right{
+	border-radius: 5px;
+	padding: 10px;
+	margin:10px 0;
+	border:1px solid #999;
+	width: 42%;
+	font-family: "Courier New";
+	float:right;
+}
+.input-box{
+	border-radius: 5px;
+	padding: 10px;
+	margin:10px 0;
+	width: 96%;
+	border:1px solid #999;
+	font-family: "Courier New";
+    font-size: 14px;
+	
+}
+
+.leftText{
+    font-family: "Courier New";
+    font-size: 10px;
+    font-weight: bold;
+   
+	float:left;
+	width:20%;
+	padding: 10px;
+}
+.rightText{
+    font-family: "Courier New";
+    font-size: 10px;
+	width:70%;
+	padding: 10px;
+	float:right;
+}
+
+button{
+	color:#fff;
+	border-radius: 5px;
+	padding: 10px;
+	
+	border:none;
+	width:40%;
+	
+}
+a{
+	text-decoration: none;
+}
+.leftBtn{
+	background-color:rgb(65,138,205);
+    font-family: "Courier New";
+    font-size: 14px;
+
+		
+}
+.rightBtn{
+	background-color:rgb(91,184,93);
+	font-family: "Courier New";
+   
+	
+	float:right;
+}
+.badge{
+	background-color:rgb(65,138,205);
+	color:white;
+    font-family: "Courier New";
+    font-size: 10px;
+
+	
+}
