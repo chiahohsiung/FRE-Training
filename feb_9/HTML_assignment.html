@@ -1,0 +1,211 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+
+  <title>Antra HTMLassignment</title>
+  <meta name="description" content="The Antra HTML assignment">
+  <meta name="author" content="Xiangliang Ni">
+
+  <style type="text/css">
+    * {
+      box-sizing: border-box;
+
+    }
+
+    .container {
+      max-width: 60em;
+      min-width: 20em;
+      margin: auto;
+      /*width: 50%;*/
+      background-color: #FFFFFF;
+      padding: 4em;
+    }
+
+    form {
+      font-size: 1.2rem;
+      font-family: Arial, Helvetica, sans-serif;
+    }
+
+    div.input-box-container {
+
+      padding: 0.2rem 1.5rem;
+    }
+
+    input {
+      padding: 1rem 1rem;
+      font-size: 1.5rem;
+    }
+
+    div.row {
+      width: 100%;
+      height: 5.5rem;
+    }
+
+    .center {
+      text-align: center;
+      font-size: 40px;
+      
+    }
+
+    .title {
+      font-family: Arial, Helvetica, sans-serif;
+      font-weight: 500;
+      margin-bottom: 0.2em;
+    }
+
+    .left {
+      float: left;
+      width: 47%;
+      margin-right: 5px;
+    }
+
+    .right {
+      float: right;
+      width: 47%;
+      margin-left: 5px;
+    }
+
+    .whole {
+      width: 100%;
+    }
+
+    .row > input {
+      
+      border-radius: 10px;
+      border: 2px solid #DADADA;
+
+    }
+
+    .row > input::placeholder {
+      color: #8C8C8C;
+    }
+
+    .row > input::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+      color: #8C8C8C;
+      opacity: 1; /* Firefox */
+    }
+
+    .row > input:-ms-input-placeholder { /* Internet Explorer 10-11 */
+      color: #8C8C8C;
+    }
+
+    .row > input::-ms-input-placeholder { /* Microsoft Edge */
+      color: #8C8C8C;
+    }
+
+    .row > input:focus {
+      outline: none !important;
+      border: 2px solid #86B9E7;
+      box-shadow: 0 0 15px #E5F1FA;
+    }
+
+    label {
+    }
+
+    .flex {
+      display: flex;
+    }
+
+    .agreement {
+      margin-top: 0;
+      margin-bottom: 0;
+      
+    }
+
+    div.checkbox-container {
+      padding: 0.5em 0;
+      width: 40%;
+      float: left;
+    }
+
+    div.agreement-container {
+      right: 0;
+      font-weight: 200;
+      font-family: "Roboto", sans-serif;
+    }
+
+    span.button-box {
+      background-color: #428BCA;
+      font-size: 0.8em;
+      color: #FFFFFF;
+      font-weight: 500;
+      padding: 0.1em 0.7em;
+      border: 1px solid white;
+      border-radius: 5px;
+    }
+
+    span.link {
+      color: #3D88C9;
+    }
+
+    div.button-container {
+      margin-top: -2em;
+      padding: 0 1.5rem;
+    }
+
+    .row input[type="submit"] {
+      width: 100%;
+      color: white;
+      border: 1px white  ;
+      border-radius: 10px;
+    }
+
+    .blue-button {
+      background-color: #428BCA;
+    }
+
+    .green-button {
+      background-color: #5CB85C;
+    }
+
+
+  </style>
+
+</head>
+
+<body>
+  <div class="container">
+    <form>
+      <h3 class="center title">Sign Up</h3>
+      <!-- <label for="firstName">First name:</label><br> -->
+      <div class="input-box-container">
+        <div class="row">
+          <input class="left" type="text" id="firstName" name="firstName" placeholder="First Name">
+          <input class="right" type="text" id="lastName" name="lastName" placeholder="Last Name">
+        </div>
+        <div class="row">
+          <input class="whole" type="tel" id="phoneNumber" name="phonNumber" placeholder="Mobile No.">
+        </div>
+        <div class="row">
+          <input class="whole" type="text" id="email" name="email" placeholder="Email Address">
+        </div>
+        <div class="row">
+          <input class="left" type="password" id="password" name="password" placeholder="Password">
+          <input class="right" type="password" id="confirmPassword" name="confirmPassword" placeholder="Confirm Password">
+        </div>
+      </div>
+      <div class="row flex">
+        <div class="checkbox-container">
+          <input type="checkbox" id="IAgree" name="IAgree" value="agree">
+          <label for="IAgree"> I Agree </label>
+        </div>
+        <div class="agreement-container">
+          <p class="agreement">By clicking <span class="button-box">Register</span>, you agree to the <span class="link">Terms and Conditions</span> set out by this site, including our Cookie Use.</p>
+        </div>
+      </div>
+      
+      <div class="row button-container">
+        <div class="left">
+          <input class="blue-button" type="submit" value="Register">
+        </div>
+        <div class="right">
+          <input class="green-button" type="submit" value="Sign In">
+        </div>
+      </div>
+    </form>
+  </div>
+  <script src="js/scripts.js"></script>
+</body>
+</html>
