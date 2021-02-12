@@ -120,18 +120,39 @@ const how_many_vowels = (
     }
     return count
 }
-console.log(how_many_vowels("The quick brown fox"))
+// console.log(how_many_vowels("The quick brown fox"))
 
 /**
  * 8. Write a JavaScript function that accepts a number as a parameter and check the number is prime or not.
  * Note : A prime number (or a prime) is a natural number greater than 1 that has no positive divisors other than 1 and itself
  */
 const is_prime = (number) => {
-    if (number <= 1) false
-    if (number === 2) true
+    if (number <= 1) return false
+    if (number === 2) return true
     for (let i = 3; i < number; i++) {
         if (number % i === 0) return false
     }
     return true
 }
-console.log(is_prime(13))
+// console.log(is_prime(13))
+/**
+ * 9. Write a JavaScript function which accepts an argument and returns the type.
+ * Note : There are six possible values that typeof returns: object, boolean, function, number,string, and undefined.
+ */
+const type_of = (arg) => {
+    return typeof arg
+}
+// console.log(type_of("a"))
+/**
+ * 10. Write a JavaScript function which returns the n rows by n columns identity matrix.
+ */
+
+/**
+ * 11. Write a JavaScript function which will take an array of numbers stored and find the secondlowest and second greatest numbers, respectively.
+ * Sample array : [1,2,3,4,5] Expected Output : 2,4
+ */
+const second_greatest_lowest = (arr) => {
+    let sorted = arr.sort((a, b) => a - b)
+    return [sorted[1], sorted[sorted.length - 2]].join()
+}
+// console.log(second_greatest_lowest([1, 2, 3, 4, 5]))
