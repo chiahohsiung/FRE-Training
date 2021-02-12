@@ -1,5 +1,68 @@
+.container {
+    width: 65%;
+    max-width: 600px;
+    margin: 15px auto;
+    padding: 10px;
+}
+
+.signup {
+    text-align: center;
+}
+
+form>div {
+    margin-bottom: 15px;
+    display: flex;
+    height: 50px;
+}
+
 input {
     border-radius: 5px;
-    border: 2px solid deepskyblue;
-    height: 30px;
+    padding: 10px;
+    border-color: lightgray;
+}
+
+textarea:focus, input:focus{
+    outline: none;
+    border-color: lightskyblue;
+}
+
+.two_line {
+    justify-content: space-between;
+}
+
+.two_line > input {
+    width: 43%;
+}
+
+.one_line > input {
+    width: 100%;
+}
+
+span {
+    padding: 5px;
+    background-color: rgb(72,144,205);
+    color: white;
+}
+
+.check_choice {
+    width: 200px;
+}
+
+.form_button{
+    justify-content: space-between;
+}
+.form_button input{
+    color: white;
+    font-size: 20px;
+    font-weight: bolder;
+}
+
+#register {
+    width: 47%;
+    background-color: rgb(72,144,205);
+}
+
+#signin {
+    width: 47%;
+    background-color: rgb(98,188,98);
 }

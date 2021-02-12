@@ -1,19 +1,56 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=\, initial-scale=1.0">
     <title>Assignment 1</title>
     <link rel="stylesheet" type="text/css" href="index.css">
 </head>
+
 <body>
-    <form action="">
-        <input id="fname" type="text" name="fname" placeholder="First Name" required>
-        <input id="lname" type="text" name="lname" placeholder="Last Name" required><br>
-        <input id="mobile" type="text" name="mobile" placeholder="Mobile No." required><br>
-        <input id="email" type="email" name="email" placeholder="Email Address" required><br>
-        <input id="password" type="password" name="password" placeholder="password" required>
-        <input id="cpassword" type="password" name="cpassword" placeholder="Comfirm Password" required><br>
-    </form>
+    <div class="container">
+        <div class="signup">
+            <h1>Sign up</h1>
+        </div>
+        <div class="form_container">
+            <form action="">
+                <div class="two_line">
+                    <input id="fname" type="text" name="fname" placeholder="First Name" required>
+                    <input id="lname" type="text" name="lname" placeholder="Last Name" required>
+                </div>
+                <br>
+                <div class="one_line">
+                    <input id="mobile" type="text" name="mobile" placeholder="Mobile No." required>
+                </div>
+                <br>
+                <div class="one_line">
+                    <input id="email" type="email" name="email" placeholder="Email Address" required>
+                </div>
+                <br>
+                <div class="two_line">
+                    <input id="password" type="password" name="password" placeholder="password" required>
+                    <input id="cpassword" type="password" name="cpassword" placeholder="Comfirm Password" required>
+                </div>
+                <br>
+                <div class="checkline">
+                    <div class="check_choice">
+                        <input type="checkbox" name="check" id="agree" />
+                        <label for="agree">I Agree</label>
+                    </div>
+                    <div class="check_content">
+                        By clicking <span>Register</span>, you agree to the <a href="#">Terms and Conditions</a> set out by this site, including our
+                        Cookie Use.
+                    </div>
+                </div>
+                <div class="form_button">
+                    <input type="submit" value="Register" id="register">
+                    <input type="submit" value="Sign in" id="signin">
+                </div>
+            </form>
+        </div>
+    </div>
+
 </body>
+
 </html>
