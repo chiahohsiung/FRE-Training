@@ -175,7 +175,6 @@ const factors = (number) => {
         ...factors,
         ...multiples(i, number / 2).filter((n) => number % n === 0),
       ];
-      console.log(multiples(2, number));
     }
   }
   return factors;
@@ -392,7 +391,31 @@ console.log(
 //Q26
 
 //Q27
-
+const longestPalin = (string) => {
+  let arr = string.split("");
+  let palindromes = [];
+  for (let i = 0; i < arr.length; i++) {
+    // Two cases - where the palindrome is even
+    for (let j = 0; j <= i; j++) {
+      if (arr[i + j] !== arr[i - j]) {
+        palindromes.push(string.substring(i - (j - 1), i + j));
+        break;
+      }
+    }
+  }
+  palindromes = palindromes.sort((a, b) => b.length - a.length);
+  return palindromes[0];
+};
+console.log(
+  `The longest substring in the string "banana" is ${longestPalin("bananas")}`
+);
 //Q28
+const me = (callMe) => callMe("I have been called by another function");
+me(console.log);
 
 //Q29
+const getFnName = (func) =>
+  console.log(`This function is called: ${func.name}`);
+getFnName(Array.prototype.toString);
+
+// console.log(here.myFilter((ele) => ele % 2 === 0));
