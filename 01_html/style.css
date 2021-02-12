@@ -1,75 +1,117 @@
 * {
   margin: 0px;
   padding: 0px;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
-a:link, a:visited {
+/* Link */
+a:link,
+a:visited {
   color: lightseagreen;
   text-decoration: none;
 }
 
-div {
-  padding: 3px;
+a:hover,
+a:active {
+  color: orangered;
 }
 
-#container {
+/* Container */
+div {
+  display: flex;
+  padding: 5px 0;
+}
+
+#signup {
   margin: auto;
   max-width: 500px;
   text-align: center;
 }
 
-.div_form_col_space {
+.signup__two-col,
+.signup__one-col {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+}
+
+.signup__two-col > input,
+.signup__one-col > button {
+  width: 47%;
+}
+
+.signup__one-col > input {
+  width: 100%;
 }
 
 input {
   height: 20px;
-  border-radius: 5px;
-  border: 1px solid black;
+  border-radius: 8px;
+  border: 1px solid rgb(27, 25, 34);
   padding: 5px;
+  font-size: 1em;
 }
 
-.input_expand {
-  width: 97.5%;
+.signup__one-col:nth-child(1) {
+  justify-content: center;
+  padding: 20px;
 }
 
-.input_column {
-  width: 46%
+.signup__one-col:nth-child(6) {
+  padding: 15px 0;
 }
 
-
-.container_agreement {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  width: 100%;
-}
-
-.container_agreement_child.partial{
+.signup__one-col > .signup--agree-checkbox {
   min-width: 20%;
 }
 
-.checkbox_align {
+.signup__one-col > .signup--agree-text {
+  display: inline;
+  line-height: 1.5em;
+  font-size: 0.8em;
+  min-width: 70%;
+  text-align: left;
+}
+
+[type="checkbox"] {
   vertical-align: middle;
+}
+
+.signup--agree-checkbox > strong {
+  padding-left: 10px;
+}
+
+.signup--agree-text > span {
+  padding: 3px;
+  color: white;
+  font-weight: bold;
+  border-radius: 3px;
+  border: 1px solid rgb(33, 30, 41);
 }
 
 /* Button */
 
 button {
   font-weight: bold;
+  font-size: 1em;
   color: white;
-  border: 1px solid black;
-  padding: 5px;
-  border-radius: 2px;
-  width: 48%;
-
+  border: 1px solid rgb(32, 28, 39);
+  padding: 8px;
+  border-radius: 5px;
 }
-.register_button {
+
+.btn-register {
   background-color: teal;
 }
 
-.sign_in_button {
+.btn-register:hover {
+  background-color: orange;
+}
+
+.btn-signin {
   background-color: palevioletred;
+}
+
+.btn-signin:hover {
+  background-color: rgb(127, 214, 28);
 }
