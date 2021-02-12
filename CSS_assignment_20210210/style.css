@@ -61,6 +61,9 @@ li a:hover {background-color: rgb(17, 245, 66);}
   background-color: #c6bfbf;
 }
 
+.content {
+  padding-bottom: 4.5rem;
+}
 .title {
   padding-top: 1rem;
 }
