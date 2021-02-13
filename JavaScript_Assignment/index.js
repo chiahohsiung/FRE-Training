@@ -256,7 +256,106 @@ console.log(uniqueCharacters("anappleadaykeepsdoctoraway"))
 counter = (str) => {
     freq = {}
     for (let ch of str.split('')) {
-        if (!ch.isLetter()) continue;
+        if (ch.length === 1 && ch.toLowerCase().match(/[a-z]/i)) {
+            if (!(ch in freq)) {
+                freq[ch] = 1;
+            } else {
+                freq[ch]++;
+            }
+        }
+    }
+    return freq;
+}
+
+console.log(counter("anappleadaykeepsdoctoraway"))
+console.log(counter("i am a little little guy in a big big world!"))
+
+// 18. Write a function for searching JavaScript arrays with a binary search. 
+// Note : A binary search searches by splitting an array into smaller and smaller chunks until it finds the desired value.
+
+binarySearch = (arr, l, r, x) => {
+    if (r >= l) {
+        mid = Math.floor((l+r)/2);
+        if (arr[mid] == x) return mid;
+        if (arr[mid] > x) return binarySearch(arr, l, mid-1, x);
+        else return binarySearch(arr, mid+1, r, x);
+    }
+    return null // if not found, return null
+}
+
+let primes = [2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37]
+
+console.log(binarySearch(primes, 0, primes.length-1, 15))
+console.log(binarySearch(primes, 0, primes.length-1, 5))
+
+// 19. Write a JavaScript function that returns array elements larger than a number. 
+
+getGreaterElements = (arr, x) => {
+    return arr.filter(num => num>x);
+}
+
+let primes = [2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37]
+console.log(getGreaterElements(primes, 8))
+console.log(getGreaterElements(primes, 24))
+
+// 20. Write a JavaScript function that generates a string id (specified length) of random characters. 
+// Sample character list : "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789"
+
+function guidGenerator() {
+    var S4 = function() {
+       return (((1+Math.random())*0x10000)|0).toString(16).substring(1);
+    };
+    return (S4()+S4()+S4()+S4()+S4()+S4()+S4()+S4());
+}
+
+let sampleString = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789"
+console.log(guidGenerator(sampleString))
+console.log(guidGenerator(sampleString))
+
+// 21. Write a JavaScript function to get all possible subset with a fixed length (for example 2) combinations in an array. 
+// Sample array : [1, 2, 3] and subset length is 2 
+// Expected output : [[2, 1], [3, 1], [3, 2], [3, 2, 1]]
+
+function getSubset(arr, t) {
+    let res=[];
+    function dfs(arr, curr, k) {
+        if(arr.length === k) {
+            if (curr.length === t) res.push(curr); 
+        } else {
+        dfs(arr, [...curr, arr[k]], k+1);
+        dfs(arr, curr, k+1);
+        }
+    }
+    dfs(arr, [], 0)
+    return res
+}
+
+testArr = [1,2,3,4]
+console.log(getSubset(testArr, 3))
+console.log(getSubset(testArr, 4))
+
+// 22. Write a JavaScript function that accepts two arguments, a string and a letter and the function will count the number of occurrences of the specified letter within the string. 
+// Sample arguments : 'microsoft.com', 'o' 
+// Expected output : 3 
+
+function countOccur(str, letter) {
+    reducer = (cnt, char) => {
+        if (char === letter) return (cnt + 1);
+        else return cnt;
+    }
+    return str.split('').reduce(reducer, 0)
+}
+
+console.log(countOccur('microsoft.com', 'o'))
+console.log(countOccur('microsoft.com', 'm'))
+
+// 23. Write a JavaScript function to find the first not repeated character. 
+// Sample arguments : 'abacddbec' 
+// Expected output : 'e' 
+
+counter = (str) => {
+    freq = {}
+    for (let ch of str.split('')) {
         if (!(ch in freq)) {
             freq[ch] = 1;
         } else {
@@ -265,45 +364,97 @@ counter = (str) => {
     }
     return freq;
 }
+    
 
-console.log(counter("anappleadaykeepsdoctoraway"))
-console.log(counter("i am a little little guy in a big big world"))
+firstUniqueChar = (str) => {
+    var count = counter(str);
+    for (let char of str.split('')) {
+        if (count[char] === 1) {
+            return char
+        }
+    }
+}
 
-// 18. Write a function for searching JavaScript arrays with a binary search. 
-// Note : A binary search searches by splitting an array into smaller and smaller chunks until it finds the desired value.
-
-// 19. Write a JavaScript function that returns array elements larger than a number. 
-
-// 20. Write a JavaScript function that generates a string id (specified length) of random characters. 
-// Sample character list : "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789"
-
-// 21. Write a JavaScript function to get all possible subset with a fixed length (for example 2) combinations in an array. 
-// Sample array : [1, 2, 3] and subset length is 2 
-// Expected output : [[2, 1], [3, 1], [3, 2], [3, 2, 1]]
-
-// 22. Write a JavaScript function that accepts two arguments, a string and a letter and the function will count the number of occurrences of the specified letter within the string. 
-// Sample arguments : 'microsoft.com', 'o' 
-// Expected output : 3 
-
-// 23. Write a JavaScript function to find the first not repeated character. 
-// Sample arguments : 'abacddbec' 
-// Expected output : 'e' 
+console.log(firstUniqueChar('abacddbec'))
 
 // 24. Write a JavaScript function to apply Bubble Sort algorithm. 
 // Note : According to wikipedia "Bubble sort, sometimes referred to as sinking sort, is a simple sorting algorithm that works by repeatedly stepping through the list to be sorted, comparing each pair of adjacent items and swapping them if they are in the wrong order". 
 // Sample array : [12, 345, 4, 546, 122, 84, 98, 64, 9, 1, 3223, 455, 23, 234, 213]
 // Expected output : [3223, 546, 455, 345, 234, 213, 122, 98, 84, 64, 23, 12, 9, 4, 1]
 
+bubbleSort = (arr) => {
+    n = arr.length;
+    for (let i=0; i<n-1; i++) {
+        for (let j=0; j<n-i-1; j++) {
+            if (arr[j] < arr[j+1]) {
+                var temp = arr[j];
+                arr[j] = arr[j+1];
+                arr[j+1] = temp;
+            }
+        }
+    }
+    return arr;
+}
+
+console.log(bubbleSort([12, 345, 4, 546, 122, 84, 98, 64, 9, 1, 3223, 455, 23, 234, 213]))
+
 // 25. Write a JavaScript function that accept a list of country names as input and returns the longest country name as output. 
 // Sample function : Longest_Country_Name(["Australia", "Germany", "United States of America"])
 // Expected output : "United States of America"
 
+longestName = (arr) => {
+    var res = ""
+    for (let name of arr) {
+        if (name.length > res.length) {
+            res = name;
+        }
+    }
+    return res;
+}
+
+console.log(longestName(["Australia", "Germany", "United States of America"]))
+console.log(longestName(["Australia", "Germany", "United States of America", "United Kingdom of Great Britain and North Ireland"]))
+
 // 26. Write a JavaScript function to find longest substring in a given a string without repeating characters. 
+
+lengthOfLongestSubstring = (str) => {
+    var res = "";
+    let i = 0, j =0;
+    while (j<str.length) {
+        while (str.slice(i, j).includes(str[j])) {
+            if (res.length < (j-i)) res = str.slice(i, j);
+            i++;
+        }
+        j++
+    }
+    if (res.length < (j-i)) res = str.slice(i, j);
+    return res;
+}
+
+console.log(lengthOfLongestSubstring("afasreqassadasqwdasdasfsaF"))
+console.log(lengthOfLongestSubstring("writeaJavaScriptfunctionthatreturnsthelongestpalindromeinagivenstring"))
 
 // 27. Write a JavaScript function that returns the longest palindrome in a given string. 
 // Note: According to Wikipedia "In computer science, the longest palindromic substring or longest symmetric factor problem is the problem of finding a maximum-length contiguous substring of a given string that is also a palindrome. For example, the longest palindromic substring of "bananas" is "anana". The longest palindromic substring is not guaranteed to be unique; for example, in the string "abracadabra", there is no palindromic substring with length greater than three, but there are two palindromic substrings with length three, namely, "aca" and "ada".
 // In some applications it may be necessary to return all maximal palindromic substrings (that is, all substrings that are themselves palindromes and cannot be extended to larger palindromic substrings) rather than returning only one substring or returning the maximum length of a palindromic substring.
 
+
+
 // 28. Write a JavaScript program to pass a 'JavaScript function' as parameter. 
 
+myRule1 = (char) => String.fromCharCode(char.charCodeAt(0)+1);
+myRule2 = (char) => String.fromCharCode(char.charCodeAt(0)-1);
+
+myEncoder = (str, rule) => {
+    return str.split('').map(rule).join('');
+}
+
+const testString = "Write a JavaScript program to pass a 'JavaScript function' as parameter"
+console.log(myEncoder(testString, myRule1))
+console.log(myEncoder(testString, myRule2))
+
 // 29. Write a JavaScript function to get the function name. 
+
+getName = (func) => func.name;
+
+console.log(getName(myRule1))
