@@ -102,3 +102,19 @@ console.log(UpperCamelCase('the quick brown fox'))
 // Expected Output : 'Development'
 const longestWord = (str) => str.split(' ').reduce((longest,word)=> longest.length > word.length ? longest : word,'')
 console.log(longestWord('Web Development Tutorial'))
+
+
+// 7. Write a JavaScript function that accepts a string as a parameter 
+// and counts the number ofvowels within the string. 
+// Note : As the letter 'y' can be regarded as both a vowel and a consonant, 
+// we do not count 'y' as vowel here. 
+// Example string : 'The quick brown fox' 
+// Expected Output : 5
+
+const countVowels = (str) => {
+    const vowels = {'a':'a','e': 'e','i': 'i','o': 'o','u' : 'u'}
+    return str.toLowerCase().split('').reduce((count,ch)=>{
+        return vowels[ch] ? count += 1 : count;
+    },0)
+}
+console.log(countVowels('The quick brown fox'))
