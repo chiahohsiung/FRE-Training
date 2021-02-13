@@ -96,5 +96,9 @@ console.log(punctuateStrings1("webmaster"))
 const UpperCamelCase = (str) => str.split(' ').map((word) => word.replace(word.charAt(0),word.charAt(0).toUpperCase())).join(' ')
 console.log(UpperCamelCase('the quick brown fox'))
 
-
-
+// 6. Write a JavaScript function that accepts a string as a parameter 
+// and find the longest wordwithin the string. 
+// Example string : 'Web Development Tutorial' 
+// Expected Output : 'Development'
+const longestWord = (str) => str.split(' ').reduce((longest,word)=> longest.length > word.length ? longest : word,'')
+console.log(longestWord('Web Development Tutorial'))
