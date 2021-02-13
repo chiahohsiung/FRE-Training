@@ -34,22 +34,21 @@ li{
     margin-bottom: 100px;
 }
 .menu ul{
-    position: relative;
+    position: absolute;
     left: 115px;
-    top:10px;
+    bottom: -9px;
 }
 .footer ul:first-of-type{
-    position: relative;
-    left: 100px;
-    top: 10px;
+    position: absolute;
+    left: 135px;
+    bottom: -9px;
     
 }
 
 .footer ul:last-of-type{
-    position: relative;
+    position: absolute;
     right: 100px;
-    float: right;
-    bottom: 10px;
+    bottom: -9px;
 }
 
 .summary{
@@ -61,11 +60,13 @@ li{
 .menu {
     background-color: #000;
     height: 40px;
+    position: relative;
 }
 .heading{
     width: 100%;
     background-color: #c6bfbf;
     height: 200px;
+    position: relative;
 }
 .content{
     display: flex;
@@ -76,4 +77,5 @@ li{
 .footer{
     height: 40px;
     background-color: #0b4d14;
+    position: relative;
 }
