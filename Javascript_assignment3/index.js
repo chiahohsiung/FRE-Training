@@ -382,9 +382,11 @@ const longPalindrome = (str) => {
                 if(str.slice(i,j).length >= longest){
                     longest = str.slice(i,j).length;
                     palindomeArr[str.slice(i,j).length].push(str.slice(i,j));
+                    break;
                 }
             }
         }
+        if(i  - longest > i) break;
     }
     return palindomeArr[longest]
 }
