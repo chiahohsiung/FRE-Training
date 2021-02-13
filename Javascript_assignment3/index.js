@@ -374,9 +374,23 @@ console.log(longestNonRepeatingSubstr("example.com"))
 // rather than returning only one substring or returning the maximum length of apalindromic substring.
 // =================================================================
 const longPalindrome = (str) => {
-    
+    let longest = 0;
+    const palindomeArr = Array(str.length+1).fill().map(()=>Array());
+    for(let i = 0; i <str.length; i++){
+        for(let j = str.length; j > i; j--){
+            if(str.slice(i,j) === str.slice(i,j).split('').reverse().join('')) {
+                if(str.slice(i,j).length >= longest){
+                    longest = str.slice(i,j).length;
+                    palindomeArr[str.slice(i,j).length].push(str.slice(i,j));
+                }
+            }
+        }
+    }
+    return palindomeArr[longest]
 }
-console.log(longPalindrome("abracadabra"))
+console.log(longPalindrome('abracadabra'))
+console.log(longPalindrome('abcdcbagthhtgabcddbca'))
+console.log(longPalindrome('bananas')) 
 
 // 28. Write a JavaScript program to pass a 'JavaScript function' as parameter. 
 // =================================================================
