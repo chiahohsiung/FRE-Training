@@ -376,7 +376,7 @@ console.log(longestNonRepeatingSubstr("example.com"))
 const longPalindrome = (str) => {
     
 }
-console.log(longPalindrome())
+console.log(longPalindrome("abracadabra"))
 
 // 28. Write a JavaScript program to pass a 'JavaScript function' as parameter. 
 // =================================================================
