@@ -147,3 +147,10 @@ console.log(type(undefined))
 // 10. Write a JavaScript function which returns the n rows by n columns identity matrix.
 const identityMatrix = n => Array(n).fill().map(()=>Array(n).fill(1)); 
 console.log(identityMatrix(4))
+
+// 11. Write a JavaScript function which will take an array of numbers sorted 
+// and find the secondlowest and second greatest numbers, respectively. 
+// Sample array : [1,2,3,4,5]
+// Expected Output : 2,4
+const findSecLowAndHigh = arr => [arr[1],arr[arr.length-2]]
+console.log(findSecLowAndHigh([1,2,3,4,5]))
