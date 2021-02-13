@@ -106,19 +106,18 @@ const longest_word = (string) => {
 
 const how_many_vowels = (
     string,
-    vowels = { a: "a", e: "e", i: "i", o: "o", u: "u" }
+    vowels = { a: "a", e: "e", i: "i", o: "o", u: "u", count: 0 }
 ) => {
     const cleanString = string
         .trim()
         .split(" ")
         .join("")
         .toLowerCase()
-    let count = 0
     for (let i = 0; i < cleanString.length; i++) {
         const letter = cleanString[i]
-        if (vowels[letter]) count++
+        if (vowels[letter]) vowels.count++
     }
-    return count
+    return vowels.count
 }
 // console.log(how_many_vowels("The quick brown fox"))
 
@@ -148,7 +147,7 @@ const type_of = (arg) => {
  */
 
 /**
- * 11. Write a JavaScript function which will take an array of numbers stored and find the secondlowest and second greatest numbers, respectively.
+ * 11. Write a JavaScript function which will take an array of numbers stored and find the second lowest and second greatest numbers, respectively.
  * Sample array : [1,2,3,4,5] Expected Output : 2,4
  */
 const second_greatest_lowest = (arr) => {
