@@ -1,0 +1,39 @@
+body{
+  margin: 0 auto;
+  padding: 10px;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+}
+.main_container{
+  margin: 15px;
+}
+
+div {
+  display: inline-block;
+  text-align: center;
+  margin-left: 10px;
+}
+
+#blog_title{
+  text-decoration: underline;
+  margin: 0 auto;
+  text-align: center;
+  padding: 30px;
+}
+
+#blog_date{
+  display: inline;
+  color: gray;
+}
+
+#blog_card{
+  position: relative;
+  border: 0.5px solid lightgray;
+  padding: 0px 30px 20px;
+  width: 35%;
+  text-align: left;
+}
+
+#blog_topic{
+  color: blue;
+}
+
