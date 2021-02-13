@@ -32,4 +32,33 @@ const sortString = str => [...str].sort().join('');
 
 // 5.function that accepts a string as a parameter and converts the first letter of each word of the string in upper case.
 
+const capitalize = str => {
+  result = str.trim().split(' ').map(ele => ele[0].toUpperCase() + ele.slice(1));
+  return result.join(' ');
+};
 
+// 6. function that accepts a string as a parameter and find the longest word within the string.
+
+const longestWord = str => {
+  return str.trim().split(' ').sort((a, b) => b.length - a.length)[0]
+}
+
+// 7. counts the number of vowels within the string
+
+const countVowel = str => {
+  return [...str.match(/a|i|o|e|u/g)].length;
+}
+
+// 8. check the number is prime or not
+
+const isPrime = num => {
+  checks = Math.floor(num/2);
+  for (i = 2; i <= checks; i++){
+    if (num%i == 0) {
+      return false
+    } 
+  }
+  return true
+};
+
+console.log(isPrime(76))
