@@ -100,6 +100,7 @@ console.log(UpperCamelCase('the quick brown fox'))
 // and find the longest wordwithin the string. 
 // Example string : 'Web Development Tutorial' 
 // Expected Output : 'Development'
+// =================================================================
 const longestWord = (str) => str.split(' ').reduce((longest,word)=> longest.length > word.length ? longest : word,'')
 console.log(longestWord('Web Development Tutorial'))
 
@@ -110,7 +111,7 @@ console.log(longestWord('Web Development Tutorial'))
 // we do not count 'y' as vowel here. 
 // Example string : 'The quick brown fox' 
 // Expected Output : 5
-
+// =================================================================
 const countVowels = (str) => {
     const vowels = {'a':'a','e': 'e','i': 'i','o': 'o','u' : 'u'}
     return str.toLowerCase().split('').reduce((count,ch)=>{
@@ -123,6 +124,7 @@ console.log(countVowels('The quick brown fox'))
 // and check the number isprime or not. 
 // Note : A prime number (or a prime) is a natural number greater than 1 
 // that has no positivedivisors other than 1 and itself.
+// =================================================================
 const primeNumers = (num) => {
 if(num === 2 || num === 3) return true;
 for(let i = 1; i < Math.floor(num/6 - 1); i++){
@@ -132,3 +134,16 @@ return true;
 }
 console.log(primeNumers(1333))
 
+// 9. Write a JavaScript function which accepts an argument and returns the type. 
+// Note : There are six possible values that typeof returns: object, boolean, 
+// function, number,string, and undefined.
+// =================================================================
+const type = arg => typeof arg;
+console.log(type("str"))
+console.log(type(123))
+console.log(type({}))
+console.log(type(undefined))
+
+// 10. Write a JavaScript function which returns the n rows by n columns identity matrix.
+const identityMatrix = n => Array(n).fill().map(()=>Array(n).fill(1)); 
+console.log(identityMatrix(4))
