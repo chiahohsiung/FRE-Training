@@ -1,0 +1,23 @@
+.header {
+    width: 100%;
+}
+.nav {
+    margin: 0 auto;
+}
+a.header_link {
+    text-decoration: underline;
+    color: rgba(133, 133, 133, 0.9);
+}
+h1.title {
+    text-decoration: underline;
+    font-family: "Times New Roman", Times, serif;
+    font-size: 2rem;
+}
+
+@media screen and (min-width: 720px) {
+    .nav {
+        width: 90%;
+        justify-content: space-between;
+        align-items: baseline;
+    }
+} ;
