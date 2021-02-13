@@ -118,3 +118,17 @@ const countVowels = (str) => {
     },0)
 }
 console.log(countVowels('The quick brown fox'))
+
+// 8. Write a JavaScript function that accepts a number as a parameter 
+// and check the number isprime or not. 
+// Note : A prime number (or a prime) is a natural number greater than 1 
+// that has no positivedivisors other than 1 and itself.
+const primeNumers = (num) => {
+if(num === 2 || num === 3) return true;
+for(let i = 1; i < Math.floor(num/6 - 1); i++){
+    if(Number.isInteger(num/(6*i + 1))  || Number.isInteger(num/(6*i - 1))) return false;
+}
+return true;
+}
+console.log(primeNumers(1333))
+
