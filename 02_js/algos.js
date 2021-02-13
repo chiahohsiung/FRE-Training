@@ -83,22 +83,17 @@ const secondMost = (arr) => {
 console.log(secondMost([1, 2, 3, 4, 5]));
 
 // 12. Perfect number
+const isPerfectNum = (num) => {
+  if (num === 0) return false;
+  let store = 0;
+  for (let i = 1; i <= num / 2; i++) {
+    if (num % i === 0) store += i;
+  }
+
+  return store === num;
+};
 
 // 13. Find factors of positive integer
-// const findFactor = (num) => {
-//   if (num <= 0) return []
-
-//   const factors = [1]
-//   for (let i = 2; i <= 5; i++){
-//     if (num % i === 0){
-//       factors.push(i)
-//     }
-//   }
-//   return factors
-
-// }
-
-// console.log(findFactor(100))
 
 // 14. Convert amount to coins
 const amountToCoins = (amount, coins) => {
@@ -122,13 +117,7 @@ const coins = [25, 10, 5, 2, 1];
 
 // 15. Compute exponent
 const findExponent = (base, num) => {
-  let count = num;
-  let exponent = 1;
-  while (count > 0) {
-    exponent *= base;
-    count--;
-  }
-  return exponent;
+  return Math.pow(base, num);
 };
 
 // 16. Extract unique char from a string
@@ -146,28 +135,20 @@ const charOccurence = (str) => {
 };
 
 // 18. Search arrays using binary search
-// const binarySearchArr = (arr, val) => {
-//   arr.sort((a, b) => a - b)
-//   console.log(arr)
+const binarySearchArr = (arr, val) => {
+  arr.sort((a, b) => a - b);
+  let midLength = Math.floor(arr.length / 2);
+  let firstHalf = arr.slice(0, midLength);
+  let secondHalf = arr.slice(midLength);
 
-//   let midLength = Math.floor((arr.length) / 2)
-//   let firstHalf = arr.slice(0, midLength)
-//   let secondHalf = arr.slice(midLength)
-//   console.log(firstHalf)
-//   console.log(secondHalf)
-//   if (val > firstHalf[firstHalf.length - 1]){
-//     // do something
-//     return binarySearchArr(secondHalf, val)
-//   } else {
-//     if (val === firstHalf[firstHalf.length - 1]) return 'ok'
-//     // recurse into the first half
-//     return binarySearchArr(firstHalf, val)
-//     return false
-//   }
-// }
-// const sampleArr = [1, 2, 12, 9, 7, 5, 0, 6, 8, 3]
-// const num = 2
-// console.log(binarySearchArr(sampleArr, num))
+  if (val === firstHalf[firstHalf.length - 1]) return true;
+  if (val > firstHalf[firstHalf.length - 1]) {
+    return binarySearchArr(secondHalf, val);
+  } else if (val < firstHalf[firstHalf.length - 1]) {
+    return binarySearchArr(firstHalf, val);
+  }
+  return false;
+};
 
 // 19. Return arr els larger than input val
 const greaterThanNum = (arr, num) => {
@@ -195,7 +176,10 @@ const genStrID = (length) => {
   return str;
 };
 
-// 21.
+// 21. Get subset of fixed length
+const fixedSubset = (arr, length) => {
+  arr.reduce((acc, cV) => {}, []);
+};
 
 // 22. Find occurrences of a character
 const countChar = (str, letter) => {
@@ -207,49 +191,28 @@ const countChar = (str, letter) => {
 };
 
 // 23. Find the first distinct letter
-// const firstDistinctLetter = (str) => {
-//   const store = {}
-//   let distinct
+const firstDistinctLetter = (str) => {
+  const store = new Map();
+  let distinct;
+  for (const char of str) {
+    if (!store.has(char)) {
+      store.set(char, 1);
+    } else {
+      let count = store.get(char);
+      store.set(char, ++count);
+    }
+  }
 
-//   for (const letter of str){
-//     store[letter] = (store[letter] || 0)
-//   }
-
-// }
+  for (const [char, count] of store) {
+    if (count === 1) {
+      distinct = char;
+      break;
+    }
+  }
+  return distinct;
+};
 
 // 24. Bubble sort algo
-// const bubbleSort = (arr) => {
-//   // sliding window?
-//   // compare, if one is greater, then swap
-//   let p1 = 0, p2 = 1
-//   let isSorted = false
-//   console.log('hi????')
-//   while(!isSorted){
-//     console.log('hello')
-//     console.log(arr.length)
-//     console.log(p2)
-//     if (arr[p1] < arr[p2] && p2 === arr.length){
-//       console.log(arr[p1])
-//       isSorted = true
-//       break
-//     }
-
-//     if (arr[p1] > arr[p2]){
-//       console.log('hello')
-//       [arr[p1], arr[p2]] = [arr[p2], arr[p1]]
-//     }
-//     if (arr[p2 + 1] === undefined){
-//       p1 = 0, p2 = 1
-//       continue
-//     }
-//     p1++
-//     p2++
-//   }
-
-//   return arr
-// }
-
-// console.log(bubbleSort([4, 9, 6, 2, 8]))
 
 // 25. Find longest name of country
 const longestCountryName = (arr) => {
