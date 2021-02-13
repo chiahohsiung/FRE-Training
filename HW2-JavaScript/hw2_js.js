@@ -148,12 +148,63 @@ console.log(findSecondNum([3,2,1,5,4]));
 
 /*12. Perfect Number*/
 const isPerfect = num => {
-    for(let i = 0; i*i <= num; i++) {
-        if(i*i == num) {
-            return true;
+    let sum = 0;
+    for(let i = 1; i < num; i++) {
+        if(num%i === 0) {
+            sum += i;
         }
     }
-    return false;
+    return sum === num;
 };
 
-console.log(isPerfect(5));
+console.log(isPerfect(8128));
+
+/*13. Factors of positive integer*/
+const findFactors = num => {
+    const res = [];
+    for(let i = 1; i <= num; i++) {
+        if(num%i === 0) {
+            res.push(i);
+        }
+    }
+    return res;
+};
+
+console.log(findFactors(66));
+
+/*14. Amount to coins*/
+const amountToCoins = (target, coins) => {
+    const res = [];
+    coins.sort((a,b) => b-a);
+    let currIdx = 0;
+    while(target != 0) {
+        if(target - coins[currIdx] < 0) {
+            currIdx++;
+        }
+        else {
+            res.push(coins[currIdx]);
+            target -= coins[currIdx];
+        }
+    }
+    return res;
+};
+
+console.log(amountToCoins(46, [1, 2, 5, 10, 25]));
+
+/*15. Compute power n of b*/
+const powerN = (b, n) => {
+    return b**n;
+};
+
+console.log(powerN(4,2));
+
+/*16. Extract unique characters from a string*/
+const uniqueChars = str => {
+    let res = new Set();
+    for(let i = 0; i < str.length; i++) {
+        res.add(str[i]);
+    }
+    return [...res].join('');
+};
+
+console.log(uniqueChars('thequickbrownfoxjumpsoverthelazydog'));
