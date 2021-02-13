@@ -95,3 +95,65 @@ const countVowels = str => {
 };
 
 console.log(countVowels('The quick brown fox'));
+
+/*8. Check Prime Number*/
+const checkPrime = num => {
+    if(num < 3) {
+        return num === 2;
+    }
+    if(num % 2 === 0) {
+        return false;
+    }
+    for(let i = 3; i < num; i += 2) {
+        if(num % i === 0) {
+            return false;
+        }
+    }
+    return true;
+};
+
+console.log(checkPrime(4)); //should be false
+console.log(checkPrime(19)); //should be true
+
+/*9. Return Type*/
+const checkType = arg => {
+    return typeof arg;
+}
+
+console.log(checkType('123')); //should be string
+console.log(checkType(123)); //should be number
+
+/*10. n rows by n columns identity matrix*/
+const nBynMatrix = n => {
+    let arr = [];
+    for(let i = 0; i < n; i++) {
+        arr[i] = new Array(n).fill(0);
+        arr[i][i] = 1;
+    }
+    return arr;
+};
+
+console.log(nBynMatrix(3));
+
+/*11. Find the second lowest and second greatest numbers in an array*/
+const findSecondNum = arr => {
+    if(arr.length < 3) {
+        return [];
+    }
+    arr.sort();
+    return [arr[1], arr[arr.length - 2]];
+}
+
+console.log(findSecondNum([3,2,1,5,4]));
+
+/*12. Perfect Number*/
+const isPerfect = num => {
+    for(let i = 0; i*i <= num; i++) {
+        if(i*i == num) {
+            return true;
+        }
+    }
+    return false;
+};
+
+console.log(isPerfect(5));
