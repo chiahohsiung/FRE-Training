@@ -21,6 +21,28 @@ h3.side-heading {
     font-size: 1.4rem;
     margin-bottom: 10px;
 }
+.blog-post-title {
+    font-family: "Times New Roman", Times, serif;
+    font-size: 2rem;
+    font-weight: 600;
+    margin: 5px 0;
+    letter-spacing: 0.5pt;
+}
+.blog-post-date {
+    color: hsla(0, 0%, 38%, 40%);
+}
+.blog-post a,
+.side-list a {
+    text-decoration: none;
+    color: hsla(217, 90%, 45%, 70%);
+}
+.blog-post p {
+    margin: 1rem auto;
+}
+hr {
+    border: none;
+    border-top: 3px solid hsla(0, 0%, 38%, 10%);
+}
 
 @media screen and (min-width: 720px) {
     .main-ctn {

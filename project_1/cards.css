@@ -10,7 +10,7 @@
 }
 h2.card_topic {
     font-family: Arial, Helvetica, sans-serif;
-    color: hsl(206, 92%, 45%);
+    color: hsla(217, 90%, 45%, 70%);
     font-size: medium;
     font-weight: 600;
     grid-column: 1/4;
@@ -32,7 +32,7 @@ p.card_content {
         sans-serif;
 }
 a.card_link {
-    color: hsl(206, 92%, 45%);
+    color: hsla(217, 90%, 45%, 70%);
     text-decoration: underline;
     margin-top: 2rem;
     grid-row: 5/5;
