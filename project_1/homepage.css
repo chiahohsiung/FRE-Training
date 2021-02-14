@@ -1,7 +1,15 @@
 .flex-grid {
     display: grid;
     gap: 1rem;
-    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-    width: 60%;
-    margin: 2rem auto;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    margin: auto;
+    width: 100%;
+}
+
+@media screen and (min-width: 720px) {
+    .flex-grid {
+        grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+        width: 70%;
+        margin: 2rem auto;
+    }
 }
