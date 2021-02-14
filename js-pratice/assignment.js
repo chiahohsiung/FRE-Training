@@ -61,4 +61,72 @@ const isPrime = num => {
   return true
 };
 
-console.log(isPrime(76))
+// 9. function return type
+
+const type = input => typeof input;
+
+// 10. function which returns the n rows by n columns identity matrix
+
+// 11. function which will take an array of numbers stored and find the second lowest and second greatest numbers, respectively.
+
+const second = arr => {
+  let result = [];
+  result.push(arr.sort()[1]);
+  result.push(arr.sort()[arr.length - 2]);
+  return result
+}
+
+// 12. perfect number
+
+const isPerfect = num => {
+  let check = Math.floor(num / 2);
+  let result = 0;
+  for (i=1; i <= check; i++){
+    num%i == 0? result += i: result = result;
+  }
+  if (result === num){
+    return true;
+  }
+  return false
+};
+
+//13. function to compute the factors of a positive integer
+
+const findFactor = num => {
+  let check = Math.floor(num/2);
+  let result = [];
+  for (i=1; i <= check; i++){
+    num%i == 0? result.push(i) : console.log('');
+  }
+  result.push(num);
+  return result;
+}
+
+// 18. function for searching JavaScript arrays with a binary search
+const binarySearch = (arr, num) => {
+  arr = arr.sort();
+  let split;
+  while (arr.length > 1){
+    split = Math.floor(arr.length/2);
+    num > arr[split]? arr = arr.slice(split): arr = arr.slice(0,split+1);
+    console.log(arr);
+    if (num === arr[split]) return true
+  }
+  return false
+}
+
+// 24.function to apply Bubble Sort algorithm.
+
+const bubbleSort = arr => {
+  let check = arr.length -1;
+  let a=0;
+  while (a < check){
+    for (i in arr){
+      if (arr[i]>arr[+i+1]) {[arr[i], arr[+i+1]] = [arr[+i+1], arr[i]]}
+   }
+    console.log(arr)
+    a++;
+  } 
+  return arr
+}
+console.log(bubbleSort([12,10,9,8,7,2,1]));
