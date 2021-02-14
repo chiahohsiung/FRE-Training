@@ -217,8 +217,6 @@ const countOccur = str => {
         if(!map.has(str[i])) {
             map.set(str[i], 0);
         }
-        console.log("count = ", i);
-        console.log(str[i]);
         map.set(str[i], map.get(str[i]) + 1);
         
     }
@@ -275,3 +273,75 @@ const randomId = len => {
 console.log(randomId(10));
 
 /*21. */
+
+/*22. Count Occurrences of the specified letter*/
+const countOccurOfLetter = (str, letter) => {
+    let count = 0;
+    for(let ele of str) {
+        if(ele === letter) {
+            count++;
+        }
+    }
+    return count;
+};
+
+console.log(countOccurOfLetter('microsoft.com', 'o'));
+
+/*23. Find the first not repeated character*/
+const findFirstNonRepeat = str => {
+    let map = new Map();
+    for(let ele of str) {
+        if(!map.has(ele)) {
+            map.set(ele, 1);
+        } else {
+            map.set(ele, map.get(ele) + 1);
+        }
+    }
+    for(let key of map.keys()) {
+        if(map.get(key) === 1) {
+            return key;    
+        }
+    }
+    return '';
+};
+
+console.log(findFirstNonRepeat('abacddbec'));
+
+/*24. Bubble Sort*/
+const bubbleSort = arr => {
+    for(let i = 0; i < arr.length - 1; i++) {
+        for(let j = 0; j < arr.length - 1 - i; j++) {
+            if(arr[j] < arr[j+1]) {
+                let temp = arr[j];
+                arr[j] = arr[j+1];
+                arr[j+1] = temp;
+            }
+        }
+    }
+    return arr;
+};
+
+console.log(bubbleSort([12, 345, 4, 546, 122, 84, 98, 64, 9, 1, 3223, 455, 23, 234, 213]));
+
+/*25. Find the longest country name*/
+const longestCountry = arr => {
+    let maxLen = 0;
+    let res = '';
+    for(let ele of arr) {
+        if(ele.length > maxLen) {
+            maxLen = ele.length;
+            res = ele;
+        }
+    }
+    return res;
+};
+
+console.log(longestCountry(["Australia", "Germany", "United States of America"]));
+
+/*26. */
+
+/*27. */
+
+/*28. */
+
+/*29. */
