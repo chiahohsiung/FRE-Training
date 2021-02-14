@@ -7,8 +7,11 @@
             name="viewport"
             content="width=device-width, initial-scale=1.0"
         />
-        <link rel="stylesheet" href="./homepage.css" />
         <link rel="stylesheet" href="./style.css" />
+        <link rel="stylesheet" href="./cards.css" />
+        <link rel="stylesheet" href="./header.css" />
+        <link rel="stylesheet" href="./homepage.css" />
+        <link rel="stylesheet" href="./reset.css" />
 
         <title>Project 1 - Personal Blog - Homepage</title>
     </head>
@@ -21,8 +24,20 @@
             </nav>
         </header>
         <main>
-            <div class="flex-grid grid-container">
-                <div class="card flex">
+            <div class="flex-grid">
+                <div class="card flex card-grid">
+                    <h2 class="card_topic">World</h2>
+                    <h3 class="card_title">Example Blog Post</h3>
+                    <h4 class="card_date">Nov 14</h4>
+                    <p class="card_content">
+                        Lorem ipsum dolor sit amet consectetur
+                        adipisicing elit. Fugiat, explicabo? Fugit
+                        exercitationem est magnam error a velit!
+                        Beatae, ipsum quam.
+                    </p>
+                    <a href="#" class="card_link">Continue reading</a>
+                </div>
+                <div class="card flex card-grid">
                     <h2 class="card_topic">World</h2>
                     <h3 class="card_title">Example Blog Title</h3>
                     <h4 class="card_date">Nov 14</h4>
@@ -34,7 +49,7 @@
                     </p>
                     <a href="#" class="card_link">Continue reading</a>
                 </div>
-                <div class="card flex">
+                <div class="card flex card-grid">
                     <h2 class="card_topic">World</h2>
                     <h3 class="card_title">Example Blog Title</h3>
                     <h4 class="card_date">Nov 14</h4>
@@ -46,19 +61,7 @@
                     </p>
                     <a href="#" class="card_link">Continue reading</a>
                 </div>
-                <div class="card flex">
-                    <h2 class="card_topic">World</h2>
-                    <h3 class="card_title">Example Blog Title</h3>
-                    <h4 class="card_date">Nov 14</h4>
-                    <p class="card_content">
-                        Lorem ipsum dolor sit amet consectetur
-                        adipisicing elit. Fugiat, explicabo? Fugit
-                        exercitationem est magnam error a velit!
-                        Beatae, ipsum quam.
-                    </p>
-                    <a href="#" class="card_link">Continue reading</a>
-                </div>
-                <div class="card flex">
+                <div class="card flex card-grid">
                     <h2 class="card_topic">World</h2>
                     <h3 class="card_title">Example Blog Title</h3>
                     <h4 class="card_date">Nov 14</h4>

@@ -1,0 +1,30 @@
+.main-grid {
+    display: grid;
+    gap: 2rem;
+    grid-template-columns: minmax(200px, 70%) 1fr;
+}
+.main-ctn {
+    margin: 1em;
+}
+section.about {
+    background-color: hsl(0, 0%, 97%);
+}
+.about,
+.archives,
+.elsewhere {
+    padding: 1.25rem;
+}
+h3.side-heading {
+    font-family: "Times New Roman", Times, serif;
+    font-style: italic;
+    font-weight: 600;
+    font-size: 1.4rem;
+    margin-bottom: 10px;
+}
+
+@media screen and (min-width: 720px) {
+    .main-ctn {
+        width: 70%;
+        margin: 2rem auto;
+    }
+}

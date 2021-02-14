@@ -1,0 +1,35 @@
+.header {
+    width: 100%;
+    padding: 1.5rem;
+}
+.nav {
+    margin: 0 auto;
+    flex-direction: column;
+}
+a.header_link {
+    text-decoration: underline;
+    color: rgba(133, 133, 133, 0.9);
+    order: 1;
+}
+h1.title {
+    text-decoration: underline;
+    font-family: "Times New Roman", Times, serif;
+    font-size: 3rem;
+    font-weight: 600;
+    order: 3;
+}
+span.icon {
+    order: 2;
+}
+
+@media screen and (min-width: 720px) {
+    .nav {
+        width: 75%;
+        justify-content: space-between;
+        align-items: baseline;
+        flex-direction: row;
+    }
+    span.icon {
+        order: 3;
+    }
+}
