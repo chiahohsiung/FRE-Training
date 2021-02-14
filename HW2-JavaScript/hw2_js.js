@@ -208,3 +208,21 @@ const uniqueChars = str => {
 };
 
 console.log(uniqueChars('thequickbrownfoxjumpsoverthelazydog'));
+
+/*17. Get the number of occurrences of each letter in specified string*/
+const countOccur = str => {
+    let map = new Map(); 
+    
+    for(let i = 0; i < str.length; i++) {
+        if(!map.has(str[i])) {
+            map.set(str[i], 0);
+        }
+        console.log("count = ", i);
+        console.log(str[i]);
+        map.set(str[i], map.get(str[i]) + 1);
+        
+    }
+    return [...map]
+};
+
+console.log(countOccur("show me the money again, show them again, and again"));
