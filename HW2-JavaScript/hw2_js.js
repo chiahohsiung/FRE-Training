@@ -338,10 +338,57 @@ const longestCountry = arr => {
 
 console.log(longestCountry(["Australia", "Germany", "United States of America"]));
 
-/*26. */
+/*26. Find the longest substring without repeat characters*/
+const findLongestSubstring = str => {
+    let longest = '';
+    let maxLen = 0;
+    let start = 0;
+    let len = str.length;
+    while(start < len) {
+        let set = new Set();
+        let end = start;
+        while(end < len) {
+            if(!set.has(str[end])) {
+                set.add(str[end]);
+                end++;
+            } else {
+                let sub = str.substring(start, end);
+                if(sub.length > maxLen) {
+                    maxLen = sub.length;
+                    longest = sub;
+                }
+                break;
+            }
+        }
+        start++;
+    }
+    return [maxLen, longest];
+};
+
+console.log(findLongestSubstring('abcdeqwedadefghijklmnopqfassd'));
 
 /*27. */
 
-/*28. */
 
-/*29. */
+/*28. Write a JavaScript program to pass a 'JavaScript function' as parameter*/
+const passAFunction = (callbackFn, num) => {
+    return callbackFn(num);
+};
+
+const computeFactorial = num => {
+    let res = 1;
+    while(num > 0) {
+        res *= num;
+        num--;
+    }
+    return res;
+};
+
+console.log(passAFunction(computeFactorial, 10));
+
+/*29. Get the function name*/
+const getFnName = fun => {
+    return fun.name;
+};
+
+console.log(getFnName(function a(){}));
