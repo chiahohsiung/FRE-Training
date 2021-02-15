@@ -1,0 +1,56 @@
+.body-container {
+    display: flex;
+    flex-direction: column;
+    margin-top: 2em;
+    width: 100%;
+    margin-bottom: 2em;
+}
+
+.row-container {
+    width: 100%;
+    position: relative;
+    margin-bottom: 2em;
+}
+
+.left-block, .right-block {
+    display: flex;
+    flex-direction: column;
+    padding: 2%;
+    border: 1px solid grey;
+    box-shadow: 0px 3px 3px gray;
+    width: 49%;
+    height: auto;
+    /* height: 0;
+    padding-bottom: 50%; */
+}
+
+.left-block {
+    float: left;
+}
+
+.right-block {
+    float: right;
+}
+
+.left-title {
+    color: rgb(63, 133, 224);
+    margin-bottom: 0.8em;
+}
+
+.right-title {
+    color: rgb(95, 221, 78);
+    margin-bottom: 0.8em;
+}
+
+.post-date {
+    color:gray;
+}
+
+.post-abs {
+    margin-top: 1em;
+}
+
+.post-link, .post-link:visited {
+    margin-top: 2em;
+    color: rgb(63, 133, 224);
+}

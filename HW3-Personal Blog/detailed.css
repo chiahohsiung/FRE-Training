@@ -1,0 +1,59 @@
+.body-container {
+    display: flex;
+    margin-top: 2em;
+    width: 100%;
+}
+
+.main-body {
+    width: 66%;
+}
+
+.right-floating {
+    margin-left: 1%;
+    width: 33%;
+    height: auto;
+}
+
+.blog {
+    margin-bottom: 4em;
+}
+
+.blog-date {
+    color: gray;
+    margin-bottom: 1em;
+}
+
+.blog-des {
+    margin-bottom: 1em;
+}
+
+.floating-about {
+    background-color: #f8f9fa;
+    margin-bottom: 2em;
+}
+
+.floating-archive {
+    margin-bottom: 2em;
+}
+
+ul.floating-ul {
+    list-style: none;
+}
+
+ul.body-ul, ol.body-ol{
+    margin-left: 2em;
+    margin-bottom: 1em;
+}
+
+li {
+    margin-bottom: 0.3em;
+}
+
+blockquote {
+    border: 1px solid gray;
+    margin-bottom: 1em;
+}
+
+h2 {
+    margin-bottom: 0.1em;
+}
