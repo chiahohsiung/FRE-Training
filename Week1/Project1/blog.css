@@ -1,0 +1,90 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+body {
+    position: relative;
+    padding-bottom: 100px;
+
+}
+header, footer {
+    padding: 10px;
+    text-align: center;
+}
+.home, .blog {
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+}
+.home>div{
+    width: 48%;
+}
+.box{
+    position: relative;
+    height: 170px;
+    padding: 10px;
+    margin-bottom: 10px;
+    border:rgb(189, 186, 186);
+    border-style: solid;
+}
+.title, .topic{
+    font-weight: bolder;
+}
+.worldList .topic{
+    color: rgb(32, 32, 241);
+}
+.designList .topic{
+    color: green;
+}
+.title {
+    font-size: 25px;  
+}
+.date {
+    color: rgb(102, 89, 89);
+    padding-bottom: 3px;
+}
+.worldList .box{
+    border-width: 1px;
+}
+.link{
+    position: absolute;
+    bottom: 5px;
+}
+.left {
+    width: 60%;
+}
+.right {
+    width: 38%;
+}
+.right h2 {
+    font-style: italic;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 18px;
+    font-weight: bolder;
+    padding-bottom: 5px;
+}
+li {
+    list-style-type: none;
+}
+.left header{
+    text-align: left;
+    padding-left: 0px;
+}
+.left h1{
+    font-size: 35px;
+}
+.list{
+    margin: 10px 0px;
+}
+.right .list{
+    padding: 10px;
+}
+.about {
+    background-color: rgb(240, 230, 230);
+}
+footer {
+    position: absolute;
+    bottom:0; left: 0; right: 0;
+    background-color: rgb(197, 187, 187);
+}

@@ -27,3 +27,10 @@ Comment out code: Select the code, then Ctrl+/ (same to uncomment)
 Block comment: Shift+Alt+A
 Change the default key binds: Ctrl+Shift+P->keyboard->open keyboard shortcut
 
+### Add dummy text:
+
+lorem(lorem100)
+p>lorem
+p*2>lorem
+
+
