@@ -18,8 +18,9 @@ h1.title {
     font-weight: 600;
     order: 3;
 }
-span.icon {
+.icon {
     order: 2;
+    color: rgba(133, 133, 133, 0.9);
 }
 
 @media screen and (min-width: 720px) {
@@ -29,7 +30,7 @@ span.icon {
         align-items: baseline;
         flex-direction: row;
     }
-    span.icon {
+    .icon {
         order: 3;
     }
 }

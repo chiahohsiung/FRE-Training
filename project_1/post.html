@@ -7,6 +7,10 @@
             name="viewport"
             content="width=device-width, initial-scale=1.0"
         />
+        <link
+            rel="stylesheet"
+            href="https://fonts.googleapis.com/icon?family=Material+Icons"
+        />
         <link rel="stylesheet" href="./post.css" />
         <link rel="stylesheet" href="./style.css" />
         <link rel="stylesheet" href="./header.css" />
@@ -19,7 +23,7 @@
             <nav class="nav flex">
                 <a href="#" class="header_link">Subscribe</a>
                 <h1 class="title">Blog Title</h1>
-                <span class="icon">Seach</span>
+                <em class="material-icons icon">search</em>
             </nav>
         </header>
         <main>
@@ -28,7 +32,12 @@
                     <h2 class="blog-post-title">Sample Blog Post</h2>
                     <p class="blog-post-date">
                         January 1, 2021
-                        <span>by <a href="#">Mark</a></span>
+                        <span
+                            >by
+                            <a href="#" class="blog-post-link"
+                                >Mark</a
+                            ></span
+                        >
                     </p>
                     <p>
                         Lorem, ipsum dolor sit amet consectetur
@@ -48,10 +57,14 @@
                     </p>
                     <p class="outlined-text">
                         Lorem ipsum dolor sit amet consectetur
-                        adipisicing elit. Tenetur unde numquam cumque
-                        repudiandae modi, ipsam repellendus quia
-                        perspiciatis in molestiae!
+                        adipisicing elit.
+                        <strong
+                            >Tenetur unde numquam cumque repudiandae
+                            modi</strong
+                        >, ipsam repellendus quia perspiciatis in
+                        molestiae!
                     </p>
+
                     <p>
                         Lorem ipsum dolor sit amet consectetur
                         adipisicing elit. Officia, eius?
@@ -68,7 +81,7 @@
                         Lorem ipsum dolor sit amet consectetur,
                         adipisicing elit. Quidem, tempora.
                     </p>
-                    <p class="code-block">Example code block</p>
+                    <code class="code-block">Example code block</code>
                     <p>
                         Lorem ipsum dolor sit amet, consectetur
                         adipisicing elit. Amet, animi ullam odio
@@ -117,8 +130,12 @@
                         adipisicing elit. Nobis, consequuntur.
                     </p>
                     <div class="blog-controls">
-                        <button class="older-post">Older Post</button>
-                        <button class="newer-post">Newer Post</button>
+                        <button class="older-post-btn">
+                            Older Post
+                        </button>
+                        <button class="newer-post-btn">
+                            Newer Post
+                        </button>
                     </div>
                 </article>
                 <section class="sidebar col-2">
