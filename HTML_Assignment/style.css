@@ -1,4 +1,38 @@
+/* General Setup */
 * {
-  display:flex;
-  align-content: center;
+  font-family: Arial, Helvetica, sans-serif;
+}
+.container{
+  width: 40%;
+  margin: auto;
+}
+.primary-bg-color{
+  background-color: #4890cd;
+}
+.primary-txt-color{
+  color: #4890cd;
+}
+.success-bg-color{
+  background-color: #62bc62;
+}
+.form-check{
+  vertical-align: middle;
+}
+.form-check-input{
+  margin-top: 0.55rem;
+  width: 1.75rem;
+  height: 1.75rem;
+}
+.form-check-label{
+  margin-top: 0.3rem;
+  padding-left: 0.75rem;
+  font-size: 1.25rem;
+  
+}
+.check-box-desc, .check-box-desc > span{
+  
+  font-size: 1.25rem;
+}
+.btn{
+  font-size: 1.5rem;
 }

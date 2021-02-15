@@ -1,0 +1,111 @@
+body {
+  font-family: Arial, Helvetica, sans-serif; 
+  box-sizing: border-box;
+  margin: 0; /* eliminate default margin*/
+}
+
+/* Navbar Start*/
+/* setup background, define area position*/
+.navbar-wrapper {
+  width: 100%;
+  background-color: #000000;
+  overflow: hidden;
+  height: 55px; /*fit child height*/
+  position: fixed;  
+}
+
+.navbar-wrapper a {
+  display: block; /*  eliminate default list style, eliminate default bullets*/
+  padding: 20px;
+  color: white;
+  text-align: center;
+  text-decoration: none;
+  font-size: 12px;
+}
+
+.navbar-wrapper a:hover {
+  background-color: #333;
+}
+
+.row{
+  width: 70%;
+  margin: auto;
+  display: flex; 
+  flex-direction: row;
+  overflow: hidden;
+}
+.col-4{
+  display: block;
+  width: 33.33%;
+}
+
+ul{
+  position: relative;
+  margin: auto 0;
+  overflow: hidden;
+  list-style-type: none;
+  padding-inline-start: 0;
+  width: 100%;
+}
+li{
+  display: inline;
+  float: left;
+}
+
+
+/* Navbar End*/
+
+.artical-wrapper{
+  position: relative;
+  width: 100%;
+  height: auto;
+  top: 55px;
+}
+/* Main page start*/
+.artical-header-wrapper{
+  padding-top: 20px;
+  padding-bottom: 20px;
+  display: block;  
+  background-color: darkgray; 
+}
+.artical-header-wrapper .row{
+  display: block;
+}
+
+.artical-header-wrapper a{
+  color: 	#4169E1;
+}
+
+.artical-body-wrapper [class^="col"]{
+  padding: 10 10 0 10;
+}
+
+
+/* Main page end*/
+
+.footer-wrapper{
+  width: 100%;
+  overflow: hidden;
+  position: fixed;
+  height: 55px;
+  background-color: #0b4d14;
+  bottom: 0;
+}
+
+.footer-wrapper a {
+  display: block; /*  eliminate default list style, eliminate default bullets*/
+  padding: 20px;
+  color: white;
+  text-align: center;
+  text-decoration: none;
+  font-size: 12px;
+}
+
+.footer-wrapper a:hover {
+  background-color: #2E8B57;
+}
+
+.footer-wrapper  li:nth-last-child(-n+3){
+  display: inline;
+  float: right;
+}
