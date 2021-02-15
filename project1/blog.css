@@ -1,0 +1,91 @@
+body {
+    margin: 0;
+	padding: 0;
+	font-family: "sans-serif";
+	background-size:cover;
+	background-position: center;
+  }
+
+
+  
+  header {
+    padding: 0% 14% 0% 14%;
+    display:flex;
+    align-items: center;
+    
+  }
+  .header-subscribe {
+    height: 100%;
+    width: 20%;
+    text-align: left;
+}
+
+.header-title {
+    height: 100%;
+    width: 60%;
+    text-align: center;
+    text-decoration: underline;
+}
+
+.header-search {
+    height: 100%;
+    width: 20%;
+    text-align: end;
+}
+  footer {
+    padding: 1% 14% 1% 14%;
+    background-color: rgb(249,249,249);
+    text-align: center;
+    
+  }
+
+  .content {
+    padding: 0% 14% 5% 14%;
+    display: flex;
+    gap: 2rem;
+ 
+}
+.main{
+    width: 100%;
+}
+.side{
+    width: 30%;
+}
+.italic{
+    font-style: italic;
+}
+
+.blog-title{
+    font-size:30px;
+}
+.blog-date{
+    color: rgb(140,141,143);
+}
+
+    
+.text-box{
+    padding: 3px;
+    border: 3px solid;
+}
+.about{
+    background-color: rgb(140,141,143);
+    padding: 5px;
+}
+
+.older-post-btn{
+    border: 3px solid rgb(83,139,229);
+    color: rgb(83,139,229);
+    background-color: transparent;
+    border-radius: 40px;
+    padding: 0.8rem;
+}
+.newer-post-btn {
+    border: 3px solid rgb(140,141,143);
+    color: rgb(140,141,143);
+    background-color: transparent;
+    border-radius: 40px;
+    padding: 0.8rem;
+}
+a{
+    color:rgb(83,139,229);
+}
