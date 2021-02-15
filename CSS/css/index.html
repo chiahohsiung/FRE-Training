@@ -14,14 +14,16 @@
     </head>
     <body>
         
-        <div class="container__main">
+        <div class="container__main" onclick="alertClassName()">
             <div class="container__parent">
                 <div class="showposition_1"></div>
-                <div class="showposition_2"></div>
             </div>
         </div>
 
         <script>
+            function alertClassName() {
+                console.log(event.target.className);
+            }
             console.log("CSS Orz");
         </script>
     </body>
