@@ -99,16 +99,12 @@ body{
     border-width: 1px;
     border-radius: 20px;
     background-color: white;
+}
+.content-footer button:nth-child(1){
     color:skyblue;
     border: 2px solid skyblue;
 }
 .content-footer button:nth-child(2){
-    width: 10%;
-    height:50%;
-    margin-right:10px;
-    border-width: 1px;
-    border-radius: 20px;
-    background-color: white;
     color: rgb(160, 160, 160);
     border: 2px solid rgb(160, 160, 160);
 }
@@ -120,24 +116,11 @@ body{
 .rightbar h1{
     font-style: italic;
 }
-.rightbar-box1{
-    background-color: rgb(240, 240, 240);
+.rightbar-box{
     display: flex;
     flex-direction: column;
     padding: 10px;
-    flex:1;
-}
-.rightbar-box2{
-    display: flex;
-    flex-direction: column;
-    padding: 10px;
-    flex:2;
-}
-.rightbar-box3{
-    display: flex;
-    flex-direction: column;
-    padding: 10px;
-    flex:1;
+    margin-bottom: 10px;
 }
 .footer{
     display: flex;
@@ -146,3 +129,43 @@ body{
     text-align: center;
     grid-area: footer;
 }
+@media screen and (min-width: 320px) and (max-width: 767px) {
+    /*Mobile Device Screens*/
+    .container{
+        padding-left: 5%;
+        padding-right: 5%;
+    }
+    p{
+        font-size: 2vw;
+    }
+    h1{
+        font-size:2vw;
+    }
+    a{
+        font-size:1.5vw;
+    }
+    li{
+        font-size: 2vw;
+    }
+    button{
+        font-size: 2vw;
+
+    }
+    .header-box3 img{
+        width:15%;
+    }
+    .content-footer button{
+        font-size: 1vw;
+        width: 20%;
+        height:40%;
+    }
+    .container{
+        grid-template-rows: 25px 1fr 25px;
+    }
+    .rightbar-box2{
+        font-size: 1.5vw;
+    }
+    .content-footer{
+        height:40px;
+    }
+  }
