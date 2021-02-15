@@ -227,4 +227,121 @@ const amount_to_coins = (amount, coins = [25, 10, 5, 1]) => {
     }
     return count
 }
-console.log(amount_to_coins(46))
+// console.log(amount_to_coins(46))
+/**
+ * 15. Write a JavaScript function to compute the value of bn where n is the exponent and b is the bases.
+ * Accept b and n from the user and display the result.
+ */
+const exp = (base, exponent) => {
+    return base ** exponent
+}
+// console.log(exp(4, 0.5))
+/**
+ * 16. Write a JavaScript function to extract unique characters from a string. 
+Example string : "thequickbrownfoxjumpsoverthelazydog"
+Expected Output : "thequickbrownfxjmpsvlazydg"
+ */
+const unique_chars = (string) => {
+    let unique = new Set([...string])
+    return [...unique].join("")
+}
+// console.log(unique_chars("thequickbrownfoxjumpsoverthelazydog"))
+/**
+ * 17. Write a JavaScript function to  get the number of occurrences of each letter in specified string. 
+
+ */
+const occurrences = (string) => {
+    let a = {}
+    let cleanString = string.trim().split(" ").join("")
+    for (const char of cleanString) {
+        a[char] ? a[char]++ : (a[char] = 1)
+    }
+
+    return a
+}
+// console.log(
+//     occurrences("the quick brown fox jumps over the lazy dog")
+// )
+/**
+ * 
+18. Write a function for searching JavaScript arrays with a binary search. 
+Note : A binary search searches by splitting an array into smaller and smaller chunks until it finds the desired value.
+ */
+const binary_search = (arr, target) => {
+    arr.sort((a, b) => a - b)
+    let start = 0
+    let end = arr.length - 1
+    while (start <= end) {
+        let middle = Math.floor((start + end) / 2)
+        if (arr[middle] === target) {
+            return console.log(target, " was found at index ", middle)
+        }
+        if (target > arr[middle]) {
+            console.log("right side")
+            start = middle + 1
+        }
+        if (target < arr[middle]) {
+            console.log("left side")
+            end = middle - 1
+        } else console.log("not found, looking again")
+    }
+    console.log(target, "not found after all iterations")
+}
+// binary_search(
+//     [1, 3, 5, 7, 11, 13, 17, 19, 23, 18, 31, 37, 41, 43, 47, 53, 59],
+//     59
+// )
+/**
+ *
+ * 19. Write a JavaScript function that returns array elements larger than a number.
+ */
+const larger_than = (arr, num) => {
+    let count = []
+    for (const number of arr) {
+        if (number > num) {
+            count.push(number)
+        }
+    }
+    return count
+}
+// // console.log(
+//     larger_than(
+//         [
+//             1,
+//             3,
+//             5,
+//             7,
+//             11,
+//             13,
+//             17,
+//             19,
+//             23,
+//             18,
+//             31,
+//             37,
+//             41,
+//             43,
+//             47,
+//             53,
+//             59,
+//         ],
+//         18
+//     )
+// )
+/**
+ * 
+20. Write a JavaScript function that generates a string id (specified length) of random characters. 
+Sample character list : "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789"
+ */
+const string_id = (length) => {
+    let string = ""
+    let charList =
+        "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789"
+    for (let i = 0; i < length; i++) {
+        string += charList.charAt(
+            Math.floor(Math.random() * charList.length)
+        )
+    }
+    return string
+}
+// console.log(string_id(7))
