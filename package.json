@@ -15,5 +15,9 @@
   "bugs": {
     "url": "https://github.com/Show3567/FRE-Training/issues"
   },
-  "homepage": "https://github.com/Show3567/FRE-Training#readme"
+  "homepage": "https://github.com/Show3567/FRE-Training#readme",
+  "dependencies": {
+    "bootstrap-icons": "^1.3.0",
+    "jquery": "^3.5.1"
+  }
 }

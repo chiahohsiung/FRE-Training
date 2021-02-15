@@ -1,0 +1,44 @@
+body{
+    background-image: url(https://images.unsplash.com/photo-1484503793037-5c9644d6a80a?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1601&q=80);
+}
+.container{
+    background-color: white;
+}
+.poster{
+    color: MEDIUMPURPLE;
+    font-weight: bold;
+    font-size: 1.2rem;
+}
+.poster:hover{
+    color: rgb(135, 93, 221);
+}
+
+#like{
+    color:MEDIUMPURPLE;
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-left: 0.1rem;
+}
+
+#review{
+    color:MEDIUMPURPLE;
+    font-weight: bold;
+    font-size: 1.5rem;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: "Times New Roman", serif;
+  }
+
+p{
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+}
+.blog-post{
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 0.0625em 0.0625em, rgba(0, 0, 0, 0.25) 0px 0.125em 0.5em, rgba(255, 255, 255, 0.1) 0px 0px 0px 1px inset;
+}
+.list-unstyled{
+    font-family: fantasy;
+    font-weight: bold;
+    font-size:1.2rem;
+    color: MEDIUMPURPLE;
+}
