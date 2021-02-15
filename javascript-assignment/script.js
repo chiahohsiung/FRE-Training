@@ -146,6 +146,21 @@ const type_of = (arg) => {
  * 10. Write a JavaScript function which returns the n rows by n columns identity matrix.
  */
 
+const identity_matrix = (num) => {
+    let x, y
+    for (x = 0; x < num; x++) {
+        for (y = 0; y < num; y++) {
+            if (x === y) {
+                console.log("1")
+            } else {
+                console.log("0")
+            }
+        }
+        console.log("----")
+    }
+}
+// identity_matrix(3)
+
 /**
  * 11. Write a JavaScript function which will take an array of numbers stored and find the second lowest and second greatest numbers, respectively.
  * Sample array : [1,2,3,4,5] Expected Output : 2,4
@@ -155,3 +170,61 @@ const second_greatest_lowest = (arr) => {
     return [sorted[1], sorted[sorted.length - 2]].join()
 }
 // console.log(second_greatest_lowest([1, 2, 3, 4, 5]))
+
+/**
+ * 12. Write a JavaScript function which says whether a number is perfect.
+ * According to Wikipedia : In number theory, a perfect number is a positive integer that is equal to the sum of its proper positive divisors, that is, the sum of its positive divisors excluding the number itself (also known as its aliquot sum). Equivalently, a perfect number is a number that is half the sum of all of its positive divisors (including itself).
+Example : The first perfect number is 6, because 1, 2, and 3 are its proper positive divisors, and 1 + 2 + 3 = 6. Equivalently, the number 6 is equal to half the sum of all its positive divisors: ( 1 + 2 + 3 + 6 ) / 2 = 6. The next perfect number is 28 = 1 + 2 + 4 + 7 + 14. This is followed by the perfect numbers 496 and 8128. 
+ */
+const perfect_number = (num) => {
+    let temp = 0
+
+    for (let i = 1; i <= num / 2; i++) {
+        if (num % i === 0) {
+            console.log(temp, i)
+            temp += i
+        }
+    }
+    if (temp === num && temp !== 0) {
+        return `${num} is a perfect number`
+    } else {
+        return `${num} is not a perfect numer`
+    }
+}
+// console.log(perfect_number(28))
+
+/**
+ * 13. Write a JavaScript function to compute the factors of a positive integer. 
+
+ */
+const factor = (num) => {
+    let factors = new Set()
+    for (let i = 1; i <= num / 2; i++) {
+        if (num % i === 0) {
+            factors.add(i)
+        }
+    }
+    factors.add(num)
+    return factors
+}
+// console.log(factor(28))
+/**
+ * 14. Write a JavaScript function to convert an amount to coins. 
+Sample function : amountTocoins(46, [25, 10, 5, 2, 1])
+Here 46 is the amount. and 25, 10, 5, 2, 1 are coins. 
+Output : 25, 10, 10, 1
+ */
+const amount_to_coins = (amount, coins = [25, 10, 5, 1]) => {
+    let count = { amount }
+    for (let i = 0; i < coins.length; i++) {
+        if (amount >= coins[i]) {
+            amount = amount - coins[i]
+            count[coins[i]]
+                ? count[coins[i]]++
+                : (count[coins[i]] = 1)
+            i--
+        }
+    }
+    return count
+}
+console.log(amount_to_coins(46))
