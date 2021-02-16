@@ -4,7 +4,7 @@ function reverse(num){
     return +num.toString().split('').reverse().join('')
     
 }
-console.log('(1)Reverse:',reverse(12456))
+//console.log('(1)Reverse:',reverse(12456))
 
 function isPalindrome(str){
     let newStr= str.replaceAll(" ","")
@@ -15,7 +15,7 @@ function isPalindrome(str){
     else return `"${str}" is not palindrome`
 
 }
-console.log('(2):',isPalindrome('nurses run'))
+//console.log('(2):',isPalindrome('nurses run'))
 
 function strCombination(str){
     let result=[]
@@ -27,28 +27,28 @@ function strCombination(str){
     }
     return result
 }
-console.log('(3):', strCombination('dog'))
+//console.log('(3):', strCombination('dog'))
 
 function sortStr(str){
     return str.split('').sort().join('')
 }
-console.log('(4):', sortStr('webmaster'))
+//console.log('(4):', sortStr('webmaster'))
 
 function capitalizeFirstLetter(str){
     return str.split(' ').map(s=>s[0].toUpperCase()+s.slice(1)).join(" ")
 }
-console.log('(5):',capitalizeFirstLetter('the quick brown fox'))
+//console.log('(5):',capitalizeFirstLetter('the quick brown fox'))
 
 function findLongestWord(str){
  return str.split(' ').sort((a,b)=>b.length-a.length)[0]
 }
-console.log('(6):',findLongestWord('Web Development Tutorial') )
+//console.log('(6):',findLongestWord('Web Development Tutorial') )
 
 function countTheVowes(str){
     let vowes=['a','e','i','o','u']
     return str.toLowerCase().split('').filter(letter=>vowes.includes(letter)).length
 }
-console.log('(7):', countTheVowes('The quick brown fox'))
+//console.log('(7):', countTheVowes('The quick brown fox'))
 
 function isPrime(num){
     let isPrime= true;
@@ -65,12 +65,12 @@ function isPrime(num){
         return (isPrime)? `${num} is a prime number` : `${num} is NOT a prime numberber`
     }
 }
-console.log('(8):',isPrime(4) )
+//console.log('(8):',isPrime(4) )
 
 function type(variable){
     return typeof(variable)
 }
-console.log('(9):', type(65) )
+//console.log('(9):', type(65) )
 
 // function matrix(){
 
@@ -81,7 +81,7 @@ function findNumbers(arr){
     arr.sort()
     return [arr[1], arr[arr.length-2]]
 }
-console.log('(11):', findNumbers([5,3,2,1,4]) )
+//console.log('(11):', findNumbers([5,3,2,1,4]) )
 
 function isPerfect(num){
     let divisors=[]
@@ -91,7 +91,7 @@ function isPerfect(num){
     let total = divisors.reduce((acc,num)=>acc+num)
     return (total===num)? `${num} is a perfect number` : `${num} is NOT a perfect number`
 }
-console.log('(12):', isPerfect(6) )
+//console.log('(12):', isPerfect(6) )
 
 function factors(num){
     //compute the factor of a number
@@ -99,7 +99,7 @@ function factors(num){
     let factors= divisors.slice(0,divisors.length/2).map(i=>[i,num/i])
     return factors;
 }
-console.log('(13):',factors(12) )
+//console.log('(13):',factors(12) )
 
 function amountTocoins(amount, coinOptions){
 
@@ -114,7 +114,7 @@ function compute(base, exp){
     }
     return base*compute(base, exp-1) //recursive
 }
-console.log('(15):',compute(3,3) )
+//console.log('(15):',compute(3,3) )
 
 function extractChar(str){
 
@@ -132,7 +132,7 @@ function occurrences (str){
   }
   return obj
 }
-console.log('(17):',occurrences('Tet Vietnam') )
+//console.log('(17):',occurrences('Tet Vietnam') )
 
 function binary(array){
 
@@ -142,7 +142,7 @@ console.log('(18):', )
 function searchElement(arr,num){
     return arr.filter(e=>e>num)
 }
-console.log('(19):', searchElement([1,2,3],2) )
+//console.log('(19):', searchElement([1,2,3],2) )
 
 //20-24
 
@@ -159,7 +159,7 @@ console.log('(21):', )
 function countLetter(str, letter){
     return str.split('').filter(e=>e===letter).length
 }
-console.log('(22):',countLetter('Tet Vietnam','e'))
+//console.log('(22):',countLetter('Tet Vietnam','e'))
 
 function findNotRepeatedLetter(str){
 
@@ -177,7 +177,7 @@ function longestCountryName(arr){
     return arr.sort((a,b)=>b.length-a.length)[0]
 }
 let countries=["Australia", "Germany", "United States of America"]
-console.log('(25):',longestCountryName(countries))
+//console.log('(25):',longestCountryName(countries))
 
 function longestSubstr(str){
 
