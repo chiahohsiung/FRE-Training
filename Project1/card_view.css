@@ -1,0 +1,14 @@
+.card{
+  width: 35%;
+  height: ;
+  margin: auto;
+}
+.card, .card-lg{
+  display: block;
+  border: 1px solid #C0C0C0;
+}
+
+.card, .card-lg:hover{
+  border: 3px solid #808080;
+}
+

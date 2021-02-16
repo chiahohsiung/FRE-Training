@@ -8,6 +8,7 @@ body {
 /* setup background, define area position*/
 .navbar-wrapper {
   width: 100%;
+  
   background-color: #000000;
   overflow: hidden;
   height: 55px; /*fit child height*/
@@ -93,6 +94,7 @@ li{
 }
 
 .footer-wrapper a {
+  z-index: 10000;
   display: block; /*  eliminate default list style, eliminate default bullets*/
   padding: 20px;
   color: white;
