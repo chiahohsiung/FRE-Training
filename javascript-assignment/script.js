@@ -60,7 +60,7 @@ const string_combinations = (string, result = []) => {
  * Assume punctuation and numbers symbols are not included in the passed string.
  */
 const alphabetize_string = (string) => {
-    const sorted = string.split("").sort().join("").trim()
+    const sorted = string.trim().split("").sort().join("")
     return sorted
 }
 /**
@@ -188,7 +188,7 @@ const perfect_number = (num) => {
     if (temp === num && temp !== 0) {
         return `${num} is a perfect number`
     } else {
-        return `${num} is not a perfect numer`
+        return `${num} is not a perfect number`
     }
 }
 // console.log(perfect_number(28))
@@ -345,3 +345,31 @@ const string_id = (length) => {
     return string
 }
 // console.log(string_id(7))
+/**
+ * 
+21. Write a JavaScript function to get all possible subset with a fixed length (for example 2) combinations in an array. 
+Sample array : [1, 2, 3] and subset length is 2 
+Expected output : [[2, 1], [3, 1], [3, 2], [3, 2, 1]]
+ */
+
+const subset = (array, arr_length) => {
+    let result_set = [],
+        result
+
+    for (var i = 0; i < Math.pow(2, array.length); i++) {
+        result = []
+        let x = array.length - 1
+
+        do {
+            if ((i & (1 << x)) !== 0) {
+                result.push(array[x])
+            }
+        } while (x--)
+        if (result.length >= arr_length) {
+            result_set.push(result)
+        }
+    }
+
+    return result_set
+}
+console.log(subset([1, 2, 3], 2))
