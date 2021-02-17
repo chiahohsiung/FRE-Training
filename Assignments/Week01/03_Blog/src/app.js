@@ -35,8 +35,20 @@ app.get("/", (req, res) => {
   });
 });
 
-app.get("/:post", (req, res) => {
-  console.log(req.params);
-  //   res.render("post", { post: post });
+app.get("/:post", async (req, res) => {
+  let post = await client.getEntries({
+    "fields.slug": req.params.post,
+    content_type: "post",
+  });
+  post = post.items[0];
+  let base64 = await imageToBase64(
+    "https:" + post.fields.feature_image.fields.file.url
+  ); // Image URL
+  post.fields.body = documentToHtmlString(post.fields.body);
+  // post.fields.feature_image.fields.file.url =
+  //   "data:image/jpeg;base64," + base64;
+
+  res.render("post", { post: post });
 });
+
 app.listen(3001);

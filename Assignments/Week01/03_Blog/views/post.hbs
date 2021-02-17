@@ -1,0 +1,21 @@
+<div class="post_body">
+    <div class="post_title" bg_image = "{{post.fields.feature_image.fields.file.url}}">
+        <h2>{{post.fields.title}}</h2>
+    </div>
+    <div id="post_body"></div>
+
+    <script post_body="{{post.fields.body}}" class="body_script">
+        // place the post body
+        let script = document.querySelector(".body_script")
+        let post_body = $(script).attr("post_body")
+        let body = document.querySelector("#post_body")
+        body.innerHTML = post_body
+
+        let post_title = document.querySelector(".post_title")
+        let bg_image = $(post_title).attr("bg_image")
+        $(post_title).css("background-image", `url(https:${bg_image})`)
+        console.log(post_title)
+        console.log(bg_image)
+    </script>
+
+</div>

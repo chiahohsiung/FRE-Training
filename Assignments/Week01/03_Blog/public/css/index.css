@@ -1,18 +1,10 @@
 body {
   background-color: #f8f9f0;
 }
-div.blog_post_card {
-  width: 45%;
-  display: inline-block;
-  text-align: center;
-}
-div.blog_post_card img {
-  width: 75%;
-}
 
 @font-face {
   font-family: "Agrandir Regular";
-  src: url("./fonts/Agradir/Agradir-Regular.otf");
+  src: url("./fonts/Agrandir/Agrandir-Regular.otf");
 }
 @font-face {
   font-family: "Agrandir Heavy";
@@ -26,6 +18,7 @@ div.blog_post_card img {
 h1 {
   font-family: "Agrandir Heavy";
   font-weight: 700;
+  font-size: 250%;
 }
 h2 {
   font-family: "Agrandir Heavy";
@@ -33,4 +26,62 @@ h2 {
 }
 body {
   font-family: "Agrandir Regular";
+}
+.title {
+  text-align: center;
+}
+div.post_body {
+  padding: 0 20% 0 20%;
+  font-size: 140%;
+}
+div.post_body img {
+  width: 50%;
+  text-align: center;
+}
+div.post_title {
+  border-radius: 5px;
+  background-size: cover;
+  background-repeat: no-repeat;
+  /* height: 20vh; */
+  vertical-align: text-bottom;
+}
+div.post_title h2 {
+  color: white;
+  mix-blend-mode: difference;
+  padding-top: 20vh;
+  margin: 2%;
+  font-size: 250%;
+  text-decoration: underline;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}
+a:hover {
+  text-decoration: underline;
+}
+a:visited {
+  text-decoration: none;
+  color: black;
+}
+div.blog_post_card {
+  border: 1px solid rgba(88, 87, 87, 0.5);
+  border-radius: 15px;
+  margin: 2.5%;
+}
+div.blog_post_card {
+  width: 40%;
+  display: inline-block;
+  text-align: center;
+}
+
+div.blog_post_card img {
+  width: 75%;
+}
+
+div.posts {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
 }

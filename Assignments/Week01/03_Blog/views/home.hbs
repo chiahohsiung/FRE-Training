@@ -1,15 +1,17 @@
 {{!-- Show the posts --}}
-{{#each posts as |post|}}
-    <div class="blog_post_card">
-        <a href="/{{post.fields.slug}}">
-        <h2>{{post.fields.title}}</h2>
-        <img src="{{post.fields.feature_image.fields.file.url}}"
-              alt="{{post.fields.title}}"/>
-              <p>
-                  </a>
-        {{#each post.fields.tags as |tag|}}
-                <span>#{{tag}}</span>
-        {{/each}}
-        </p>
-    </div>
-{{/each}}
+<div class="posts">
+    {{#each posts as |post|}}
+        <div class="blog_post_card">
+            <a href="/{{post.fields.slug}}">
+                <h2>{{post.fields.title}}</h2>
+                    <img src="{{post.fields.feature_image.fields.file.url}}"
+                        alt="{{post.fields.title}}"/>
+                </a>
+                <p>
+                {{#each post.fields.tags as |tag|}}
+                        <span>#{{tag}}</span>
+                {{/each}}
+            </p>
+        </div>
+    {{/each}}
+</div>
