@@ -4,6 +4,8 @@
         <div class="blog_post_card">
             <a href="/{{post.fields.slug}}">
                 <h2>{{post.fields.title}}</h2>
+            <p><small>{{post.fields.date}}</small></p>
+
                     <img src="{{post.fields.feature_image.fields.file.url}}"
                         alt="{{post.fields.title}}"/>
                 </a>
@@ -14,4 +16,7 @@
             </p>
         </div>
     {{/each}}
+</div>
+<div class="more">
+    <button id="more_articles" pageNo="0" >More Articles</button>
 </div>

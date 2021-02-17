@@ -85,3 +85,9 @@ div.posts {
   justify-content: center;
   flex-wrap: wrap;
 }
+button{
+  font-size: 100%;
+}
+div.more{
+  text-align: center;
+}
