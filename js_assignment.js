@@ -199,3 +199,239 @@ let sortArray = input => {
 
 let q11 = sortArray([7,6,5,4,3,2,1]);
 console.log(q11);
+
+
+// 12. Write a JavaScript function which says whether a number is perfect. 
+// According to Wikipedia : In number theory, a perfect number is a positive 
+// integer that is equal to the sum of its proper positive divisors, that is, 
+// the sum of its positive divisors excluding thenumber itself (also known as its 
+// aliquot sum). Equivalently, a perfect number is a number that ishalf the sum 
+// of all of its positive divisors (including itself).Example : The first perfect 
+// number is 6, because 1, 2, and 3 are its proper positive divisors, and1 + 2 + 3 = 6. 
+// Equivalently, the number 6 is equal to half the sum of all its positive divisors: 
+// ( 1+ 2 + 3 + 6 ) / 2 = 6. The next perfect number is 28 = 1 + 2 + 4 + 7 + 14. 
+// This is followed bythe perfect numbers 496 and 8128.
+console.log("Q12:");
+let perfectNum = input => {
+    let temp = 0;
+    for (let i = 1; i <= input/2; i++){
+        if (input % i === 0) {
+            temp += i;
+        }
+    }
+    if (temp === input && temp != 0) {
+        return "It is a perfect number.";
+    } else {
+        return "It is not a perfect number.";
+    }
+}
+console.log("28.", perfectNum(28));
+console.log("27.", perfectNum(27));
+ 
+ 
+// 13. Write a JavaScript function to compute the factors of a positive integer. 
+console.log("Q13:");
+let factors = input=> {
+    let factor = [];
+    if (input <= 0){
+        return "Not a positive integer.";
+    }
+    for (let i = 1; i <= input; i ++){
+        if (input % i === 0){
+            factor.push(i);
+        } 
+    }
+    return factor;
+}
+let q13 = factors(28);
+console.log(q13);
+ 
+// 14. Write a JavaScript function to convert an amount to coins. 
+// Sample function : amountTocoins(46, [25, 10, 5, 2, 1])
+// Here 46 is the amount. and 25, 10, 5, 2, 1 are coins. 
+// Output : 25, 10, 10, 1
+console.log("Q14:");
+let amountTocoins = (num, coins) => {
+    if (num === 0){
+        return [];
+    } else {
+        if (num >= coins[0]){
+            left = (num - coins[0]);
+            return [coins[0]].concat(amountTocoins(left, coins));
+        } else {
+            coins.shift();
+            return amountTocoins(num, coins);
+        }
+    }
+}
+ 
+let q14 = amountTocoins(46, [25, 10, 5, 2, 1]);
+console.log(q14);
+ 
+// 15. Write a JavaScript function to compute the value of bn where n is the exponent and b is thebases. 
+// Accept b and n from the user and display the result. 
+console.log("Q15:");
+let ans = (b, n) =>{
+    return b ** n;
+}
+ 
+let q15 = ans(2,3);
+console.log(q15);
+ 
+ 
+// 16. Write a JavaScript function to extract unique characters from a string. 
+// Example string : "thequickbrownfoxjumpsoverthe lazydog"
+// Expected Output : "thequickbrownfxjmpsvlazydg"
+console.log("Q16");
+let unique = input => {
+    let output = "";
+    let str = input;
+    for (let i = 0; i < str.length; i++) {
+        if (output.indexOf(str.charAt(i))== -1) {
+            output += str[i];
+        }
+    }
+    return output;
+}
+let q16 = unique("thequickbrownfoxjumpsoverthelazydog");
+console.log(q16);
+ 
+ 
+// 17. Write a JavaScript function to  get the number of occurrences of each letter in specified string.
+console.log("Q17:");
+let charCount = input=> {
+    let chars = {};
+    input.replace(/\S/g, function(l) {
+        chars[l] = (isNaN(chars[l]) ? 1 : chars[l] +1);
+    });
+    return chars;
+}
+ 
+let q17 = charCount("The quick brown fox jumps over the lazy dog");
+console.log(q17);
+ 
+// 18. Write a function for searching JavaScript arrays with a binary search. 
+// Note : A binary search searches by splitting an array into smaller and smaller chunks 
+// until it finds the desired value.
+console.log("Q18:");
+let binarySearch = (array, target) => {
+    let left = 0;
+    let right = array.length -1;
+    while (left < right -1) {
+        let mid =  Math.floor((left - right)/2);
+        if (array[mid] > target) {
+            right = mid;
+        } else if (array[mid] < target){
+            left = mid;
+        } else {
+            return mid;
+        }
+    }
+    if (array[left] == target) {
+        return left;
+    }
+    if (array[right] == target) {
+        return right;
+    }
+}
+let myArray = [1, 2, 3, 5, 6, 7, 10, 11, 14, 15, 17, 19, 20, 22, 23];
+let q18 = binarySearch(myArray, 6);
+ 
+ 
+// 19. Write a JavaScript function that returns array elements larger than a number. 
+console.log("Q19:");
+let biggerNum = input => {
+    return (evalue, index, array) => {
+        return (evalue >= input);
+    }
+}
+ 
+let q19 = [11, 45, 4, 31, 64, 10].filter(biggerNum(10));
+console.log(q19);
+ 
+// 20. Write a JavaScript function that generates a string id (specified length) of random characters.
+// Samplecharacterlist:"ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789"
+console.log("Q20:");
+let makeid = input => {
+    let text = "";
+    let char_list = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+    for (let i = 0; i< input; i++){
+        text += char_list.charAt(Math.floor(Math.random() * char_list.length));
+    }
+    return text;
+}
+let q20 = makeid(8);
+console.log(q20);
+ 
+ 
+// 21. Write a JavaScript function to get all possible subset with a fixed length (for example 2)
+// combinations in an array. 
+// Sample array : [1, 2, 3] and subset length is 2 
+// Expected output : [[2, 1], [3, 1], [3, 2], [3, 2, 1]]
+console.log("Q21:");
+let subset = (array, size) => {
+    let result_set = [], result;
+    for (let i = 0; i < Math.pow(2, array.length); i++) {
+        result = [];
+        x = array.length -1;
+        do {
+            if( (i & (1 << x)) !== 0) {
+                result.push(array[x]);
+            } 
+        } while (x--);
+        if (result.length >= size){
+            result_set.push(result);
+        }
+    }
+    return result_set;
+}
+ 
+let q21 = subset([1, 2, 3], 2);
+console.log(q21);
+ 
+// 22. Write a JavaScript function that accepts two arguments, a string and a letter and the 
+// function will count the number of occurrences of the specified letter within the string.
+// Sample arguments : 'microsoft.com', 'o' Expected output : 3 
+console.log("Q22:");
+ 
+ 
+// 23. Write a JavaScript function to find the first not repeated character. 
+// Sample arguments : 'abacddbec' Expected output : 'e' 
+ 
+ 
+// 24. Write a JavaScript function to apply Bubble Sort algorithm. 
+// Note : According to wikipedia "Bubble sort, sometimes referred to as sinking sort, 
+// is a simplesorting algorithm that works by repeatedly stepping through the list to be sorted, 
+// comparingeach pair of adjacent items and swapping them if they are in the wrong order". 
+// Sample array : [12, 345, 4, 546, 122, 84, 98, 64, 9, 1, 3223, 455, 23, 234, 213]
+// Expected output : [3223, 546, 455, 345, 234, 213, 122, 98, 84, 64, 23, 12, 9, 4, 1]
+ 
+ 
+// 25. Write a JavaScript function that accept a list of country names as input and returns 
+// the longest country name as output. 
+// Sample function : Longest_Country_Name(["Australia", "Germany", "United States of America"])
+// Expected output : "United States of America"
+ 
+ 
+// 26. Write a JavaScript function to find longest substring in a given a string without 
+// repeating characters. 
+ 
+ 
+// 27. Write a JavaScript function that returns the longest palindrome in a given string. 
+// Note: According to Wikipedia "In computer science, the longest palindromic substring or 
+// longestsymmetric factor problem is the problem of finding a maximum-length contiguous 
+// substring of agiven string that is also a palindrome. 
+// For example, the longest palindromic substring of"bananas" is "anana". 
+// The longest palindromic substring is not guaranteed to be unique; 
+// forexample, in the string "abracadabra", there is no palindromic substring with length 
+// greater thanthree, but there are two palindromic substrings with length three, namely, 
+// "aca" and "ada".In some applications it may be necessary to return all maximal palindromic 
+// substrings (that is, allsubstrings that are themselves palindromes and cannot be extended to 
+// larger palindromicsubstrings) rather than returning only one substring or returning the 
+// maximum length of apalindromic substring.
+ 
+ 
+// 28. Write a JavaScript program to pass a 'JavaScript function' as parameter. 
+ 
+ 
+// 29. Write a JavaScript function to get the function name. 
