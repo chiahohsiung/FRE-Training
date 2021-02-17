@@ -1,0 +1,38 @@
+@import 'footer.css';
+@import 'header.css';
+@import 'index.css';
+@import 'sample_blog.css';
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Lato', sans-serif;
+}
+a{
+    color: rgb(88, 120, 187);
+    line-height: 25px;
+}
+
+.date-format{
+    font-weight: 600;
+    font-style: italic;
+    color: rgb(170, 170, 170);
+}
+.author{
+    color: rgb(88, 120, 187);
+    line-height: 25px;
+}
+.container{
+    max-width: 800px;
+    width: 90%;
+    margin: 0 auto;
+}
+.background-img{
+    width: 100%;
+    background-color: #f1f1f1;
+    background-image: url(../images/blog-background.jpg);
+    padding: 70px 0;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
