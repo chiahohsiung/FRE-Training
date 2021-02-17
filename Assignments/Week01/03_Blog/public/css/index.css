@@ -1,0 +1,36 @@
+body {
+  background-color: #f8f9f0;
+}
+div.blog_post_card {
+  width: 45%;
+  display: inline-block;
+  text-align: center;
+}
+div.blog_post_card img {
+  width: 75%;
+}
+
+@font-face {
+  font-family: "Agrandir Regular";
+  src: url("./fonts/Agradir/Agradir-Regular.otf");
+}
+@font-face {
+  font-family: "Agrandir Heavy";
+  src: url("./fonts//Agrandir/Agrandir-GrandHeavy.otf");
+}
+@font-face {
+  font-family: "Agrandir Light";
+  src: url("./fonts/Agrandir/Agrandir-GrandLight.otf");
+}
+
+h1 {
+  font-family: "Agrandir Heavy";
+  font-weight: 700;
+}
+h2 {
+  font-family: "Agrandir Heavy";
+  font-weight: 500;
+}
+body {
+  font-family: "Agrandir Regular";
+}

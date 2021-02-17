@@ -1,0 +1,26 @@
+{
+  "name": "03_blog",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node src/app.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@contentful/rich-text-html-renderer": "^14.1.2",
+    "contentful": "^8.1.7",
+    "express": "^4.17.1",
+    "hbs": "^4.1.1",
+    "image-to-base64": "^2.1.1",
+    "node-modules": "^1.0.1"
+  },
+  "devDependencies": {
+    "chai": "^4.3.0",
+    "eslint": "^7.20.0",
+    "eslint-plugin-mocha": "^8.0.0",
+    "mocha": "^8.3.0"
+  }
+}
