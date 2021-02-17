@@ -1,0 +1,21 @@
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+}
+
+.header_container {
+    background-color: rgba(202, 201, 204, 0.685);
+    width: 100%;
+}
+
+header h1 {
+    font-family: 'Benne', serif;
+
+}
+
+.subscribe {
+    color:rgba(13, 138, 240, 0.774);
+    font-weight: 500;
+}
