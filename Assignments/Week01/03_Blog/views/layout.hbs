@@ -3,25 +3,27 @@
     {{!-- Css Reset --}}
     <link rel-="stylesheet" type="text/css" href="/css/reset.css">
     <link rel="stylesheet" type="text/css" href="/css/index.css">
+    <link rel="stylesheet" type="text/css" href="/css/post.css">
     {{!-- JQuery from CDN --}}
     <script src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
 
+{{!-- Adobe fonts --}}
+<link rel="stylesheet" href="https://use.typekit.net/pnd5bun.css">
     <script src="./index.js"></script>
 </head>
 <body>
     <header>
-        <a href="/"><h1 class="title">Notes I Keep</h1></a>
+        <a href="/"><h1 class="title">NOTES I KEEP</h1></a>
         
     </header>
+    <div id="body">
+        {{{body}}}
+    <span id="up" >⇡</span>
 
-    {{{body}}}
+    </div>
     <footer>
-        
-        <a>LinkedIn</a>
-
-        <a>Facebook</a>
-          
-        <a>Twitter</a>
-          
+        <a href="https://www.linkedin.com/in/laurence-ininda">LinkedIn</a>
+        <a href="https://www.facebook.com/laurence.bugasu">Facebook</a>
+        <a href="https://twitter.com/lbugasu">Twitter</a>
     </footer>
 </body>

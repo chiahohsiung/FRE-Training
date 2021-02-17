@@ -1,6 +1,8 @@
 body {
+  min-height: 100%;
   background-color: #f8f9f0;
   margin: 0;
+  position: relative;
 }
 
 @font-face {
@@ -15,6 +17,9 @@ body {
   font-family: "Agrandir Light";
   src: url("./fonts/Agrandir/Agrandir-GrandLight.otf");
 }
+#body {
+  padding-bottom: 8vh;
+}
 
 h1 {
   font-family: "Agrandir Heavy";
@@ -24,6 +29,10 @@ h1 {
 h2 {
   font-family: "Agrandir Heavy";
   font-weight: 500;
+  color: #49326b;
+}
+small {
+  color: #587a33;
 }
 body {
   font-family: "Agrandir Regular";
@@ -31,29 +40,6 @@ body {
 .title {
   text-align: center;
 }
-div.post_body {
-  padding: 0 20% 0 20%;
-  font-size: 140%;
-}
-div.post_body img {
-  width: 50%;
-  text-align: center;
-}
-div.post_title {
-  border-radius: 5px;
-  background-size: cover;
-  background-repeat: no-repeat;
-  /* height: 20vh; */
-  vertical-align: text-bottom;
-}
-div.post_title h2 {
-  color: white;
-  mix-blend-mode: difference;
-  padding-top: 20vh;
-  margin: 2%;
-  font-size: 250%;
-}
-
 a {
   text-decoration: none;
   color: black;
@@ -96,6 +82,7 @@ header {
   position: -webkit-sticky;
   top: 0;
   background-color: #f8f9f0;
+  z-index: 1;
 }
 footer {
   background-color: black;
@@ -106,8 +93,24 @@ footer {
   align-items: center;
   height: 5vh;
   margin-top: 3vh;
+  bottom: 0;
+  position: absolute;
 }
 footer a {
   padding: 0 5% 0 5%;
   color: #f8f9f0;
+}
+footer a:visited {
+  color: #f8f9f0;
+}
+#up {
+  /* display: none; */
+  visibility: hidden;
+  position: fixed;
+  top: 90vh;
+  left: 95vw;
+  font-size: 200%;
+}
+#up:hover {
+  cursor: pointer;
 }
