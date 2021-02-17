@@ -1,5 +1,6 @@
 body {
   background-color: #f8f9f0;
+  margin: 0;
 }
 
 @font-face {
@@ -51,7 +52,6 @@ div.post_title h2 {
   padding-top: 20vh;
   margin: 2%;
   font-size: 250%;
-  text-decoration: underline;
 }
 
 a {
@@ -85,9 +85,29 @@ div.posts {
   justify-content: center;
   flex-wrap: wrap;
 }
-button{
+button {
   font-size: 100%;
 }
-div.more{
+div.more {
   text-align: center;
+}
+header {
+  position: sticky;
+  position: -webkit-sticky;
+  top: 0;
+  background-color: #f8f9f0;
+}
+footer {
+  background-color: black;
+  color: #f8f9f0;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  align-items: center;
+  height: 5vh;
+  margin-top: 3vh;
+}
+footer a {
+  padding: 0 5% 0 5%;
+  color: #f8f9f0;
 }
