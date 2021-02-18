@@ -8,8 +8,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
   // loading and add function
   const populateList = (input) => {
-    let isComplete = false;
-
     const id = genID();
     const div = document.createElement("div");
     div.className = id;
@@ -17,21 +15,24 @@ document.addEventListener("DOMContentLoaded", function () {
     const li = document.createElement("li");
     const checkBox = document.createElement("input");
     checkBox.type = "checkbox";
-    checkBox.classList.add(id, 'false')
-    // checkBox.addEventListener('click', () => {
-    //   for (let i = 0; i < list.length; i++) {
-    //     const item = list[i];
-    //     if (item.className === checkBox.className) {
-    //       !isComplete
-    //       if (isComplete){
-    //         item.style.textDecoration = "line-through"
-    //       } else {
-
-    //       }
-    //     }
-    //   }
-
-    })
+    checkBox.classList.add(id, "false");
+    checkBox.addEventListener("click", () => {
+      console.log(checkBox.classList[1]);
+      for (let i = 0; i < list.length; i++) {
+        const item = list[i];
+        if (item.className === checkBox.classList[0]) {
+          let isComplete = JSON.parse(checkBox.classList[1]);
+          isComplete = !isComplete;
+          checkBox.classList.remove(checkBox.classList[1]);
+          checkBox.classList.add(JSON.stringify(isComplete));
+          if (isComplete) {
+            item.style.textDecoration = "line-through";
+          } else {
+            item.style.textDecoration = "none";
+          }
+        }
+      }
+    });
     const editBtn = document.createElement("button");
     editBtn.className = id;
     editBtn.innerHTML = "Edit";
@@ -40,13 +41,11 @@ document.addEventListener("DOMContentLoaded", function () {
         const item = list[i];
         if (item.className === editBtn.className) {
           const input = document.createElement("input");
-          const editInput = li.innerHTML;
+          const editInput = li.innerText;
           input.value = editInput;
           input.className = "edit_input";
           li.innerHTML = "";
           li.appendChild(input);
-          console.log("edit input", editInput);
-
           const saveBtn = document.createElement("button");
           saveBtn.className = id;
           saveBtn.innerHTML = "Save";
@@ -59,11 +58,8 @@ document.addEventListener("DOMContentLoaded", function () {
             saveBtn.remove();
             div.appendChild(editBtn);
           });
-
           editBtn.remove();
           div.appendChild(saveBtn);
-
-          console.log("inside edit loop");
         }
       }
     });
@@ -112,6 +108,4 @@ document.addEventListener("DOMContentLoaded", function () {
     populateList(addTodoInput.value);
     addTodoInput.value = "";
   });
-
-  // iterate thru the list, if the classname id matches the classname of what's being clicked, splice that out
 });
