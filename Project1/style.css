@@ -1,0 +1,30 @@
+
+#dashboard{
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 15px;
+}
+
+.card-header{
+    font-weight: bold;
+
+}
+.navbar-brand{
+    font-size: 30px;
+    font-weight: bolder;
+}
+h7.card-title{
+    color:grey;
+}
+.world{
+    color:blue;
+}
+.design{
+    color:green;
+}
+
+#footer{
+    display: flex;
+    justify-content: center;
+}
+
