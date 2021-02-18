@@ -1,5 +1,5 @@
-const ele = document.getElementsByTagName('h1')[0];
-console.log(ele);
+// const ele = document.getElementsByTagName('h1')[0];
+// console.log(ele);
 
 // function getElementsByClassName(className) {
 //     const nodeList = [];
@@ -18,3 +18,10 @@ console.log(ele);
 // }
 
 // getElementsByClassName('test');
+
+// const foo = arr => {
+//     let a = 5;
+//     return a === 5 && a++ && a;
+// }
+
+// console.log(foo());
