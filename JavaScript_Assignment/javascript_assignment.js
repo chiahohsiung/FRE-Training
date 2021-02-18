@@ -196,6 +196,137 @@ function problem17(string) {
     }
     return map;
 }
+function testProblem18(test) {
+    return problem18(test.list, test.target);
+}
+function problem18(list, target) {
+    if (list.length === 1) return 0;
+    let left = 0,
+        right = list.length - 1,
+        mid;
+    while (right >= left) {
+        mid = Math.floor((left + right) / 2);
+        if (list[mid] === target) {
+            return mid;
+        }
+        if (list[mid] > target) right = mid - 1;
+        else left = mid + 1;
+    }
+    return -1;
+}
+function problem19(n) {
+    let answer = [];
+    for (let i = 0; i < n; i++) {
+        answer.push(Math.floor(Math.random() * 100 + n));
+    }
+    return answer;
+}
+function problem20(n) {
+    let charcterList =
+        "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+    let id = "";
+    for (let i = 0; i < n; i++) {
+        id = id.concat(
+            charcterList[Math.floor(Math.random() * charcterList.length)]
+        );
+    }
+    return id;
+}
+function problem21(numbers, n) {
+    const subset = numbers.reduce(
+        (subsets, value) =>
+            subsets.concat(subsets.map((set) => [value, ...set])),
+        [[]]
+    );
+    let answer = [];
+    subset.forEach(item=>{
+        if(item.length >= n)
+            answer.push(item);
+    })
+    return answer;
+}
+function testProblem21(test) {
+    return problem21(test.list, test.n);
+}
+function problem22(string, letter){
+    let map = {[letter]:0};
+    for(let i = 0; i < string.length; i ++){
+        if(string[i] === letter){
+            map[letter]++;
+        }
+    }
+    return map[letter];
+}
+function testProblem22(test){
+    return problem22(test.string, test.letter);
+}
+
+function problem23(string){
+    const map = {};
+    for(let i =0; i < string.length; i ++){
+        if(!map[string.charAt(i)]){
+            const indexFreq = {
+                index : i,
+                freq : 1
+            }
+            map[string.charAt(i)] = indexFreq;
+        }
+        else{
+            map[string.charAt(i)].freq++;
+        }
+    }
+    let char, smallestIndex = Number.MAX_VALUE;
+    Object.keys(map).forEach(item =>{
+        if(map[item].freq === 1){
+            if(map[item].index < smallestIndex){
+                smallestIndex = map[item].index;
+                char = item;
+            }
+        }
+    });
+    return char;
+}
+function problem24(list){
+    for(let i = 0; i < list.length; i ++){
+        for(let j = 0; j < list.length - 1 - i; j ++){
+            if(list[j] > list[j+1]){
+                let temp = list[j+1];
+                list[j+1] = list[j];
+                list[j] = temp;
+            }
+        }
+    }
+    return list;
+}
+function problem25(countries){
+    let max = Number.MIN_VALUE;
+    let country = "";
+    countries.forEach(item =>{
+        if(item.length > max){
+            max = item.length;
+            country = item;
+        }
+    });
+    return country;
+}
+function problem26(string){
+    let max = 0, left = 0;
+    let map = {};
+    for(let i = 0; i < string.length; i ++){
+        if(map.hasOwnProperty(string.charAt(i))){
+            if(map[string.charAt(i)] + 1 > left){
+                left = i;
+            }
+        }
+        map[string.charAt(i)] = i;
+        max = Math.max(max, i - left + 1);
+    }
+    return max;
+}
+
+function problem29(foo){
+    return foo.name;
+}
 function testFunction(func, input, expected) {
     console.log("Testing: " + func.name);
     console.log("Expected answer: ");
@@ -206,6 +337,7 @@ function testFunction(func, input, expected) {
 }
 
 
+/*
 testFunction(problem1,32243, 34223);
 testFunction(problem2, "maam", true);
 testFunction(problem3,"dog","wtf");
@@ -249,3 +381,18 @@ testFunction(problem17, "the quick brown fox", {
     f: 1,
     x: 1,
 });
+*/
+testFunction(testProblem18, { list: [3, 5, 6, 7, 8, 9], target: 3 }, 0);
+testFunction(problem19, 4, []);
+testFunction(problem20, 10, "");
+testFunction(testProblem21, { list: [1, 2, 3], n: 2 }, [
+    [2, 1],
+    [3, 1],
+    [3, 2],
+    [3, 2, 1],
+]);
+testFunction(testProblem22, {string:"microsoft.com","letter": "o"},3);
+testFunction(problem23, "abcddbec", "a");
+testFunction(problem24, [2,4,2,6,3,8,9,10,2,5],[2,2,2,3,4,5,6,8,9,10]);
+testFunction(problem25,["Australia", "Germany", "United States of America"],"United States of America");
+testFunction(problem26, "abcabcbb", 3);
