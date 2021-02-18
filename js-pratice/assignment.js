@@ -102,6 +102,17 @@ const findFactor = num => {
   return result;
 }
 
+// 14. function amount to coins
+
+const amountToCoins = (amt, coins = [25,10,5,2,1]) => {
+  let result = [];
+  while (amt > 0) {
+    
+  }
+}
+
+console.log(amountToCoins(46));
+
 // 18. function for searching JavaScript arrays with a binary search
 const binarySearch = (arr, num) => {
   arr = arr.sort();
@@ -124,9 +135,7 @@ const bubbleSort = arr => {
     for (i in arr){
       if (arr[i]>arr[+i+1]) {[arr[i], arr[+i+1]] = [arr[+i+1], arr[i]]}
    }
-    console.log(arr)
     a++;
   } 
   return arr
 }
-console.log(bubbleSort([12,10,9,8,7,2,1]));
