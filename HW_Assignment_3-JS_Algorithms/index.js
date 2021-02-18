@@ -358,15 +358,38 @@ function amountToCoins(amt, coins) {
     return change;
 };
 
-console.log(amountToCoins(46, [25, 10, 5, 2, 1])); // 25, 10, 10, 1
-console.log(amountToCoins(66, [25, 10, 5, 2, 1])); // [ 25, 25, 10, 5, 1 ]
-console.log(amountToCoins(236, [25, 10, 5, 2, 1])); // $2.36 = 9 quarters, 1 dime, 1 penny
+// console.log(amountToCoins(46, [25, 10, 5, 2, 1])); // 25, 10, 10, 1
+// console.log(amountToCoins(66, [25, 10, 5, 2, 1])); // [ 25, 25, 10, 5, 1 ]
+// console.log(amountToCoins(236, [25, 10, 5, 2, 1])); // $2.36 = 9 quarters, 1 dime, 1 penny
 
-// 15. Write a JavaScript function to compute the value of bn where n is the exponent and b is thebases.Accept b and n from the user and display the result. 
+// 15. Write a JavaScript function to compute the value of bn where n is the exponent and b is the base.Accept b and n from the user and display the result.
+const exponentiation = (b, n) => {
+    return Math.pow(b, n);
+    // return b ** n; // new in ES6, same result
+};
 
-// 16. Write a JavaScript function to extract unique characters from a string.Example string: "thequickbrownfoxjumpsoverthelazydog"Expected Output: "thequickbrownfxjmpsvlazydg"
+// console.log(exponentiation(2, 4)); // base = 2, exponent = 4, power/product = 16
+// console.log(exponentiation(5, 2)); // 25
+// console.log(exponentiation(3, 3)); // 27
 
-// 17. Write a JavaScript function to  get the number of occurrences of each letter in specifiedstring. 
+// 16. Write a JavaScript function to extract unique characters from a string. Example string: "thequickbrownfoxjumpsoverthelazydog" Expected Output: "thequickbrownfxjmpsvlazydg"
+function uniqueChars(str) {
+    //let alphabet = "abcdefghijklmnopqrstuvwxyz";
+    //console.log([...alphabet]); // produces a neat alphabetical array for each character
+    let array = str.split("");
+    //let uniqueCollection = new Set(array);
+    //console.log(uniqueCollection); // output: Set {'t','h','e','q','u','i','c','k', to the end...}
+
+    //let newArr = [...uniqueCollection];
+    //let uniqueStr = newArr.join("");
+    //return uniqueStr;
+    return [... new Set(array)].join(""); // refactored all-in-one shot:
+};
+
+// console.log(uniqueChars("thequickbrownfoxjumpsoverthelazydog")); // "thequickbrownfxjmpsvlazydg"
+// console.log(uniqueChars("Al-Ghazzali")); // Al-Ghazi
+
+// 17. Write a JavaScript function to  get the number of occurrences of each letter in specified string. 
 
 // 18. Write a function for searching JavaScript arrays with a binary search.Note : A binary search searches by splitting an array into smaller and smaller chunks until it findsthe desired value.
 
