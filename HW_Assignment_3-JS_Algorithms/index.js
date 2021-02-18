@@ -307,11 +307,60 @@ function factors(num) {
     return factors;
 };
 
-console.log(factors(6));
-console.log(factors(15));
-console.log(factors(28));
+// console.log(factors(6));
+// console.log(factors(15));
+// console.log(factors(28));
 
-// 14. Write a JavaScript function to convert an amount to coins. Sample function : amountTocoins(46, [25, 10, 5, 2, 1])Here 46 is the amount.and 25, 10, 5, 2, 1 are coins.Output : 25, 10, 10, 1
+// 14. Write a JavaScript function to convert an amount to coins. Sample function : amountTocoins(46, [25, 10, 5, 2, 1]) Here 46 is the amount and 25, 10, 5, 2, 1 are coins. Output: 25, 10, 10, 1
+function amountToCoins(amt, coins) {
+    // counters:
+    // let quarter = 0;
+    // let dime = 0;
+    // let nickel = 0;
+    // let twoCentPiece = 0;
+    // let penny = 0;
+    let change = [];
+    while (amt - coins[0] >= 0) {
+        amt -= coins[0];
+        change.push(25);
+        //quarter++;
+        //console.log("after quarters: ", amt);
+    }
+    //console.log("quarters: ", quarter);
+    while (amt - coins[1] >= 0) {
+        amt -= coins[1];
+        change.push(10);
+        //dime++;
+        //console.log("after dimes: ", amt);
+    }
+    //console.log("dimes: ", dime);
+    while (amt - coins[2] >= 0) {
+        amt -= coins[2];
+        change.push(5);
+        //nickel++;
+        //console.log("after nickels: ", amt);
+    }
+    //console.log("nickels: ", nickel);
+    while (amt - coins[3] >= 0) {
+        amt -= coins[3];
+        change.push(2);
+        //twoCentPiece++;
+        //console.log("after two-cent piece: ", amt);
+    }
+    //console.log("two-cent pieces: ", twoCentPiece);
+    while (amt - coins[4] >= 0) {
+        amt -= coins[4];
+        change.push(1);
+        //penny++;
+        //console.log("after pennies: ", amt);
+    }
+    //console.log("pennies: ", penny);
+    return change;
+};
+
+console.log(amountToCoins(46, [25, 10, 5, 2, 1])); // 25, 10, 10, 1
+console.log(amountToCoins(66, [25, 10, 5, 2, 1])); // [ 25, 25, 10, 5, 1 ]
+console.log(amountToCoins(236, [25, 10, 5, 2, 1])); // $2.36 = 9 quarters, 1 dime, 1 penny
 
 // 15. Write a JavaScript function to compute the value of bn where n is the exponent and b is thebases.Accept b and n from the user and display the result. 
 
