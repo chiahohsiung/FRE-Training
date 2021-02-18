@@ -1,5 +1,6 @@
 class MyPromise {
   callBackQueue = [];
+  callBackErrorQueue = [];
   status = "pending";
   currentData;
 
@@ -7,24 +8,42 @@ class MyPromise {
     executor(this.resolve, this.reject);
   }
   resolve = data => {
-    this.currentData = data;
-    console.log(data);
-    while (this.callBackQueue.length) {
-      this.currentData = this.callBackQueue.shift()(this.currentData);
-    }
+    setTimeout(() => {
+      this.status = "fullfiled";
+      if (!this.callBackQueue.length) return;
+      this.currentData = data;
+      while (this.callBackQueue.length) {
+        this.currentData = this.callBackQueue.shift()(this.currentData);
+      }
+    }, 1000);
   };
-  reject = () => {};
+
+  reject = data => {
+    setTimeout(() => {
+      this.status = "rejected";
+      if (!this.callBackErrorQueue.length) return;
+      this.currentData = data;
+      while (this.callBackErrorQueue.length) {
+        this.currentData = this.callBackErrorQueue.shift()(this.currentData);
+      }
+    }, 1000);
+  };
 
   then = cb => {
     this.callBackQueue.push(cb);
+    return this;
+  };
+
+  catch = cb => {
+    this.callBackErrorQueue.push(cb);
     return this;
   };
 }
 
 const p = new MyPromise((resolve, reject) => {
   setTimeout(() => {
-    console.log("hello");
-    resolve("nameisantony");
+    resolve("Successfull");
+    // reject(new Error(" error message "));
   }, 2000);
 })
   .then(data => {
@@ -37,6 +56,8 @@ const p = new MyPromise((resolve, reject) => {
   })
   .then(data => {
     console.log("here i am " + data);
+    return data;
+  })
+  .catch(error => {
+    console.log(error);
   });
-
-// p()s;
