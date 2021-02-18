@@ -46,7 +46,8 @@ a {
 }
 .article__ul {
   margin: 5px 10px;
-  height: 200px;
+  height: 220px;
+  width: 350px;
 }
 .article__li {
   line-height: 1.2;
@@ -106,5 +107,16 @@ footer {
   width: 100%;
 }
 
-@media (max-width: 360) {
+@media (min-width: 400px) {
+  .main__articles {
+    display: flex;
+    flex-direction: row;
+    height: 100%;
+    justify-content: center;
+    justify-content: space-around;
+  }
+  .main__row {
+    display: flex;
+    flex-direction: column;
+  }
 }
