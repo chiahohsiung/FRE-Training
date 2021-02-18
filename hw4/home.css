@@ -1,0 +1,178 @@
+/* navigation */
+nav {
+    height: 100px;
+    width: 100%;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 2rem;
+    position: fixed;
+    top: 0;
+    background-color: white;
+    z-index: 2;
+    border-bottom: 3px solid grey;
+}
+
+nav button {
+    width: 100px;
+    height: 40px;
+    border-radius: 20px;
+    border: 1px solid grey;
+    color: grey;
+    font-size: 1rem;
+    background-color: white;
+    outline: none;
+}
+
+nav button:hover {
+    color: white;
+    background-color: navy;
+}
+
+#search-bar {
+    width: 200px;
+    height:30px;
+    border: 2px solid lightgrey;
+    border-radius: 15px;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+#search-bar:hover {
+    border-color: lightskyblue;
+    box-shadow: 0 0 5px lightskyblue;
+}
+
+#search-bar input {
+    width: 75%;
+    height: 80%;
+    border: none;
+    font-size: 1rem;
+    outline: none;
+}
+
+#search-bar svg {
+    height: 90%;
+    fill: none;
+    stroke: lightgrey;
+    stroke-width: 2;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
+
+#search-bar:hover svg {
+    stroke: lightskyblue;
+}
+
+/* card */
+#container {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    margin-top: 100px;
+}
+
+#container .card {
+    height: 300px;
+    width: 500px;
+    border: 3px solid lightgrey;
+    border-radius: 10px;
+    margin: 30px 20px;
+    padding: 10px;
+    background-color: Beige;
+}
+
+#container .card:hover {
+    background-color: Wheat;
+    border-color: Wheat;
+    box-shadow: 0 15px 30px Gainsboro;
+    transform: translateY(-5px) scale(1.005) translateZ(0);
+    transition: background-color 0.5s ease-out;
+}
+
+.card .category {
+    margin: 5px 0 0 0;
+    font-weight: bold;
+}
+
+.card .news {
+    color: DodgerBlue;
+}
+
+.card .design {
+    color: ForestGreen;
+}
+
+.card .title {
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    overflow: hidden;
+    height: 65px;
+    margin: 10px 0 0 0;
+    font: italic bold 1.6rem/2rem Georgia, serif;
+}
+
+.card .date {
+    margin: 5px 0 0 0;
+    font: 0.8rem;
+    color: grey;
+}
+
+.card .summary {
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 5;
+    overflow: hidden;
+    height: 120px;
+    margin: 10px 0 0 0;
+    font: 1.2rem/1.5rem Arial;
+}
+
+.card .spread a {
+    font-weight: bold;
+    color: navy;
+    text-decoration: none;
+}
+
+.card .spread a:active {
+    font-weight: bold;
+    color: lightgrey;
+}
+
+/* footer */
+footer {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    height: 100px;
+    width: 100%;
+    box-sizing: border-box;
+    border-top: 2px solid grey;
+}
+
+#social-media {
+    display: flex;
+    justify-content: space-evenly;
+    width: 25%;
+    height: 40px;
+}
+
+#social-media svg {
+    height: 90%;
+    fill: none;
+    stroke: lightgrey;
+    stroke-width: 2;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
+
+#social-media svg:hover {
+    stroke: black;
+}
