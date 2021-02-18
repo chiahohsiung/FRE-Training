@@ -223,7 +223,107 @@ function dataType(x) {
 // 10. Write a JavaScript function which returns the n rows by n columns identity matrix.
 
 
-// 11. Write a JavaScript function which will take an array of numbers stored and find the secondlowest and second greatest numbers, respectively.Sample array: [1, 2, 3, 4, 5]Expected Output: 2, 4
+// 11. Write a JavaScript function which will take an array of numbers stored and find the secondlowest and second greatest numbers, respectively. Sample array: [1, 2, 3, 4, 5] Expected Output: 2, 4
+function penultimateNums(arr) {
+    if (arr.length === 0) {
+        console.log("array is empty - contains no numbers!");
+        return; // without this return statement, the other console log on line 242 executes producing the message in terminal: Infinity -Infinity
+    } else if (arr.length === 1 || arr.length === 2) {
+        console.log(...arr);
+        return; // ditto
+    }
+    let lowestNum = Math.min(...arr);
+    let indexLowestNum = arr.indexOf(lowestNum);
+    arr.splice(indexLowestNum, 1);
+    let highestNum = Math.max(...arr);
+    let indexHighestNum = arr.indexOf(highestNum);
+    arr.splice(indexHighestNum, 1);
+    let penultimateLowest = Math.min(...arr);
+    let penultimateHighest = Math.max(...arr);
+    console.log(penultimateLowest, penultimateHighest);
+    return;
+}
+
+//penultimateNums([1, 2, 3, 4, 5]); // no console.log needed since nothing is being returned in the function / return statements purely to exit the function.
+// penultimateNums([]);
+// penultimateNums([1]);
+// penultimateNums([1, 2]);
+// penultimateNums([56, 51, 57, 59, 58, 52]); // 52, 58
+// penultimateNums([3, 6, 8, 19, 34, 21, 6, 908, 45, 333]); // 6, 333
+
+// 12. Write a JavaScript function which says whether a number is perfect. According to Wikipedia: In number theory, a perfect number is a positive integer that is equal to the sum of its proper positive divisors, that is, the sum of its positive divisors excluding the number itself (also known as its aliquot sum). Equivalently, a perfect number is a number that is half the sum of all of its positive divisors (including itself). Example : The first perfect number is 6, because 1, 2, and 3 are its proper positive divisors, and 1 + 2 + 3 = 6. Equivalently, the number 6 is equal to half the sum of all its positive divisors: (1 + 2 + 3 + 6) / 2 = 6. The next perfect number is 28 = 1 + 2 + 4 + 7 + 14. This is followed by the perfect numbers 496 and 8128.
+const isPerfect = num => {
+    let factors = []; // not 'divisors' since divisors can have remainders, but 'factors' cannot!
+    for (let i = 1; i < num; i++) {
+        if (num % i === 0) {
+            factors.push(i);
+        }
+    }
+    let sum = factors.reduce((accum, ele, i, array) => {
+        return accum + ele;
+    });
+    // console.log(sum);
+    // console.log(typeof sum);
+
+    if (sum === num) {
+        // console.log(true);
+        // console.log((sum + num) / 2);
+        if ((sum + num) / 2 === num) {
+            //console.log(true);
+            return `${num} is a perfect number!`;
+        } else {
+            return `${num} is NOT a perfect number! It's imperfect.`;
+        }
+    } else {
+        return `${num} is NOT a perfect number! It's imperfect.`;
+    }
+};
+
+// console.log(isPerfect(0)); // TypeError: Reduce of empty array with no initial value // since 0 is less than i (for loop condition), so nothing gets pushed in the array
+// console.log(isPerfect(1)); // TypeError: Reduce of empty array with no initial value // since 1 is not less than i but equal to it, so nothing gets pushed in the array, but besides for 1 if it did pass the for loop condition, it would not pass the if-statement condition and nothing would get pushed into the array
+// reduce method requires an initial value if array is empty or a non-empty array.
+// console.log(isPerfect(2));
+// console.log(isPerfect(3));
+// console.log(isPerfect(4));
+// console.log(isPerfect(5));
+// console.log(isPerfect(6)); // is perfect
+// console.log(isPerfect(9));
+// console.log(isPerfect(11));
+// console.log(isPerfect(28)); // is perfect
+// console.log(isPerfect(100));
+// console.log(isPerfect(496)); // is perfect
+// console.log(isPerfect(8128)); // is perfect
+// console.log(isPerfect(23489));
+
+
+// 13. Write a JavaScript function to compute the factors of a positive integer.
+function factors(num) {
+    let factors = [];
+    for (let i = 1; i <= num; i++) {
+        if (num % i === 0) {
+            factors.push(i);
+        }
+    };
+    return factors;
+};
+
+console.log(factors(6));
+console.log(factors(15));
+console.log(factors(28));
+
+// 14. Write a JavaScript function to convert an amount to coins. Sample function : amountTocoins(46, [25, 10, 5, 2, 1])Here 46 is the amount.and 25, 10, 5, 2, 1 are coins.Output : 25, 10, 10, 1
+
+// 15. Write a JavaScript function to compute the value of bn where n is the exponent and b is thebases.Accept b and n from the user and display the result. 
+
+// 16. Write a JavaScript function to extract unique characters from a string.Example string: "thequickbrownfoxjumpsoverthelazydog"Expected Output: "thequickbrownfxjmpsvlazydg"
+
+// 17. Write a JavaScript function to  get the number of occurrences of each letter in specifiedstring. 
+
+// 18. Write a function for searching JavaScript arrays with a binary search.Note : A binary search searches by splitting an array into smaller and smaller chunks until it findsthe desired value.
+
+// 19.Write a JavaScript function that returns array elements larger than a number. 
+
+// 20. Write a JavaScript function that generates a string id(specified length) of random characters.Samplecharacterlist: "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789"
 
 // 21. Write a JavaScript function to get all possible subset with a fixed length(for example 2)combinations in an array.Sample array: [1, 2, 3] and subset length is 2 Expected output: [[2, 1], [3, 1], [3, 2], [3, 2, 1]]. This question is a subset question. 
 // For example:
@@ -239,3 +339,19 @@ function dataType(x) {
 //     input: [4, 6, 5, 4, 2]
 // length: 2
 // output: [[2, 4], [2, 5], [2, 6], [4, 5], [4, 6], [5, 6]]
+
+// 22. Write a JavaScript function that accepts two arguments, a string and a letter and the functionwill count the number of occurrences of the specified letter within the string. Sample arguments: 'microsoft.com', 'o' Expected output: 3
+
+// 23. Write a JavaScript function to find the first not repeated character.Sample arguments: 'abacddbec' Expected output: 'e' 
+
+// 24. Write a JavaScript function to apply Bubble Sort algorithm.Note : According to wikipedia "Bubble sort, sometimes referred to as sinking sort, is a simplesorting algorithm that works by repeatedly stepping through the list to be sorted, comparingeach pair of adjacent items and swapping them if they are in the wrong order".Sample array: [12, 345, 4, 546, 122, 84, 98, 64, 9, 1, 3223, 455, 23, 234, 213]Expected output: [3223, 546, 455, 345, 234, 213, 122, 98, 84, 64, 23, 12, 9, 4, 1]
+
+// 25. Write a JavaScript function that accept a list of country names as input and returns thelongest country name as output.Sample function : Longest_Country_Name(["Australia", "Germany", "United States of America"])Expected output: "United States of America"
+
+// 26. Write a JavaScript function to find longest substring in a given a string without repeatingcharacters. 
+
+// 27. Write a JavaScript function that returns the longest palindrome in a given string.Note: According to Wikipedia "In computer science, the longest palindromic substring or longestsymmetric factor problem is the problem of finding a maximum-length contiguous substring of agiven string that is also a palindrome. For example, the longest palindromic substring of"bananas" is "anana". The longest palindromic substring is not guaranteed to be unique; forexample, in the string "abracadabra", there is no palindromic substring with length greater thanthree, but there are two palindromic substrings with length three, namely, "aca" and "ada".In some applications it may be necessary to return all maximal palindromic substrings (that is, allsubstrings that are themselves palindromes and cannot be extended to larger palindromicsubstrings) rather than returning only one substring or returning the maximum length of apalindromic substring.
+
+// 28. Write a JavaScript program to pass a 'JavaScript function' as parameter. 
+
+// 29. Write a JavaScript function to get the function name.
