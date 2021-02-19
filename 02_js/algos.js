@@ -54,12 +54,13 @@ const findLongestWord = (str) => {
 
 // 7. Count vowels in string
 const countVowels = (str) => {
-  const vowels = { a: true, e: true, i: true, o: true, u: true };
-  let sum = 0;
-  for (const char of str) {
-    if (vowels[char.toLowerCase()]) sum++;
-  }
-  return sum;
+  // const vowels = { a: true, e: true, i: true, o: true, u: true };
+  // let sum = 0;
+  // for (const char of str) {
+  //   if (vowels[char.toLowerCase()]) sum++;
+  // }
+  // return sum;
+  return str.match(/a|e|i|o|u/g).length;
 };
 
 // 8. IsPrime
@@ -68,12 +69,22 @@ const isPrime = (num) => {
   return true;
 };
 
+console.log(isPrime(100));
 // 9. Check input type
 const checkInputType = (input) => {
   return typeof input;
 };
 
 // 10. Generate matrix based on input
+// const matrix = (n) => {
+//   const arr = []
+//   for (let i = 0; i <= n; i++){
+//     arr.push([])
+//     for (let j = 0; j <= n; j++){
+
+//     }
+//   }
+// }
 
 // 11. Find second smallest and biggest numbers
 const secondMost = (arr) => {
@@ -89,11 +100,18 @@ const isPerfectNum = (num) => {
   for (let i = 1; i <= num / 2; i++) {
     if (num % i === 0) store += i;
   }
-
   return store === num;
 };
 
 // 13. Find factors of positive integer
+const positiveFactors = (num) => {
+  const factors = [];
+  for (let i = 1; i <= Math.floor(num / 2); i++) {
+    if (num % i === 0) factors.push(i);
+  }
+  factors.push(num);
+  return factors;
+};
 
 // 14. Convert amount to coins
 const amountToCoins = (amount, coins) => {
@@ -213,6 +231,9 @@ const firstDistinctLetter = (str) => {
 };
 
 // 24. Bubble sort algo
+const bubbleSort = (arr) => {
+  
+}
 
 // 25. Find longest name of country
 const longestCountryName = (arr) => {
