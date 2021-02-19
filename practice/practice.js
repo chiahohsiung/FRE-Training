@@ -1,6 +1,18 @@
 //Json place holder
 const url = "https://jsonplaceholder.typicode.com/posts/1";
 
+const postUrl = 'https://jsonplaceholder.typicode.com/posts';
+const postParams = {
+    method: 'POST',
+    body: JSON.stringify({
+      title: 'foo',
+      body: 'bar',
+      userId: 1,
+    }),
+    headers: {
+      'Content-type': 'application/json; charset=UTF-8',
+    },
+}
 //write a precess function
 const processPost = (json) => {
     let obj;
@@ -40,24 +52,41 @@ fetch(url)
 // The user Id is 1. 
 // Title: sunt aut facere repellat provident occaecati excepturi optio reprehenderit
 
+// fetch(postUrl, postParams)
+//     .then(response => response.json())
+//     .then(data => console.log(data))
+//{title: "foo", body: "bar", userId: 1, id: 101}
 
 //3. Write myFetch using promise
 
-const myFetch = (url) => {
+const myFetch = (url, options) => {
+    let method = 'GET';
+    if(options){
+        method = options.method;
+    }
+
     let fetchPromise = new Promise( (resolve, reject) => {
         const ajax = new XMLHttpRequest();
+        ajax.open(method, url, true);
         ajax.onreadystatechange = () => {
             if(ajax.readyState === XMLHttpRequest.DONE){
-                if(ajax.state === 200){
-                    resolve(ajax.responseText);
+                if(ajax.status >= 200 && ajax.status <= 300){
+                    resolve(ajax.response);
                 }else{
-                    reject(new Error())
+                    reject({
+                        state: ajax.readyState,
+                        status: ajax.status
+                    })
                 }
             }
         }
-        ajax.open('GET', url);
-        ajax.send();
+        ajax.send(options.body);
     })
     return fetchPromise;
 }
-console.log(myFetch(url));
+myFetch(url)
+    .then(response => console.log(JSON.parse(response)))
+    //{userId: 1, id: 1, title: "sunt aut facere repellat provident occaecati excepturi optio reprehenderit", body: "quia et suscipit↵suscipit recusandae consequuntur …strum rerum est autem sunt rem eveniet architecto"}
+myFetch(postUrl, postParams)
+    .then(response => console.log(response))
+    //{title: "foo", body: "bar", userId: 1, id: 101}
