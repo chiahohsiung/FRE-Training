@@ -113,15 +113,25 @@ document.addEventListener("DOMContentLoaded", function () {
   const filter = document.getElementById("todo__filter");
   filter.addEventListener("change", (e) => {
     const ul = document.getElementsByTagName("ul")[0];
+    console.log("what is the value", e.target.value);
     if (e.target.value === "complete") {
+      console.log("in the complete");
       let nodeArrCopy = Array.from(list);
       let clone = document.createDocumentFragment();
-
-      nodeArrCopy.forEach((node, idx) => {
-        const li = document.getElementsByTagName("li")[idx];
-        let classVal = li.children[0].classList[1];
-        console.log(classVal);
-
+      nodeArrCopy.forEach((node) => {
+        let classVal = node.children[0].querySelector("input").classList[1];
+        if (classVal === "true") {
+          clone.appendChild(node);
+        }
+      });
+      ul.innerHTML = "";
+      ul.appendChild(clone);
+    } else if (e.target.value === "incomplete") {
+      console.log("in the incomplete");
+      let nodeArrCopy = Array.from(list);
+      let clone = document.createDocumentFragment();
+      nodeArrCopy.forEach((node) => {
+        let classVal = node.children[0].querySelector("input").classList[1];
         if (classVal === "false") {
           clone.appendChild(node);
         }
@@ -129,21 +139,16 @@ document.addEventListener("DOMContentLoaded", function () {
 
       ul.innerHTML = "";
       ul.appendChild(clone);
-      console.log("ul inside complete", ul);
+    } else {
+      console.log("in the else");
+      let nodeArrCopy = Array.from(list);
+      console.log(nodeArrCopy);
+      let clone = document.createDocumentFragment();
+      nodeArrCopy.forEach((node) => {
+        clone.appendChild(node);
+      });
+      ul.innerHTML = "";
+      ul.appendChild(clone);
     }
-    // else if (e.target.value === "incomplete") {
-    //   for (let i = 0; i < filterList.length; i++) {
-    //     let item = filterList[i];
-    //     if (item.classList[1] === "true") {
-    //       ul.appendChild(item);
-    //     }
-    //   }
-    // }
-    // else if (e.target.value === "view_all") {
-    //   for (let i = 0; i < filterList.length; i++) {
-    //     let item = filterList[i];
-    //     ul.appendChild(item);
-    //   }
-    // }
   });
 });
