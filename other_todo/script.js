@@ -108,4 +108,42 @@ document.addEventListener("DOMContentLoaded", function () {
     populateList(addTodoInput.value);
     addTodoInput.value = "";
   });
+
+  // filter
+  const filter = document.getElementById("todo__filter");
+  filter.addEventListener("change", (e) => {
+    const ul = document.getElementsByTagName("ul")[0];
+    if (e.target.value === "complete") {
+      let nodeArrCopy = Array.from(list);
+      let clone = document.createDocumentFragment();
+
+      nodeArrCopy.forEach((node, idx) => {
+        const li = document.getElementsByTagName("li")[idx];
+        let classVal = li.children[0].classList[1];
+        console.log(classVal);
+
+        if (classVal === "false") {
+          clone.appendChild(node);
+        }
+      });
+
+      ul.innerHTML = "";
+      ul.appendChild(clone);
+      console.log("ul inside complete", ul);
+    }
+    // else if (e.target.value === "incomplete") {
+    //   for (let i = 0; i < filterList.length; i++) {
+    //     let item = filterList[i];
+    //     if (item.classList[1] === "true") {
+    //       ul.appendChild(item);
+    //     }
+    //   }
+    // }
+    // else if (e.target.value === "view_all") {
+    //   for (let i = 0; i < filterList.length; i++) {
+    //     let item = filterList[i];
+    //     ul.appendChild(item);
+    //   }
+    // }
+  });
 });
