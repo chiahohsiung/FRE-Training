@@ -195,9 +195,9 @@ const genStrID = (length) => {
 };
 
 // 21. Get subset of fixed length
-const fixedSubset = (arr, length) => {
-  arr.reduce((acc, cV) => {}, []);
-};
+// const fixedSubset = (arr, length) => {
+//   arr.reduce((acc, cV) => {}, []);
+// };
 
 // 22. Find occurrences of a character
 const countChar = (str, letter) => {
@@ -232,8 +232,18 @@ const firstDistinctLetter = (str) => {
 
 // 24. Bubble sort algo
 const bubbleSort = (arr) => {
-  
-}
+  let count = 0;
+  while (count < arr.length - 1) {
+    for (let i = 1; i < arr.length; i++) {
+      if (arr[i - 1] > arr[i]) {
+        [arr[i - 1], arr[i]] = [arr[i], arr[i - 1]];
+      } else {
+        count++;
+      }
+    }
+  }
+  return arr;
+};
 
 // 25. Find longest name of country
 const longestCountryName = (arr) => {
@@ -244,9 +254,35 @@ const longestCountryName = (arr) => {
 };
 
 // 26. Find longest substring in string without repeating characters
+const longestDistinctSubstring = (input) => {
+  let longest = "";
+  const obj = new Map();
+  for (const char of input) {
+    if (obj.has(char)) {
+      if (longest.length) longest = "";
+      longest += char;
+    } else {
+      obj.set(char, true);
+      longest += char;
+    }
+  }
+  return longest;
+};
 
 // 27. Find longest palindrome in string
 
 // 28. Pass a function as a param
+const cb = () => {
+  return "hello";
+};
+const cbFunc = (cb) => {
+  return cb();
+};
 
 // 29. Get function name
+const getFuncName = (func) => {
+  if (typeof func === "function") {
+    return func.name;
+  }
+  return "input is not a function";
+};
