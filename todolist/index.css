@@ -6,6 +6,8 @@
     --width-todolist: 400px;
 
     --color-green: rgb(30, 255, 0);
+    --color-red-button: rgb(99, 3, 3);
+    --color-red-li-hover: rgb(27, 172, 8)
 }
 
 * {
@@ -74,25 +76,25 @@ ul li {
     justify-content: space-between;
 }
 ul li:hover {
-    background-color: rgb(27, 172, 8);
+    background-color: var(--color-red-li-hover);
 }
 ul li button {
     width: 20px;
     height: var(--height-todolist-header);
     border: none;
-    background-color: rgb(30, 255, 0, 0);
+    background-color: rgb(0, 0, 0, 0);
     outline: none;
-    color: red;
+    color: var(--color-red-button);
     font-size: 1.3rem;
     line-height: var(--height-todolist-header);
 }
 ul li button:hover {
-    color: rgb(99, 3, 3);
+    color: red;
     font-size: 1.4rem;
 }
 ul li button:active {
     font-size: 1.2rem;
-    color: rgb(99, 3, 3);
+    color: red;
 }
 ul li span {
     line-height: var(--height-todolist-header);
