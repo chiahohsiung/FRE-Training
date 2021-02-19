@@ -122,33 +122,35 @@
 
 // oop
 // encapsulation
-// class Person {
-//     #name;
-//     #age;
-//     constructor(name = 'Dio', age = 200) {
-//         this.#name = name;
-//         this.#age = age;
-//     }
-//     get book() {
-//         return this.#name;
-//     } 
-//     set book(newName) {
-//         this.#name = newName;
-//     }
-//     get age() {
-//         return this.#age;
-//     } 
-//     set age(newAge) {
-//         this.#age = newAge;
-//     }
+class Person {
+    #name;
+    #age;
+    constructor(name = 'Dio', age = 200) {
+        this.#name = name;
+        this.#age = age;
+    }
+    get name() {
+        return this.#name;
+    } 
+    set name(newName) {
+        this.#name = newName;
+    }
+    get age() {
+        return this.#age;
+    } 
+    set age(newAge) {
+        this.#age = newAge;
+    }
 
-//     walk() {
-//         console.log(this.#name + ' walk around the world!');
-//         // console.log(this.#name, 'walk around the world!');
-//         // console.log(`${this.#name} walk around the world!`);
-//     }
-// }
-// const p = new Person('Jojo', 20);
+    walk() {
+        console.log(this.#name + ' walk around the world!');
+        // console.log(this.#name, 'walk around the world!');
+        // console.log(`${this.#name} walk around the world!`);
+    }
+}
+const p = new Person('Jojo', 20);
+p.#name;
+p.name;
 // p.book = 'David';
 // console.log(p.book);
 // console.log(p);
@@ -682,112 +684,117 @@
 
 // console.log(p);
 
-// const getRandomTime = () => {
-//     return Math.floor(Math.random() * 3);
-// }
-// class MyPromise {
-//     thenCallBackQueue = [];
-//     catchCallBackQueue = [];
-//     currentData;
-//     promisestate = 'pending';
+const getRandomTime = () => {
+    return Math.floor(Math.random() * 3);
+}
+class MyPromise {
+    thenCallBackQueue = [];
+    catchCallBackQueue = [];
+    currentData;
+    promisestate = 'pending';
 
-//     constructor(executor) {
-//         try {
-//             executor(this.resolve, this.reject.bind(this));
-//         } catch (error) {
-//             this.reject(error);
-//         }
-//     }
+    constructor(executor) {
+        try {
+            executor(this.resolve, this.reject.bind(this));
+        } catch (error) {
+            this.reject(error);
+        }
+    }
 
-//     resolve = (data) => {
-//         setTimeout(() => {
-//             try {
-//                 this.promisestate = 'fulfilled';
-//                 if (!this.thenCallBackQueue.length) return; // <-------------
+    resolve = (data) => {
+        setTimeout(() => {
+            try {
+                this.promisestate = 'fulfilled';
+                if (!this.thenCallBackQueue.length) return; // <-------------
 
-//                 this.currentData = data;
-//                 while (this.thenCallBackQueue.length) {
-//                     const cb = this.thenCallBackQueue.shift();
+                this.currentData = data;
+                while (this.thenCallBackQueue.length) {
+                    const cb = this.thenCallBackQueue.shift();
 
-//                     if (this.currentData instanceof MyPromise) {
-//                         this.currentData.then(dataFromRes => {
-//                             this.currentData = cb(dataFromRes);
-//                         });
-//                     } else {
-//                         this.currentData = cb(this.currentData);
-//                     }
-//                 }
-//             } catch (error) {
-//                 if (this.catchCallBackQueue.length) {
-//                     const cb = this.catchCallBackQueue.shift();
-//                     cb(error);
-//                 }
-//             }
-//         }, 0);
-//     }
-//     reject(error) {
-//         this.promisestate = 'rejected';
-//         setTimeout(() => {
-//             if (!this.catchCallBackQueue.length) return;
-//             this.currentData = error;
-//             const cb = this.catchCallBackQueue.shift();
-//             if (this.currentData instanceof MyPromise) {
-//                 this.currentData.catch(dataFromRes => {
-//                     this.currentData = cb(dataFromRes);
-//                 });
-//             } else {
-//                 this.currentData = cb(this.currentData);
-//             }
-//         }, 0);
-//     }
-//     then(resolvefn, rejectfn) {
-//         if (this.promisestate === 'pending') // <-------------
-//             this.thenCallBackQueue.push(resolvefn);
-//         return this;
-//     }
-//     catch(rejectfn) {
-//         if (rejectfn != undefined)
-//             this.catchCallBackQueue.push(rejectfn);
-//         return this;
-//     }
+                    if (this.currentData instanceof MyPromise) {
+                        this.currentData.then(dataFromRes => {
+                            this.currentData = cb(dataFromRes);
+                        });
+                    } else {
+                        this.currentData = cb(this.currentData);
+                    }
+                }
+            } catch (error) {
+                if (this.catchCallBackQueue.length) {
+                    const cb = this.catchCallBackQueue.shift();
+                    cb(error);
+                }
+            }
+        }, 0);
+    }
+    reject(error) {
+        this.promisestate = 'rejected';
+        setTimeout(() => {
+            if (!this.catchCallBackQueue.length) return;
+            this.currentData = error;
+            const cb = this.catchCallBackQueue.shift();
+            if (this.currentData instanceof MyPromise) {
+                this.currentData.catch(dataFromRes => {
+                    this.currentData = cb(dataFromRes);
+                });
+            } else {
+                this.currentData = cb(this.currentData);
+            }
+        }, 0);
+    }
+    then(resolvefn, rejectfn) {
+        if (this.promisestate === 'pending') // <-------------
+            this.thenCallBackQueue.push(resolvefn);
+        return this;
+    }
+    catch(rejectfn) {
+        if (rejectfn != undefined)
+            this.catchCallBackQueue.push(rejectfn);
+        return this;
+    }
 
-//     // Promise.all
-//     static all(array) {
-//         let counter = 0;
-//         const resolveData = new Array(array.length); // 
+    // Promise.all
+    static all(array) {
+        let counter = 0;
+        const resolveData = new Array(array.length); // 
 
-//         return new MyPromise((res, rej) => {
-//             array.forEach((ele, i) => {
-//                 if (ele instanceof MyPromise) {
-//                     ele.then(data => {
-//                         counter++;
-//                         resolveData[i] = data;
-//                         if (counter === array.length)
-//                             res(resolveData);
-//                     }).catch(err => rej(err));
-//                 } else {
-//                     counter++;
-//                     resolveData[i] = ele;
-//                     if (counter === array.length)
-//                         res(resolveData);
-//                 }
-//             });
-//         });
-//     }
-//     // Promise.resolve
-//     static resolve(resdata) {
-//         return new MyPromise((resolve, _) => {
-//             resolve(resdata)
-//         });
-//     }
-//     // Promise.reject
-//     static reject(rejdata) {
-//         return new MyPromise((_, reject) => {
-//             reject(rejdata);
-//         });
-//     }
-// }
+        return new MyPromise((res, rej) => {
+            array.forEach((ele, i) => {
+                if (ele instanceof MyPromise) {
+                    ele.then(data => {
+                        counter++;
+                        resolveData[i] = data;
+                        if (counter === array.length)
+                            res(resolveData);
+                    }).catch(err => rej(err));
+                } else {
+                    counter++;
+                    resolveData[i] = ele;
+                    if (counter === array.length)
+                        res(resolveData);
+                }
+            });
+        });
+    }
+    // Promise.resolve
+    static resolve(resdata) {
+        return new MyPromise((resolve, _) => {
+            resolve(resdata)
+        });
+    }
+    // Promise.reject
+    static reject(rejdata) {
+        return new MyPromise((_, reject) => {
+            reject(rejdata);
+        });
+    }
+}
 
+// const promise = new Promise((res, rej) => res(2) )
+//     .then(() => { })
+//     .then(() => { })
+//     .then((data) => console.log(data) );
+    
 // const p = new MyPromise((resolve, reject) => {
 //     // console.log(a);
 //     const timer = getRandomTime();
@@ -854,7 +861,7 @@
 
 //             options.body ? xhttp.send(options.body) : xhttp.send();
 //         }
-        
+
 //         if (method === 'GET') {}
 //         if (method === 'DELETE') {}
 //         if (method === 'PUT') {}
@@ -875,3 +882,4 @@
 //     .then((response) => response.json())
 //     .then((json) => console.log(json))
 //     .catch(err => console.log(err));
+
