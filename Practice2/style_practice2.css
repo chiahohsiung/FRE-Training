@@ -1,0 +1,136 @@
+:root{
+    --padding-left:100px;
+}
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+html,
+body
+{
+    width:100%;
+    height:100%;
+    overflow: hidden;
+}
+a:link{
+    text-decoration: none;
+}
+ul{
+    list-style: none;
+}
+li {
+    width:fit-content;
+    display: inline;
+}
+.header{
+    position:fixed;
+    height:50px;
+    width: 100%;
+    background-color: cornflowerblue;
+    display: flex;
+}
+.main{
+    padding-top:50px;
+    height:100%;
+}
+.header-left, .header-right{
+    flex:1;
+    padding: 0 var(--padding-left);
+    display: flex;
+    align-items: center;
+}
+.main-title-left .material-icons{
+    font-size: 64px;
+    margin-right: 10px ;
+}
+.header-right ul{
+    width:100%;
+    display: flex;
+    justify-content: space-between;
+}
+.header-left a:link, .header-left a:visited{
+    padding:16px 10px;
+}
+.header-right a:link, .header-right a:visited{
+    padding:14px 15px;
+    color: #fff;
+}
+.header-right a:hover, .header-right a:active{
+    background-color: rgb(32, 161, 178);
+}
+.main-title{
+    height:100px;
+    display: flex;
+    color: cornflowerblue;
+}
+.main-content{
+    color: #FFF;
+    height:400px;
+    background-color: rgb(237, 178, 100);
+    display: flex;
+}
+.main-title-left,
+.main-title-right{
+    display:flex;
+    align-items: center;
+    flex:1;
+    padding: 0 var(--padding-left);
+}
+.main h1{
+    line-height: 100px;
+}
+.main-title ul{
+    width:100%;
+    display: flex;
+    justify-content: space-between;
+}
+.main-content-left,
+.main-content-right{
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    padding:0 100px;
+    flex:1;
+}
+.main-content-right{
+    align-items: center;
+}
+.main-content-right .material-icons{
+    font-size: 256px;
+    color: cornflowerblue;
+}
+.main a:link, .main a:visited{
+    color: #000;
+}
+.main a:hover, .main a:active{
+    color:red;
+}
+.main-box{
+    display: flex;
+    height:100%;
+    padding: 0 100px;
+    justify-content: space-between;
+}
+.box{
+    padding: 40px 15px;
+    width: 400px;
+    background-color: #fff;
+    display: flex;
+}
+.box-left{
+    width:30%;
+}
+.box-right{
+    width:70%;
+}
+.box-right h3{
+    line-height: 40px;
+}
+.box .material-icons{
+    font-size: 64px;
+    color:cornflowerblue;
+    border: 1px solid rgb(207, 207, 207);
+    border-radius: 10px;
+}
