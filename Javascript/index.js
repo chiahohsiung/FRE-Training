@@ -122,35 +122,35 @@
 
 // oop
 // encapsulation
-class Person {
-    #name;
-    #age;
-    constructor(name = 'Dio', age = 200) {
-        this.#name = name;
-        this.#age = age;
-    }
-    get name() {
-        return this.#name;
-    } 
-    set name(newName) {
-        this.#name = newName;
-    }
-    get age() {
-        return this.#age;
-    } 
-    set age(newAge) {
-        this.#age = newAge;
-    }
+// class Person {
+//     #name;
+//     #age;
+//     constructor(name = 'Dio', age = 200) {
+//         this.#name = name;
+//         this.#age = age;
+//     }
+//     get name() {
+//         return this.#name;
+//     } 
+//     set name(newName) {
+//         this.#name = newName;
+//     }
+//     get age() {
+//         return this.#age;
+//     } 
+//     set age(newAge) {
+//         this.#age = newAge;
+//     }
 
-    walk() {
-        console.log(this.#name + ' walk around the world!');
-        // console.log(this.#name, 'walk around the world!');
-        // console.log(`${this.#name} walk around the world!`);
-    }
-}
-const p = new Person('Jojo', 20);
-p.#name;
-p.name;
+//     walk() {
+//         console.log(this.#name + ' walk around the world!');
+//         // console.log(this.#name, 'walk around the world!');
+//         // console.log(`${this.#name} walk around the world!`);
+//     }
+// }
+// const p = new Person('Jojo', 20);
+// p.#name;
+// p.name;
 // p.book = 'David';
 // console.log(p.book);
 // console.log(p);
@@ -716,7 +716,9 @@ class MyPromise {
                             this.currentData = cb(dataFromRes);
                         });
                     } else {
-                        this.currentData = cb(this.currentData);
+                        this.currentData = cb !== undefined 
+                            ? cb(this.currentData)
+                            : this.currentData;
                     }
                 }
             } catch (error) {
@@ -790,11 +792,24 @@ class MyPromise {
     }
 }
 
-// const promise = new Promise((res, rej) => res(2) )
-//     .then(() => { })
-//     .then(() => { })
-//     .then((data) => console.log(data) );
-    
+const promise = new Promise((res, rej) => res(2) )
+    .then(() => { })
+    .then(() => { })
+    .then((data) => console.log(data) );
+
+// const p = new Promise((resolve, reject) => {
+//     setTimeout(() => {
+//         console.log('promise', 1);
+//         resolve('hello');
+//     }, 3 * 1000);
+// })
+//     .then().then().then().then().then().then()
+//     .then((data) => {
+//         console.log(data, 2);
+//     })
+//     .then((data) => {
+//         console.log(data, 3);
+//     });
 // const p = new MyPromise((resolve, reject) => {
 //     // console.log(a);
 //     const timer = getRandomTime();
