@@ -7,10 +7,11 @@ const client = require("contentful").createClient({
 });
 
 module.exports = {
-  getPosts: async function (pageNo) {
+  getPosts: function (pageNo) {
     return client
       .getEntries({ content_type: "post" })
       .then(async (response) => {
+        let sth = await new Promise(5);
         const posts = response.items.sort(function (a, b) {
           return new Date(b.fields.date) - new Date(a.fields.date);
         });

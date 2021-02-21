@@ -10,8 +10,10 @@ app.use(express.urlencoded({ extended: false }));
 
 app.get("/", async (req, res) => {
   // get the first page
-  let posts = await helperFunctions.getPosts(0);
-  res.render("home", { posts: posts });
+  let posts = helperFunctions.getPosts(0); // Promise
+  posts.then((posts) => {
+    res.render("home", { posts: posts });
+  });
 });
 
 app.get("/:post", async (req, res) => {
@@ -21,10 +23,14 @@ app.get("/:post", async (req, res) => {
 });
 
 app.get("/page/:no", async (req, res) => {
-  let pageNo = parseInt(req.params.no);
-  let posts = await helperFunctions.getPosts(pageNo);
-  console.log(posts);
-  res.json({ posts: posts });
+  try {
+    let pageNo = parseInt(req.params.no);
+    let posts = await helperFunctions.getPosts(pageNo);
+    console.log(posts);
+    res.json({ posts: posts });
+  } catch (error) {
+    res.json({ posts: [], message: error.message });
+  }
 });
 
 app.listen(3000);
