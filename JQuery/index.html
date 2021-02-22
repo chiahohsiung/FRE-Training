@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <script
+            src="https://code.jquery.com/jquery-3.5.1.js"
+            integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc="
+            crossorigin="anonymous"
+        ></script>
+    </head>
+    <body>
+        <!-- <button class="continue">this is a button</button>
+
+        <button id="button-container-show">show</button>
+        <button id="button-container-hide">hide</button>
+        <div
+            id="banner-message"
+            style="
+                display: none;
+                width: 80px;
+                height: 80px;
+                background-color: red;
+            "
+        >
+            myJQuery
+        </div>
+        <div id="weather-temp"></div> -->
+
+        <div
+            style="
+                display: none;
+                width: 80px;
+                height: 80px;
+                background-color: red;
+            "
+        >
+            test
+        </div>
+        <script>
+            //1. $( "button.continue" ).html( "Next Step..." );
+            //2. var hiddenBox = $("#banner-message");
+            // $("#button-container-show").on("click", function (event) {
+            //     hiddenBox.show();
+            // });
+            // $("#button-container-hide").on("click", function (event) {
+            //     hiddenBox.hide();
+            // });
+
+            class MyJQuery {
+                _elements;
+                constructor(selector) {
+                    this._elements = document.querySelectorAll(selector);
+                }
+                html(tmp) {
+                    this._elements.forEach((ele) => {
+                        ele.innerHTML = tmp;
+                    });
+                }
+                on(eventType, cb) {
+                    this._elements.forEach((ele) => {
+                        ele.addEventListener(eventType, cb);
+                    });
+                }
+                show() {
+                    this._elements.forEach((ele) => {
+                        // ele.style.display = 'inline-block';
+                        ele.style.removeProperty("display");
+                    });
+                }
+                hide() {
+                    this._elements.forEach((ele) => {
+                        ele.style.display = "none";
+                    });
+                }
+            }
+
+            // $.ajax({
+            //     url: "https://jsonplaceholder.typicode.com/todos/1",
+            //     success: function (result) {
+            //         console.log(result);
+            //         $("#weather-temp").html(result.title);
+            //     },
+            // });
+            const $$ = (seletor) => {
+                return new MyJQuery(seletor);
+            };
+            $$.ajax = (option) => {
+                fetch(option.url)
+                    .then((data) => data.json())
+                    .then((json) => {
+                        option.success(json);
+                    });
+            };
+
+            $$.ajax({
+                url: "https://jsonplaceholder.typicode.com/todos/1",
+                success: function (result) {
+                    console.log(result);
+                    $$("#weather-temp").html(result.title);
+                },
+            });
+            // $$("button.continue").html("Next Step...");
+
+            // const hiddenBox = $$("#banner-message");
+            // $$("#button-container-show").on("click", function (event) {
+            //     hiddenBox.show();
+            // });
+            // $$("#button-container-hide").on("click", function (event) {
+            //     hiddenBox.hide();
+            // });
+        </script>
+    </body>
+</html>

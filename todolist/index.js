@@ -7,21 +7,33 @@ const todoAPI = (() => {
         fetch([baseurl, todoPath].join('/'))
             .then((response) => response.json());
 
-    const deleteTodo = (id) => 
+    const deleteTodo = (id) =>
         fetch([baseurl, todoPath, id].join('/'), {
             method: 'DELETE',
         });
 
+    const addTodo = (newtodo) =>
+        fetch([baseurl, todoPath].join('/'), {
+            method: 'POST',
+            body: JSON.stringify(newtodo),
+            headers: {
+                'Content-type': 'application/json; charset=UTF-8',
+            },
+        })
+            .then((response) => response.json());
+
     return {
         getAllTodos,
-        deleteTodo
+        deleteTodo,
+        addTodo
     }
 })();
 
 const View = (() => {
     const domString = {
         todolist: 'todolist-content',
-        removebtn: 'btn-remove'
+        removebtn: 'btn-remove',
+        todoinput: 'todolist__input'
     }
     const render = (element, htmlTemplate) => {
         element.innerHTML = htmlTemplate;
@@ -46,11 +58,10 @@ const View = (() => {
     }
 })();
 
-const Module = ((api, view) => {
+const Model = ((api, view) => {
     class Todo {
-        constructor(userId, id, title, completed) {
+        constructor(userId, title, completed) {
             this.userId = userId;
-            this.id = id;
             this.title = title;
             this.completed = completed;
         }
@@ -58,6 +69,17 @@ const Module = ((api, view) => {
 
     class State {
         #todolist = [];
+        #todoinput = '';
+
+        get todoinput() {
+            return this.#todoinput;
+        }
+        set todoinput(inputvalue) {
+            this.#todoinput = inputvalue;
+
+            const todoInputEle = document.querySelector('#' + view.domString.todoinput);
+            todoInputEle.value = this.#todoinput;
+        }
 
         get todolist() {
             return this.#todolist;
@@ -82,36 +104,57 @@ const Module = ((api, view) => {
 
     const getAllTodos = api.getAllTodos;
     const deleteTodo = api.deleteTodo;
+    const addTodo = api.addTodo;
 
     return {
         Todo,
         State,
         getAllTodos,
-        deleteTodo
+        deleteTodo,
+        addTodo
     }
 })(todoAPI, View);
 
-const AppController = ((view, module) => {
-    const state = new module.State();
+const AppController = ((view, model) => {
+    const state = new model.State();
+
+    const addListenerOnInput = () => {
+        const todoInputEle = document.querySelector('#' + view.domString.todoinput);
+        todoInputEle.addEventListener('keyup', (event) => {
+            
+            if (event.key === 'Enter') {
+                state.todoinput = event.target.value;
+                
+                const newtodo = new model.Todo(1, state.todoinput, false);
+
+                model.addTodo(newtodo).then(data => {
+                    console.log(data);
+                    state.todolist = [data, ...state.todolist];
+                });
+                state.todoinput = '';
+            }
+        });
+    }
 
     const addListenerOnRemove = () => {
         const todoElement = document.querySelector('#' + view.domString.todolist);
         todoElement.addEventListener('click', (event) => {
             state.todolist = state.todolist.filter(todo => +todo.id !== +event.target.id);
-            module.deleteTodo(+event.target.id);
+            model.deleteTodo(+event.target.id);
         });
     }
 
     const init = () => {
-        module.getAllTodos().then(data => {
+        model.getAllTodos().then(data => {
             state.todolist = data;
             addListenerOnRemove();
+            addListenerOnInput();
         });
     }
     return {
         init
     }
-})(View, Module);
+})(View, Model);
 
 AppController.init();
 
