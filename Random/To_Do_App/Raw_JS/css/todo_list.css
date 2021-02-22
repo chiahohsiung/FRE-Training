@@ -1,0 +1,31 @@
+.todo_list_container{
+    margin-top: 10vh;
+    display:flex;
+    justify-content: center;
+
+}
+
+.todo_list_item{
+    flex-grow: 1 0 60%;
+    height: 75vh;
+    overflow: scroll;
+    border:1px solid black;
+
+}
+
+.todo_list_events{
+    list-style-type: none;
+    padding:0;
+    margin:0;
+}
+
+.todo_list{
+    padding-block:10px;
+    padding-left:4px;
+    border:1px solid gray;
+}
+
+.button_position{
+    float: right;
+    padding-right: 15px;
+}
