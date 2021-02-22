@@ -513,4 +513,67 @@ const longest_substring_wo_repeating = (string) => {
     return substring
 }
 
-console.log(longest_substring_wo_repeating("example.com"))
+// console.log(longest_substring_wo_repeating("example.com"))
+
+/**
+ * 27. Write a JavaScript function that returns the longest palindrome in a given string. 
+
+ */
+var longestPalindrome = function (string) {
+    let cleanString = string.trim().split(" ").join("")
+    var length = cleanString.length
+    var result = ""
+
+    var centeredPalindrome = function (left, right) {
+        while (
+            left >= 0 &&
+            right < length &&
+            cleanString[left] === cleanString[right]
+        ) {
+            //expand in each direction.
+            left--
+            right++
+        }
+
+        return cleanString.slice(left + 1, right)
+    }
+
+    for (var i = 0; i < length; i++) {
+        var evenPal = centeredPalindrome(i, i + 1)
+
+        var oddPal = centeredPalindrome(i, i)
+
+        if (oddPal.length > 1) console.log("oddPal: " + oddPal)
+        if (evenPal.length > 1) console.log("evenPal: " + evenPal)
+
+        if (oddPal.length > result.length) {
+            result = oddPal
+        }
+        if (evenPal.length > result.length) {
+            result = evenPal
+        }
+    }
+    return "the longest palindrome is: " + result
+}
+
+// console.log(longestPalindrome("nan noon is redder"))
+
+/**
+ * 28. Write a JavaScript program to pass a 'JavaScript function' as parameter. 
+
+ */
+
+const a_function = (input, cb) => {
+    cb(input)
+}
+const another_function = (name) => {
+    console.log(`Hello, ${name}! How are you?`)
+}
+// a_function("Matt", another_function)
+/**
+ * 29. Write a JavaScript function to get the function name.
+ */
+function abc() {
+    console.log(arguments.callee.name)
+}
+// abc()
