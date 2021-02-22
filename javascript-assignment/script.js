@@ -372,4 +372,114 @@ const subset = (array, arr_length) => {
 
     return result_set
 }
-console.log(subset([1, 2, 3], 2))
+// console.log(subset([1, 2, 3], 2))
+
+/**
+ * 22. Write a JavaScript function that accepts two arguments, a string and a letter and the function will count the number of occurrences of the specified letter within the string. 
+Sample arguments : 'microsoft.com', 'o' 
+Expected output : 3 
+ */
+
+const occur = (string, key) => {
+    let count = {
+        [key]: 0,
+    }
+    for (const letter of string) {
+        letter === key && (count[key] = count[key] + 1)
+    }
+
+    return count[key]
+}
+
+// console.log(occur("microsoft.com", "o"))
+
+/**
+ * 23. Write a JavaScript function to find the first not repeated character. 
+Sample arguments : 'abacddbec' 
+Expected output : 'e' 
+ */
+
+const first_non_repeated = (string, memo = {}) => {
+    for (const letter of string) {
+        if (memo[letter]) {
+            memo[letter]++
+        } else {
+            memo[letter] = 1
+        }
+    }
+    for (const key in memo) {
+        if (memo[key] < 2) {
+            return key ? key : null
+        }
+    }
+}
+
+// console.log(first_non_repeated("abacddbec"))
+/**
+ * 24. Write a JavaScript function to apply Bubble Sort algorithm. 
+Note : According to wikipedia "Bubble sort, sometimes referred to as sinking sort, is a simple sorting algorithm that works by repeatedly stepping through the list to be sorted, comparing each pair of adjacent items and swapping them if they are in the wrong order". 
+Sample array : [12, 345, 4, 546, 122, 84, 98, 64, 9, 1, 3223, 455, 23, 234, 213]
+Expected output : [3223, 546, 455, 345, 234, 213, 122, 98, 84, 64, 23, 12, 9, 4, 1] 
+*/
+let bubble_sort = (array) => {
+    const length = array.length
+    //loop every element in the array
+    for (let i = 0; i < length; i++) {
+        //loop again with a pointer element
+        for (let j = 0; j < length; j++) {
+            //swap the leading element if pointer is less
+            if (array[j] < array[j + 1]) {
+                let temp = array[j]
+                array[j] = array[j + 1]
+                array[j + 1] = temp
+            }
+        }
+    }
+    return array
+}
+// console.log(
+//     bubble_sort([
+//         12,
+//         345,
+//         4,
+//         546,
+//         122,
+//         84,
+//         98,
+//         64,
+//         9,
+//         1,
+//         3223,
+//         455,
+//         23,
+//         234,
+//         213,
+//     ])
+// )
+
+/**
+ * 25. Write a JavaScript function that accept a list of country names as input and returns the longest country name as output. 
+Sample function : Longest_Country_Name(["Australia", "Germany", "United States of America"])
+Expected output : "United States of America"
+ */
+
+const Longest_Country_Name = (countries, memo = {}) => {
+    let temp = {}
+    for (const country of countries) {
+        memo[country] = country.length
+    }
+    for (const country in memo) {
+        temp = { country }
+        if (memo[country] > temp) {
+            temp = memo[country]
+        }
+    }
+    return temp.country
+}
+console.log(
+    Longest_Country_Name([
+        "Australia",
+        "Germany",
+        "United States of America",
+    ])
+)
