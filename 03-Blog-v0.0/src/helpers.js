@@ -11,14 +11,12 @@ module.exports = {
     return client
       .getEntries({ content_type: "post" })
       .then(async (response) => {
-        let sth = await new Promise(5);
         const posts = response.items.sort(function (a, b) {
           return new Date(b.fields.date) - new Date(a.fields.date);
         });
         posts.map((post) => {
           post.fields.body = documentToHtmlString(post.fields.body);
           post.fields.date = `${readableDate(post.fields.date)}`;
-          console.log(post.fields.date);
         });
         return posts.slice(pageNo * 10, (pageNo + 1) * 10);
       });

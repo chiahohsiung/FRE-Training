@@ -9,6 +9,7 @@ function doSomething() {
 
   $("#up").on("click", scrollToTop);
 }
+
 function scrollToTop() {
   $("html, body").animate({ scrollTop: 0 }, 700);
 }

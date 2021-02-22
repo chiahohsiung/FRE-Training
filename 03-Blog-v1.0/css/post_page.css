@@ -1,0 +1,22 @@
+div.post_body {
+  padding: 0 20% 0 20%;
+  font-size: 140%;
+}
+div.post_body img {
+  width: 50%;
+  text-align: center;
+}
+div.post_title {
+  border-radius: 5px;
+  background-size: cover;
+  background-repeat: no-repeat;
+  /* height: 20vh; */
+  vertical-align: text-bottom;
+}
+div.post_title h2 {
+  color: white;
+  mix-blend-mode: difference;
+  padding-top: 20vh;
+  margin: 2%;
+  font-size: 250%;
+}

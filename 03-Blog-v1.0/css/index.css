@@ -1,0 +1,148 @@
+:root {
+  --background-color: #f2efeb;
+  --dark-background: #1c2120;
+}
+body {
+  font-family: ballinger-mono, sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  background-color: var(--background-color);
+  position: relative;
+  min-height: 100vh;
+  margin: 0;
+}
+#body {
+  flex: 1;
+  padding-bottom: 8vh;
+}
+h1 {
+  font-family: itc-american-typewriter, serif;
+  font-weight: 500;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 250%;
+}
+
+.title {
+  text-align: center;
+}
+a {
+  text-decoration: none;
+  color: black;
+}
+a:hover {
+  text-decoration: underline;
+}
+a:visited {
+  text-decoration: none;
+  color: black;
+}
+div.blog_post_card {
+  border: 1px solid rgba(88, 87, 87, 0.5);
+  border-radius: 15px;
+  margin: 2.5%;
+}
+div.blog_post_card {
+  width: 40%;
+  display: inline-block;
+  text-align: center;
+}
+
+div.blog_post_card img {
+  width: 75%;
+}
+
+section.content {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+button {
+  font-size: 100%;
+}
+section.more {
+  text-align: center;
+}
+.loading {
+  padding: 10%;
+  /* width: 100%; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+button.load__more {
+  font-family: ballinger-mono, sans-serif;
+  user-select: none;
+  border-color: var(--dark-background);
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 0;
+}
+button.load__more:hover {
+  cursor: pointer;
+  border-color: #e9a34d;
+}
+button.load__more:focus {
+  outline: none;
+  box-shadow: none;
+}
+header {
+  position: sticky;
+  position: -webkit-sticky;
+  top: 0;
+  background-color: #f8f9f0;
+  z-index: 1;
+}
+footer {
+  background-color: var(--dark-background);
+  color: #f8f9f0;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  align-items: center;
+  height: 4vh;
+  margin-top: 3vh;
+  bottom: 0;
+  position: absolute;
+}
+footer a {
+  padding: 0 5% 0 5%;
+  color: #f8f9f0;
+}
+footer a:visited {
+  color: #f8f9f0;
+}
+#up {
+  /* display: none; */
+  visibility: hidden;
+  position: fixed;
+  top: 90vh;
+  left: 95vw;
+  font-size: 200%;
+}
+#up:hover {
+  cursor: pointer;
+}
+
+/* width */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: var(--background-color);
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: var(--dark-background);
+  border-radius: 3px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: var(--dark-background);
+}
