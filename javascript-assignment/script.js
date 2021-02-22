@@ -464,22 +464,53 @@ Expected output : "United States of America"
  */
 
 const Longest_Country_Name = (countries, memo = {}) => {
-    let temp = {}
+    let longest = {}
     for (const country of countries) {
         memo[country] = country.length
     }
+
     for (const country in memo) {
-        temp = { country }
-        if (memo[country] > temp) {
-            temp = memo[country]
+        longest = { country }
+        if (memo[country] > longest) {
+            longest = memo[country]
         }
     }
-    return temp.country
+    return longest.country
 }
-console.log(
-    Longest_Country_Name([
-        "Australia",
-        "Germany",
-        "United States of America",
-    ])
-)
+// console.log(
+//     Longest_Country_Name([
+//         "Australia",
+//         "Germany",
+//         "United States of America",
+//     ])
+// )
+
+/**
+ * 26. Write a JavaScript function to find longest substring in a given a string without repeating characters. 
+
+ */
+
+const longest_substring_wo_repeating = (string) => {
+    let cleanString = string.split("")
+    let longest_string = ""
+    let substring = ""
+
+    for (let i = 0; i < cleanString.length; i++) {
+        for (let j = i; j < cleanString.length; j++) {
+            const letter = cleanString[j]
+            if (longest_string.includes(letter)) {
+                break
+            } else {
+                longest_string += letter
+            }
+        }
+        if (substring.length < longest_string.length) {
+            substring = longest_string
+        }
+
+        longest_string = ""
+    }
+    return substring
+}
+
+console.log(longest_substring_wo_repeating("example.com"))
