@@ -22,7 +22,9 @@ const addListenerOnInput = () => {
     btn.addEventListener("click",(event)=>{
         const keyWord = document.getElementById('myInput').value;
         searchAPI(keyWord);
+        document.getElementById('myInput').value = '';
     });
+
     
 }
 const addListenerOnSearchBar = () =>{
