@@ -15,6 +15,7 @@ const View = (() => {
         resultList: 'flexGrid',
         searchinput: 'search-input',
         header: "query",
+        searchbtn: "search-button",
     }
     const render = (element, htmlTemplate) => {
         element.innerHTML = htmlTemplate;
@@ -26,7 +27,6 @@ const View = (() => {
 
     const initSearchTmp = (resultArray) => {
         let template = '';
-        console.log(resultArray);
         resultArray.forEach(ele => {
             template += `
                 <div class="card">
@@ -85,7 +85,7 @@ const Model = ((api, view) => {
         set searchResult(newlist) {
             this.#searchResult = newlist;
 
-            const resultElement = document.querySelector('#' + view.domString.searchResult);
+            const resultElement = document.querySelector('#' + view.domString.resultList);
             const htmltmp = view.initSearchTmp(this.#searchResult);
             view.render(resultElement, htmltmp);
         }
@@ -104,7 +104,6 @@ const AppController = ((view, model) => {
 
     const addListenerOnInput = () => {
         const searchInputEle = document.querySelector('#' + view.domString.searchinput);
-        console.log(searchInputEle);
         searchInputEle.addEventListener('keyup', (event) => {
             if (event.key === 'Enter' && event.target.value.length > 0) {
                 state.searchinput = event.target.value;
@@ -112,25 +111,21 @@ const AppController = ((view, model) => {
                 model.getAlbums(state.searchinput).then((data) => {
                     console.log("results", data);
                     state.query = `${data.resultCount} results for "${state.searchinput}"`;
-                    
-                    state.resultList = data.results;
+                    state.searchResult = data.results;
                 });
                 
             }
         });
-        // const searchbtn = document.querySelector('.' + view.domString.searchbtn);
-        // searchbtn.addEventListener('click', (event) => {
-        //     console.log(event.target.value);
-        //     state.searchinput = event.target.value;
-        //     console.log(event.target.value);
-        //     const name = new model.Search(state.searchinput);
-        //     console.log(name);
-        //     model.getAlbums(name).then(data => {
-        //         console.log(data);
-        //         state.resultList = [data];
-        //     });
-        //     state.searchinput = '';
-        // });
+        const searchbtn = document.querySelector('#' + view.domString.searchbtn);
+        searchbtn.addEventListener('click', (event) => {
+            state.searchinput = document.querySelector('#' + view.domString.searchinput).value;
+            console.log(state.searchinput);
+            model.getAlbums(state.searchinput).then((data) => {
+                console.log("results", data);
+                state.query = `${data.resultCount} results for "${state.searchinput}"`;
+                state.searchResult = data.results;
+            });
+        });
     }
 
     const init = () => {
