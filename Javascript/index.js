@@ -687,6 +687,8 @@
 // const getRandomTime = () => {
 //     return Math.floor(Math.random() * 3);
 // }
+
+// // MyPromise
 // class MyPromise {
 //     thenCallBackQueue = [];
 //     catchCallBackQueue = [];
@@ -846,6 +848,7 @@
 //     console.log(values);
 // });
 
+// myFetch
 function myFetch(url, options) {
     return new Promise((resolve, reject) => {
         let method = options && options.method ? options.method : 'GET';
@@ -866,41 +869,12 @@ function myFetch(url, options) {
     });
 }
 
-myFetch('https://jsonplaceholder.typicode.com/posts/1', {
-    method: 'PUT',
-    body: JSON.stringify({
-        id: 1,
-        title: 'foo',
-        body: 'bar',
-        userId: 1,
-    }),
-    headers: {
-        'Content-type': 'application/json; charset=UTF-8',
-    },
-})
+// GET
+myFetch('https://jsonplaceholder.typicode.com/posts/1')
     .then((response) => response.json())
     .then((json) => console.log(json));
 
-myFetch('https://jsonplaceholder.typicode.com/posts/1', {
-    method: 'DELETE',
-});
-
-myFetch('https://jsonplaceholder.typicode.com/posts/1', {
-  method: 'PATCH',
-  body: JSON.stringify({
-    title: 'foo',
-  }),
-  headers: {
-    'Content-type': 'application/json; charset=UTF-8',
-  },
-})
-  .then((response) => response.json())
-  .then((json) => console.log(json));
-
-myFetch('https://jsonplaceholder.typicode.com/posts/1')
-  .then((response) => response.json())
-  .then((json) => console.log(json));
-
+// POST
 myFetch('https://jsonplaceholder.typicode.com/todos', {
     method: 'POST',
     body: JSON.stringify({
@@ -916,3 +890,36 @@ myFetch('https://jsonplaceholder.typicode.com/todos', {
     .then((json) => console.log(json))
     .catch(err => console.log(err));
 
+// DELETE
+myFetch('https://jsonplaceholder.typicode.com/posts/1', {
+    method: 'DELETE',
+});
+
+// PUT
+myFetch('https://jsonplaceholder.typicode.com/posts/1', {
+    method: 'PUT',
+    body: JSON.stringify({
+        id: 1,
+        title: 'foo',
+        body: 'bar',
+        userId: 1,
+    }),
+    headers: {
+        'Content-type': 'application/json; charset=UTF-8',
+    },
+})
+    .then((response) => response.json())
+    .then((json) => console.log(json));
+
+// PATCH
+myFetch('https://jsonplaceholder.typicode.com/posts/1', {
+    method: 'PATCH',
+    body: JSON.stringify({
+        title: 'foo',
+    }),
+    headers: {
+        'Content-type': 'application/json; charset=UTF-8',
+    },
+})
+    .then((response) => response.json())
+    .then((json) => console.log(json));
