@@ -743,7 +743,19 @@ function uniqueChar(string) {
 
 // 24. Write a JavaScript function to apply Bubble Sort algorithm. Note : According to wikipedia "Bubble sort, sometimes referred to as sinking sort, is a simplesorting algorithm that works by repeatedly stepping through the list to be sorted, comparingeach pair of adjacent items and swapping them if they are in the wrong order".Sample array: [12, 345, 4, 546, 122, 84, 98, 64, 9, 1, 3223, 455, 23, 234, 213]Expected output: [3223, 546, 455, 345, 234, 213, 122, 98, 84, 64, 23, 12, 9, 4, 1]
 
-// 25. Write a JavaScript function that accept a list of country names as input and returns thelongest country name as output.Sample function : Longest_Country_Name(["Australia", "Germany", "United States of America"])Expected output: "United States of America"
+// 25. Write a JavaScript function that accept a list of country names as input and returns the longest country name as output. Sample function : Longest_Country_Name(["Australia", "Germany", "United States of America"]) Expected output: "United States of America"
+function longest_country_name(countrylist) {
+    let longest = "";
+    countrylist.forEach(ele => {
+        if (ele.length > longest.length) {
+            longest = ele;
+        };
+    });
+    return longest;
+};
+
+console.log(longest_country_name(["Australia", "Germany", "United States of America"]));
+console.log(longest_country_name(["China", "Japan", "Korea", "Vietnam", "Indonesia", "Malaysia"])); // Indonesia
 
 // 26. Write a JavaScript function to find longest substring in a given a string without repeatingcharacters. 
 
