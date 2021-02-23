@@ -28,7 +28,10 @@ const View = (() => {
                 <div class = "card">
                     <img src="${element.artworkUrl100}" alt="${element.collectionName}" width="101" height="110">
                     <p class = "card_content">${element.collectionName}</p>
-                </div>addListenerOnInput();
+                </div>
+                `
+        });
+        return template;
     }
 
     return {
