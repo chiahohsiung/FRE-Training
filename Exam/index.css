@@ -1,0 +1,84 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial,sans-serif;
+    font-size: 1rem;
+    line-height: 1.4;
+}
+
+.topnav{
+    background-color: teal;
+    height: 80px;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+}
+.searchButton {
+    width: 40px;
+    height: 36px;
+    border-radius: 0 20px 20px 0;
+    cursor: pointer;
+    font-size: 20px;
+    border: none;
+}
+.searchTerm{
+    width: 40%;
+    border-right: none;
+    padding-left: 40px;
+    height: 36px;
+    border: none;
+    border-radius: 20px 0 0 20px;
+    outline: none;
+    
+}
+.search-container{
+    padding-top: 20px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+}
+.content-cotainer{
+    display: flex;
+    justify-content: center;
+    align-content: center;     
+}
+.searchResut{
+    padding: 20px;
+    font-size: x-large;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    border-bottom: 1px solid teal;
+}
+.flexGrid{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.card{
+    background-color: #f0eeee;
+    border: 1px solid teal;
+    border-radius: 3px;
+    flex: 0 0 10rem;
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+}
+.card_img{
+    padding: .5rem;
+}
+.card_content{
+    color: #333;
+    text-align: center;
+    padding: 0 .5rem .5rem;
+    font-size: 0.8rem;
+    font-weight: 700;
+}
+.flexGrid>.card {
+    margin: 1rem;
+}
+section.SearchResult {
+    width: 80%;
+}

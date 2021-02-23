@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <title>Search Application</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel="stylesheet" href="./index.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+    <div class="topnav">
+        <div class="search-container">
+            
+                <input type="text" id ="myInput" name="searchTerm" class="searchTerm" placeholder="Search..."></form>
+                <button type="submit" class="searchButton" id="searchBtn">
+                    <i class="fa fa-search"></i>
+                 </button>
+            
+        </div>
+    </div>
+    <main class ="content-cotainer">
+        <section class="SearchResult">
+            <div id= "info" class="searchResut">Search Albums by ArtistName:</div>    
+            </div>
+            <div class="flexGrid" id="albumGrid"></div>
+        </section>
+    </main>
+    <script src='index.js'></script>
+</body>
+</html>
