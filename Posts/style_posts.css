@@ -1,0 +1,85 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html,
+body
+{
+    width:100%;
+    height:100%;
+    overflow: hidden;
+}
+.header{
+    font-size: 64px;
+    text-align: center;
+    width:100%;
+    height:100px;
+    background-color: aquamarine;
+}
+.container{
+    width: 100%;
+    height: 100%;
+    /* background-color: cadetblue; */
+    display: flex;
+}
+.content{
+    flex:1;
+    padding:0 40px;
+    /* display: flex; */
+    /* background-color: rgb(217, 233, 172); */
+}
+.content-box{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+.content-post{
+    border-left: 1px solid black;
+    overflow: scroll;
+    flex:1;
+    padding:0 40px;
+    /* background-color: rgb(253, 132, 19); */
+}
+.content-titlebox,
+.content-postbox{
+    width: 80%;
+}
+input{
+    width:100%;
+    height:70px;
+}
+button{
+    width: 100px;
+    height: 50px;
+    border-radius: 10px;
+}
+.card{
+    position: relative;
+    padding: 40px 50px;
+    margin-bottom:20px;
+    height: 300px;
+    background-color: rgb(188, 255, 188);
+    border-radius: 10px;
+    border: 1px solid rgb(85, 126, 25);
+    overflow: scroll;
+}
+.card button{
+    position: absolute;
+    width:50px;
+    top:0;
+    right:0;
+    color: brown;
+    border:none;
+    background-color:  rgb(188, 255, 188);
+}
+.card button:hover,.card button:active{
+    color:red;
+}
+.card button:active{
+    font-size: 24px;
+}
+
+
+
+
