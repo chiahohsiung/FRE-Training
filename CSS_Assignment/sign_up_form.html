@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="sign_up_form..css">
+    <title>Sign Up</title>
+  </head>
+  <body>
+    <form action="" class="form-container">
+      <header>
+        <h1>Sign Up</h1>
+      </header>
+      <div class="row-container">
+        <div class="fName-container sm-box">
+          <input type="text" name="first_name" placeholder="First Name" />
+        </div>
+        <div class="lName-container sm-box">
+          <input type="text" name="last_name" placeholder="Last Name" />
+        </div>
+      </div>
+      <div class="row-container">
+        <div class="mobile-container lg-box">
+          <input type="text" name="mobile_no" placeholder="Mobile No." />
+        </div>
+      </div>
+      <div class="row-container">
+        <div class="email-container lg-box">
+          <input type="email" name="email" placeholder="Email Address" />
+        </div>
+      </div>
+      <div class="row-container">
+        <div class="password-container sm-box">
+          <input type="password" name="password" placeholder="Password" />
+        </div>
+        <div class="confPassword-container sm-box">
+          <input
+            type="text"
+            name="confim_password"
+            placeholder="Confirm Password"
+          />
+        </div>
+      </div>
+      <div class="row-container" id="space-between">
+        <div class="checkbox-container">
+          <input type="checkbox" id="agree" name="agree" />
+          <label for="agree">I Agree</label>
+        </div>
+        <div class="disclaimer-container">
+          <p>
+            By clicking <span>Register</span>, you agree to the
+            <a class="terms" href="#"> Terms and Conditions</a> set out by this site,
+            including our Cooike Use.
+          </p>
+        </div>
+      </div>
+      <div class="row-container button-container">
+        <div class="submit-container">
+          <input class="register-btn" type="submit" value="Register" />
+        </div>
+        <div class="signin-container">
+            <input class="signin-btn" type="button" class="signin-btn" value="Sign In">
+        </div>
+      </div>
+    </form>
+  </body>
+</html>
