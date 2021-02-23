@@ -58,7 +58,7 @@ input {
   font-size: 16pt;
   padding: 0.2% 0.5% 0.2% 0.5%;
   border: 0;
-  width: 85%;
+  width: 90%;
   margin: 1%;
   border-radius: 25px;
   background-color: var(--body-bg);
@@ -69,6 +69,7 @@ input {
   border-radius: 25px;
   margin: 1% 0 1% 0;
   background-color: var(--body-bg);
+  text-align: center;
 }
 input:focus {
   text-decoration: none;
