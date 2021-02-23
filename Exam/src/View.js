@@ -11,7 +11,7 @@ const View = (() => {
         let template = ""
         albums.forEach((ele) => {
             template += `
-            <div id="album-card" class="album-card">
+            <div id="album-card" class="album-card flex">
                   <img src=${ele.artworkUrl100} alt="album artwork" class="artist-img" />
                   <div class="card-content album-title">
                   ${ele.collectionName}
