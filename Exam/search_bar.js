@@ -1,20 +1,10 @@
 const searchAPI = (() => {
   const baseUrl = 'https://itunes.apple.com';
   const searchPath = 'search';
-  // const searchParameters = {
-  //   // term: "",
-  //   media: "music",
-  //   entity: "album",
-  //   attribute: "artistTerm",
-  //   limit: 500
-  // }
 
   const getAllResults = async (keyword) => {
     let paramString = `term=${keyword}&media=music&entity=album&attribute=artistTerm&limit=500`;
-    // console.log([[baseUrl, searchPath].join('/'), paramString].join('?'));
-    
     let queryUrl = [[baseUrl, searchPath].join('/'), paramString].join('?');
-    console.log(queryUrl);
     return fetchJsonp(queryUrl, {
       method: 'GET',
       header: {
@@ -56,7 +46,6 @@ const View = (() => {
         </li>
       `;
     });
-    console.log("template: ", template);
     render(resultGallery, template);
     render(resultInfo, `${albumArray.length} results for "${keyword}"`)
   };
@@ -103,14 +92,12 @@ const AppController = ((view, model) => {
   const addListenerOnInput = () => {
     const searchBarElem = document.querySelector('#' + view.domString.searchInput);
     searchBarElem.addEventListener('keyup', (event) => {
-      console.log(event);
       if (event.key === 'Enter') {
         event.preventDefault();
         state.searchQuery = event.target.value;
         search(state.searchQuery)
           .then(json => {
             let albumArray = new Array();
-            // console.log("json: ", json);
             json.results.forEach(elem => {
               albumArray.push({ 
                 imgUrl: elem["artworkUrl100"], 
@@ -118,10 +105,8 @@ const AppController = ((view, model) => {
                 albumId: elem["collectionId"]
               });
             })
-            console.log(albumArray);
             view.populateAlbumsList(albumArray, state.searchQuery);
           });
-        // console.log(resultList);
       }
     });
 
@@ -137,5 +122,3 @@ const AppController = ((view, model) => {
 })(View, Model);
 
 AppController.init();
-
-
