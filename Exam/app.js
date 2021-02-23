@@ -95,18 +95,6 @@ const AppController = ((model, view) => {
                     }
                 })
             });
-            // const url = `https://itunes.apple.com/search?term=${input}&media=music&entity=album&attribute=artistTerm&limit=500`;
-            // fetch(url).then(response => response.json()).then(data => {
-            //     console.log(data);
-            //     state.count = data.resultCount;
-            //     let result = data.results;
-            //     state.albumList = result.map((ele) => {
-            //         return {
-            //             name: ele.artistName,
-            //             cover: ele.artworkUrl100
-            //         }
-            //     })
-            // });
         });
 
     };
