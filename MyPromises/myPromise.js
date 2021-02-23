@@ -38,26 +38,53 @@ class MyPromise {
     this.callBackErrorQueue.push(cb);
     return this;
   };
+
+  all = arr => {
+    while (arr.length) {
+      const cb = arr.shift();
+      console.log(cb);
+      // cb();
+    }
+  };
 }
 
 const p = new MyPromise((resolve, reject) => {
   setTimeout(() => {
-    resolve("Successfull");
+    resolve("first");
     // reject(new Error(" error message "));
   }, 2000);
-})
-  .then(data => {
-    console.log("here " + data);
-    return "here " + data;
-  })
-  .then(data => {
-    console.log("here i " + data);
-    return data;
-  })
-  .then(data => {
-    console.log("here i am " + data);
-    return data;
-  })
-  .catch(error => {
-    console.log(error);
-  });
+});
+const r = new MyPromise((resolve, reject) => {
+  setTimeout(() => {
+    resolve("second");
+    // reject(new Error(" error message "));
+  }, 2000);
+});
+
+const o = new MyPromise((resolve, reject) => {
+  setTimeout(() => {
+    resolve("third");
+    // reject(new Error(" error message "));
+  }, 2000);
+});
+
+p.all([p, r, o]);
+// .then(values => {
+//   console.log(values);
+// });
+
+// .then(data => {
+//   console.log("here " + data);
+//   return "here " + data;
+// })
+// .then(data => {
+//   console.log("here i " + data);
+//   return data;
+// })
+// .then(data => {
+//   console.log("here i am " + data);
+//   return data;
+// })
+// .catch(error => {
+//   console.log(error);
+// });
