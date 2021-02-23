@@ -7,9 +7,34 @@
             name="viewport"
             content="width=device-width, initial-scale=1.0"
         />
+        <link
+            rel="stylesheet"
+            href="https://fonts.googleapis.com/icon?family=Material+Icons"
+        />
+        <link rel="stylesheet" href="./styles/index.css" />
         <title>Exam</title>
     </head>
     <body>
-        <script type="module" async src="src/app"></script>
+        <header class="header">
+            <nav class="navigation flex">
+                <input
+                    type="text"
+                    id="search-input"
+                    class="search-input"
+                    aria-label="Search"
+                />
+                <i class="material-icons">search</i>
+            </nav>
+        </header>
+
+        <main>
+            <section class="album-section-ctn">
+                <div
+                    id="album-section"
+                    class="album-section flex-grid flex"
+                ></div>
+            </section>
+        </main>
+        <script type="module" async src="./src/App.js"></script>
     </body>
 </html>
