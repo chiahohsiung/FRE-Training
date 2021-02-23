@@ -1,36 +1,44 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8" />
-        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-        <meta name="viewport" content="width=device-width,initial-scale=1,shrink-to-fit=no" />
-        <title>Albums Search</title>
-        <link rel="preconnect" href="https://fonts.gstatic.com" />
-        <link rel="stylesheet" href="./index.css" />
-        <script
-            src="https://code.jquery.com/jquery-3.5.1.js"
-            integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc="
-            crossorigin="anonymous"
-        ></script>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta
+      name="viewport"
+      content="width=device-width,initial-scale=1,shrink-to-fit=no"
+    />
+    <title>Albums Search</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link rel="stylesheet" href="./index.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fetch-jsonp/1.0.6/fetch-jsonp.min.js"></script>
+    <script
+      src="https://code.jquery.com/jquery-3.5.1.js"
+      integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc="
+      crossorigin="anonymous"
+    ></script>
 
-        <script async src="./index.js"></script>
-    </head>
-    <body>
-        <noscript>You need to enable JavaScript to run this app.</noscript>
-        <div class="container">
-
-            <div class="itunes-widget">
-              <form action="#" id="search-form">
-                <div class="artist-search">
-                  <input type="text" id="album-search" placeholder="Enter artist name" />
-                </div>
-              </form>
-              <main class="container__content">
-                  <section class="album-list">
-                      <div id="info" class="searchResult__info">Search Albums by ArtistName:</div>
-                    </section>
-                </main>
-            </div>
-        </div>
-    </body>
+    <script async src="./index.js"></script>
+  </head>
+  <body>
+    <noscript>You need to enable JavaScript to run this app.</noscript>
+    <div class="container">
+      <div class="itunes-widget">
+        <form action="#" id="search-form">
+          <div class="artist-search">
+            <input
+              type="text"
+              id="album-search"
+              placeholder="Enter artist name"
+            />
+          </div>
+        </form>
+        <main class="container__content">
+          <div id="info" class="searchResult__info">
+            Search Albums by ArtistName:
+          </div>
+          <div class="album-list" id="album-list"></div>
+        </main>
+      </div>
+    </div>
+  </body>
 </html>

@@ -7,13 +7,12 @@ const searchAPI = (() => {
     const urlsuffix = '&media=music&entity=album&attribute=artistTerm&limit=500';
 
     const searchByName = (keyword) =>
-        fetch([urlprefix + keyword + urlsuffix], {
+        fetchJsonp(urlprefix + keyword + urlsuffix, {
             method: 'GET',
             headers: {
                 'Host': 'example.com'}
             })
-            .then((response) => response.body());
-
+            .then((response) => response.json());
     const start = () => '';
 
     return {
@@ -28,14 +27,16 @@ const View = (() => {
         searchinput: 'album-search'
     }
     const render = (element, htmlTemplate) => {
+        console.log("render....");
         element.innerHTML = htmlTemplate;
     }
-    const initResultTemplate = (albumArray) => {
+    const initResultTemplate = (resultObject) => {
         let template = '';
+        let albumArray = Object.values(resultObject)[1];
         albumArray.forEach(ele => {
             template += `
                 <li class="album-list__album">
-                    <img class="album__cover" src=${ele.artworkUrl100}</img>
+                    <img class="album__cover" src=${ele.artworkUrl100}></img>
                     <div class="album__name">${ele.collectionName}</div>
                 </li>
             `;
