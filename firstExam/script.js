@@ -33,6 +33,7 @@ const searchArtist = () => {
   }
   submitButton.addEventListener('click', (event) => {
     event.preventDefault();
+    document.getElementById('result-cards').innerHTML = '';
     let ARTIST_NAME = searchInput.value;
     let url = `https://itunes.apple.com/search?term=${ARTIST_NAME}&media=music&entity=album&attribute=artistTerm&limit=500`;
     fetchData(url);
