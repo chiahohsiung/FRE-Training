@@ -1,0 +1,126 @@
+:root {
+  --background-color: #d8dbe2;
+  --dark-background: #1c2120;
+
+  --background-color: white;
+  --text-color: black;
+
+  --header-bg: #a9bcd0;
+  --header-text: white;
+
+  --footer-bg: black;
+  --footer-text: white;
+
+  --border-color: #58a4b0;
+  --body-bg: #f4faff;
+}
+* {
+  box-sizing: border-box;
+}
+body {
+  position: relative;
+  min-height: 100vh;
+  background-color: var(--background-color);
+  font-family: mr-eaves-modern, sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 16pt;
+  background-color: var(--body-bg);
+}
+#body {
+  padding-bottom: 8vh;
+}
+/* Header Styling
+-------------------*/
+header {
+  position: sticky;
+  position: -webkit-sticky;
+  top: 0;
+}
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  background-color: var(--header-bg);
+}
+.header img {
+  width: 15px;
+  align-self: flex-end;
+}
+.header img:hover {
+  cursor: pointer;
+}
+input {
+  font-family: mr-eaves-modern, sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 16pt;
+  padding: 0.2% 0.5% 0.2% 0.5%;
+  border: 0;
+  width: 85%;
+  margin: 1%;
+  border-radius: 25px;
+  background-color: var(--body-bg);
+}
+.input__container {
+  width: 30%;
+  border: 2px solid var(--border-color);
+  border-radius: 25px;
+  margin: 1% 0 1% 0;
+  background-color: var(--body-bg);
+}
+input:focus {
+  text-decoration: none;
+  outline: none;
+}
+div.subheader {
+  width: 100%;
+  display: block;
+  padding: 1% 0 0.5% 0;
+  background-color: var(--body-bg);
+  position: sticky;
+  position: -webkit-sticky;
+  top: 0;
+}
+h2 {
+  font-size: 20pt;
+  text-align: center;
+}
+hr {
+  border: 0.5px solid var(--border-color);
+  width: 60%;
+  display: block;
+}
+/* Footer Styling
+----------------- */
+footer {
+  position: absolute;
+  bottom: 0;
+  /* Change this accordingly */
+  height: 5vh;
+  margin-top: 3vh;
+
+  width: 100%;
+  align-items: center;
+  display: flex;
+  justify-content: center;
+
+  background-color: var(--footer-bg);
+  color: var(--footer-text);
+}
+
+/* Media Queries 
+----------------*/
+@media (min-width: 1200) {
+}
+@media (max-width: 900px) {
+  .input__container {
+    width: 45%;
+  }
+}
+@media (max-width: 600px) {
+  .input__container {
+    width: 60%;
+  }
+}

@@ -1,5 +1,5 @@
 :root {
-  --background-color: #f2efeb;
+  --background-color: #d8dbe2;
   --dark-background: #1c2120;
 }
 body {
@@ -126,7 +126,6 @@ footer a:visited {
   cursor: pointer;
 }
 
-/* width */
 ::-webkit-scrollbar {
   width: 8px;
 }

@@ -5,6 +5,7 @@ $(document).ready(initialize);
 function initialize() {
   console.log("initializing...");
   $(window).scroll(activateUp);
+  $("#up").on("click", scrollToTop);
 }
 
 function activateUp() {
@@ -14,4 +15,8 @@ function activateUp() {
   } else {
     $("#up").css("visibility", "hidden");
   }
+}
+
+function scrollToTop() {
+  $("html, body").animate({ scrollTop: 0 }, 700);
 }
