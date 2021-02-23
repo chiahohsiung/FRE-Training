@@ -1,0 +1,72 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Akaya Kanadaka', cursive;
+}
+html,
+body
+{
+    width:100%;
+    height:100%;
+    overflow: hidden;
+}
+.header{
+    position: fixed;
+    height:100px;
+    width:100%;
+    background-color: darkblue;
+    color:white;
+    padding-top:25px;
+    font-size: 48px;
+}
+.main{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height:100%;
+    padding-top:100px;
+}
+.todolist{
+    width: 400px;
+    height: 600px;
+    background-color: rgb(148, 181, 243);
+    border: 2px solid rgb(90, 90, 90);;
+    overflow: hidden;
+}
+.todolist-header{
+    color: white;
+    padding-top:20px;
+    font-size: 32px;
+    height: 80px;
+    background-color: rgb(148, 181, 243);
+}
+.input-section{
+    display: flex;
+}
+.input{
+    font-size:32px;
+    width: 100%;
+    height: 80px;
+}
+.todolist-content{
+    height:100%;
+    overflow: scroll;
+}
+ul{
+    height:30px;
+    position: relative;
+    list-style: none;
+}
+li::before{
+    content: "&& ";
+    color:blue;
+}
+li{
+    padding: 20px 20px;
+}
+li button{
+    position: absolute;
+    right: 5px;
+    width: 40px;
+}

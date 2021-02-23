@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style_todolist.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Akaya+Kanadaka&display=swap" rel="stylesheet">
+  <title>Todolist</title>
+</head>
+<body>
+  <header class= "header">
+    This Is My Todolist
+  </header>
+  <main class="main">
+    <div class="todolist">
+      <header class="todolist-header">
+        Todolist
+      </header>
+      <section class="input-section">
+        <input type="text" class="input" id="input" placeholder="new to do...">
+        <button onclick="addToList()">ENTER</button>
+      </section>
+    
+      <div class="todolist-content">
+        <ul class="todolist-ul">
+          <!-- <li>Task1 <button id="e1">X</button> </li>
+          <li>Task1 <button>X</button> </li>
+          <li>Task1 <button>X</button> </li> -->
+        </ul>
+      </div>
+    </div>
+  </main>
+  <script src="myscript.js"></script>
+</body>
+</html>
