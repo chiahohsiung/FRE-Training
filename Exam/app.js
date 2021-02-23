@@ -90,7 +90,7 @@ const AppController = ((model, view) => {
                 let result = data.results;
                 state.albumList = result.map((ele) => {
                     return {
-                        name: ele.artistName,
+                        name: ele.collectionName,
                         cover: ele.artworkUrl100
                     }
                 })
