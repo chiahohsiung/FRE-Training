@@ -61,7 +61,7 @@ const dealData = async () => {
             const div2add = document.createElement('div')
             div2add.classList.add("flexGrid")
             let template = '<div class="card>';
-            for (i = 0; i <= data['resultCount']; i++) {
+            for (i = 0; i <= 50; i++) {
 
                 template += `<img class="card_img" src="${data['results'][i]['artworkUrl100']}>"</div>`
             }
