@@ -1,0 +1,133 @@
+:root {
+    --height-header: 90px;
+    --height-search-bar: 30px;
+    --height-query: 60px;
+
+    --width-card: 160px;
+
+    --color-header: rgb(0, 128, 128);
+    --corlor-search-bar: rgb(240, 238, 238);
+    --corlor-search-icon: grey;
+}
+
+body {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+#header {
+    position: fixed;
+    top: 0;
+    height: var(--height-header);
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: var(--color-header);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 2;
+}
+
+#search-bar {
+    width: 20%;
+    height: var(--height-search-bar);
+    margin: 0;
+    padding: 0 1rem;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--corlor-search-bar);
+    transition: width .1s linear;
+    border-radius: calc(0.5*var(--height-search-bar));
+}
+
+#search-input {
+    width: 80%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    border: none;
+    outline: none;
+    font: 1rem/1rem Arial, sans-serif;
+    background-color: var(--corlor-search-bar);
+}
+
+#search-bar:focus-within {
+    width: 35%;
+    transition: width .1s linear;
+}
+
+#search-icon {
+    height: 80%;
+    fill: none;
+    stroke: var(--corlor-search-icon);
+    stroke-width: 2px;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
+
+#content {
+    width: 100%;
+    height: 100%;
+    margin-top: var(--height-header);
+    padding: 0;
+    box-sizing: border-box;
+}
+
+#query {
+    width: 60%;
+    height: var(--height-query);
+    margin: 0 auto;
+    padding: 0;
+    box-sizing: border-box;
+    border-bottom: 1px solid var(--color-header);
+    text-align: center;
+    font-size: 1.3rem;
+    line-height: var(--height-query);
+}
+
+#result {
+    width: 75%;
+    margin: 0 auto;
+    padding: 0;
+    box-sizing: border-box;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.card {
+    width: var(--width-card);
+    margin: 10px;
+    padding: 0;
+    box-sizing: border-box;
+    border: 1px solid var(--color-header);
+    background-color: var(--corlor-search-bar);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 5px;
+    box-shadow:  3px 3px 3px var(--color-header);
+}
+
+.card:hover {
+    transform: translateY(-5px) scale(1.005) translateZ(0);
+}
+
+.card .albumCover {
+    width: 100%;
+    border-radius: 5px 5px 0 0;
+}
+
+.card .albumInfo {
+    width: 100%;
+    font: bold 0.75rem/1rem Arial, sans-serif;
+    text-align: center;
+}
