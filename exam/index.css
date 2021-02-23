@@ -1,0 +1,160 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background: rgba(191, 191, 191, 0.98);
+  height: 100vh;
+  width: 100vw;
+}
+
+.searchResult__info {
+ margin: 20px;
+}
+
+a {
+  color: #800800;
+  text-decoration: none;
+}
+a:hover {
+  color: #1a0200;
+}
+a:visited {
+  color: #400400;
+}
+
+#sidebar {
+  width: 240px;
+}
+
+.sum-class {
+  width: 300;
+}
+
+.sum-class-2 {
+  width: 300px;
+}
+
+.some-class--cp {
+  width: 52.08333%;
+}
+
+.message,
+.success,
+.error {
+  border: 1px solid #ccc;
+  padding: 10px;
+  color: #333;
+}
+
+.success {
+  border-color: green;
+}
+
+.error {
+  border-color: red;
+}
+
+.message,
+.success,
+.error {
+  border: 1px solid #ccc;
+  padding: 10px;
+  color: #333;
+}
+
+.success {
+  border-color: green;
+}
+
+.error {
+  border-color: red;
+}
+
+.itunes-widget {
+  background-color: rgba(255, 255, 255, 0.98);
+  border-radius: 5px;
+  box-shadow: 1px 1px 7px rgba(0, 0, 0, 0.2);
+  margin: 1.2rem auto;
+  overflow: scroll;
+  padding: 18px;
+  text-align: center;
+  max-width: 960px;
+}
+.itunes-widget .artist-search {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+.itunes-widget .artist-search input[type="text"] {
+  border: none;
+  background: #e6e6e6;
+  border-radius: 5px 0 0 5px;
+  font-size: 18px;
+  padding: 9px 18px;
+  width: 250px;
+}
+.itunes-widget .artist-search input[type="text"]:focus {
+  outline: 0;
+}
+.itunes-widget .artist-search input[type="text"]::-webkit-input-placeholder {
+  font-size: 0.9rem;
+}
+.itunes-widget .artist-search input[type="text"]:-ms-input-placeholder {
+  font-size: 0.9rem;
+}
+.itunes-widget .artist-search input[type="text"]::placeholder {
+  font-size: 0.9rem;
+}
+.itunes-widget .artist-search input[type="submit"] {
+  background-color: midnightblue;
+  border: 0;
+  border-radius: 0 5px 5px 0;
+  color: rgba(255, 255, 255, 0.98);
+  cursor: pointer;
+  font-size: 18px;
+  padding: 9px 18px;
+}
+.itunes-widget .artist-search input[type="submit"]:hover {
+  background-color: navy;
+}
+.itunes-widget .artist-search input[type="submit"]:focus {
+  outline: 0;
+}
+.itunes-widget .album-list {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-flow: row wrap;
+  flex-flow: row wrap;
+  -ms-flex-pack: distribute;
+  justify-content: space-around;
+  list-style: none;
+  padding: 0;
+}
+.itunes-widget .album-list__album {
+  border-radius: 5px;
+  display: none;
+  margin: 1.5em auto auto;
+  text-align: center;
+  padding: 0.5rem;
+  width: 25%;
+}
+.itunes-widget .album-list__album img {
+  border-radius: 5px;
+}
+.itunes-widget .album-list__album p {
+  margin: 0.3rem;
+}
+@media (max-width: 600px) {
+  .itunes-widget .album-list__album {
+    width: 50%;
+  }
+}
+.itunes-widget .album-list__album--hover:hover {
+  transition: 1s;
+  background: #e6e6e6;
+  animation: pulse 0.5s;
+}
