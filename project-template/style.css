@@ -13,6 +13,12 @@
   min-height: 100vh;
 }
 
+header {
+  width: 100%;
+  background-color: var(--theme-color);
+  padding: 10px;
+}
+
 .container {
   margin: 0 7%;
   padding-bottom: 7vh;
