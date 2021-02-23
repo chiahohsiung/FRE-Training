@@ -1,0 +1,75 @@
+:root {
+    --height-header: 60px;
+    --height-search-input: 30px;
+
+    --width-search-input: 200px;
+    --width-albums: 80%;
+    --color-header: #008080;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family:'Roboto', sans-serif;
+}
+
+html,
+body,
+main {
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+}
+
+main {
+    display: flex;
+    justify-content: center;
+    padding-top: var(--height-header);
+}
+
+.header {
+    position: fixed;
+    background-color: var(--color-header);
+    width: 100%;
+    height: var(--height-header);
+    line-height: var(--height-header);
+    text-align: center;
+}
+
+.search-input {
+    height: var(--height-search-input);
+    width: var(--width-search-input);
+    outline: none;
+    border: none;
+    border-radius: var(--height-search-input);
+    padding-left: 10px;
+}
+
+.search-input:focus {
+    width: calc(var(--width-search-input) * 1.5);
+    transition: 300ms;
+}
+
+.albums {
+    width: var(--width-albums);
+}
+
+.search-info {
+    width: 90%;
+    padding: 1rem;
+    border-bottom: 1px solid var(--color-header);
+    font-size: 1.4rem;
+    text-align: center;
+    margin: auto auto 1rem;
+}
+
+ul {
+    display: flex;
+    justify-content: space-between;
+    list-style: none;
+}
+
+ul li {
+    display: block;
+}
