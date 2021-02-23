@@ -374,6 +374,27 @@ function subSet(arr, index) {
 
 }
 
+const subset = (arr, len) => {
+    const res = [];
+    const subArr = [];
+    if (!arr.length || len < 1) return null;
+    arr.sort((a, b) => a - b);
+    helper(subArr, 0, res);
+    function helper(subArr, start, res) {
+        if (subArr.length === len) {
+            res.push([...subArr]);
+            return;
+        }
+        for (let i = start; i < arr.length; i++) {
+            if (arr[i + 1] && arr[i] === arr[i + 1]) continue;
+            subArr.push(arr[i]);
+            helper(subArr, i + 1, res);
+            subArr.pop();
+        }
+    }
+    return res;
+};
+
 //console.log(subSet([1, 2, 3]))
 
 
@@ -463,32 +484,61 @@ function Longest_Country_Name(countryName) {
 
 // 26. Write a JavaScript function to find longest substring in a given a string without repeating characters. 
 //quite hard no personal solution.........
-function longestSubstring(str) {
-    let resultarr = [];
-    let arr = str.split('')
+// function longestSubstring(str) {
+//     let resultarr = [];
+//     let arr = str.split('')
 
-    for (let i = 0; i < arr.length; i++) {
+//     for (let i = 0; i < arr.length; i++) {
 
-        for (let j = i + 1; j < arr.length; j++) {
+//         for (let j = i + 1; j < arr.length; j++) {
 
-            if (arr[i] == arr[j]) {
-                arr[i] = ''
-                arr[j] = ''
+//             if (arr[i] == arr[j]) {
+//                 arr[i] = ''
+//                 arr[j] = ''
 
+//             }
+
+//         }
+
+
+//     }
+
+//     return arr.join('')
+//     //resultarr = resultarr.reduce(function (cur, next) { return cur.length > next.length ? curr : next; })
+//     //return resultarr
+
+// }
+
+
+const findLongestNRepeat = str => {
+    const set = new Set();
+    let i = 0;
+    while (i < str.length) {
+        let j = i;
+        const markSet = new Set();
+        while (j <= str.length) {
+            if (!markSet.has(str[j])) markSet.add(str[j++]);
+            else {
+                set.add(str.slice(i, j));
+                break;
             }
-
+            if (j == str.length - 1 && !markSet.has(str[j])) set.add(str.slice(i, j + 1));
         }
-
-
+        i++;
     }
+    const res = [...set];
+    let len = 0;
+    let result = "";
+    res.forEach(ele => {
+        if (ele.length > len) {
+            len = ele.length;
+            result = ele;
+        }
+    });
+    return result;
+};
 
-    return arr.join('')
-    //resultarr = resultarr.reduce(function (cur, next) { return cur.length > next.length ? curr : next; })
-    //return resultarr
-
-}
-
-console.log(longestSubstring("example.com"));
+console.log(findLongestNRepeat("example.com"));
 
 
 
