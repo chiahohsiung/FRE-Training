@@ -28,6 +28,8 @@ const view = (() => {
   };
 
   const addArtist = (artistList) => {
+    console.log("inside add artist");
+    console.log("this is artistList", artistList);
     let artistDisplay = "";
     artistList.forEach(({ artistName, collectionName, artworkUrl100, collectionID }) => {
       artistDisplay.innerHTML += `
@@ -53,7 +55,7 @@ const model = ((view) => {
 
   // need to set the list
   class State {
-    _artistList = [];
+    _list = [];
     _artistInput = "";
 
     get artistInput() {
@@ -71,10 +73,13 @@ const model = ((view) => {
     }
 
     set list(json) {
-      this._artistList = json.results;
-      const artistResults = document.querySelector(view.domString.artistResults);
-      const template = view.inittodolsitTmp(this._artistList);
-      view.render(artistResults, addArtist);
+      console.log("checking set list");
+      this._list = json.results;
+      console.log("hitting the list inside state");
+      console.log("this is the list", this._list);
+      const artistResults = document.querySelector(view.domStr.artistResults);
+      const template = view.addArtist(this._list);
+      view.render(artistResults, template);
     }
   }
 
@@ -92,15 +97,18 @@ const controller = ((view, model) => {
   const inputAndTextListener = () => {
     const input = document.querySelector(view.domStr.input);
     input.addEventListener("keyup", async (e) => {
+      console.log("hello");
       if (e.key === "Enter") {
+        console.log(state.artistInput);
         state.artistInput = e.target.value;
-        state.artistList = [];
+        state.list = [];
 
         const artistText = document.querySelector(view.domStr.artistText);
-        state.artistList = await artistAPI.getArtist(state.artistInput);
-        artistText.innerHTML = `There are <b>${state.artistList.resultCount}</b> entries for <b>${state.artistList.results[0].artistName}</b>`;
+        state.list = await artistAPI.getArtist(state.artistInput);
+        console.log("what is the list here", state.list);
+        artistText.innerHTML = `There are <b>${state.list.resultCount}</b> entries for <b>${state.list.results[0].artistName}</b>`;
+        state.artistInput = "";
       }
-      state.artistInput = "";
     });
   };
 
