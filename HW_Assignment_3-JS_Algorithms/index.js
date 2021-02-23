@@ -389,7 +389,299 @@ function uniqueChars(str) {
 // console.log(uniqueChars("thequickbrownfoxjumpsoverthelazydog")); // "thequickbrownfxjmpsvlazydg"
 // console.log(uniqueChars("Al-Ghazzali")); // Al-Ghazi
 
-// 17. Write a JavaScript function to  get the number of occurrences of each letter in specified string. 
+// 17. Write a JavaScript function to get the number of occurrences of each letter in specified string.
+function numLetter(str) {
+    let occurrences = "The input string has ";
+    let countA = 0;
+    let countB = 0;
+    let countC = 0;
+    let countD = 0;
+    let countE = 0;
+    let countF = 0;
+    let countG = 0;
+    // --------- //
+    let countH = 0;
+    let countI = 0;
+    let countJ = 0;
+    let countK = 0;
+    let countL = 0;
+    // --------- //
+    let countM = 0;
+    let countN = 0;
+    let countO = 0;
+    let countP = 0;
+    let countQ = 0;
+    // --------- //
+    let countR = 0;
+    let countS = 0;
+    let countT = 0;
+    let countU = 0;
+    let countV = 0;
+    // --------- //
+    let countW = 0;
+    let countX = 0;
+    let countY = 0;
+    let countZ = 0;
+    // --------- //
+    let nonLetter = 0;
+
+    for (let i = 0; i < str.length; i++) {
+        let char = str[i];
+        if (char === "a" || char === "A") {
+            countA++;
+        }
+        else if (char === "b" || char === "B") {
+            countB++;
+        }
+        else if (char === "c" || char === "C") {
+            countC++;
+        }
+        else if (char === "d" || char === "D") {
+            countD++;
+        }
+        else if (char === "e" || char === "E") {
+            countE++;
+        }
+        else if (char === "f" || char === "F") {
+            countF++;
+        }
+        else if (char === "g" || char === "G") {
+            countG++;
+        }
+        else if (char === "h" || char === "H") {
+            countH++;
+        }
+        else if (char === "i" || char === "I") {
+            countI++;
+        }
+        else if (char === "j" || char === "J") {
+            countJ++;
+        }
+        else if (char === "k" || char === "K") {
+            countK++;
+        }
+        else if (char === "l" || char === "L") {
+            countL++;
+        }
+        else if (char === "m" || char === "M") {
+            countM++;
+        }
+        else if (char === "n" || char === "N") {
+            countN++;
+        }
+        else if (char === "o" || char === "O") {
+            countO++;
+        }
+        else if (char === "p" || char === "P") {
+            countP++;
+        }
+        else if (char === "q" || char === "Q") {
+            countQ++;
+        }
+        else if (char === "r" || char === "R") {
+            countR++;
+        }
+        else if (char === "s" || char === "S") {
+            countS++;
+        }
+        else if (char === "t" || char === "T") {
+            countT++;
+        }
+        else if (char === "u" || char === "U") {
+            countU++;
+        }
+        else if (char === "v" || char === "V") {
+            countV++;
+        }
+        else if (char === "w" || char === "W") {
+            countW++;
+        }
+        else if (char === "x" || char === "X") {
+            countX++;
+        }
+        else if (char === "y" || char === "Y") {
+            countY++;
+        }
+        else if (char === "z" || char === "Z") {
+            countZ++;
+        }
+        else {
+            nonLetter++;
+        }
+    }
+
+    if (countA > 1) {
+        occurrences += `${countA} A's, `
+    } else if (countA > 0) {
+        occurrences += `${countA} A, `
+    }
+
+    if (countB > 1) {
+        occurrences += `${countB} B's, `
+    } else if (countB > 0) {
+        occurrences += `${countB} B, `
+    }
+
+    if (countC > 1) {
+        occurrences += `${countC} C's, `
+    } else if (countC > 0) {
+        occurrences += `${countC} C, `
+    }
+
+    if (countD > 1) {
+        occurrences += `${countD} D's, `
+    } else if (countD > 0) {
+        occurrences += `${countD} D, `
+    }
+
+    if (countE > 1) {
+        occurrences += `${countE} E's, `
+    } else if (countE > 0) {
+        occurrences += `${countE} E, `
+    }
+
+    if (countF > 1) {
+        occurrences += `${countF} F's, `
+    } else if (countF > 0) {
+        occurrences += `${countF} F's, `
+    }
+
+    if (countG > 1) {
+        occurrences += `${countG} G's, `
+    } else if (countG > 0) {
+        occurrences += `${countG} G, `
+    }
+
+    if (countH > 1) {
+        occurrences += `${countH} H's, `
+    } else if (countH > 0) {
+        occurrences += `${countH} H, `
+    }
+
+    if (countI > 1) {
+        occurrences += `${countI} I's, `
+    } else if (countI > 0) {
+        occurrences += `${countI} I, `
+    }
+
+    if (countJ > 1) {
+        occurrences += `${countJ} J's, `
+    } else if (countJ > 0) {
+        occurrences += `${countJ} J, `
+    }
+
+    if (countK > 1) {
+        occurrences += `${countK} K's, `
+    } else if (countK > 0) {
+        occurrences += `${countK} K, `
+    }
+
+    if (countL > 1) {
+        occurrences += `${countL} L's, `
+    } else if (countL > 0) {
+        occurrences += `${countL} L, `
+    }
+
+    if (countM > 1) {
+        occurrences += `${countM} M's, `
+    } else if (countM > 0) {
+        occurrences += `${countM} M, `
+    }
+
+    if (countN > 1) {
+        occurrences += `${countN} N's, `
+    } else if (countN > 0) {
+        occurrences += `${countN} N, `
+    }
+
+    if (countO > 1) {
+        occurrences += `${countO} O's, `
+    } else if (countO > 0) {
+        occurrences += `${countO} O, `
+    }
+
+    if (countP > 1) {
+        occurrences += `${countP} P's, `
+    } else if (countP > 0) {
+        occurrences += `${countP} P, `
+    }
+
+    if (countQ > 1) {
+        occurrences += `${countQ} Q's, `
+    } else if (countQ > 0) {
+        occurrences += `${countQ} Q, `
+    }
+
+    if (countR > 1) {
+        occurrences += `${countR} R's, `
+    } else if (countR > 0) {
+        occurrences += `${countR} R, `
+    }
+
+    if (countS > 1) {
+        occurrences += `${countS} S's, `
+    } else if (countS > 0) {
+        occurrences += `${countS} S, `
+    }
+
+    if (countT > 1) {
+        occurrences += `${countT} T's, `
+    } else if (countT > 0) {
+        occurrences += `${countT} T, `
+    }
+
+    if (countU > 1) {
+        occurrences += `${countU} U's, `
+    } else if (countU > 0) {
+        occurrences += `${countU} U, `
+    }
+
+    if (countV > 1) {
+        occurrences += `${countV} V's, `
+    } else if (countV > 0) {
+        occurrences += `${countV} V, `
+    }
+
+    if (countW > 1) {
+        occurrences += `${countW} W's, `
+    } else if (countW > 0) {
+        occurrences += `${countW} W, `
+    }
+
+    if (countX > 1) {
+        occurrences += `${countX} X's, `
+    } else if (countX > 0) {
+        occurrences += `${countX} X, `
+    }
+
+    if (countY > 1) {
+        occurrences += `${countY} Y's, `
+    } else if (countY > 0) {
+        occurrences += `${countY} Y, `
+    }
+
+    if (countZ > 1) {
+        occurrences += `and ${countZ} Z's.`
+    } else if (countZ > 0) {
+        occurrences += `and ${countZ} Z.`
+    };
+
+    let lastCharIndex = occurrences.length - 1;
+    let occurrencesRevised;
+    if (occurrences[lastCharIndex] === " ") {
+
+        occurrencesRevised = occurrences.slice(0, lastCharIndex - 6) + "and " + occurrences.slice(lastCharIndex - 6, lastCharIndex - 1) + ".";
+        //occurrencesRevised = occurrences.slice(0, lastCharIndex - 1) + ".";
+    } else {
+        return occurrences;
+    }
+    return occurrencesRevised;
+};
+
+// console.log(numLetter("apple")); // expected output: The input string has 1 A, 1 E, 1 L, and 2 P's.
+// console.log(numLetter("zapper"));
+// console.log(numLetter("borborygmus")); // some errors
+// console.log(numLetter("call#786"));
 
 // 18. Write a function for searching JavaScript arrays with a binary search.Note : A binary search searches by splitting an array into smaller and smaller chunks until it findsthe desired value.
 
