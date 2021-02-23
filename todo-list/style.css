@@ -1,0 +1,84 @@
+:root {
+  --height-header: 60px;
+  --color-green: rgb(68, 241, 88);
+  --todoList-height: 400px;
+  --todoList-width: 700px;
+
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Ubuntu', sans-serif;
+}
+
+html, body {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.header {
+  position: fixed;
+  width: 100%;
+  height: var(--height-header);
+  line-height: var(--height-header);
+  text-transform: capitalize;
+  font-size: 1.8rem;
+  letter-spacing: 1px;
+  color: white;
+  padding-left: 10px;
+  background: linear-gradient(to right, rgb(102, 95, 95), var(--color-green));
+  user-select: none;
+}
+
+.content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: var(--height-header);
+  height: 100%;
+}
+
+.todoList {
+  height: var(--todoList-height);
+  width: var(--todoList-width);
+  background-color: var(--color-green);
+}
+
+.list_header {
+  padding: 5px 15px;
+  font-weight: bold;
+  font-size: 1.4rem;
+}
+.todo_input, ul li {
+  height: 40px;
+  line-height: 40px;
+  width: 100%;
+  outline: none;
+  padding: 0px 10px;
+  list-style: none;
+}
+.todoList > ul {
+  height: 324px;
+  overflow: auto;
+}
+ul li {
+  display: flex;
+  justify-content: space-between;
+  align-content: center;
+}
+ul li:hover{
+  background-color: whitesmoke;
+}
+.btn-remove {
+  height: 20px;
+  margin-top: 10px;
+  background-color: transparent;
+  border: none;
+  font-size: 20px;
+}
+.btn-remove:hover{
+  color: rgb(218, 81, 81);
+}
