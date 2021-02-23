@@ -26,6 +26,7 @@ submit.addEventListener("click", onClickFn);
 
 function show(data) {
   let card = "";
+
   for (let r of data.results) {
     card += `<div class="card">
     <img class="image" src="${r.artworkUrl100}" alt="${r.collectionName}">
@@ -33,4 +34,7 @@ function show(data) {
   </div>`;
   }
   document.getElementById("continer").innerHTML = card;
+  document.getElementById("text").innerHTML = "Results Count:";
+
+  document.getElementById("count").innerHTML = data.resultCount;
 }

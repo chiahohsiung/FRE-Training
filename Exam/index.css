@@ -4,10 +4,6 @@
   padding: 0;
 }
 
-#container {
-  display: flex;
-}
-
 .header {
   width: 100%;
   text-align: center;
@@ -29,9 +25,31 @@ form {
 }
 .resultcount {
   max-width: 500px;
-  left: 25%;
 }
 hr {
   border: 1px solid black;
-  max-width: 500px;
+  max-width: 75%;
+}
+
+.title {
+  width: 75%;
+  margin: 10px auto;
+  border-bottom: 1px solit black;
+}
+.text {
+  font-size: 2em;
+  text-align: center;
+}
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  width: 75%;
+  margin: 10px auto;
+}
+
+.card {
+  margin: 10px;
+  flex-grow: 1;
+  flex-basis: 100px;
 }
