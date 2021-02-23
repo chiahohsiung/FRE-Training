@@ -1,0 +1,96 @@
+:root{
+    --height-header: 60px;
+    --height-result-header: 60px;
+}
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+}
+
+
+nav{
+    position:fixed;
+    height: var(--height-header);
+    width: 100%;
+    padding-left: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(81, 92, 81);
+}
+
+#search-area{
+    background-color: white;
+    height:25px;
+    border-radius: 10px;
+    width: 50%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#search-area input{
+    border:none;
+    margin-left: 10px;
+    outline:none;
+}
+
+#search-button{
+    border: none;
+    margin-right: 10px;
+    background-color: white;
+    outline:none;
+}
+
+main{
+    height: 100%;
+    padding-top: var(--height-header);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#result-area{
+    width: 80%;
+}
+
+#result-header{
+    height: var(--height-result-header);
+    border-bottom: 1px solid violet;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10px;
+    padding-bottom: 10px;
+}
+
+#result-content{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.card {
+    /* Add shadows to create the "card" effect */
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    transition: 0.3s;
+    height: 200px;
+    width: 100px;
+    margin: 10px;
+  }
+  
+  /* On mouse-over, add a deeper shadow */
+  .card:hover {
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+  }
+  
+  /* Add some padding inside the card container */
+  .container {
+    padding: 2px 16px;
+    overflow: hidden;
+    height:90px;
+    font-size: small;
+  }
