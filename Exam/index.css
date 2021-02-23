@@ -24,6 +24,14 @@ form {
 
 .search__input {
   display: inline-block;
+  border: 2px solid black;
+  border-radius: 10px;
+}
+.resultcount {
   max-width: 500px;
-  margin: auto;
+  left: 25%;
+}
+hr {
+  border: 1px solid black;
+  max-width: 500px;
 }
