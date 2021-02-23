@@ -11,9 +11,9 @@
     flex: 0 0 70vw;
     text-align: center;
     padding-bottom: 8px;
-    border-bottom: 1px solid blue;
+    border-bottom: 1px solid teal;
     font-size: larger;
-    padding-bottom: 10px;
+    padding-bottom: 18px;
 }
 .song_break{
     flex-basis: 100%;

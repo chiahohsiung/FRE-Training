@@ -1,11 +1,33 @@
 .navbar_container{
     display: flex;
     margin:0;
-    background-color: lightgray;
+    background-color: teal;
+    top: 0;
+    position:sticky;
+    align-items: baseline;
+    align-self: flex-start;
 }
 
 .navbar_item{
     margin-block:20px;
     text-align: center;
     width:100%;
+}
+
+.navbar_button{
+    border:0px solid transparent;
+    background-color: transparent;
+}
+
+.navbar_search_icon{
+    width: 10px;
+}
+
+.navbar_input{
+    padding: 10px;
+    width: 40%;
+    height: 10px;
+    border: 0px solid transparent;
+    border-radius: 100px;
+    margin-right: -40px;
 }

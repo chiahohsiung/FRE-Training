@@ -13,6 +13,7 @@ const API = (() => {
 
 const View = (() => {
     const constructTemplate = (list,input) => {
+        console.log(list);
         let template = ' <div class = "song_results" id = "song_results">' + list.length +  ' results for "' + input + '"</div> <div class = "song_break"></div>';
         list.forEach((item) => {
             template +=
@@ -50,9 +51,7 @@ const init = () => {
         const songElement = document.getElementById("song_container");
         formElement.addEventListener("submit", (event) => {
             event.preventDefault();
-            console.log(inputElement.value);
             API.search(inputElement.value).then((data) => {
-                console.log(data);
                 if (data.resultCount !== 0) {
                     state.numSongs = data.resultCount;
                     state.songs = data.results;
