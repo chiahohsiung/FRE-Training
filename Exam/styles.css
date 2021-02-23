@@ -84,7 +84,7 @@ svg {
 .card {
     background-color: #f0eeee;
     border: 1px solid teal;
-    flex: 0 0 8%;
+    flex: 0 0 6rem;
     border-radius: 3px;
     margin: 0.7rem;
     display: flex;
