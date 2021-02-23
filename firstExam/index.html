@@ -7,14 +7,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>First Exam Search Bar API</title>
     <link rel="stylesheet" href="./style.css">
+    <script src="https://code.jquery.com/jquery-3.5.1.js"
+        integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/fetch-jsonp/1.0.6/fetch-jsonp.min.js"></script> -->
+
 </head>
 
 <body>
-    <header>
-        <form
-            action="https://itunes.apple.com/search?term=${ARTIST_NAME}&media=music&entity=album&attribute=artistTerm&limit=500"
-            method="GET">
-            <input type="text" id="search_bar" name="artist" placeholder="Search..." required value>
+    <header class="header">
+        <form class="albumlist" id="albumlist">
+            <input type="text" class="albumlist_input" id="albumlist_input" name="albumlist_input"
+                placeholder="Search..." required value>
             <button type="submit">
                 <svg class="search__icon" version="1.1" xmlns="http://www.w3.org/2000/svg" width="20" height="20"
                     viewBox="0 0 20 20">
@@ -27,13 +30,15 @@
         </form>
     </header>
 
-    <main>
-        <section>
+    <main class="content">
+        <section class="albums">
             <div>Search Albums by ArtistName:</div>
         </section>
     </main>
 
-    <script scr="./index.js"></script>
+    <div class="album-content" id="album-content"></div>
+
+    <script async scr="./index.js"></script>
 </body>
 
 </html>
