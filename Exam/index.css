@@ -1,0 +1,78 @@
+:root {
+    --height-header: 60px;
+    --height-card: 250px;
+    --width-card: 140px;
+
+
+    --color-blue: rgb(11, 219, 192);
+    --color-red-button: rgb(99, 3, 3);
+    --color-red-li-hover: rgb(27, 172, 8)
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    width: 100%;
+    height: 100%;
+    overflow:scroll
+}
+
+.search_bar {
+    width: 100%;
+    position: fixed;
+    text-align: center;
+    height: var(--height-header);
+    line-height: var(--height-header);
+    font-size: 1.8rem;
+    background-color: var(--color-blue);
+}
+
+.btn {
+    width: 1.8rem;
+    height: 1.8rem;
+}
+
+.num_songs {
+    display:block;
+    width: 100%;
+    text-align: center;
+    height: calc(var(--height-header)*2);
+    line-height: var(--height-header);
+    font-size: 1rem;
+    padding-top: var(--height-header);
+}
+
+
+.content {
+    width: 100%;
+    height: var(--height-card);
+    display: flex;
+    flex-wrap: wrap;
+
+}
+
+.album {
+    margin: 2rem;
+    width: var(--width-card);
+    height: var(--height-card);
+    background-color: red;
+}
+
+.image {
+    width: 100%;
+    height: 75%;
+    background-color: green;
+}
+
+.song_title {
+    width: 100%;
+    height: 25%;
+    font-size: 0.8rem;
+    text-align: center;
+    padding: 1rem;
+}
+

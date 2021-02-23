@@ -902,6 +902,7 @@
 // function print(data) {
 //     console.log(data);
 // }
+
 // function getUserPromise(id) {
 //     return new Promise((resolve, reject) => {
 //         var xhttp = new XMLHttpRequest();
@@ -1227,6 +1228,7 @@
 
 // Promise.all([runAsync1(), runAsync2(), runAsync3()]).then((results)=>console.log(results));
 
+
 // getNumber = () => {
 //     let p = new Promise(function(resolve, reject){
 //         let num = Math.ceil(Math.random()*10);
@@ -1248,4 +1250,8 @@
 //     console.log(data);
 // });
 // console.log("此语句先执行， 因为前面是异步");
+
+
+
+
 
