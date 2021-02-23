@@ -25,7 +25,7 @@ const order = (str) => {
 // function 5: Write a JavaScript function that accepts a string as a parameter and converts the first letter ofeach word of the string in upper case. 
 const Capfirst = (str) => {
     let array = str.split(' ');
-    array = array.map((element)=> {
+    array = array.map((element) => {
         let first = element.charAt(0);
         let rest = element.slice(1);
         return first.toUpperCase() + rest;
@@ -35,7 +35,7 @@ const Capfirst = (str) => {
 
 // function 6: Write a JavaScript function that accepts a string as a parameter and find the longest wordwithin the string. 
 const Longest = (str) => {
-    return str.split(' ').sort((a, b) => {return b.length - a.length})[0];
+    return str.split(' ').sort((a, b) => { return b.length - a.length })[0];
 }
 
 // function 7: Write a JavaScript function that accepts a string as a parameter and counts the number ofvowels within the string. 
@@ -62,19 +62,19 @@ const isPrime = (num) => {
 
 // function 9: Write a JavaScript function which accepts an argument and returns the type
 const itsType = (i) => {
-    return typeof(i);
+    return typeof (i);
 }
 
 // function 10: Write a JavaScript function which returns the n rows by n columns identity matrix. 
 const matrix = (n) => {
     let matrix = [];
     let i = 0, j = 0;
-    for (;i < n; ++i) {
+    for (; i < n; ++i) {
         matrix[i] = [];
     }
     i = 0;
-    for (;i < n; ++i) {
-        for (;j < n; ++j) {
+    for (; i < n; ++i) {
+        for (; j < n; ++j) {
             if (i === j) {
                 matrix[i][j] = 1;
             }
@@ -94,10 +94,10 @@ const secondLowestAndGreatest = (arr) => {
 
 const isPerfectNumber = (n) => {
     let divisors = [];
-    for (let i =0;i<n;i++)
+    for (let i = 0; i < n; i++)
         if (!n % i)
             divisors.push(i)
-    if(divisors.reduce((ac,n) => ac+n) === n)
+    if (divisors.reduce((ac, n) => ac + n) === n)
         return true
     return false
 }
