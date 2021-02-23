@@ -8,6 +8,8 @@ body {
     width: 60%;
     margin: auto;
     justify-content: center;
+    border-top: 1px solid teal;
+    padding: 5px;
 }
 .container_header {
     background-color: teal;
@@ -16,7 +18,10 @@ body {
     align-items: center;
 }
 .container_num {
+    margin-top: 10px;
     text-align: center;
+    font-size: 25px;
+    padding: 5px;
 }
 .search_bar {
     border-radius: 25px;
