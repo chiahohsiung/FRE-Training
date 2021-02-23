@@ -12,7 +12,7 @@ window.addEventListener('DOMContentLoaded', (event) => {
         fetch(baseurl)
             .then((response) => response.json())
             .then((data) => data.results.forEach(ele => {
-                display.innerHTML = `
+                display.innerHTML += `
                 <div class="card">
                     <img src=${ele.artworkUrl100} alt="album image" style="width:100%">
                     <div class="container">
