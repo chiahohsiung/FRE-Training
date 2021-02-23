@@ -3,7 +3,7 @@ const search = async (elem) => {
         const url = `https://itunes.apple.com/search?term=${elem.value}&media=music&entity=album&attribute=artistTerm&limit=500`
         const res = await fetchJsonp(url)
         const json = await res.json()
-        document.getElementById('container_num').innerText = `${json.results.length} results for ${elem.value}`
+        document.getElementById('container_num').innerText = `${json.results.length} results for "${elem.value}"`
 
         htmlArr = []
         json.results.forEach(e => {
@@ -19,9 +19,5 @@ const search = async (elem) => {
         })
 
         document.getElementById('container_result').innerHTML = htmlArr.join('')
-        console.log()
-        console.log(document.getElementById('container_result').innerHTML)
-
-        console.log(json)
     }
 }

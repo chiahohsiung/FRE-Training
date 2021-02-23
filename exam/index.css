@@ -2,13 +2,21 @@ body {
     margin: 0;
     padding: 0;
 }
-.container {
+.container_result {
+    display: flex;
+    flex-wrap: wrap;
+    width: 60%;
+    margin: auto;
+    justify-content: center;
 }
 .container_header {
     background-color: teal;
     height: 60px;
     display: flex;
     align-items: center;
+}
+.container_num {
+    text-align: center;
 }
 .search_bar {
     border-radius: 25px;
@@ -17,4 +25,20 @@ body {
     margin-left: auto;
     margin-right: auto;
     width: 40%;
+}
+.search_element {
+    width: 110px;
+    display: block;
+    margin: 10px;
+    background-color: WhiteSmoke;
+    border: 1px solid teal;
+    border-radius: 3px;
+}
+.search_element_text {
+    text-align: center;
+    margin: 0px;
+}
+.search_element_image {
+    width: 110px;
+    height: 110px;
 }
