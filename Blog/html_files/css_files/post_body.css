@@ -4,6 +4,13 @@
     padding-top: 10px;
     width: 100%;
     padding-bottom: 50px;
+    background-image: url(../image/background.jpg);
+    background-repeat: none;
+    background-position: bottom;
+    background-size: cover;
+}
+.container {
+    width: 100%;
 }
 
 .left {
@@ -80,11 +87,13 @@ p {
     font-size: 25px;
 }
 
-button {
+.btn {
     background-color: #fff;
     padding: 7px;
-    border-radius: 15px;
-    
+    border-radius: 17px;
+    outline: none;
+    cursor: pointer;
+    text-decoration: none;
 }
 .new_button {
     border: 1px solid rgba(13, 138, 240, 0.774);
@@ -95,15 +104,6 @@ button {
     border: 1px solid #c2bfbf;
     color: #c2bfbf;
 }
-
-
-
-
-
-
-
-
-
 
 .right {
     width: 27%;
