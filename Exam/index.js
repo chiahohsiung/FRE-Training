@@ -42,12 +42,14 @@ const dealData = async () => {
 
     await fetchData([baseurl, singerPath].join('')).then(data => console.log(data));
     const data = await fetchData([baseurl, singerPath].join(''));
-    console.log(data);
+    console.log(typeof data);
+    console.log(data.resultCount)
+    console.log(data['results'][0]['artworkUrl100'])
 
 
     // const searchAdd = document.querySelector(".searchResult")
     const inputValue = document.querySelector("#search_input")
-    await inputValue.addEventListener('keyup', (event) => {
+    inputValue.addEventListener('keyup', (event) => {
         console.log(event.keyCode);
         if (event.key === 'Enter') {
 
@@ -59,12 +61,12 @@ const dealData = async () => {
             const div2add = document.createElement('div')
             div2add.classList.add("flexGrid")
             let template = '<div class="card>';
-            for (i = 0; i <= data[resultCount]; i++) {
+            for (i = 0; i <= data['resultCount']; i++) {
 
-                template += `<img class="card_img" src="${data[results][i][artworkUrl100]}>"</div>`
+                template += `<img class="card_img" src="${data['results'][i]['artworkUrl100']}>"</div>`
             }
             div2add.innerHTML = template
-            div1add.innerHTML = `${data[resultCount]} result for ${inputValue.value}`
+            div1add.innerHTML = `${data['resultCount']} result for ${inputValue.value}`
             searchAdd.appendChild(div1add);
             searchAdd.appendChild(div2add);
 
