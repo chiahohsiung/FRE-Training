@@ -5,11 +5,18 @@ body{
 	background-size:cover;
 	background-position: center;
 }
-.container{
+.content{
 	text-align: center;
 }
+.message{
+	text-align: center;
+}
+
 .topnav {
 	overflow: hidden;
 	background-color: green;
   }
   
+.albums{
+	display:flex;
+}
