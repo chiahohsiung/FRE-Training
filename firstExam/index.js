@@ -2,7 +2,7 @@
 
 window.addEventListener('DOMContentLoaded', (event) => {
     const input = document.getElementById('albumlist_input');
-    input.addEventListener('submit', event => {
+    input.addEventListener('keypress', event => {
         //event.preventDefault();
         const artist_name = event.target.value;
 
