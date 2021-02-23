@@ -684,118 +684,118 @@
 
 // console.log(p);
 
-const getRandomTime = () => {
-    return Math.floor(Math.random() * 3);
-}
-class MyPromise {
-    thenCallBackQueue = [];
-    catchCallBackQueue = [];
-    currentData;
-    promisestate = 'pending';
+// const getRandomTime = () => {
+//     return Math.floor(Math.random() * 3);
+// }
+// class MyPromise {
+//     thenCallBackQueue = [];
+//     catchCallBackQueue = [];
+//     currentData;
+//     promisestate = 'pending';
 
-    constructor(executor) {
-        try {
-            executor(this.resolve, this.reject.bind(this));
-        } catch (error) {
-            this.reject(error);
-        }
-    }
+//     constructor(executor) {
+//         try {
+//             executor(this.resolve, this.reject.bind(this));
+//         } catch (error) {
+//             this.reject(error);
+//         }
+//     }
 
-    resolve = (data) => {
-        setTimeout(() => {
-            try {
-                this.promisestate = 'fulfilled';
-                if (!this.thenCallBackQueue.length) return; // <-------------
+//     resolve = (data) => {
+//         setTimeout(() => {
+//             try {
+//                 this.promisestate = 'fulfilled';
+//                 if (!this.thenCallBackQueue.length) return; // <-------------
 
-                this.currentData = data;
-                while (this.thenCallBackQueue.length) {
-                    const cb = this.thenCallBackQueue.shift();
+//                 this.currentData = data;
+//                 while (this.thenCallBackQueue.length) {
+//                     const cb = this.thenCallBackQueue.shift();
 
-                    if (this.currentData instanceof MyPromise) {
-                        this.currentData.then(dataFromRes => {
-                            this.currentData = cb(dataFromRes);
-                        });
-                    } else {
-                        this.currentData = cb !== undefined 
-                            ? cb(this.currentData)
-                            : this.currentData;
-                    }
-                }
-            } catch (error) {
-                if (this.catchCallBackQueue.length) {
-                    const cb = this.catchCallBackQueue.shift();
-                    cb(error);
-                }
-            }
-        }, 0);
-    }
-    reject(error) {
-        this.promisestate = 'rejected';
-        setTimeout(() => {
-            if (!this.catchCallBackQueue.length) return;
-            this.currentData = error;
-            const cb = this.catchCallBackQueue.shift();
-            if (this.currentData instanceof MyPromise) {
-                this.currentData.catch(dataFromRes => {
-                    this.currentData = cb(dataFromRes);
-                });
-            } else {
-                this.currentData = cb(this.currentData);
-            }
-        }, 0);
-    }
-    then(resolvefn, rejectfn) {
-        if (this.promisestate === 'pending') // <-------------
-            this.thenCallBackQueue.push(resolvefn);
-        return this;
-    }
-    catch(rejectfn) {
-        if (rejectfn != undefined)
-            this.catchCallBackQueue.push(rejectfn);
-        return this;
-    }
+//                     if (this.currentData instanceof MyPromise) {
+//                         this.currentData.then(dataFromRes => {
+//                             this.currentData = cb(dataFromRes);
+//                         });
+//                     } else {
+//                         this.currentData = cb !== undefined 
+//                             ? cb(this.currentData)
+//                             : this.currentData;
+//                     }
+//                 }
+//             } catch (error) {
+//                 if (this.catchCallBackQueue.length) {
+//                     const cb = this.catchCallBackQueue.shift();
+//                     cb(error);
+//                 }
+//             }
+//         }, 0);
+//     }
+//     reject(error) {
+//         this.promisestate = 'rejected';
+//         setTimeout(() => {
+//             if (!this.catchCallBackQueue.length) return;
+//             this.currentData = error;
+//             const cb = this.catchCallBackQueue.shift();
+//             if (this.currentData instanceof MyPromise) {
+//                 this.currentData.catch(dataFromRes => {
+//                     this.currentData = cb(dataFromRes);
+//                 });
+//             } else {
+//                 this.currentData = cb(this.currentData);
+//             }
+//         }, 0);
+//     }
+//     then(resolvefn, rejectfn) {
+//         if (this.promisestate === 'pending') // <-------------
+//             this.thenCallBackQueue.push(resolvefn);
+//         return this;
+//     }
+//     catch(rejectfn) {
+//         if (rejectfn != undefined)
+//             this.catchCallBackQueue.push(rejectfn);
+//         return this;
+//     }
 
-    // Promise.all
-    static all(array) {
-        let counter = 0;
-        const resolveData = new Array(array.length); // 
+//     // Promise.all
+//     static all(array) {
+//         let counter = 0;
+//         const resolveData = new Array(array.length); // 
 
-        return new MyPromise((res, rej) => {
-            array.forEach((ele, i) => {
-                if (ele instanceof MyPromise) {
-                    ele.then(data => {
-                        counter++;
-                        resolveData[i] = data;
-                        if (counter === array.length)
-                            res(resolveData);
-                    }).catch(err => rej(err));
-                } else {
-                    counter++;
-                    resolveData[i] = ele;
-                    if (counter === array.length)
-                        res(resolveData);
-                }
-            });
-        });
-    }
-    // Promise.resolve
-    static resolve(resdata) {
-        return new MyPromise((resolve, _) => {
-            resolve(resdata)
-        });
-    }
-    // Promise.reject
-    static reject(rejdata) {
-        return new MyPromise((_, reject) => {
-            reject(rejdata);
-        });
-    }
-}
+//         return new MyPromise((res, rej) => {
+//             array.forEach((ele, i) => {
+//                 if (ele instanceof MyPromise) {
+//                     ele.then(data => {
+//                         counter++;
+//                         resolveData[i] = data;
+//                         if (counter === array.length)
+//                             res(resolveData);
+//                     }).catch(err => rej(err));
+//                 } else {
+//                     counter++;
+//                     resolveData[i] = ele;
+//                     if (counter === array.length)
+//                         res(resolveData);
+//                 }
+//             });
+//         });
+//     }
+//     // Promise.resolve
+//     static resolve(resdata) {
+//         return new MyPromise((resolve, _) => {
+//             resolve(resdata)
+//         });
+//     }
+//     // Promise.reject
+//     static reject(rejdata) {
+//         return new MyPromise((_, reject) => {
+//             reject(rejdata);
+//         });
+//     }
+// }
 
-const promise = new Promise((res, rej) => res(2) )
-    .then(() => { })
-    .then(() => { })
-    .then((data) => console.log(data) );
+// const promise = new Promise((res, rej) => res(2) )
+//     .then(() => { })
+//     .then(() => { })
+//     .then((data) => console.log(data) );
 
 // const p = new Promise((resolve, reject) => {
 //     setTimeout(() => {
@@ -846,55 +846,73 @@ const promise = new Promise((res, rej) => res(2) )
 //     console.log(values);
 // });
 
-// function myFetch(url, options) {
-//     return new Promise((resolve, reject) => {
-//         let method = 'GET';
-//         if (options && options.method) method = options.method;
+function myFetch(url, options) {
+    return new Promise((resolve, reject) => {
+        let method = options && options.method ? options.method : 'GET';
+        const xhttp = new XMLHttpRequest();
 
-//         const xhttp = new XMLHttpRequest();
+        xhttp.open(method, url, true);
+        if (options && options.headers)
+            Object.keys(options.headers).forEach(key => {
+                xhttp.setRequestHeader(key, options.headers[key]);
+            });
+        xhttp.onreadystatechange = function () {
+            if (this.readyState == 4 && this.status >= 200 && this.status < 300)
+                resolve({ json: () => JSON.parse(xhttp.response) });
+            else if (this.status < 200 || this.status >= 300)
+                reject({ errorState: this.readyState, errorStatus: this.status });
+        };
+        options && options.body ? xhttp.send(options.body) : xhttp.send();
+    });
+}
 
-//         if (method === 'POST') {
-//             xhttp.open(method, url, true);
-//             if (options.headers) {
-//                 for (let key in options.headers)
-//                     xhttp.setRequestHeader(key, options.headers[key]);
-//             }
+myFetch('https://jsonplaceholder.typicode.com/posts/1', {
+    method: 'PUT',
+    body: JSON.stringify({
+        id: 1,
+        title: 'foo',
+        body: 'bar',
+        userId: 1,
+    }),
+    headers: {
+        'Content-type': 'application/json; charset=UTF-8',
+    },
+})
+    .then((response) => response.json())
+    .then((json) => console.log(json));
 
-//             xhttp.onreadystatechange = function () {
-//                 if (this.readyState == 4 && this.status >= 200 && this.status < 300) {
-//                     // Typical action to be performed when the document is ready:
-//                     const response = {
-//                         json: () => JSON.parse(xhttp.response)
-//                     };
-//                     resolve(response);
-//                 } else if (this.status < 200 || this.status >= 300)
-//                     reject({
-//                         errorState: this.readyState,
-//                         errorStatus: this.status
-//                     });
-//             };
+myFetch('https://jsonplaceholder.typicode.com/posts/1', {
+    method: 'DELETE',
+});
 
-//             options.body ? xhttp.send(options.body) : xhttp.send();
-//         }
+myFetch('https://jsonplaceholder.typicode.com/posts/1', {
+  method: 'PATCH',
+  body: JSON.stringify({
+    title: 'foo',
+  }),
+  headers: {
+    'Content-type': 'application/json; charset=UTF-8',
+  },
+})
+  .then((response) => response.json())
+  .then((json) => console.log(json));
 
-//         if (method === 'GET') {}
-//         if (method === 'DELETE') {}
-//         if (method === 'PUT') {}
-//     });
-// }
+myFetch('https://jsonplaceholder.typicode.com/posts/1')
+  .then((response) => response.json())
+  .then((json) => console.log(json));
 
-// myFetch('https://jsonplaceholder.typicode.com/todos', {
-//     method: 'POST',
-//     body: JSON.stringify({
-//         userId: 1,
-//         title: 'bar',
-//         completed: false,
-//     }),
-//     headers: {
-//         'Content-type': 'application/json; charset=UTF-8',
-//     },
-// })
-//     .then((response) => response.json())
-//     .then((json) => console.log(json))
-//     .catch(err => console.log(err));
+myFetch('https://jsonplaceholder.typicode.com/todos', {
+    method: 'POST',
+    body: JSON.stringify({
+        userId: 1,
+        title: 'bar',
+        completed: false,
+    }),
+    headers: {
+        'Content-type': 'application/json; charset=UTF-8',
+    },
+})
+    .then((response) => response.json())
+    .then((json) => console.log(json))
+    .catch(err => console.log(err));
 
