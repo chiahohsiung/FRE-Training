@@ -62,8 +62,10 @@ const app = (() => {
     const albumInfo = new AlbumInfo();
     const addListener = () => {
         const inputEle = document.querySelector('#search-input');
-        const btnEle = document.querySelector('#search-area');
+        const btnEle = document.querySelector('#search-button');
         const eventHandler = (e)=>{
+            e.preventDefault();
+            console.log(e);
             if(e.key === 'Enter'){
                 const inputVal = e.target.value;
                 albumInfo.inputVal = inputVal;
@@ -85,7 +87,26 @@ const app = (() => {
         }
 
         inputEle.addEventListener('keyup', eventHandler);
-        btnEle.addEventListener('click', eventHandler);
+        btnEle.addEventListener('click', (e)=>{
+            e.preventDefault();
+            const inputVal = document.querySelector('#search-input').value;
+            albumInfo.inputVal = inputVal;
+            const url = `https://itunes.apple.com/search?term=${inputVal}&media=music&entity=album&attribute=artistTerm&limit=500`;
+            fetch(url).then(response => response.json())
+                .then((data) => {
+                    console.log(data);
+                    albumInfo.total = data.resultCount;
+                    let resultList = data.results;
+                    albumInfo.albumList = resultList.map((val) =>{
+                        return {
+                            name: val.artistName,
+                            albumUrl: val.artworkUrl100
+                        }
+                    })
+                    console.log(albumInfo);
+                });
+
+        });
     }
 
     const init = () => {
