@@ -4,6 +4,7 @@
     padding: 0;
     box-sizing: inherit;
     font-family: "Akaya Kanadaka", cursive;
+    
 }
 
 html{
@@ -17,6 +18,7 @@ body {
     line-height: 1.4;
     box-sizing: border-box;
     min-width: 320px;
+    overflow: scroll;
 }
 
 div{
@@ -41,7 +43,6 @@ button {
     padding: 1px 6px;
     border-width: 2px;
     border-style: outset;
-
     border-image: initial;
 }
 
@@ -95,9 +96,10 @@ button {
 
 
 .searchResult {
-    width: 80%;
+    width: 50%;
     margin: auto;
     padding: 1rem;
+    
 }
 
 
