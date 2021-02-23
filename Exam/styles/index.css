@@ -14,6 +14,7 @@ body {
 .header {
     background-color: #283593;
     padding: 10px;
+    z-index: -1;
 }
 
 .header {
@@ -33,16 +34,22 @@ body {
     width: 100%;
 }
 .search-input {
+    position: relative;
     width: 100%;
     border-radius: 5px;
     height: 30px;
     padding: 5px;
+    padding-left: 30px;
+    z-index: 1;
 }
 i {
     position: absolute;
-    margin: 0 5px 5px 0;
-    align-self: flex-end;
-    color: #283493d0;
+    color: black;
+    z-index: 2;
+    padding-left: 5px;
+    padding-top: 5px;
+    color: hsla(233, 57%, 37%, 0.612);
+    min-width: 40px;
 }
 .album-section {
     margin: 10px auto;
