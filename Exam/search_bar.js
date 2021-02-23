@@ -12,11 +12,15 @@ const searchAPI = (() => {
   const getAllResults = async (keyword) => {
     let paramString = `term=${keyword}&media=music&entity=album&attribute=artistTerm&limit=500`;
     // console.log([[baseUrl, searchPath].join('/'), paramString].join('?'));
+    
     let queryUrl = [[baseUrl, searchPath].join('/'), paramString].join('?');
-    return fetch(queryUrl, {
-      
-    })
-    .then((response) => response.json());
+    console.log(queryUrl);
+    return fetchJsonp(queryUrl, {
+      method: 'GET',
+      header: {
+        "Access-Control-Allow-Origin": "*"
+      }
+    }).then(response => response.json());
   }
 
   return { getAllResults };
@@ -27,7 +31,8 @@ const View = (() => {
   const domString = {
     searchInput: "search-keyword",
     album_card: "album-card",
-    resultGallery: "result-gallery__list"
+    resultGallery: "result-gallery__list",
+    resultInfo: "result-info__text"
   };
 
   const render = (element, htmlTemplate) => {
@@ -35,8 +40,9 @@ const View = (() => {
   };
 
   const resultGallery = document.querySelector('#' + domString.resultGallery);
+  const resultInfo = document.querySelector('#' + domString.resultInfo);
 
-  const populateAlbumsList = (albumArray) => {
+  const populateAlbumsList = (albumArray, keyword) => {
     let template = '';
     albumArray.forEach( elem => {
       template += `
@@ -52,6 +58,7 @@ const View = (() => {
     });
     console.log("template: ", template);
     render(resultGallery, template);
+    render(resultInfo, `${albumArray.length} results for "${keyword}"`)
   };
 
   return {
@@ -112,7 +119,7 @@ const AppController = ((view, model) => {
               });
             })
             console.log(albumArray);
-            view.populateAlbumsList(albumArray);
+            view.populateAlbumsList(albumArray, state.searchQuery);
           });
         // console.log(resultList);
       }

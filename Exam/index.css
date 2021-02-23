@@ -5,6 +5,10 @@
   font-size: 14pt;
 }
 
+ul {
+  list-style-type: none;
+}
+
 .grid-container {
   display: grid;
 }
@@ -39,4 +43,13 @@
   /* text-justify: center; */
   font-size: 1.2rem;
   font-family: Arial, Helvetica, sans-serif;
+}
+
+.result-gallery__list {
+  grid-column: 2/3;
+  grid-template-columns: repeat(7, 1fr);
+}
+
+.result-gallery__wrapper {
+  grid-template-columns: 5rem 1fr 5rem;
 }
