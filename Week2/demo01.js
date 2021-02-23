@@ -81,8 +81,6 @@
 // const arr1 = []
 // arr1.myMap()
 
-
-
 // // "USE STRICT"
 
 // function foo() {
@@ -340,3 +338,5 @@ class Person {
 // const obj2 = JSON.parse(JSON.stringify(obj));
 // // console.log(obj.links === obj2.links);
 // console.log(obj2);
+
+/* 02-16-2020 */
