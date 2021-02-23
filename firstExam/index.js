@@ -14,7 +14,7 @@ window.addEventListener('DOMContentLoaded', (event) => {
             .then((data) => data.results.forEach(ele => {
                 display.innerHTML += `
                 <div class="card">
-                    <img src=${ele.artworkUrl100} alt="album image" style="width:100%">
+                    <img src=${ele.artworkUrl100} alt="album image">
                     <div class="container">
                         <h4><b>${ele.collectionName}</b></h4>
                     </div>
