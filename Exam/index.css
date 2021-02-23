@@ -13,7 +13,7 @@
   text-align: center;
   position: absolute;
 }
-.search {
+form {
   display: flex;
   justify-content: center;
   margin: auto;
@@ -25,6 +25,5 @@
 .search__input {
   display: inline-block;
   max-width: 500px;
-  background-color: black;
   margin: auto;
 }
