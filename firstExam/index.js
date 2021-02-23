@@ -3,7 +3,7 @@
 window.addEventListener('DOMContentLoaded', (event) => {
     const input = document.getElementById('albumlist_input');
     input.addEventListener('submit', event => {
-        event.preventDefault();
+        //event.preventDefault();
         const artist_name = event.target.value;
 
         const baseurl = `https://itunes.apple.com/search?term=${artist_name}&media=music&entity=album&attribute=artistTerm&limit=500`;
