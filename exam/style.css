@@ -1,0 +1,83 @@
+* {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  box-sizing: border-box;
+}
+
+:root {
+  --nav-bg: teal;
+  --content-padding: 10vh 20vw;
+  --flex-basis: 0;
+}
+
+html,
+body {
+  width: 100%;
+}
+
+.flex__container {
+  display: flex;
+  flex-direction: column;
+}
+
+/* navigation */
+.nav__container {
+  flex-basis: var(--flex-basis);
+  padding: 20px;
+  background-color: var(--nav-bg);
+  text-align: center;
+}
+
+.nav__container > input {
+  padding: 8px;
+  padding-left: 15px;
+  width: 30%;
+  border-radius: 20px;
+  border-style: none;
+  background-image: url(https://cdn2.iconfinder.com/data/icons/font-awesome/1792/search-512.png);
+  /* background-position: ; */
+  opacity: 95%;
+}
+
+/* main */
+
+.main__container {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  /* justify-content: flex-start; */
+  padding: var(--content-padding);
+  background-color: red;
+}
+
+.main--result-display-text {
+  flex-basis: var(--flex-basis);
+  /* centering not happening */
+  justify-content: center;
+  font-size: 1.5rem;
+  /* padding-bottom: 10vh; */
+  /* border-bottom: 1px solid var(--nav-bg); */
+  background-color: yellow;
+}
+
+.main--result-display-content {
+  background-color: lime;
+  flex-wrap: wrap;
+  flex-direction: row;
+  flex: 1;
+  /* column-count: 3;
+  column-gap: 40px; */
+}
+
+/* artist content display */
+.artist__container {
+  padding: 20px;
+  border: 1px solid black;
+  background-color: orange;
+}
+
+img {
+  max-width: 100px;
+  max-height: 100px;
+}
