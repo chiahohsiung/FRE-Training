@@ -24,6 +24,7 @@ body {
     padding: 5px;
 }
 .search_bar {
+    background-color: white;
     border-radius: 25px;
     border-style: none;
     height: 30px;
@@ -62,17 +63,10 @@ body {
     width: 110px;
     height: 110px;
 }
-.loader {
-  margin: auto;
-  border: 16px solid lightgray;
-  border-radius: 50%;
-  border-top: 16px solid black;
-  width: 10px;
-  height: 10px;
-  animation: spin 1s linear infinite;
-  display: hide;
+.search_button {
+    background-color: Transparent;
+    border: none;
 }
-@keyframes spin {
-  0% { transform: rotate(0deg); }
-  100% { transform: rotate(360deg); }
+.search_button:focus {
+    outline: none;
 }
