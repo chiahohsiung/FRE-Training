@@ -683,7 +683,7 @@ function numLetter(str) {
 // console.log(numLetter("borborygmus")); // some errors
 // console.log(numLetter("call#786"));
 
-// 18. Write a function for searching JavaScript arrays with a binary search.Note : A binary search searches by splitting an array into smaller and smaller chunks until it findsthe desired value.
+// 18. Write a function for searching JavaScript arrays with a binary search. Note : A binary search searches by splitting an array into smaller and smaller chunks until it finds the desired value.
 
 // 19.Write a JavaScript function that returns array elements larger than a number. 
 
@@ -704,11 +704,44 @@ function numLetter(str) {
 // length: 2
 // output: [[2, 4], [2, 5], [2, 6], [4, 5], [4, 6], [5, 6]]
 
-// 22. Write a JavaScript function that accepts two arguments, a string and a letter and the functionwill count the number of occurrences of the specified letter within the string. Sample arguments: 'microsoft.com', 'o' Expected output: 3
+// 22. Write a JavaScript function that accepts two arguments, a string and a letter and the function will count the number of occurrences of the specified letter within the string. Sample arguments: 'microsoft.com', 'o' Expected output: 3
+const letterCount = (str, char) => {
+    let count = 0;
+    for (let i = 0; i < str.length; i++) {
+        if (str[i] === char) {
+            count++;
+        }
+    }
+    return count;
+};
 
-// 23. Write a JavaScript function to find the first not repeated character.Sample arguments: 'abacddbec' Expected output: 'e' 
+// console.log(letterCount('microsoft.com', 'o')); // 3
+// console.log(letterCount('Pure Land Buddhism', 'd')) // 3
+// console.log(letterCount('Maitreya', 'a')) // 2
 
-// 24. Write a JavaScript function to apply Bubble Sort algorithm.Note : According to wikipedia "Bubble sort, sometimes referred to as sinking sort, is a simplesorting algorithm that works by repeatedly stepping through the list to be sorted, comparingeach pair of adjacent items and swapping them if they are in the wrong order".Sample array: [12, 345, 4, 546, 122, 84, 98, 64, 9, 1, 3223, 455, 23, 234, 213]Expected output: [3223, 546, 455, 345, 234, 213, 122, 98, 84, 64, 23, 12, 9, 4, 1]
+// 23. Write a JavaScript function to find the first not repeated character. Sample arguments: 'abacddbec' Expected output: 'e'
+function uniqueChar(string) {
+    let obj = {};
+    for (let i = 0; i < string.length; i++) {
+        let char = string[i];
+        if (obj.hasOwnProperty(char)) {
+            obj[char]++;
+        } else {
+            obj[char] = 1;
+        };
+    };
+    for (let key in obj) {
+        if (obj[key] === 1) {
+            return key;
+        };
+    };
+};
+
+// console.log(uniqueChar('abacddbec')); // e
+// console.log(uniqueChar('abacddbecz')); // e
+// console.log(uniqueChar('iabagcdgdbeeco')); // i
+
+// 24. Write a JavaScript function to apply Bubble Sort algorithm. Note : According to wikipedia "Bubble sort, sometimes referred to as sinking sort, is a simplesorting algorithm that works by repeatedly stepping through the list to be sorted, comparingeach pair of adjacent items and swapping them if they are in the wrong order".Sample array: [12, 345, 4, 546, 122, 84, 98, 64, 9, 1, 3223, 455, 23, 234, 213]Expected output: [3223, 546, 455, 345, 234, 213, 122, 98, 84, 64, 23, 12, 9, 4, 1]
 
 // 25. Write a JavaScript function that accept a list of country names as input and returns thelongest country name as output.Sample function : Longest_Country_Name(["Australia", "Germany", "United States of America"])Expected output: "United States of America"
 
