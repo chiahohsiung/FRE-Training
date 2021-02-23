@@ -1,23 +1,21 @@
 const searchAPI = (() => {
   const baseUrl = 'https://itunes.apple.com';
   const searchPath = 'search';
-  const searchParameters = {
-    // term: "",
-    media: "music",
-    entity: "album",
-    attribute: "artistTerm",
-    limit: 500
-  }
+  // const searchParameters = {
+  //   // term: "",
+  //   media: "music",
+  //   entity: "album",
+  //   attribute: "artistTerm",
+  //   limit: 500
+  // }
 
-  
-
-
-  const getAllResults = (keyword) => {
+  const getAllResults = async (keyword) => {
     let paramString = `term=${keyword}&media=music&entity=album&attribute=artistTerm&limit=500`;
-    console.log("fetching");
-    console.log("there, ", keyword);
-    console.log([[baseUrl, searchPath].join('/'), paramString].join('?'));
-    fetch([[baseUrl, searchPath].join('/'), paramString].join('?'))
+    // console.log([[baseUrl, searchPath].join('/'), paramString].join('?'));
+    let queryUrl = [[baseUrl, searchPath].join('/'), paramString].join('?');
+    return fetch(queryUrl, {
+      
+    })
     .then((response) => response.json());
   }
 
@@ -28,31 +26,38 @@ const searchAPI = (() => {
 const View = (() => {
   const domString = {
     searchInput: "search-keyword",
-    album_card: "album-card"
+    album_card: "album-card",
+    resultGallery: "result-gallery__list"
   };
 
   const render = (element, htmlTemplate) => {
     element.innerHTML = htmlTemplate;
   };
 
-  const initAlbumsList = (albumArray) => {
+  const resultGallery = document.querySelector('#' + domString.resultGallery);
+
+  const populateAlbumsList = (albumArray) => {
     let template = '';
     albumArray.forEach( elem => {
       template += `
         <li>
-          <div class="album-card">
-            <div class="album-card__cover> <div>
-            <div class="album-card__title> <div>
+          <div class="album-card" id="album-${elem.albumId}">
+            <div class="album-card__cover">
+              <img src="${elem.imgUrl}" alt="${elem.title}">
+            </div>
+            <div class="album-card__title">${elem.title}</div>
           </div>
         </li>
       `;
-    })
+    });
+    console.log("template: ", template);
+    render(resultGallery, template);
   };
 
   return {
     domString,
     render,
-    initAlbumsList
+    populateAlbumsList
   }
 
 })();
@@ -75,10 +80,7 @@ const Model = ((api, view) => {
 
   }
 
-  const getSearchResult = (keyword) => {
-    console.log("here: ", keyword);
-    api.getAllResults(keyword);
-  }
+  const getSearchResult = (keyword) => api.getAllResults(keyword);
 
   return {
     State,
@@ -92,16 +94,26 @@ const AppController = ((view, model) => {
   const search = model.getSearchResult;
 
   const addListenerOnInput = () => {
-    console.log("adding");
     const searchBarElem = document.querySelector('#' + view.domString.searchInput);
     searchBarElem.addEventListener('keyup', (event) => {
       console.log(event);
-      if (event.key === 'q') {
+      if (event.key === 'Enter') {
         event.preventDefault();
         state.searchQuery = event.target.value;
-        console.log(event.target.value);
-        console.log(state.searchQuery);
-        const resultList = search(state.searchQuery);
+        search(state.searchQuery)
+          .then(json => {
+            let albumArray = new Array();
+            // console.log("json: ", json);
+            json.results.forEach(elem => {
+              albumArray.push({ 
+                imgUrl: elem["artworkUrl100"], 
+                title: elem["collectionName"], 
+                albumId: elem["collectionId"]
+              });
+            })
+            console.log(albumArray);
+            view.populateAlbumsList(albumArray);
+          });
         // console.log(resultList);
       }
     });
@@ -109,7 +121,6 @@ const AppController = ((view, model) => {
   };
 
   const init = () => {
-    console.log("init");
     addListenerOnInput();
   }
 
