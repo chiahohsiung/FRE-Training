@@ -1,0 +1,30 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+#container {
+  display: flex;
+}
+
+.header {
+  width: 100%;
+  text-align: center;
+  position: absolute;
+}
+.search {
+  display: flex;
+  justify-content: center;
+  margin: auto;
+  text-align: center;
+  background-color: #018180;
+  height: 50px;
+}
+
+.search__input {
+  display: inline-block;
+  max-width: 500px;
+  background-color: black;
+  margin: auto;
+}
