@@ -1,0 +1,11 @@
+.navbar_container{
+    display: flex;
+    margin:0;
+    background-color: lightgray;
+}
+
+.navbar_item{
+    margin-block:20px;
+    text-align: center;
+    width:100%;
+}

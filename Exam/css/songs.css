@@ -1,0 +1,35 @@
+.song_container{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin-top: 20px;
+    justify-content: center;
+    margin-inline: 8%;
+}
+
+.song_results{
+    flex: 0 0 70vw;
+    text-align: center;
+    padding-bottom: 8px;
+    border-bottom: 1px solid blue;
+    font-size: larger;
+    padding-bottom: 10px;
+}
+.song_break{
+    flex-basis: 100%;
+}
+
+.song_card{
+    flex: 0 0 8%;
+    padding: 10px;
+    margin:10px;
+    text-align: center;
+    background-color: #f0eeee;
+    border: 1px solid teal;
+    font-size: small;
+    font-weight: bold;
+}
+
+.song_title{
+    margin-top:10px
+}
