@@ -12,9 +12,13 @@ const API = (() => {
 })();
 
 const View = (() => {
-    const constructTemplate = (list,input) => {
-        console.log(list);
-        let template = ' <div class = "song_results" id = "song_results">' + list.length +  ' results for "' + input + '"</div> <div class = "song_break"></div>';
+    const constructTemplate = (list, input) => {
+        let template =
+            ' <div class = "song_results" id = "song_results">' +
+            list.length +
+            ' results for "' +
+            input +
+            '"</div> <div class = "song_break"></div>';
         list.forEach((item) => {
             template +=
                 '<div class = "song_card"><img src = "' +
@@ -56,7 +60,10 @@ const init = () => {
                     state.numSongs = data.resultCount;
                     state.songs = data.results;
                     state.input = inputElement.value;
-                    let template = View.constructTemplate(state.songs,inputElement.value);
+                    let template = View.constructTemplate(
+                        state.songs,
+                        inputElement.value
+                    );
                     View.render(songElement, template);
                 }
             });

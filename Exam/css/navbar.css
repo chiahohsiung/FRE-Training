@@ -30,4 +30,27 @@
     border: 0px solid transparent;
     border-radius: 100px;
     margin-right: -40px;
+    transition: all .2s ease-out;
+}
+
+
+.navbar_input:focus{
+    padding: 10px;
+    height: 10px;
+    border: 0px solid transparent;
+    border-radius: 100px;
+    margin-right: -40px;
+    width: 45%;   
+    animation-name: navbar_animation;
+    animation-duration: 0.2s;
+    outline-width: 0;
+}
+
+@keyframes navbar_animation{
+    0% {width: 40%;}
+    20% {width:41%}
+    40% {width:42%}
+    60% {width:43%}
+    80% {width:44%}
+    100% {width:45%}
 }
