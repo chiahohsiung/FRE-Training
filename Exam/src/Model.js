@@ -26,13 +26,26 @@ const Model = ((api, view) => {
             )
             searchInputElement.value = this._searchInput
         }
+        get albumsCount() {
+            return this._albumsCount
+        }
+        set albumsCount(newCount) {
+            this._albumsCount = newCount
+            const countElement = document.querySelector(
+                `#${view.DOMString.count}`
+            )
+            const htmlTemplate = view.init_count_template(
+                this._albumsCount,
+                this._searchInput
+            )
+            view.render(countElement, htmlTemplate)
+        }
         get albumsList() {
             return this._albumsList
         }
 
         set albumsList(newList) {
             this._albumsList = newList.results
-            this._albumsCount = newList.resultCount
             console.log(this._albumsList, this._albumsCount)
             const albumsList = document.querySelector(
                 `#${view.DOMString.albums}`
@@ -40,6 +53,7 @@ const Model = ((api, view) => {
             const htmlTemplate = view.init_albums_template(
                 this._albumsList
             )
+            this.albumsCount = newList.resultCount
             view.render(albumsList, htmlTemplate)
         }
     }

@@ -3,9 +3,13 @@ const View = (() => {
         albums: "album-section",
         cards: "album-card",
         input: "search-input",
+        count: "count",
     }
     const render = (element, htmlTemplate) => {
         element.innerHTML = htmlTemplate
+    }
+    const init_count_template = (count, input) => {
+        return `<div class="count-info">${count} results for "${input}"</div>`
     }
     const init_albums_template = (albums) => {
         let template = ""
@@ -25,6 +29,7 @@ const View = (() => {
         DOMString,
         render,
         init_albums_template,
+        init_count_template,
     }
 })()
 

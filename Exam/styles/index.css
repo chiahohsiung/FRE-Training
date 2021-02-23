@@ -69,3 +69,13 @@ img {
         0 3px 6px rgba(0, 0, 0, 0.23);
     padding: 15px;
 }
+.count-ctn {
+    padding: 20px;
+    width: 50%;
+    margin: 1rem auto;
+}
+
+.count-info {
+    text-align: center;
+    font-size: 2rem;
+}
