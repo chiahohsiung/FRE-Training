@@ -74,7 +74,7 @@ main {
 ul {
     outline: none;
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     list-style: none;
     flex-flow: row wrap;
     align-items: center;
@@ -83,7 +83,7 @@ ul {
 }
 
 ul li {
-    min-height: 200px;
+    height: 200px;
     width: 10%;
     text-align: center;
     border: 1px solid var(--color-header);
@@ -92,6 +92,8 @@ ul li {
     background-color: #f0eeee;
     margin: 1rem;
     line-height: 1.6;
+    padding: 0.8rem;
+    overflow: hidden;
 }
 
 ul li p {
