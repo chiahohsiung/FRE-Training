@@ -27,7 +27,6 @@ const View = (() => {
         searchinput: 'album-search'
     }
     const render = (element, htmlTemplate) => {
-        console.log("render....");
         element.innerHTML = htmlTemplate;
     }
     const initResultTemplate = (resultObject) => {
@@ -101,7 +100,6 @@ const AppController = ((view, model) => {
             if (event.key === 'Enter') {
                 state.searchinput = event.target.value;
                 model.searchByName(state.searchinput).then(data => {
-                    console.log(data);
                     state.searchresult = data;
                 });
                 state.searchinput = '';
