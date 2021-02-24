@@ -80,25 +80,29 @@ const AppController = ((model, view) => {
         const searchBar = document.getElementById('searchBar');
         const button = document.getElementsByClassName('search-button');
 
-        searchBar.addEventListener('keyup', (e) => {
-            const input = e.target.value;
-            state.input = input;
-            console.log(input);
-            model.getAllEle(input).then(data => {
-                console.log(data)
-                state.count = data.resultCount;
-                let result = data.results;
-                state.albumList = result.map((ele) => {
-                    return {
-                        name: ele.collectionName,
-                        cover: ele.artworkUrl100
-                    }
-                })
-            });
-        });
+        const search = (e) => {
+            console.log(e.key);
+            if (e.key === "Enter") {
+                e.preventDefault();
+                const input = e.target.value;
+                state.input = input;
+                console.log(input);
+                model.getAllEle(input).then(data => {
+                    state.count = data.resultCount;
+                    let result = data.results;
+                    state.albumList = result.map((ele) => {
+                        return {
+                            name: ele.collectionName,
+                            cover: ele.artworkUrl100
+                        }
+                    })
+                });
+            }
+        };
 
-    };
-
+        searchBar.addEventListener('keypress', search);
+        // button.addEventListener('click', search);
+    }
 
     const init = () => {
         addListenerOnSearch();
