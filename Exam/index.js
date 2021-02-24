@@ -27,14 +27,14 @@ submit.addEventListener("click", onClickFn);
 function show(data) {
   let card = "";
 
-  for (let r of data.results) {
-    card += `<div class="card">
-    <img class="image" src="${r.artworkUrl100}" alt="${r.collectionName}">
-    <div class="content">${r.collectionName}</div>
+  for (let collection of data.results) {
+    card += `<div class="card" key="${collection.collectionId}">
+    <img class="image" src="${collection.artworkUrl100}" alt="${collection.collectionName}">
+    <div class="content">${collection.collectionName}</div>
   </div>`;
   }
+
   document.getElementById("continer").innerHTML = card;
   document.getElementById("text").innerHTML = "Results Count:";
-
   document.getElementById("count").innerHTML = data.resultCount;
 }
