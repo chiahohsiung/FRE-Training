@@ -29,8 +29,12 @@
     height: 36px;
     border: none;
     border-radius: 20px 0 0 20px;
-    outline: none;
-    
+    outline: none; 
+}
+.topnav .searchTerm:focus{
+    width: 50%;
+    transition: 0.3s;
+
 }
 .search-container{
     padding-top: 20px;

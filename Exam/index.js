@@ -36,5 +36,5 @@ const addListenerOnSearchBar = () =>{
         document.getElementById('myInput').style.width = '40%';
     });
 }
-addListenerOnSearchBar();
+// addListenerOnSearchBar();
 addListenerOnInput();
