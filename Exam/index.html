@@ -1,34 +1,30 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8" />
-        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Document</title>
-        <link rel="preconnect" href="https://fonts.gstatic.com" />
-        <link
-            href="https://fonts.googleapis.com/css2?family=Akaya+Kanadaka&display=swap"
-            rel="stylesheet"
-        />
-        <link rel="stylesheet" href="./index.css" />
-        <script async src="./index.js"></script>
-    </head>
-    <body>
-        <header class="header">Search Songs</header>
-        <main class="content">
-            <section class="todolist">
-                <header class="todolist__header">Search Bar</header>
-                <input
-                    type="text"
-                    class="postlist_input"
-                    id="postlist_input"
-                    placeholder="input here"
-                />
-                <ul id="postlist-content">
-             
-                    <button class="continue"></button>
-                </ul>
-            </section>
-        </main>
-    </body>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./index.css">
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"/>
+    <script async src ="./index.js"></script>
+</head>
+<body>
+    <header class="header-container">
+        <div class="input-container">
+            <input type="text" class="search-input" id="search-input" placeholder="search here">
+            <i class="fas fa-search"></i>
+        </div>
+    </header>
+    <div class="main-top">
+        <h2 class= "status-text" id="status-text">Search Albums by ArtistName:</h2>
+        <hr>
+    </div>
+    <main class="main">
+        <div class="content-container">
+            <section id="items"></section>
+            </ul>
+        </div>
+    </main>
+</body>
 </html>
