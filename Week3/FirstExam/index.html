@@ -7,31 +7,30 @@
     <title>First Exam</title>
     <link href="index.css" rel="stylesheet" type="text/css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="index.js"></script>
     
 </head>
 <body>
-    <header>
+    <header class="app-header">
         <form id='search_form'>
-            <input type="text" id="search_input" class='a'placeholder="Search..."/>
+            <input type="text" id="search_input" class='input' placeholder="Search..."/>
             <button type='submit' id='search_button'>
                 <i class="fa fa-search"></i>
             </button>
         </form>
     </header>
-    <div class="notification">
-
-    </div>
-
+    
     <div class="content">
-        <h1>Search Albums by Artist Name: </h1>
-        <div>
+        <header>
+            <p class="default">Search Albums by Artist Name</p>
+            <p class="notification"></p>
+        </header>
+        
+        <div class="results">
 
         </div>
-        <ul class="results">
-
-        </ul>
     </div>
-
-    <script src="index.js"></script>
+    
 </body>
 </html>
