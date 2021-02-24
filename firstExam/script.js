@@ -3,7 +3,7 @@
 const searchArtist = () => {
   let searchInput = document.getElementById('search');
   let submitButton = document.getElementById('submit');
-  
+
   const fetchData = async (inputUrl) => {
     let getMethod = {
       method: 'GET',
@@ -11,12 +11,12 @@ const searchArtist = () => {
         'content-type': 'application.json'
       }
     }
-    let APIResponse = await fetch(inputUrl, getMethod);
+    let APIResponse = await fetchJsonp(inputUrl, getMethod);
     let data = await APIResponse.json();
     handleResultData(data);
   };
   const handleResultData = (data) => {
-    const { resultCount , results } = data;
+    const { resultCount, results } = data;
     document.getElementById('result-count').innerText = `${resultCount} results for \"${searchInput.value}\"`;
     let resultCards = document.getElementById('result-cards');
     results.forEach(element => {
