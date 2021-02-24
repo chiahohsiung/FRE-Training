@@ -12,10 +12,13 @@ body {
     padding: 5px;
 }
 .container_header {
+    margin:0px;
     background-color: teal;
     height: 60px;
     display: flex;
     align-items: center;
+    position: sticky;
+    top: -1px;
 }
 .container_num {
     margin-top: 10px;
