@@ -40,7 +40,7 @@ input {
     border-radius: 100px;
     width: 80%;
     transition: all .2s;
-    margin-right: -2rem;
+    margin-right: -2.6rem;
 }
 
 input:focus {
@@ -50,6 +50,7 @@ input:focus {
 button {
     border: none;
     background-color: #F0EEEE;
+    padding: 9px;
 }
 
 #description {
@@ -87,4 +88,29 @@ button {
     padding: 0 .5rem .5rem;
     font-size: 1rem;
     font-weight: 700;
+}
+
+.content {
+    display: flex;
+    flex-direction: row;
+}
+
+.loader {
+    display: none;
+    border: 16px solid #F0EEEE;
+    border-top: 16px solid teal;
+    border-radius: 50%;
+    width: 100px;
+    height: 100px;
+    margin: 0 auto;
+    animation: spin 1s linear infinite;
+}
+  
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+.on {
+    display: block;
 }

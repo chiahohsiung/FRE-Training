@@ -1,3 +1,5 @@
+const loader = document.getElementById('loader');
+
 const API = async (artist) => {
     const baseurl = `https://itunes.apple.com/search?term=${artist}&media=music&entity=album&attribute=artistTerm&limit=500`;
     let response = await fetchJsonp(baseurl);
@@ -7,6 +9,7 @@ const API = async (artist) => {
 
 const View = (() => {
     const render = (element, htmlTemplate) => {
+        loader.classList.remove('on');
         element.innerHTML = htmlTemplate;
     }
     const initResultsTmp = (resultObject, artist) => {
@@ -32,12 +35,19 @@ const View = (() => {
     }
 })();
 
-const search = () => {
+const search = (event) => {
+    event.preventDefault();
+    loader.classList.add('on');
     artist = document.getElementById('search').value;
     init();
 };
 
 document.querySelector('#submit').addEventListener("click", search);
+document.querySelector('#search').addEventListener("keydown", event => {
+    if (event.keyCode === 13) {
+        search(event);
+    }
+});
 
 const init = () => {
     if (artist) {
