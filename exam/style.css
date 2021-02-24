@@ -1,14 +1,12 @@
 * {
   margin: 0;
   padding: 0;
-  height: 100%;
   box-sizing: border-box;
 }
 
 :root {
   --nav-bg: teal;
-  --content-padding: 10vh 20vw;
-  --flex-basis: 0;
+  --content-padding: 2vh 20vw;
 }
 
 html,
@@ -19,65 +17,72 @@ body {
 .flex__container {
   display: flex;
   flex-direction: column;
+  justify-content: flex-start;
 }
 
 /* navigation */
 .nav__container {
-  flex-basis: var(--flex-basis);
   padding: 20px;
   background-color: var(--nav-bg);
   text-align: center;
 }
 
 .nav__container > input {
-  padding: 8px;
-  padding-left: 15px;
+  padding: 8px 15px;
   width: 30%;
   border-radius: 20px;
   border-style: none;
   background-image: url(https://cdn2.iconfinder.com/data/icons/font-awesome/1792/search-512.png);
-  /* background-position: ; */
+  background-repeat: no-repeat;
+  background-size: 20px 20px;
+  background-position: 98% 50%;
   opacity: 95%;
 }
 
 /* main */
 
 .main__container {
-  display: flex;
-  flex-direction: column;
-  align-items: start;
-  /* justify-content: flex-start; */
   padding: var(--content-padding);
-  background-color: red;
+  align-items: start;
 }
 
 .main--result-display-text {
-  flex-basis: var(--flex-basis);
-  /* centering not happening */
-  justify-content: center;
+  padding: 2% 0;
+  text-align: center;
   font-size: 1.5rem;
-  /* padding-bottom: 10vh; */
-  /* border-bottom: 1px solid var(--nav-bg); */
-  background-color: yellow;
+  border-bottom: 1px solid var(--nav-bg);
 }
 
 .main--result-display-content {
-  background-color: lime;
-  flex-wrap: wrap;
+  padding-top: 1%;
+  display: flex;
   flex-direction: row;
-  flex: 1;
+  flex-wrap: wrap;
+  justify-content: center;
+  /* flex: 1; */
   /* column-count: 3;
   column-gap: 40px; */
 }
 
 /* artist content display */
 .artist__container {
+  width: 25%;
+  margin: 20px;
   padding: 20px;
-  border: 1px solid black;
-  background-color: orange;
+  align-items: center;
+  text-align: center;
+  border-radius: 8px;
+  border: 1px solid rgb(62, 60, 66);
+  background-image: linear-gradient(to bottom right, rgb(205, 207, 211), rgb(190, 228, 229));
+  -webkit-box-shadow: 0 10px 6px -6px #777;
+  -moz-box-shadow: 0 10px 6px -6px #777;
+  box-shadow: 0 10px 6px -6px #777;
+  font-weight: bold;
+  color: rgb(46, 43, 43);
 }
 
-img {
-  max-width: 100px;
-  max-height: 100px;
+.artist__container:hover {
+  -webkit-box-shadow: 0 10px 6px -6px rgb(43, 156, 221);
+  -moz-box-shadow: 0 10px 6px -6px rgb(43, 156, 221);
+  box-shadow: 0 10px 6px -6px rgb(43, 156, 221);
 }

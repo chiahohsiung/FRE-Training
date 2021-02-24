@@ -14,12 +14,12 @@ const artistAPI = (() => {
 
 // View
 const view = (() => {
-  // dom attributes taht will be modified
+  // dom attributes that will be modified
   const domStr = {
     input: ".nav__input",
     artistText: ".main--result-display-text",
     artistResults: ".main--result-display-content",
-    artistAlbum: ".artist__container",
+    artistAlbum: "artist__container",
   };
 
   // render
@@ -28,17 +28,16 @@ const view = (() => {
   };
 
   const addArtist = (artistList) => {
-    console.log("inside add artist");
-    console.log("this is artistList", artistList);
     let artistDisplay = "";
     artistList.forEach(({ artistName, collectionName, artworkUrl100, collectionID }) => {
-      artistDisplay.innerHTML += `
-      <div class='${collectionID}'>
+      artistDisplay += `
+      <div class='${domStr.artistAlbum}'>
         <img src='${artworkUrl100}' /><br>
         <center>${collectionName}</center>
       </div>
       `;
     });
+    return artistDisplay;
   };
 
   return {
@@ -50,13 +49,9 @@ const view = (() => {
 
 // Model
 const model = ((view) => {
-  // data we need: result count, name of artist, name of album, photo of album
-  // extract relevant data
-
-  // need to set the list
   class State {
-    _list = [];
     _artistInput = "";
+    _list = [];
 
     get artistInput() {
       return this._artistInput;
@@ -69,17 +64,15 @@ const model = ((view) => {
     }
 
     get list() {
-      return this.artistList;
+      return this._list;
     }
 
     set list(json) {
-      console.log("checking set list");
-      this._list = json.results;
-      console.log("hitting the list inside state");
-      console.log("this is the list", this._list);
+      this._list = json;
       const artistResults = document.querySelector(view.domStr.artistResults);
-      const template = view.addArtist(this._list);
+      const template = view.addArtist(this._list.results);
       view.render(artistResults, template);
+      return this._list;
     }
   }
 
@@ -97,15 +90,10 @@ const controller = ((view, model) => {
   const inputAndTextListener = () => {
     const input = document.querySelector(view.domStr.input);
     input.addEventListener("keyup", async (e) => {
-      console.log("hello");
       if (e.key === "Enter") {
-        console.log(state.artistInput);
         state.artistInput = e.target.value;
-        state.list = [];
-
         const artistText = document.querySelector(view.domStr.artistText);
         state.list = await artistAPI.getArtist(state.artistInput);
-        console.log("what is the list here", state.list);
         artistText.innerHTML = `There are <b>${state.list.resultCount}</b> entries for <b>${state.list.results[0].artistName}</b>`;
         state.artistInput = "";
       }
