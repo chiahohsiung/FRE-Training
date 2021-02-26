@@ -1,24 +1,29 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="index1.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/fetch-jsonp/1.0.6/fetch-jsonp.min.js"></script>
-    <script async src="index.js"></script>
+    <script async src="index1.js"></script>
     <title>Document</title>
 </head>
+
 <body>
     <header class="search_bar">
-            <input class="input" id="input" type="text">
+        <!-- <input class="input" id="input" type="text"> -->
+        <input type="text" placeholder="Search.." name="search" class="input" id="input">
+        <button type="submit"><i class="fa fa-search"></i></button>
     </header>
     <div class="num_songs">
-        <p id="num_songs">Search Albums by ArtistName:</p>
+        <p id="num_songs">Search Albums by Artist Name:</p>
     </div>
     <hr>
     <main class="content" id="content">
-        <div class="album">
+        <!-- <div class="album">
             <div class="image"></div>
             <div class="song_title">None</div>
         </div>
@@ -38,7 +43,8 @@
             <div class="image"></div>
             <div class="song_title">None</div>
         </div>
-        
+         -->
     </main>
 </body>
+
 </html>

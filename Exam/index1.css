@@ -2,8 +2,7 @@
     --height-header: 60px;
     --height-card: 250px;
     --width-card: 140px;
-
-
+    
     --color-blue: rgb(11, 219, 192);
     --color-red-button: rgb(99, 3, 3);
     --color-red-li-hover: rgb(27, 172, 8)
@@ -18,7 +17,10 @@
 html, body {
     width: 100%;
     height: 100%;
-    overflow:scroll
+}
+
+body {
+    overflow: scroll;
 }
 
 .search_bar {
@@ -31,9 +33,30 @@ html, body {
     background-color: var(--color-blue);
 }
 
-.btn {
-    width: 1.8rem;
-    height: 1.8rem;
+.search_bar .input {
+    width: 18rem;
+    height: 2rem;
+    border: none;
+    border-radius: 1rem;
+    padding-left: 1rem;
+}
+
+.search_bar .input:focus, button:focus{
+    border: none;
+    outline: none;
+}
+
+.search_bar button {
+    background-color: #ddd;
+    border: none;
+    width: 2rem;
+    height: 2rem;
+    border-radius: 1rem;
+    cursor: pointer;
+}
+
+.search_bar button:hover {
+    background: #ccc;
 }
 
 .num_songs {
@@ -57,20 +80,27 @@ html, body {
 
 .album {
     margin: 2rem;
+    text-align: center;
     width: var(--width-card);
     height: var(--height-card);
     background-color: grey;
+    box-shadow: 5px 5px 5px #ccc;
 }
 
 .image {
+    width: var(--width-card);
+    height: calc(0.65*var(--height-card));
+    background-color: grey;
+}
+
+img {
     width: 100%;
     height: 100%;
-    background-color: grey;
 }
 
 .song_title {
     width: 100%;
-    height: 25%;
+    height: 35%;
     font-size: 0.8rem;
     text-align: center;
     padding: 1rem;
