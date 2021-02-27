@@ -1,0 +1,8 @@
+<div class="contact-information">
+    <ul>
+        <li *ngFor="let contact of contacts; let index = index">
+            {{contact.getName()}}
+            <button (click)="removeContact(index)">x</button>
+        </li>
+    </ul>
+</div>

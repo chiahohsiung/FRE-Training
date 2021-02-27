@@ -1,0 +1,11 @@
+<header class="header">Stanley's Contact</header>
+<section class=container>
+    <form [formGroup]="contactForm" (ngSubmit)="setContact()" class="contact-form">
+        <input type="text" formControlName="name" placeholder="add...">
+        <button>Add</button>
+    </form>
+    <div class="contact-information">
+        <app-child [contacts]="getContactLists()"></app-child>
+    </div>
+    
+</section>
