@@ -1,0 +1,27 @@
+#container {
+  width: 400px;
+  padding: 10px;
+  margin: auto;
+
+  #input-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  #name-input {
+    width: 75%;
+    height: 40px;
+    border: 1px solid lightgray;
+    text-indent: 5px;
+    border-radius: 5px;
+  }
+
+  #name-input:focus {
+    outline: none;
+  }
+
+  #add-name {
+    margin-left: 10px;
+  }
+}

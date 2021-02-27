@@ -1,0 +1,10 @@
+<main id="container">
+  <h2>Add Person</h2>
+  <div id="input-bar">
+    <input type="text" id="name-input" placeholder="Name" />
+    <button id="add-name" class="btn btn-success" (click)="addName($event)">
+      Add
+    </button>
+  </div>
+  <app-person-list [nameList]="nameList"></app-person-list>
+</main>

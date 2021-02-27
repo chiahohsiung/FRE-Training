@@ -1,21 +1,9 @@
-# FRE-Training
-
-This is a repo to record the FRE-TRAINING assignments and notes.
-
-## How to record your FEE-TRAINING assignments by using this repo:
-
-### Clone this repo:
-open your teminal
-
-```bash
-cd your_work_dir
-git clone https://github.com/Show3567/FRE-Training.git
-```
-
-### Create your feature branch to implement the assignment.
-
-```bash
-git branch by_your_name/notes
-git checkout by_your_name/notes
-implement the assignment under this feature branch.
-```
+## Directory of Assignments
+This is a repository to record my solution of FRE-TRAINING assignments and exams.
+### JavaScript
+- hw1: HTML
+- hw2: CSS
+- hw3: JavaScript
+- hw4: Project 1- Personal Blog
+### Angular
+- hw1: Parent to Child Data Flow
