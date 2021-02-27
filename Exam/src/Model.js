@@ -43,7 +43,6 @@ const Model = ((api, view) => {
         get albumsList() {
             return this._albumsList
         }
-
         set albumsList(newList) {
             this._albumsList = newList.results
             console.log(this._albumsList, this._albumsCount)
