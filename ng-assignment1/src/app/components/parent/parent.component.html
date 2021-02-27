@@ -1,0 +1,10 @@
+<h1>Add Person</h1>
+<div class="container">
+  <div class="col-auto">
+    <input type="text" class="form-control" id="name" placeholder="Please Input Name..." [(ngModel)]="name">
+  </div>
+  <div class="col-auto">
+    <button type="submit" class="btn btn-success mb-3" (click)="onAddPerson(name)">Add</button>
+  </div>
+</div>
+<app-children [myInputMsg]=msgToChildren></app-children>
