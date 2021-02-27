@@ -6,8 +6,7 @@ import { Component, Input, OnInit } from "@angular/core"
     styleUrls: ["./child.component.less"],
 })
 export class ChildComponent implements OnInit {
-    @Input() person_list: string[] = []
+    @Input() person_list?: string[]
     constructor() {}
-
     ngOnInit(): void {}
 }
