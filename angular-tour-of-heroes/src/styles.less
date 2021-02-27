@@ -1,0 +1,29 @@
+// Application wide stlyes
+
+@arial: "Arial, Helvetica, sans-serif";
+@cambria: "Cambria, Helvetica, sans-serif";
+@ff: "font-family";
+
+h1 {
+    color: #369;
+    @ff: @arial;
+    font-size: 250%;
+}
+h2,
+h3 {
+    color: #444;
+    @ff: @arial;
+    font-weight: lighter;
+}
+body {
+    margin: 2em;
+}
+body,
+input[type="text"],
+button {
+    color: #333;
+    @ff: @cambria;
+}
+* {
+    @ff: @arial;
+}
