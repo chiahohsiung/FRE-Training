@@ -1,0 +1,15 @@
+<h2 class="title">Add Person</h2>
+<input
+    type="text"
+    class="add-person"
+    [(ngModel)]="person"
+    placeholder="name"
+/>
+<button
+    type="button"
+    class="add-person-btn"
+    (click)="addPerson(person)"
+>
+    ADD
+</button>
+<app-child [person_list]="personList"></app-child>
