@@ -9,7 +9,7 @@
           method: 'POST',
           headers: headers
       })
-    .then(resp => resp.json() )
+    .then(resp => resp.json())
     .then(data => {
       let resultCount = data.results.length;
       resultTitle(artist, resultCount)
