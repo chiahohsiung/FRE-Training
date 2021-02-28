@@ -1,0 +1,16 @@
+<div class="container d-flex flex-column justify-content-center">
+    <div class="col-md-12">
+        <h1>Add Person</h1>
+    </div>
+    <div class="row g-3">
+        <div class="col-5"><input class="form-control" type="text" [(ngModel)]="inputValue" placeholder=""
+                aria-label=".form-control-lg example">
+        </div>
+
+        <div class="col-auto"><button type="button" class="btn btn-success" (click)="doAdd($event)">Add</button></div>
+
+    </div>
+
+</div>
+
+<app-child [personChild]="personList"></app-child>
