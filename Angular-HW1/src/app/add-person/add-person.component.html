@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+<html>
+    <head></head>
+    <body>
+        <h1>Add Person</h1>
+        <div class="input-section">
+            <input type="text" (keyup.enter)="addPersonKeyUp($event)" #userInput />
+            <button (click)="addPerson(userInput)">Add</button>
+        </div>
+        <app-show-person [personListInput]=personList></app-show-person>
+    </body>
+</html>
