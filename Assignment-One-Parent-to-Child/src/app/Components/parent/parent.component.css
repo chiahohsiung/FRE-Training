@@ -1,0 +1,10 @@
+.container_parent input,
+.container_parent button {
+  margin: 10px 0;
+}
+
+.container_parent input {
+  position: relative;
+  margin-right: 10px;
+  width: 300px;
+}

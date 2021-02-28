@@ -1,0 +1,7 @@
+
+<div class="container_parent">
+      <h1>Add Person</h1>
+      <input type="text" (input)="onInputPerson($event)">
+      <button type="button" class="btn btn-success" (click)="onClick()">Add</button>
+      <app-child [personList]="personList"></app-child>
+</div>
