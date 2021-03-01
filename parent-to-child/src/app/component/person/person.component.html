@@ -1,0 +1,11 @@
+  
+<div>
+    <h1>
+      <label>Add Person</label>
+    </h1>
+    <div class="addPerson">
+        <input [(ngModel)]=person class="form-control">
+        <button class="btn btn-success" (click)="add()">Add</button>
+    </div>
+    <app-person-list [personList]="personList"></app-person-list>
+  </div>
