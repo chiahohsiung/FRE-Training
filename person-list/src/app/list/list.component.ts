@@ -6,7 +6,7 @@ import { Component, Input, OnInit } from '@angular/core';
   styleUrls: ['./list.component.scss']
 })
 export class ListComponent implements OnInit {
-  @Input() person_list?: string[];
+  @Input() person_list!: Array<string>;
   constructor() { }
   ngOnInit(): void {
   }

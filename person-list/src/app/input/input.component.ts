@@ -7,13 +7,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class InputComponent implements OnInit {
   person: string = "";
-  personList: string[] =[];
-  constructor() { }
+  personList: Array<string>;
+  constructor() { 
+    this.person = "";
+    this.personList = [];
+  }
   ngOnInit(): void {
   }
   addPerson(person:string): void {
     this.person = person;
     this.personList.push(person);
-    this.person = "";
   }
 }
