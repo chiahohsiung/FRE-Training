@@ -1,0 +1,24 @@
+
+
+#input-area{
+    display: flex;
+}
+
+input{
+    margin-right:10px;
+    outline:off;
+    border: solid 1px gainsboro;
+    border-radius: 2px;
+}
+
+button{
+    height: 30px;
+    width: 50px;
+    background-color: rgb(76, 163, 76);
+    color:white;
+    font-size: 8px;
+    border: solid 2px gainsboro;
+    border-radius: 4px;
+    outline:none;
+}
+
