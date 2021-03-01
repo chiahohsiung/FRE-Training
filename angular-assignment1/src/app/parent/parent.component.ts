@@ -8,14 +8,15 @@ import { Component, OnInit } from '@angular/core';
 
 
 export class ParentComponent implements OnInit {
-  nameToAdd = '';
+  nameToAdd:string = '';
+  pList: Array<string> = [];
   constructor() { }
   ngOnInit(): void {
   }
   
-  onAddPerson(value: string): void{
-    console.log(value);
-    this.nameToAdd = value;
+  onAddPerson(): void{
+    this.pList.push(this.nameToAdd);
+    this.nameToAdd = '';
   }
 
 }

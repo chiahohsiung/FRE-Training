@@ -1,10 +1,13 @@
 <div class="container">
     <h1>Add Person</h1>
     <div class="col">
-        <input type="text" class="form-control" id="name" placeholder="Please Add Name..." [(ngModel)]="nameToAdd">
+        <input type="text" class="form-control" id="name" placeholder="Please Add Name..." [(ngModel)]="nameToAdd" (keyup.enter)="onAddPerson()">
     </div>
     <br>
     <div class="col">
-        <button type="submit" class="btn btn-primary" (click)="onAddPerson(nameToAdd)">Add</button>
+        <button type="submit" class="btn btn-primary" (click)="onAddPerson()">Add</button>
+    </div>
+    <div class="row">
+        <app-child [PersonList]=pList></app-child>
     </div>
 </div>
