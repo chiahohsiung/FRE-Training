@@ -1,0 +1,5 @@
+<h1>Add Person</h1>
+<input [(ngModel)]=person class="form-control">
+<button class="btn btn-success" (click)="addPerson()">Add</button>
+
+<app-person-list [myList]="personList"></app-person-list>
