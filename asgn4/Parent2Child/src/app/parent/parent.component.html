@@ -1,0 +1,8 @@
+<div class="container m-auto">
+  <h1>Add Person</h1>
+  <div class="form-group row">
+    <input type="text" name="name" id="name" #inputName placeholder="Please enter a name" style="width: 80%;" class="form-control form-control-lg m-2">
+    <button class="btn btn-success btn-lg m-2" (click)="addName(inputName.value)">Add</button>
+  </div>
+  <app-child [names]="names"></app-child>
+</div>
