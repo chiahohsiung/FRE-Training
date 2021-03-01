@@ -1,0 +1,8 @@
+<h1>Add Person</h1>
+
+<div class = "input-wrapper">
+    <input type="text" class = "input-box" [(ngModel)] = "person" placeholder="Enter a name"/>
+    <button type="button" (click) = "addPerson(person)">Add</button>
+</div>
+
+<app-list [person_list] = "personList"></app-list>
