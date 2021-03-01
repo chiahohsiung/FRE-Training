@@ -1,0 +1,6 @@
+<h1>Add Person</h1>
+<div class="input-section">
+  <input type="text" (keyup.enter)="addPerson(userInput)" #userInput />
+  <button (click)="addPerson(userInput)">Add</button>
+</div>
+<app-display-person [personList]="personList"></app-display-person>

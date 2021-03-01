@@ -1,0 +1,44 @@
+/* Add application styles & imports to this file! */
+
+* {
+  font-family: Helvetica;
+  margin-left: 10px;
+}
+header {
+  font-size: 18px;
+  text-align: center;
+}
+
+h1 {
+  font-size: 24px;
+}
+
+button {
+  background-color: green;
+  border: none;
+  border-radius: 5%;
+  color: white;
+  padding: 12px 24px;
+  text-align: center;
+  font-size: 16px;
+  margin: 4px 2px;
+  opacity: 0.6;
+  transition: 0.3s;
+  display: inline-block;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+button:hover {
+  opacity: 1;
+}
+
+input {
+  height: 2rem;
+  width: 20rem;
+  margin-right: 2rem;
+}
+
+li {
+  font-size: 18px;
+}
