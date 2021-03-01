@@ -1,0 +1,8 @@
+<h1>Person List</h1>
+<div *ngIf = "personList">
+    <ul>
+        <li *ngFor = "let person of personList" class = "list">
+            <a href = "#" class = "link">{{person}}</a>
+        </li>
+    </ul>
+</div>
