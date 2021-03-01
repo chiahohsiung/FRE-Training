@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import {PersonServiceService} from '../person-service.service';
+import { fromEventPattern } from 'rxjs';
 
 @Component({
   selector: 'app-person-list',
@@ -7,12 +8,14 @@ import {PersonServiceService} from '../person-service.service';
   styleUrls: ['./person-list.component.css']
 })
 export class PersonListComponent implements OnInit {
-
+  @Input() newItem:string[];
   persons:string[];
+  newPersons:string[];
   constructor(private personService: PersonServiceService) { }
 
   ngOnInit(): void {
     this.persons = this.personService.getPersons();
+    this.newPersons = this.newItem;
   }
 
 }
