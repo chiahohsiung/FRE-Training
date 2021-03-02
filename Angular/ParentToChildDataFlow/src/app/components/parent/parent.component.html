@@ -1,0 +1,16 @@
+<hr>
+<div class="row">
+    <h1 class="col-lg-5">Add Person</h1>
+</div>
+<div class="row">
+    <div class="col-lg-5">
+        <div class="input-group input-group-lg">
+            <input type="text" class="form-control input-lg" [(ngModel)]="name" placeholder="{{name}}">
+        </div>
+    </div>
+    <div class="col-lg-2"><button class="btn btn-success btn-lg" (click)="addPerson()">Add</button></div>
+</div>
+<!-- <ul *ngFor="let l of List">
+    <li>{{l}}</li>
+</ul> -->
+<app-child [List]="List"></app-child>

@@ -1,0 +1,11 @@
+<hr>
+<div class="row">
+    <h1 class="col-lg-5">Person List</h1>
+</div>
+<div class="row mt-2">
+    <ul *ngFor="let i of List">
+        <li>
+            <h4 [ngStyle]="{'color': 'skyblue'}">{{i}}</h4>
+        </li>
+    </ul>
+</div>
