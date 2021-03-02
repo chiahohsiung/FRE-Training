@@ -3,3 +3,18 @@
 * {
   margin: 0 10%;
 }
+.dark{
+  --background:#18191A;
+  --header:#242526;
+  --post-bg:#242526;
+  --text:#B0B3B8;
+}
+.light{
+  --header:#rgb(255,255,255);
+  --background:#F0F2F5;
+  --text:#0D0D0E;
+  --post-bg:#FFFFFF;
+}
+body{
+  background-color: var(--background);
+}
