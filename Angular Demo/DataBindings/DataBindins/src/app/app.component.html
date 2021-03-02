@@ -1,0 +1,22 @@
+<div class="container">
+  <h1>Two Way</h1>
+  <input type="text" bindon-ngModel=message>  
+  <input type="text" [(ngModel)]=message>
+  <input type="text" [(ngModel)]=city (input)=doUpdate(city)>
+  <h3>From: {{city}}</h3>
+  <hr/>
+  <h1>Event Binding - One Way</h1>
+  <div class="btn-toolbar">
+  <button class="btn btn-success" on-click=doClick()>Click Me!</button>&nbsp;
+  <button class="btn btn-success" (click)=doClick()>Click Me!</button>&nbsp;
+  <button class="btn btn-danger" id="btnJS">Click Me - JS</button>
+  </div>
+  <hr/>
+  <h1>Property Binding - One Way</h1>
+  <h2>Message: {{message}}</h2>
+  <h2 innerHTML={{message}}>Message: </h2>
+  <h2 bind-innerHTML=message>Message: </h2>
+  <h2 [innerHTML]=message>Message: </h2>
+  <h2>Message: <span [innerHTML]=message></span></h2>
+  <input type="text" [value]=message>
+</div>

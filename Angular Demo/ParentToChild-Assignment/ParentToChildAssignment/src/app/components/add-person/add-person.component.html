@@ -1,0 +1,16 @@
+<div class="container">
+    <div class="row">
+        <h3 class="col-md-5">Add Person</h3>
+    </div>
+    <div class="row">
+        <div class="col-md-4">
+            <input class="form-control" type="text" [(ngModel)]=pname>
+        </div>
+        <div class="col-md-1">
+            <button class="btn btn-success btn-block" (click)=add()>Add</button>
+        </div>
+    </div>
+    <div class="row">
+        <app-list-person [personList]=pList></app-list-person>
+    </div>
+</div>
