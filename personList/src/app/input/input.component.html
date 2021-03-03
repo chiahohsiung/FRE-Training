@@ -1,0 +1,9 @@
+<div>
+ 
+    <input type="text" placeholder="type name here.." [(ngModel)] = 'person'>
+    <button type="button" value="Add" (click)="addPerson(person)">Add</button>
+
+<div>
+    <app-list [people]="people"></app-list>
+
+
