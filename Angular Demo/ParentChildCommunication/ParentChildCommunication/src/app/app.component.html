@@ -1,0 +1,8 @@
+<div class="container">
+  <h2 class="text-danger">{{message}}</h2>
+  <app-counter-component #c1 (onMax)=maxedOut($event)></app-counter-component>
+  <br/>
+  <br/>
+  <button class="btn btn-danger btn-block" (click)=c1.reset()>Parent Reset</button>
+  <button class="btn btn-danger btn-block" (click)=p_reset(c1)>Parent Reset</button>
+</div>

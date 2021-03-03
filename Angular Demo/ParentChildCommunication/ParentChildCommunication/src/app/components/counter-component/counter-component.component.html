@@ -1,0 +1,15 @@
+<h3 class="row">Counter Component</h3>
+<div class="row">
+    <div class="col-md-4">
+        <input type="text" class="form-control" [(ngModel)]=count>
+    </div>
+    <div class="col-md-1">
+        <button class="btn btn-info btn-block" (click)=inc() [disabled]=flag>+</button>
+    </div>
+    <div class="col-md-1">
+        <button class="btn btn-info btn-block" (click)=dec() [disabled]=flag>-</button>
+    </div>
+    <div class="col-md-1">
+        <button class="btn btn-success btn-block" (click)=reset() [disabled]=!flag>Reset</button>
+    </div>
+</div>
