@@ -1,0 +1,4 @@
+
+<h1>{{ msgFromChild }}</h1>
+<app-child #c [msgFromParent]="msgToChild" (myOutput)="receiveMsg($event)"></app-child>
+{{ c.msgToParent }}
