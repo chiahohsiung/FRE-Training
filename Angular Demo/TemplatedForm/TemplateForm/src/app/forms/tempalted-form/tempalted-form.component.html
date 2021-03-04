@@ -1,0 +1,46 @@
+<h3>Templated Form</h3>
+
+<form class="form-horizontal" #form1="ngForm" (submit)=logForm(form1)>
+    <div class="form-group">
+        <label>First Name:</label>
+        <input type="text" class="form-control" name="firstname" ngModel>
+    </div>
+    <div class="form-group">
+        <label>Last Name:</label>
+        <input type="text" class="form-control" name="lastname" ngModel>
+    </div>
+    <div ngModelGroup="address">
+        <div class="form-group">
+            <label>City:</label>
+            <input type="text" class="form-control" name="city" ngModel>
+        </div>
+        <div class="form-group">
+            <label>Zip:</label>
+            <input type="text" class="form-control" name="zip" ngModel>
+        </div>
+    </div>
+    <div class="form-group">
+        <input type="submit" class="btn btn-primary" value="Save">
+    </div>
+</form>
+
+<hr/>
+
+<div>
+    <tr>
+        <td> touched: {{form1.touched}}</td> &nbsp;
+        <td> untouched: {{form1.untouched}} </td>
+    </tr>
+</div>
+<div>
+    <tr>
+        <td> dirty: {{form1.dirty}}</td> &nbsp;
+        <td> pristine: {{form1.pristine}} </td>
+    </tr>
+</div>
+<div>
+    <tr>
+        <td> valid: {{form1.valid}}</td> &nbsp;
+        <td> invalid: {{form1.invalid}} </td>
+    </tr>
+</div>
