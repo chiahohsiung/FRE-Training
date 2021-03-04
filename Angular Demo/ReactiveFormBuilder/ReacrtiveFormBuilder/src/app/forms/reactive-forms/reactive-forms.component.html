@@ -1,0 +1,70 @@
+<h3 style="text-align: center;">Reactive Forms</h3>
+
+<form class="form-horizontal" [formGroup]="rForm" (ngSubmit)=logForm(rForm)>
+    <div class="form-group">
+        <label>FirstName: </label>
+        <input type="text" class="form-control" formControlName=firstname>
+        <div class="text-danger" *ngIf="rForm.get('firstname')!.hasError('required') && rForm.get('firstname')!.touched">
+            Firstname is required....
+        </div>    
+        <div class="text-danger" *ngIf="rForm.get('firstname')!.hasError('minlength') && rForm.get('firstname')!.touched">
+            Minimum 2 charators are required....
+        </div>    
+        <div class="text-danger" *ngIf="rForm.get('firstname')!.hasError('maxlength') && rForm.get('firstname')!.touched">
+            Maximum 30 charators are required....
+        </div>  
+        <div *ngIf="rForm.get('firstname')!.hasError('pattern')">
+            Invalid FirstName!
+        </div>    
+    </div>
+
+    <div class="form-group">
+        <label>LastName: </label>
+        <input type="text" class="form-control" formControlName=lastname>  
+        <div class="text-danger" *ngIf="rForm.get('lastname')!.hasError('required') && rForm.get('lastname')!.touched">
+            LastName is required....
+        </div>      
+        <div class="text-danger" *ngIf="rForm.get('lastname')!.hasError('minlength') && rForm.get('lastname')!.touched">
+            Minimum 2 charators are required....
+        </div>    
+        <div class="text-danger" *ngIf="rForm.get('lastname')!.hasError('maxlength') && rForm.get('lastname')!.touched">
+            Maximum 10 charators are required....
+        </div> 
+        <div *ngIf="rForm.get('lastname')!.hasError('pattern')">
+            Invalid LastName!
+        </div>  
+    </div>
+
+    <div formGroupName=address>
+        <div class="form-group">
+            <label>City: </label>
+            <input type="text" class="form-control" formControlName=city>
+            <div class="text-danger" *ngIf="rForm.get('address.city')!.hasError('required') && rForm.get('address.city')!.touched">
+                City is required....
+            </div>    
+        </div>
+        <div class="form-group">
+            <label>State: </label>
+            <select class="form-control" formControlName=state>
+                <option selected="" value="">Select...</option>
+                <option [ngValue]="s.id" *ngFor="let s of states">
+                    {{s.name}}
+                </option>
+            </select>
+            <div class="text-danger" *ngIf="rForm.get('address.state')!.hasError('required') && rForm.get('address.state')!.touched">
+                State is required....
+            </div>
+        </div>
+        <div class="form-group">
+            <label>Zip: </label>
+            <input type="text" class="form-control" formControlName=zip>
+        </div>
+        <div class="text-danger" *ngIf="rForm.get('address.zip')!.hasError('required') && rForm.get('address.zip')!.touched">
+            Zip is required....
+        </div>
+    </div>
+
+    <div class="form-group">
+        <input type="submit" [disabled]=rForm.invalid class="btn btn-primary" value="Save">
+    </div>
+</form>
