@@ -1,0 +1,88 @@
+<div class="templateform">
+    <form class="form-horizontal" #f="ngForm" (ngSubmit)="onSubmit(f)">
+        <div class="form-group">
+            <label>Last Name: </label>
+            <input type="text" class="form-control" name="lastname" placeholder="Last Name..." ngModel />
+        </div>
+        <div class="form-group">
+            <label>First Name: </label>
+            <input type="text" class="form-control" name="firstname" placeholder="First Name..." ngModel />
+        </div>
+        <div class="div" ngModelGroup="address">
+            <div class="form-group">
+                <label>City: </label>
+                <input type="text" class="form-control" name="cityname" placeholder="City..." ngModel/>
+            </div>
+            <div class="form-group">
+                <label>ZipCode</label>
+                <input type="text" class="form-control" name="zipcode" placeholder="ZipCode..." ngModel/>
+                <button class="btn btn-primary">Submit</button>
+            </div>
+        </div>
+        
+    </form>
+</div>
+<div class="showCard" *ngIf="lists.length">
+    <div class="card" *ngFor="let user of lists; let index=index" style="width: 18rem;">
+        <div class="card-body">
+            <h5 class="card-title">{{user.firstName}} {{user.lastName}} </h5>
+            <h6 class="card-subtitle mb-2 text-muted">{{user.city}}</h6>
+            <p class="card-text">{{user.zipcode}}</p>
+        </div>
+    </div>
+</div>
+
+<div>
+    <tr>
+        <td>Touched: {{f.touched}}</td>
+        <td>Untouched: {{f.untouched}}</td>
+    </tr>
+    <tr>
+        <td>Dirty: {{f.dirty}}</td>
+        <td>Pristine: {{f.pristine}}</td>
+    </tr>
+    <tr>
+        <td>valid: {{f.valid}}</td>
+        <td>Invalid: {{f.invalid}}</td>
+    </tr>
+</div>
+<hr>
+
+<form #forvalidated="ngForm" (ngSubmit)="forvalidated.form.valid && onSubmit2(forvalidated)">
+    <div class="form-group">
+        <label>Name: </label>
+        <input type="text" class="form-control" [(ngModel)]="newPerson.name" placeholder="name..." 
+        name="name" #name="ngModel" [ngClass]="{'is-invalid':forvalidated.submitted && name.invalid}" required>
+        <div class="invalid-feedback" *ngIf="forvalidated.submitted && name.invalid">
+            <div *ngIf="name.errors!.required">Name is required</div>
+        </div>
+    </div>
+    <div class="form-group">
+        <label>Age: </label>
+        <input type="text" class="form-control" [(ngModel)]="newPerson.age" placeholder="age..." 
+        name="age" #age="ngModel" [ngClass]="{'is-invalid':forvalidated.submitted && name.invalid}" required>
+        <div class="invalid-feedback" *ngIf="forvalidated.submitted && age.invalid">
+            <div *ngIf="age.errors!.required">Age is required</div>
+        </div>
+    </div>
+    <div class="form-group">
+        <label>Email: </label>
+        <input type="text" class="form-control" [(ngModel)]="newPerson.email" placeholder="email..." 
+        name="email" #email="ngModel" [ngClass]="{'is-invalid':forvalidated.submitted && email.invalid}" required>
+        <div class="invalid-feedback" *ngIf="forvalidated.submitted && email.invalid">
+            <div *ngIf="email.errors!.required">Email is required</div>
+        </div>
+    </div>
+    <div class="form-group">
+        <button class="btn btn-primary">Submit2</button>
+    </div>
+</form>
+<div class="showCard" *ngIf="database.length">
+    <div class="card" *ngFor="let person of database; let index=index" style="width: 18rem;">
+        <div class="card-body">
+            <h5 class="card-title">{{person.name}}</h5>
+            <h6 class="card-subtitle mb-2 text-muted">{{person.age}}</h6>
+            <p class="card-text">{{person.email}}</p>
+        </div>
+    </div>
+</div>
