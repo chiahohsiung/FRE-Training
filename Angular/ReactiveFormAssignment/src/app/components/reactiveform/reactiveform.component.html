@@ -38,32 +38,35 @@
             </div>
         </div>
     </div>
-    <div class="form-group">
-        <label>City:</label>
-        <input type="text" class="form-control"  placeholder="city..." formControlName="city">
-        <div class="invalid-feedback" *ngIf="profileForm.get('city')!.touched && 
-        profileForm.get('city')!.invalid" class="alert alert-danger">
-            <div *ngIf="profileForm.get('city')!.hasError('required')">
-                City is required!
+    <div formGroupName="address">
+        <div class="form-group">
+            <label>City:</label>
+            <input type="text" class="form-control"  placeholder="city..." formControlName="city">
+            <div class="invalid-feedback" *ngIf="profileForm.get('address.city')!.touched && 
+            profileForm.get('address.city')!.invalid" class="alert alert-danger">
+                <div *ngIf="profileForm.get('address.city')!.hasError('required')">
+                    City is required!
+                </div>
+                <div *ngIf="profileForm.get('address.city')!.hasError('pattern')">
+                    City should be string!
+                </div>
             </div>
-            <div *ngIf="profileForm.get('city')!.hasError('pattern')">
-                City should be string!
+       
+    
+            <label>Zipcode:</label>
+            <input type="text" class="form-control"  placeholder="zipcode..." formControlName="zipcode">
+            <div class="invalid-feedback" *ngIf="profileForm.get('address.zipcode')!.touched && 
+            profileForm.get('address.zipcode')!.invalid" class="alert alert-danger">
+                <div *ngIf="profileForm.get('address.zipcode')!.hasError('address.required')">
+                    Zipcode is required!
+                </div>
+                <div *ngIf="profileForm.get('zipcode')!.hasError('pattern')">
+                    Zipcode should be number!
+                </div>
             </div>
         </div>
     </div>
-    <div class="form-group">
-        <label>Zipcode:</label>
-        <input type="text" class="form-control"  placeholder="zipcode..." formControlName="zipcode">
-        <div class="invalid-feedback" *ngIf="profileForm.get('zipcode')!.touched && 
-        profileForm.get('zipcode')!.invalid" class="alert alert-danger">
-            <div *ngIf="profileForm.get('zipcode')!.hasError('required')">
-                Zipcode is required!
-            </div>
-            <div *ngIf="profileForm.get('zipcode')!.hasError('pattern')">
-                Zipcode should be number!
-            </div>
-        </div>
-    </div>
+    
 
     <button class="btn btn-primary">Submit</button>
 </form>

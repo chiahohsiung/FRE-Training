@@ -13,9 +13,12 @@ export class ReactiveformComponent implements OnInit {
     firstName: new FormControl('',[Validators.required, Validators.pattern('[a-zA-Z][a-zA-Z]+')]),
     lastName: new FormControl('', [Validators.required, Validators.pattern('[a-zA-Z][a-zA-Z]+')]),
     email: new FormControl('', [Validators.required, Validators.email]),
-    city: new FormControl('', [Validators.required, Validators.pattern('[a-zA-Z][a-zA-Z]+')]),
-    zipcode: new FormControl('', [Validators.required, Validators.pattern('[0-9]*'), 
-    Validators.minLength(5), Validators.maxLength(5)])
+    address: new FormGroup({
+      city: new FormControl('', [Validators.required, Validators.pattern('[a-zA-Z][a-zA-Z]+')]),
+      zipcode: new FormControl('', [Validators.required, Validators.pattern('[0-9]*'), 
+      Validators.minLength(5), Validators.maxLength(5)])
+    })
+   
   });
 
   profileList: Profile[] = [];
@@ -30,8 +33,8 @@ export class ReactiveformComponent implements OnInit {
     temp.firstName = this.profileForm.value.firstName
     temp.lastName = this.profileForm.value.lastName
     temp.email = this.profileForm.value.email
-    temp.city = this.profileForm.value.city
-    temp.zipCode = this.profileForm.value.zipcode
+    temp.city = this.profileForm.value.address.city
+    temp.zipCode = this.profileForm.value.address.zipcode
     this.profileList.push(temp);
   }
 
