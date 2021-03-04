@@ -1,0 +1,80 @@
+<form [formGroup]="profileForm" (ngSubmit)="onSubmit()">
+    <div class="form-group">
+        <label>Last Name: </label>
+        <input type="text" class="form-control" placeholder="last name..." formControlName="lastName">
+        <div class="invalid-feedback" *ngIf="profileForm.get('lastName')!.touched && 
+        profileForm.get('lastName')!.invalid" class="alert alert-danger">
+            <div *ngIf="profileForm.get('lastName')!.hasError('required')">
+                Last Name is required!
+            </div>
+            <div *ngIf="profileForm.get('lastName')!.hasError('pattern')">
+                Last Name should be string!
+            </div>
+        </div>
+    </div>
+    <div class="form-group">
+        <label>First Name:</label>
+        <input type="text" class="form-control"  placeholder="first name" formControlName="firstName">
+        <div class="invalid-feedback" *ngIf="profileForm.get('firstName')!.touched && 
+        profileForm.get('firstName')!.invalid" class="alert alert-danger">
+            <div *ngIf="profileForm.get('firstName')!.hasError('required')">
+                First Name is required!
+            </div>
+            <div *ngIf="profileForm.get('firstName')!.hasError('pattern')">
+                First Name should be string!
+            </div>
+        </div>
+    </div>
+    <div class="form-group">
+        <label>Email:</label>
+        <input type="text" class="form-control"  placeholder="email..." formControlName="email">
+        <div class="invalid-feedback" *ngIf="profileForm.get('email')!.touched && 
+        profileForm.get('email')!.invalid" class="alert alert-danger">
+            <div *ngIf="profileForm.get('email')!.hasError('required')">
+                Email Name is required!
+            </div>
+            <div *ngIf="profileForm.get('email')!.hasError('email')">
+                Email should be example@...
+            </div>
+        </div>
+    </div>
+    <div class="form-group">
+        <label>City:</label>
+        <input type="text" class="form-control"  placeholder="city..." formControlName="city">
+        <div class="invalid-feedback" *ngIf="profileForm.get('city')!.touched && 
+        profileForm.get('city')!.invalid" class="alert alert-danger">
+            <div *ngIf="profileForm.get('city')!.hasError('required')">
+                City is required!
+            </div>
+            <div *ngIf="profileForm.get('city')!.hasError('pattern')">
+                City should be string!
+            </div>
+        </div>
+    </div>
+    <div class="form-group">
+        <label>Zipcode:</label>
+        <input type="text" class="form-control"  placeholder="zipcode..." formControlName="zipcode">
+        <div class="invalid-feedback" *ngIf="profileForm.get('zipcode')!.touched && 
+        profileForm.get('zipcode')!.invalid" class="alert alert-danger">
+            <div *ngIf="profileForm.get('zipcode')!.hasError('required')">
+                Zipcode is required!
+            </div>
+            <div *ngIf="profileForm.get('zipcode')!.hasError('pattern')">
+                Zipcode should be number!
+            </div>
+        </div>
+    </div>
+
+    <button class="btn btn-primary">Submit</button>
+</form>
+
+<div class="showProfile">
+    <div class="card" style="width: 18rem;" *ngFor="let user of profileList">
+        <div class="card-body">
+          <h5 class="card-title">{{user.firstName}} {{user.lastName}}</h5>
+          <h6 class="card-subtitle mb-2 text-muted">{{user.email}}</h6>
+          <p class="card-text">{{user.city}}</p>
+          <a href="#" class="card-link">{{user.zipCode}}</a>
+        </div>
+      </div>
+</div>
