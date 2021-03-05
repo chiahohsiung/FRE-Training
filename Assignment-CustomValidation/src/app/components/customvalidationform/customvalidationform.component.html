@@ -1,0 +1,40 @@
+<div class="form">
+  <div >
+    <form [formGroup]="userDetails" (submit)="addUser()">
+      <!------------------------------------ NAME ------------------------------->
+      <div>
+        <label for="name">Name:</label>
+        <input class="form-control" type="text" id="name" formControlName="name" name="name">
+      </div>
+      <!------------------------------------ CONTACT ------------------------------->
+      <div>
+        <label for="contact">Contact:</label>
+        <input class="form-control" type="tel" id="contact" formControlName="contact" name="contact">
+      </div>
+      <!------------------------------------ EMAIL ------------------------------->
+      <div>
+        <label for="email">Email:</label>
+        <input class="form-control" type="email" id="email" formControlName="email" name="email">
+      </div>
+      <!------------------------------------ PASSWORD ------------------------------->
+      <div>
+        <label for="password">Password:</label>
+        <input class="form-control" type="password" id="password" formControlName="password" name="password">
+      </div>
+      <!------------------------------------ CONFIRM PASSWORD ------------------------------->
+      <div>
+        <label for="confirmpassword">Confirm Password:</label>
+        <input class="form-control" type="password" id="confirmpassword" formControlName="confirmpassword" name="confirmpassword">
+      </div>
+      <!------------------------------------ SUBMIT BUTTON ------------------------------->
+      <div>
+        <button type="submit" class="btn btn-success">Add User</button>
+      </div>
+    </form>
+
+    <div class="output" *ngIf="userDetails.valid">
+      Name:{{name}}, Contact: {{contact}}, Email: {{email}}, Password: {{password}}, Confirm Password: {{confirmpassword}}.
+    </div>
+    
+  </div>
+</div>
