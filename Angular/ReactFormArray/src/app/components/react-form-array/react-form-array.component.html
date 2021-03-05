@@ -1,0 +1,51 @@
+<form [formGroup]="nForm" (ngSubmit)="onSubmit()">
+    <div>
+        <label>Name: </label>
+        <input type="text" placeholder="name..." name="name" formControlName="name">
+    </div>
+    <div *ngIf="nForm.get('name')!.hasError('required') && nForm.get('name')!.touched">
+        Name is required!
+    </div>
+    <div *ngIf="nForm.get('name')!.hasError('minlength') && nForm.get('name')!.touched">
+        MinLength should be 5!
+    </div>
+    <div formGroupName="address">
+        <div>
+            <label>City: </label>
+            <input type="text" placeholder="name..." name="name" formControlName="city">
+        </div>
+        <div *ngIf="nForm.get('address.city')!.hasError('required') && nForm.get('address.city')!.touched">
+            City is required!
+        </div>
+        <div *ngIf="nForm.get('address.city')!.hasError('minlength') && nForm.get('address.city')!.touched">
+            MinLength should be 5!
+        </div>
+    </div>
+    <div formArrayName="nicknames">
+        <div *ngFor="let item of nicknames.controls; let index = index">
+            <div [formGroupName]="index">
+                {{index}}
+                Nickname:
+                <input type="text" name="nickname" placeholder="nickname..." formControlName="nickname">
+                age:
+                <input type="text" name="age" placeholder="age..." formControlName="age">
+                <button (click)="remove(index)">Remove</button>
+                <div class="text-danger"  *ngIf="item.get('nickname')!.hasError('required') && item.get('nickname')!.touched">
+                    Nickname is required!!
+                </div>
+                <div class="text-danger" *ngIf="item.get('age')!.hasError('required') && item.get('age')!.touched">
+                    Age is required!!
+                </div>
+            </div>
+            
+        </div>
+    </div>
+    
+    <div>
+        <button class="btn btn-primary" [disabled]="!nForm.valid">Submit</button>
+    </div>
+    
+</form>
+<div>
+    <button class="btn btn-primary" (click)="addNickname()">Add</button>
+</div>
