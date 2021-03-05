@@ -1,0 +1,38 @@
+<div class="forms">
+  <form #formtest="ngForm" (submit)="submitForm(formtest)">
+    <div class="form-group">
+      <label for="inputEmail">Email address</label>
+      <input type="email" class="form-control" id="inputEmail"  name="email" ngModel aria-describedby="emailHelp" required>
+    </div>
+    <div class="form-group">
+      <label for="inputPassword">Password</label>
+      <input type="password" class="form-control" id="inputPassword" name="password" [(ngModel)]="person.password" required>
+    </div>
+    <div class="form-check">
+      <input type="checkbox" class="form-check-input" id="checkbox" name="terms" [(ngModel)]="person.terms" required>
+      <label class="form-check-label" for="checkbox">Check me out</label>
+    </div>
+    <div class="form-select">
+      <select [(ngModel)]="person.food" name="food">
+        <option value="">Select your favorite..</option>
+        <option value="Chicken">Chicken</option>
+        <option value="Fish">Fish</option>
+        <option value="Meat">Meat</option>
+      </select>
+    </div>
+    <div class="form-check form-check-inline">
+      <input class="form-check-input" type="checkbox" id="inlineCheckbox1" [(ngModel)]="person.NotMeat" name="NotMeat" [disabled]="formtest.value.food === 'Meat'">
+      <label class="form-check-label" for="inlineCheckbox1">1 NotMeat</label>
+    </div>
+    <div class="form-check form-check-inline">
+      <input class="form-check-input" type="checkbox" id="inlineCheckbox2" [(ngModel)]="person.NotChicken" name="NotChicken" [disabled]="formtest.value.food === 'Chicken'">
+      <label class="form-check-label" for="inlineCheckbox2">2 NotChicken</label>
+    </div>
+    <div class="form-check form-check-inline">
+      <input class="form-check-input" type="checkbox" id="inlineCheckbox3" [(ngModel)]="person.NotFish" name="NotFish" [disabled]="formtest.value.food === 'Fish'">
+      <label class="form-check-label" for="inlineCheckbox3">3 NotFish</label>
+    </div>
+    <br>
+    <button type="submit" class="btn btn-primary">Submit</button>
+  </form>
+</div>

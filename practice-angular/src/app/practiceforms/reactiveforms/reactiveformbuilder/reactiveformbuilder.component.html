@@ -1,0 +1,30 @@
+<h1 style="text-align:center"> Reactive form Builder</h1>
+<form class="form-horizontal" [formGroup]="rform" (submit)="logForm()">
+  <div class="form-group">
+    <label for="firstname">First Name:</label>
+    <input type="text" class="form-control" formControlName="firstname" >
+  </div>
+  <div *ngIf="rform.get('firstname')!.touched && rform.get('firstname')!.invalid" class="alert alert-danger">
+    <div *ngIf="rform.get('firstname')!.hasError('required')">
+        Firstname is Required.
+    </div>
+    <div *ngIf="rform.get('firstname')!.hasError('pattern')">
+      Firstname invalid.
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label for="lastname">Last Name:</label>
+    <input type="text" class="form-control" formControlName="lastname">
+  </div>
+  <div *ngIf="rform.get('lastname')!.touched && rform.get('lastname')!.invalid" class="alert alert-danger">
+    <div *ngIf="rform.get('lastname')!.hasError('required')">
+        Lastname is Required.
+    </div>
+    <div *ngIf="rform.get('lastname')!.hasError('pattern')">
+      Lastname invalid.
+    </div>
+  </div>
+  <button type="submit" >submit</button>
+</form>
+

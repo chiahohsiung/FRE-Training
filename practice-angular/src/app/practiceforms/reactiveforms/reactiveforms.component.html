@@ -1,0 +1,57 @@
+<form [formGroup]="forms" (ngSubmit)="addUser()">
+<div class="form-group">
+  <label for="name">Name</label>
+  <input type="text" class="form-control" formControlName="name" (keyup)="namechange()">
+</div>
+<div *ngIf="forms.get('name')!.touched && forms.get('name')!.invalid" class="alert alert-danger">
+  <div *ngIf="forms.get('name')!.hasError('required')">
+      Name is Required.
+  </div>
+  <div *ngIf="forms.get('name')!.hasError('pattern')">
+    Name invalid.
+  </div>
+</div>
+
+<div class="form-group">
+  <label for="contact">Contact</label>
+  <input type="number" class="form-control" formControlName="contact">
+</div>
+<div *ngIf="forms.get('contact')!.touched && forms.get('contact')!.invalid" class="alert alert-danger">
+  <div *ngIf="forms.get('contact')!.hasError('required')">
+      Contact is Required.
+  </div>
+  <div *ngIf="forms.get('contact')!.hasError('pattern')">
+    Contact invalid.
+  </div>
+  <div *ngIf="forms.get('contact')!.hasError('maxLength') || forms.get('contact')!.hasError('minLength')">
+    Contact size not proper.
+  </div>
+</div>
+
+<div class="form-group">
+  <label for="email">Email</label>
+  <input type="text" class="form-control" formControlName="email">
+</div>
+<div *ngIf="forms.get('email')!.touched && forms.get('email')!.invalid" class="alert alert-danger">
+  <div *ngIf="forms.get('email')!.hasError('required')">
+      Email is Required.
+  </div>
+  <div *ngIf="forms.get('email')!.hasError('pattern')">
+    Email invalid.
+  </div>
+</div>
+<button type="submit" class="btn btn-success" name="button" >Add User</button>
+</form>
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <ul class="list-group">
+        <li *ngFor="let user of userList" class="list-group-item">
+          <B>Name:</B>{{user.name}}
+          <B>Contact:</B>{{user.contact}}
+          <B>Email:</B>{{user.email}}
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
