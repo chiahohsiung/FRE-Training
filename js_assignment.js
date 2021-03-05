@@ -393,11 +393,45 @@ console.log(q21);
 // function will count the number of occurrences of the specified letter within the string.
 // Sample arguments : 'microsoft.com', 'o' Expected output : 3 
 console.log("Q22:");
+let count = (str, letter) => {
+    let count = 0;
+    for (let position = 0; position < str.length; position++){
+        if (str.charAt(position) == letter) {
+            count++;
+        }   
+    }
+    return count;
+}
+
+let q22 = count("Count the occurences of the letter", "o");
+console.log(q22);
  
  
 // 23. Write a JavaScript function to find the first not repeated character. 
 // Sample arguments : 'abacddbec' Expected output : 'e' 
- 
+ console.log("Q23: ");
+ let firstChar = (str) => {
+     let arr1 = str.split('');
+     let result = '';
+     let ctr = 0;
+
+     for (let i = 0; i < arr1.length; i++) {
+         ctr = 0;
+         for (let j = 0; j < arr1.length; j++) {
+             if (arr1[i] === arr1[j]) {
+                 ctr++;
+             }
+         }
+         if (ctr < 2) {
+             result = arr1[i];
+             break
+         }
+     }
+     return result;
+ }
+
+ let q23 = firstChar("abcccaadedd");
+ console.log(q23);
  
 // 24. Write a JavaScript function to apply Bubble Sort algorithm. 
 // Note : According to wikipedia "Bubble sort, sometimes referred to as sinking sort, 
@@ -405,17 +439,82 @@ console.log("Q22:");
 // comparingeach pair of adjacent items and swapping them if they are in the wrong order". 
 // Sample array : [12, 345, 4, 546, 122, 84, 98, 64, 9, 1, 3223, 455, 23, 234, 213]
 // Expected output : [3223, 546, 455, 345, 234, 213, 122, 98, 84, 64, 23, 12, 9, 4, 1]
- 
+ console.log("Q24: ");
+ let bubbleSort = (array) => {
+     let swap;
+     let n = array.length-1;
+     let x = array;
+     do {
+         swap = false;
+         for (let j = 0; j< n; j++){
+             if (x[j] < x[j+1]){
+                 let tmp = x[j];
+                 x[j] = x[j+1];
+                 x[j+1] = tmp;
+                 swap = true;
+             }
+         }
+         n--;
+     } while (swap);
+     return x;
+ }
+
+ let q24 = bubbleSort([12, 345, 4, 546, 122, 84, 98, 64, 9, 1, 3223, 455, 23, 234, 213]);
+ console.log(q24);
  
 // 25. Write a JavaScript function that accept a list of country names as input and returns 
 // the longest country name as output. 
 // Sample function : Longest_Country_Name(["Australia", "Germany", "United States of America"])
 // Expected output : "United States of America"
- 
+ console.log("Q25:");
+ let countryName = (list) => {
+     let index = 0;
+     let count = 0;
+     for (let i = 0; i < list.length; i++) {
+        if (list[i].length > count) {
+            count = list[i].length;
+            index = i;
+        }
+     }
+     return list[index];
+ }
+
+ let q25 = countryName(["Australia", "Germany", "United States of America"]);
+ console.log(q25);
  
 // 26. Write a JavaScript function to find longest substring in a given a string without 
 // repeating characters. 
- 
+ console.log("q26");
+ let longestSubstr = (input) => {
+     let chars = input.split('');
+     let curr_char;
+     let str = "";
+     let longest_string = "";
+     let hash = {};
+     for (let i = 0; i < chars.length; i++) {
+         curr_char = chars[i];
+         if (!hash[chars[i]]){
+             str += curr_char;
+             hash[chars[i]] = {index:i};
+         } else {
+             if (longest_string.length <= str.length) {
+                 longest_string = str;
+             }
+             let prev_dupeIndex = hash[curr_char].index;
+             let str_FromPrevDupe = input.substring(prev_dupeIndex +1,i);
+             str = str_FromPrevDupe + curr_char;
+             hash = {};
+             for (let j = prev_dupeIndex+1; j<=i; j++){
+                 hash[input.charAt(i)] = {index:j};
+             }
+         }
+     }
+     return longest_string.length > str.length ? longest_string: str;
+ }
+
+ q25 = longestSubstr("find the longest substring");
+ console.log(q25);
+
  
 // 27. Write a JavaScript function that returns the longest palindrome in a given string. 
 // Note: According to Wikipedia "In computer science, the longest palindromic substring or 
