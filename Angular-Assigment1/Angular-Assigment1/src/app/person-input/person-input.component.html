@@ -1,6 +1,7 @@
 <h3>Add Person</h3>
 <div id="input-area">
-    <input type="text" #inputPerson placeholder="Input the name" value="">
+    <input type="text" #inputPerson placeholder="Input the name" [value] = "value">
     <button (click)="onClick(inputPerson)">Add</button>
 </div>
-<app-person-list [newItem]="newItem"></app-person-list>
+<app-name-editor></app-name-editor>
+<app-person-list [newItem]="newItem" (showItem) = "showItem($event)"></app-person-list>

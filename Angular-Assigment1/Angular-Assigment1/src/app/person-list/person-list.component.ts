@@ -1,6 +1,5 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import {PersonServiceService} from '../person-service.service';
-import { fromEventPattern } from 'rxjs';
 
 @Component({
   selector: 'app-person-list',
@@ -9,9 +8,15 @@ import { fromEventPattern } from 'rxjs';
 })
 export class PersonListComponent implements OnInit {
   @Input() newItem:string[];
+  @Output() showItem =  new EventEmitter<String>();
+
   persons:string[];
   newPersons:string[];
   constructor(private personService: PersonServiceService) { }
+
+  onClick(person){
+    this.showItem.emit(person);
+  }
 
   ngOnInit(): void {
     this.persons = this.personService.getPersons();

@@ -10,6 +10,7 @@ export class PersonInputComponent implements OnInit {
 
   persons = PERSONS;
   newItem:string[] = this.persons;
+  value:string = "Please Enter...";
   constructor(private personService: PersonServiceService) { }
 
   ngOnInit(): void {
@@ -22,7 +23,10 @@ export class PersonInputComponent implements OnInit {
       this.newItem = this.persons;
       event.value = "";
     }
-    
+  }
+
+  showItem(event){
+    this.value = event;
   }
 
 }

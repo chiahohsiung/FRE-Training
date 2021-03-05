@@ -1,0 +1,30 @@
+<form [formGroup] = "personInfo" (ngSubmit)="onSubmit()">
+    <label>
+        First Name:
+        <input type = "text" formControlName="firstName">
+    </label>
+
+    <label>
+        Last Name:
+        <input type = "text" formControlName="lastName">
+    </label>
+
+    <button type="submit" [disabled] = "!personInfo.valid">Submit </button>
+
+    <div formArrayName="alias">
+        <button (click)="addAlias()">Add</button>
+        <div *ngFor="let alia of alias.controls; let i = index">
+            <Label>
+                Alias:
+                <Input type="text" [formControlName] = "i">
+            </Label>
+        </div>
+    </div>
+    <p>
+        Result:{{result}}
+    </p>
+    <p>
+        {{personInfo.status}}
+    </p>
+
+</form>
