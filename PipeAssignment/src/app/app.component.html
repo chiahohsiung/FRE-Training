@@ -1,0 +1,23 @@
+<div class="container">
+  <h3>filter pipe demo </h3>
+  <h3>Name selected is: {{person}}</h3>
+  <input type="text" class="text-primary" [(ngModel)]="by">
+  <ul class="list-group">
+    <li class="list-group-item" *ngFor="let name of nameList | filter:by"><a href="https://google.com" (click)="onSelect($event)">{{ name }}</a></li>
+  </ul>
+  <hr>
+  <input type="text" class="text-primary" [(ngModel)]="byy">
+  <ul class="list-group">
+    <li class="list-group-item" *ngFor="let name of nameList | filter:byy"><a href="#" (click)="onSelect1(name)">{{ name }}</a></li>
+  </ul>
+</div>
+
+
+<div class="container">
+  <h3>Other solutions 1</h3>
+  <h3>Name selected is {{ person1 }}</h3>
+  <input type="text" class="text-primary" (keyup)="onFilter($event)">
+  <ul class="list-group">
+    <li class="list-group-item" *ngFor="let name1 of nameList1"><a href="#" (click)="onSelect2(name1)">{{ name1 }}</a></li>
+  </ul>
+</div>

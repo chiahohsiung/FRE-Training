@@ -1,0 +1,31 @@
+<div class="container">
+  <h1>Welcome to {{ title }}</h1>
+  <hr>
+  <h1 appChangeText >Welcome to {{ title | uppercase}}</h1>
+  <hr>
+</div>
+<div class="container">
+  <h2>Pipes Demo</h2>
+  <h3>Angular Clock</h3>
+  <hr>
+  <h3 class="text-primary">Time right now is {{ timeNow | date: 'mediumTime'}}</h3>
+  <hr>
+  <input type="text"  (keyup)="xyz=$event.target.value">
+  <h3>{{ xyz }}</h3>
+  <hr>
+  <h3>{{name}}</h3>
+  <h3>{{name | uppercase}}</h3>
+  <h3>{{name | capitalize}}</h3>
+  <hr>
+  <h3>{{test_object}}</h3>
+  <h3>{{test_object | json}}</h3>
+  <hr>
+  <h3>{{timeNow}}</h3>
+  <h3>{{timeNow | date}}</h3>
+  <h3>{{timeNow | date: 'MMM/dd/yyyy'}}</h3>
+  <h3>{{timeNow | date: format}}</h3>
+  <button class="btn btn-info" (click)="changeFormat()">Change Date Format</button>
+  <hr>
+  <h3>The squre root of 8 is {{8 | sqrt }}</h3>
+  <h3>The squre root of 8 is {{num8 | sqrt }}</h3>
+</div>

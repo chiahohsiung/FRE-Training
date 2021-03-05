@@ -1,0 +1,6 @@
+<h1 *ngIf="flag" class="text-danger">Max Click Count Reached!</h1>
+<app-counter #c [interval]="pInterval" (onMax)="flag=$event"></app-counter>
+<hr>
+<button class="col-md-12 btn btn-danger" (click)="c.reset(); flag=false">Reset From parent</button>
+<hr>
+<button class="col-md-12 btn btn-danger" (click)="parent_reset(c); flag=false">Reset From parent</button>

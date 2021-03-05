@@ -1,0 +1,21 @@
+<div class="container">
+  <h1>Techniques</h1>
+  <input type="text" [(ngModel)]=message>
+  <input type="text" [(ngModel)]=message>
+  <h3>{{ message }}</h3>
+  <input type="text" (keyup.enter)="doUpdate($event)">
+  <h3>{{ city }}</h3>
+  <input type="text" #input_box (input)="doUpdate1(input_box.value)">
+  <h3>{{ city1 }}</h3>
+
+  <h1>Event Bindings</h1>
+  <div class="btn-toolbar">
+    <button class="btn btn-success" (click)="onClick()">Click Me</button>
+  </div>
+
+  <h1>Property Binding</h1>
+  <p [innerHTML]="message"></p>
+  <input type="text" [value]="message">
+
+
+</div>
