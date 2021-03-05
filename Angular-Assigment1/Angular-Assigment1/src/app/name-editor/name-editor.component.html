@@ -1,7 +1,8 @@
+<h1>Reactive Form</h1>
 <form [formGroup] = "personInfo" (ngSubmit)="onSubmit()">
     <label>
         First Name:
-        <input type = "text" formControlName="firstName">
+        <input type = "text" formControlName="firstName" >
     </label>
 
     <label>
@@ -10,6 +11,18 @@
     </label>
 
     <button type="submit" [disabled] = "!personInfo.valid">Submit </button>
+
+    <div *ngIf="testName.invalid && (testName.dirty || testName.touched)">
+        <div *ngIf="testName.errors.required">
+            Name is required.
+        </div>
+        <div *ngIf="testName.errors.minlength">
+            Name is at least 4 characters.
+        </div>
+        <div *ngIf="testName.errors.forbiddenName">
+            Name "Tom" is forbidden
+        </div>
+    </div>
 
     <div formArrayName="alias">
         <button (click)="addAlias()">Add</button>
@@ -27,4 +40,37 @@
         {{personInfo.status}}
     </p>
 
+</form>
+
+<h1>Template Driven Form</h1>
+<form #templateForm = "ngForm" (ngSubmit) = "onSubmit()">
+    <div class="form-group">
+        <label>
+            FirstName:
+            <input type="text" class="form-control" id="firstName" required
+                [(ngModel)] = "firstName" name="firstName" #testFirstName = "ngModel"
+                appForbiddenName = "Tom">  
+        </label>
+        Current Value: {{firstName}}
+    </div>
+
+    <div *ngIf="testFirstName.invalid && (testFirstName.dirty || testFirstName.touched)">
+        <div *ngIf="testFirstName.errors.required">
+            Name is required.
+        </div>
+        <div *ngIf="testFirstName.errors.forbiddenName">
+            Name is forbidden.
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label>
+            LastName:
+            <input type="text" class="form-control" id="lastName" required
+                [(ngModel)] = "lastName" name="lastName">     
+        </label>
+        Current Value: {{lastName}}
+    </div>
+
+    <button type="submit">Submit </button>
 </form>
