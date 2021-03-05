@@ -1,0 +1,74 @@
+<form [formGroup]="nform" (ngSubmit)=logForm(nform)>
+    <div class="form-group">
+        <label>First Name:</label>
+        <input type="text" class="form-control" placeholder="first name..." 
+        formControlName="firstName">
+        <div class="text-danger" *ngIf="nform.get('firstName')!.hasError('required') && nform.get('firstName')!.touched">
+            First name is required....
+        </div>  
+        <div class="text-danger" *ngIf="nform.get('firstName')!.hasError('minlength') && nform.get('firstName')!.touched">
+            Min length is 2!
+        </div>
+        <div class="text-danger" *ngIf="nform.get('firstName')!.hasError('maxlength') && nform.get('firstName')!.touched">
+            Max length is 20!
+        </div>
+        <div class="text-danger" *ngIf="nform.get('firstName')!.hasError('pattern')">
+            Invalid First Name!
+        </div>
+    </div>
+    <div class="form-group">
+        <label>Last Name:</label>
+        <input type="text" class="form-control" placeholder="last name..." 
+        formControlName="lastName">
+        <div class="text-danger" *ngIf="nform.get('lastName')!.hasError('required') && nform.get('lastName')!.touched">
+            Last name is required....
+        </div>  
+        <div class="text-danger" *ngIf="nform.get('lastName')!.hasError('minlength') && nform.get('lastName')!.touched">
+            Min length is 2!
+        </div>
+        <div class="text-danger" *ngIf="nform.get('lastName')!.hasError('maxlength') && nform.get('lastName')!.touched">
+            Max length is 20!
+        </div>
+        <div class="text-danger" *ngIf="nform.get('lastName')!.hasError('pattern')">
+            Invalid Last Name!
+        </div>
+    </div>
+    <div formGroupName="address">
+        <div class="form-group">
+            <label>City:</label>
+            <input type="text" class="form-control" placeholder="city..." 
+            formControlName="city">
+            <div class="text-danger" *ngIf="nform.get('address.city')!.hasError('required') && nform.get('address.city')!.touched">
+                City is required....
+            </div>  
+        </div>
+        <div class="form-group">
+            <label>State: </label>
+            <select class="form-control" formControlName=state>
+                <option selected="" value="">Select...</option>
+                <option [ngValue]="s" *ngFor="let s of states">
+                    {{s.position}}
+                </option>
+            </select>
+            <div class="text-danger" *ngIf="nform.get('address.state')!.hasError('required') && nform.get('address.state')!.touched">
+                State is required....
+            </div>
+        </div>
+        <div class="form-group">
+            <label>Zipcode:</label>
+            <input type="text" class="form-control" placeholder="zipcode..." 
+            formControlName="zipcode">
+            <div class="text-danger" *ngIf="nform.get('address.zipcode')!.hasError('required') && nform.get('address.zipcode')!.touched">
+                Zipcode is required....
+            </div>  
+        </div>
+
+    </div>
+    <div class="form-group">
+        <input type="submit" class="btn btn-primary" value="Save">
+    </div>
+</form>
+
+
+
+
