@@ -1,0 +1,10 @@
+<form [formGroup]="nForm" (ngSubmit)="onSubmit()">
+    <label >Name: </label>
+    <input type="text" placeholder="number..." name="number" formControlName="number">
+    <button>Submit</button>
+    <div *ngIf="number!.invalid && (number!.dirty || number!.touched) ">
+        <div *ngIf="number!.errors!.gte">
+            {{number!.errors!.requiredValue}}
+        </div>
+    </div>
+</form>
