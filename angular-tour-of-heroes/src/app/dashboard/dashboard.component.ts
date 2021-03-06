@@ -6,6 +6,14 @@ import { HeroService } from "../hero.service"
     selector: "app-dashboard",
     templateUrl: "./dashboard.component.html",
     styleUrls: ["./dashboard.component.less"],
+    template: `<div class="heroes-menu">
+        <a
+            *ngFor="let hero of heroes"
+            routerLink="/detail/{{ hero.id }}"
+        >
+            {{ hero.name }}
+        </a>
+    </div>`,
 })
 export class DashboardComponent implements OnInit {
     heroes: Hero[] = []
