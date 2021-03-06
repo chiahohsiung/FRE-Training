@@ -1,0 +1,171 @@
+<h2>{{ title }}</h2>
+<form
+    action=""
+    class="form-horizontal"
+    [formGroup]="requiredForm"
+    (ngSubmit)="onSubmit()"
+    noValidate
+>
+    <div class="form-group">
+        <label for="name">Name:</label>
+        <input
+            type="text"
+            name="name"
+            id="name"
+            class="formControl"
+            formControlName="name"
+        />
+        <div
+            class="text-danger"
+            *ngIf="
+                requiredForm.get('name')?.hasError('required') &&
+                requiredForm.get('name')?.touched
+            "
+        >
+            Name is required
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label for="mobileNumber">Mobile No.:</label>
+        <input
+            type="text"
+            name="mobileNumber"
+            id="mobileNumber"
+            class="formControl"
+            formControlName="mobileNumber"
+        />
+
+        <div
+            class="text-danger"
+            *ngIf="
+                requiredForm
+                    .get('mobileNumber')
+                    ?.hasError('required') &&
+                requiredForm.get('mobileNumber')?.touched
+            "
+        >
+            Mobile Number is required
+        </div>
+        <div
+            class="text-danger"
+            *ngIf="
+                requiredForm
+                    .get('mobileNumber')
+                    ?.hasError('pattern') &&
+                requiredForm.get('mobileNumber')?.touched
+            "
+        >
+            Only numerical digits allowed
+        </div>
+        <div
+            class="text-danger"
+            *ngIf="
+                requiredForm
+                    .get('mobileNumber')
+                    ?.hasError('minlength') &&
+                requiredForm.get('mobileNumber')?.touched
+            "
+        >
+            Mobile number must be 10 digits and include area code
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="name">Email:</label>
+        <input
+            type="text"
+            name="email"
+            id="email"
+            class="formControl"
+            formControlName="email"
+        />
+        <div
+            class="text-danger"
+            *ngIf="
+                requiredForm.get('email')?.hasError('required') &&
+                requiredForm.get('email')?.touched
+            "
+        >
+            Email is required
+        </div>
+        <div
+            class="text-danger"
+            *ngIf="
+                requiredForm.get('email')?.hasError('email') &&
+                requiredForm.get('email')?.touched
+            "
+        >
+            Must submit correct format, ex. 'youremail@domain.com'
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="name">Password:</label>
+        <input
+            type="password"
+            name="password"
+            id="password"
+            class="formControl"
+            formControlName="password"
+        />
+        <div
+            class="text-danger"
+            *ngIf="
+                requiredForm.get('password')?.hasError('required') &&
+                requiredForm.get('password')?.touched
+            "
+        >
+            Password is required
+        </div>
+        <div
+            class="text-danger"
+            *ngIf="
+                requiredForm.get('password')?.hasError('minlength') &&
+                requiredForm.get('password')?.touched
+            "
+        >
+            Password must be 7 characters or longer
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="name">Confirm Password:</label>
+        <input
+            type="password"
+            name="password2"
+            id="password2"
+            class="formControl"
+            formControlName="password2"
+        />
+        <div
+            class="text-danger"
+            *ngIf="
+                requiredForm.errors?.passError &&
+                requiredForm.get('password2')?.touched
+            "
+        >
+            Passwords do not match
+        </div>
+    </div>
+    <div class="form-group">
+        <button
+            type="submit"
+            class="btn btn-success"
+            [disabled]="requiredForm.invalid"
+        >
+            Save
+        </button>
+    </div>
+</form>
+
+<div class="ctn" *ngIf="open">
+    <ul class="form-data list-group">
+        <li class="data-item list-group-item">
+            <b>Name:</b>{{ requiredForm.get("name")?.value }}
+            <b>Mobile No:</b
+            >{{ requiredForm.get("mobileNumber")?.value }}
+            <b>Email:</b>{{ requiredForm.get("email")?.value }}
+            <b>Password:</b>{{ requiredForm.get("password")?.value }}
+            <b>Confirmed Password:</b
+            >{{ requiredForm.get("password2")?.value }}
+        </li>
+    </ul>
+</div>
