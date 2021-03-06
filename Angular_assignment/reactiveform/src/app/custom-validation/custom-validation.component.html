@@ -1,0 +1,50 @@
+<h2 style="text-align: center;">Welcome to Reactive Forms!</h2>
+
+
+  <form [formGroup]="Form" (ngSubmit)="onSubmit()" >
+    <div class="mb-3 px-3 col-md-10" >
+      <label for="name" class="form-label">Name:</label>
+      <input type="text" class="form-control" id="name" formControlName="name">
+
+    </div>
+    <div class="mb-3 px-3 col-md-10" >
+      <label for="contact" class="form-label">Contact(Mobile No.):</label>
+      <input type="text" class="form-control" id="contact" formControlName="contact">
+
+    </div>
+    <div class="mb-3 px-3 col-md-10" >
+      <label for="email" class="form-label">Email:</label>
+      <input type="email" class="form-control" id="email" formControlName="email">
+
+    </div>
+      <div formGroupName="passwordpatch">
+
+      <div class="mb-3 px-3 col-md-10" >
+        <label for="password" class="form-label">Password:</label>
+        <input type="password" class="form-control" id="password" formControlName="password">
+      </div>
+      <div class="mb-3 px-3 col-md-10" >
+        <label for="confirmpassword" class="form-label">Confirm Password:</label>
+        <input type="password" class="form-control" id="confirmpassword" formControlName="confirmpassword">
+      </div>
+      <div *ngIf="!passwordpatch!.valid && (passwordpatch!.dirty || passwordpatch!.touched)">
+        <div class="mb-3 px-3 col-md-10" *ngIf="passwordpatch!.errors?.identityRevealed">
+         confirm password dose not match
+        </div>
+        </div>
+
+      </div>
+
+
+    <div class="mb-3 px-3 col-md-10" >
+      <button type="submit" class="btn btn-success" [disabled]="!Form.valid">Add User</button>
+    </div>
+
+
+
+  </form>
+  <hr>
+
+  <div class="mb-3 px-3 col-md-10" *ngIf="submitted">
+    <p>Name:{{user.name}} Contact:{{user.contact}} Email:{{user.email}} Password:{{user.password}} Confirm Password:{{user.confirmpassword}}</p>
+  </div>
