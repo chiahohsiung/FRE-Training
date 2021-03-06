@@ -65,7 +65,7 @@
     </div>
     <!------------------------------------ SUBMIT BUTTON ------------------------------->
     <div>
-      <button type="submit" class="btn btn-success">Add User</button>
+      <button type="submit" class="btn btn-success" [disabled]="!userDetails.valid">Add User</button>
     </div>
   </form>
       <!------------------------------------ Valid Form Values ------------------------------->

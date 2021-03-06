@@ -69,6 +69,8 @@ export class CustomvalidationformComponent implements OnInit {
     if(this.userDetails.valid){
       this.user = this.userDetails.value;
       this.submitSuccess = true
+    }else {
+      return;
     }
   }
   get funct() {
