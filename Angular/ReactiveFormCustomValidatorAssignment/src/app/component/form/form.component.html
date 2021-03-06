@@ -1,0 +1,70 @@
+<h1 class="title">{{title}}</h1>
+<form [formGroup]="nForm" (ngSubmit)="onSubmit()">
+    <div class="form-group">
+        <label>Name: </label>
+        <input class="form-control" type="text" placeholder="name..." name="name" formControlName="name">
+        <div class="text-danger" *ngIf="nForm.get('name')!.hasError('required') && nForm.get('name')!.touched">
+            Name is required!
+        </div>
+        <div class="text-danger" *ngIf="nForm.get('name')!.hasError('pattern') && nForm.get('name')!.touched">
+            Name should be a-z or A-Z!
+        </div>
+    </div>
+    <div class="form-group">
+        <label>Contact: </label>
+        <input class="form-control" type="text" placeholder="contact..." name="contact" formControlName="contact">
+        <div class="text-danger" *ngIf="nForm.get('contact')!.hasError('required') && nForm.get('contact')!.touched">
+            Contact is required!
+        </div>
+        <div class="text-danger" *ngIf="nForm.get('contact')!.hasError('pattern') && nForm.get('contact')!.touched">
+            Contact should be numbers!
+        </div>
+    </div>
+    <div class="form-group">
+        <label>Email: </label>
+        <input class="form-control" type="text" placeholder="email..." name="email" formControlName="email">
+        <div class="text-danger" *ngIf="nForm.get('email')!.hasError('required') && nForm.get('email')!.touched">
+            Email is required!
+        </div>
+        <div class="text-danger" *ngIf="nForm.get('email')!.hasError('email') && nForm.get('email')!.touched">
+            Email should be example@...
+        </div>
+    </div>
+    <div formGroupName="matchpassword">
+        <div class="form-group">
+            <label>Password: </label>
+            <input class="form-control" type="password" placeholder="password..." name="password"
+                formControlName="password">
+            <div class="text-danger"
+                *ngIf="matchpassword.get('password')!.hasError('required') && matchpassword.get('password')!.touched">
+                Password is required!
+            </div>
+        </div>
+        <div class="form-group">
+            <label>Confirm Password: </label>
+            <input class="form-control" type="password" placeholder="confirm password..." name="confirmPassword"
+                formControlName="confirmPassword">
+            <div class="text-danger"
+                *ngIf="matchpassword.get('confirmPassword')!.hasError('required') && matchpassword.get('confirmPassword')!.touched">
+                Confirm Password is required!
+            </div>
+        </div>
+        <div *ngIf="matchpassword!.invalid && (matchpassword.get('password')!.touched || matchpassword.get('password')!.dirty)
+        && (matchpassword.get('confirmPassword')!.touched || matchpassword.get('confirmPassword')!.dirty)">
+            <div class="text-danger" *ngIf="matchpassword!.errors!.gte">
+                {{matchpassword?.errors?.requiredValue}}
+            </div>
+        </div>
+    </div>
+    <div class="form-group">
+        <button class="btn btn-success" [disabled]="nForm.invalid">Add User</button>
+    </div>
+</form>
+
+<div class="form-control" *ngFor="let user of Users">
+    <B>Name: </B>{{user.name}}
+    <B>contact: </B>{{user.contact}}
+    <B>email: </B>{{user.email}}
+    <B>password: </B>{{user.password}}
+    <B>confirmPassword: </B>{{user.confirmPassword}}
+</div>
