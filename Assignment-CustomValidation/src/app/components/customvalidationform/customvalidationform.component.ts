@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormControl, FormGroup, Validators, AbstractControl } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import {matchpasswordValidator} from './customvalidators/matchpassword.validator'
 @Component({
   selector: 'app-customvalidationform',
@@ -29,12 +29,12 @@ export class CustomvalidationformComponent implements OnInit {
     ],
 
     'password': [
-      { type: 'required', message: 'Confirm password is required.' },
+      { type: 'required', message: 'Password is required.' },
       { type: 'minlength', message: 'password length.' },
       { type: 'maxlength', message: 'password length.' }
     ],
     'confirmpassword': [
-      { type: 'required', message: 'password is required.' },
+      { type: 'required', message: 'Confirm password is required.' },
       { type: 'minlength', message: 'Confirm password length.' },
       { type: 'maxlength', message: 'Confirm password length.' },
       { type: 'mustMatch', message: 'Confirm password must be same '}
