@@ -1,0 +1,1 @@
+TS is a JS superset. Browser cannot execute TS. It's a powerful compiler -> JS
