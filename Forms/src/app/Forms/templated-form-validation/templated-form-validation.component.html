@@ -1,0 +1,56 @@
+<div class="container">
+    <h3 class="text-info">Templated Form Validation</h3>
+    <form #form2=ngForm (submit)="form2.form.valid && onSubmit(form2)">
+        <div class="form-group">
+            <label>Name</label>
+            <input type="text" name="name" class="form-control"
+                [ngClass]="{'is-invalid': form2.submitted && name.invalid}" [(ngModel)]="model.name" #name="ngModel" required>
+            <div class="invalid-feedback" *ngIf="form2.submitted && name.invalid">
+                <div *ngIf="name.errors!.required">Name is required!</div>
+            </div>
+        </div>
+        <div class="form-group">
+            <label>Email</label>
+            <input type="email" name="email" class="form-control"
+                [ngClass]="{'is-invalid': form2.submitted && email.invalid}" [(ngModel)]="model.email" #email="ngModel" required email>
+            <div class="invalid-feedback" *ngIf="form2.submitted && email.invalid">
+                <div *ngIf="email.errors!.required">Email is required!</div>
+                <div *ngIf="email.errors!.email">Must be a valid email address!</div>
+            </div>
+        </div>
+        <div class="form-group">
+            <label>Password</label>
+            <input type="password" name="password" class="form-control"
+                [ngClass]="{'is-invalid': form2.submitted && password.invalid}" [(ngModel)]="model.password" #password="ngModel" minlength="8" required>
+            <div class="invalid-feedback" *ngIf="form2.submitted && password.invalid">
+                <div *ngIf="password.errors!.required">Password is required!</div>
+                <div *ngIf="password.errors!.minlength">Requires at least 8 characters!</div>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label>Hobbies</label>
+            <select name="hobbies" class="form-control" [(ngModel)]="model.hobbies" #hobby="ngModel" required>
+                <option value="">Please select a hobby</option>
+                <option *ngFor="let hoby of hobbies">{{ hoby }}</option>
+            </select>
+            <div class="invalid-feedback" *ngIf="form2.submitted && hobby.value==''">
+                <div>Must select a hobby!</div>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <input type="submit" class="btn btn-primary" value="Submit">
+        </div>
+
+    </form>
+
+    <ul class="list-group">
+        <li class="list-group-item" *ngFor="let emp of empList">
+            <B>Name: </B> {{emp.name}}
+            <B>Email: </B> {{emp.email}}
+            <B>Password: </B> {{emp.password}}
+            <B>Hobby: </B> {{emp.hobby}}
+        </li>
+    </ul>
+</div>
