@@ -5,16 +5,31 @@
     <div class="mb-3 px-3 col-md-10" >
       <label for="name" class="form-label">Name:</label>
       <input type="text" class="form-control" id="name" formControlName="name">
+      <div *ngIf = 'Form.get("name")!.touched&&Form.get("name")!.invalid' class = 'alert alert-danger'>
+      <div *ngIf="Form.get('name')!.hasError('required')">
+        Name is required!
+    </div>
+  </div>
 
     </div>
     <div class="mb-3 px-3 col-md-10" >
       <label for="contact" class="form-label">Contact(Mobile No.):</label>
       <input type="text" class="form-control" id="contact" formControlName="contact">
+      <div *ngIf = 'Form.get("contact")!.touched&&Form.get("contact")!.invalid' class = 'alert alert-danger'>
+      <div *ngIf="Form.get('contact')!.hasError('required')">
+        contact is required!
+    </div>
+  </div>
 
     </div>
     <div class="mb-3 px-3 col-md-10" >
       <label for="email" class="form-label">Email:</label>
       <input type="email" class="form-control" id="email" formControlName="email">
+      <div *ngIf = 'Form.get("email")!.touched&&Form.get("email")!.invalid' class = 'alert alert-danger'>
+      <div *ngIf="Form.get('email')!.hasError('required')">
+        contact is required!
+    </div>
+  </div>
 
     </div>
       <div formGroupName="passwordpatch">
@@ -28,7 +43,7 @@
         <input type="password" class="form-control" id="confirmpassword" formControlName="confirmpassword">
       </div>
       <div *ngIf="!passwordpatch!.valid && (passwordpatch!.dirty || passwordpatch!.touched)">
-        <div class="mb-3 px-3 col-md-10" *ngIf="passwordpatch!.errors?.identityRevealed">
+        <div class="mb-3 px-3 col-md-10 alert alert-danger" *ngIf="passwordpatch!.errors?.identityRevealed">
          confirm password dose not match
         </div>
         </div>
