@@ -4,29 +4,64 @@
   </h1>
   <form [formGroup]="userDetails" (submit)="addUser()">
     <!------------------------------------ NAME ------------------------------->
-    <div>
+    <div class="form-group">
       <label for="name">Name:</label>
       <input class="form-control" type="text" id="name" formControlName="name" name="name">
     </div>
+    <div class="error-messages">
+      <ng-container *ngFor="let error of errors.name">
+        <div class="error-messages" *ngIf="userDetails.get('name').hasError(error.type) && (userDetails.get('name').dirty || userDetails.get('name').touched)">
+          {{error.message}}
+        </div>
+      </ng-container>
+    </div>
     <!------------------------------------ CONTACT ------------------------------->
-    <div>
+    <div class="form-group">
       <label for="contact">Contact:</label>
       <input class="form-control" type="tel" id="contact" formControlName="contact" name="contact">
     </div>
+    <div class="error-messages">
+      <ng-container *ngFor="let error of errors.contact">
+        <div class="error-messages" *ngIf="userDetails.get('contact').hasError(error.type) && (userDetails.get('contact').dirty || userDetails.get('contact').touched)">
+          {{error.message}}
+        </div>
+      </ng-container>
+    </div>
     <!------------------------------------ EMAIL ------------------------------->
-    <div>
+    <div class="form-group">
       <label for="email">Email:</label>
       <input class="form-control" type="email" id="email" formControlName="email" name="email">
     </div>
+    <div class="error-messages">
+      <ng-container *ngFor="let error of errors.email">
+        <div class="error-messages" *ngIf="userDetails.get('email').hasError(error.type) && (userDetails.get('email').dirty || userDetails.get('email').touched)">
+          {{error.message}}
+        </div>
+      </ng-container>
+    </div>
     <!------------------------------------ PASSWORD ------------------------------->
-    <div>
+    <div class="form-group">
       <label for="password">Password:</label>
       <input class="form-control" type="password" id="password" formControlName="password" name="password">
     </div>
+    <div class="error-messages">
+      <ng-container *ngFor="let error of errors.password">
+        <div class="error-messages" *ngIf="userDetails.get('password').hasError(error.type) && (userDetails.get('password').dirty || userDetails.get('password').touched)">
+          {{error.message}}
+        </div>
+      </ng-container>
+    </div>
     <!------------------------------------ CONFIRM PASSWORD ------------------------------->
-    <div>
+    <div class="form-group">
       <label for="confirmpassword">Confirm Password:</label>
       <input class="form-control" type="password" id="confirmpassword" formControlName="confirmpassword" name="confirmpassword">
+    </div>
+    <div class="error-messages">
+      <ng-container *ngFor="let error of errors.confirmpassword">
+        <div class="error-messages" *ngIf="userDetails.get('confirmpassword').hasError(error.type) && (userDetails.get('confirmpassword').dirty || userDetails.get('confirmpassword').touched)">
+          {{error.message}}
+        </div>
+      </ng-container>
     </div>
     <!------------------------------------ SUBMIT BUTTON ------------------------------->
     <div>
@@ -34,7 +69,7 @@
     </div>
   </form>
       <!------------------------------------ Valid Form Values ------------------------------->
-  <div class="list-group" *ngIf="submitSuccess">
+  <div *ngIf="submitSuccess">
       <strong>Name: </strong>{{user.name}}, <strong>Contact: </strong>{{user.contact}}, <strong>Email: </strong>{{user.email}}, <strong>Password: </strong> {{user.password}}, <strong>Confirm Password: </strong> {{user.confirmpassword}}.
   </div>
 </div>

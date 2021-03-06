@@ -10,8 +10,50 @@ export class CustomvalidationformComponent implements OnInit {
   userDetails:FormGroup;
   submitSuccess:Boolean = false;
   user:any;
+
+  errors = {
+    'name': [
+      { type: 'required', message: 'Name is required.' },
+    ],
+
+    'contact': [
+      { type: 'required', message: 'Contact is required.' },
+      { type: 'pattern', message: 'Contact should be numbers only.'},
+      { type: 'minlength', message: 'Contact length should be 10.' },
+      { type: 'maxlength', message: 'Contact length should be 10.' }
+    ],
+
+    'email': [
+      { type: 'required', message: 'Email is required.' },
+      { type: 'email', message: 'please enter a valid email address.' }
+    ],
+
+    'password': [
+      { type: 'required', message: 'Confirm password is required.' },
+      { type: 'minlength', message: 'password length.' },
+      { type: 'maxlength', message: 'password length.' }
+    ],
+    'confirmpassword': [
+      { type: 'required', message: 'password is required.' },
+      { type: 'minlength', message: 'Confirm password length.' },
+      { type: 'maxlength', message: 'Confirm password length.' },
+      { type: 'mustMatch', message: 'Confirm password must be same '}
+    ],
+  }
+
+
   constructor(private fb: FormBuilder) { 
-    
+    this.userDetails = this.fb.group(
+      {
+      name: ['',Validators.compose([Validators.required,Validators.pattern('[a-zA-Z0-9]+'),Validators.minLength(4),Validators.maxLength(30)])],
+      contact: ['',Validators.compose([Validators.required,Validators.pattern('[0-9]+'),Validators.minLength(10),Validators.maxLength(10)])],
+      email: ['',Validators.compose([Validators.required,Validators.email])],
+      password: ['',Validators.compose([Validators.required,Validators.minLength(6),Validators.maxLength(30) ])],
+      confirmpassword: ['',Validators.compose([Validators.required,Validators.minLength(6),Validators.maxLength(30)])],
+    },
+    {
+      validator: matchpasswordValidator("password","confirmpassword")
+    })
   }
 
   addUser(){
@@ -20,6 +62,8 @@ export class CustomvalidationformComponent implements OnInit {
     console.log(" email : "+ this.userDetails.get("email").valid)
     console.log(" password : "+ this.userDetails.get("password").valid)
     console.log(" confirmpassword : "+ this.userDetails.get("confirmpassword").valid)
+    console.log(" match : "+ this.userDetails.get("confirmpassword").hasError('mustMatch'))
+
 
     console.log("Form Values" + JSON.stringify(this.userDetails.value));
     if(this.userDetails.valid){
@@ -32,17 +76,7 @@ export class CustomvalidationformComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.userDetails = this.fb.group(
-      {
-      name: ['',Validators.compose([Validators.required,])],
-      contact: ['',Validators.compose([Validators.required])],
-      email: ['',Validators.compose([Validators.required])],
-      password: ['',Validators.compose([Validators.required])],
-      confirmpassword: ['',Validators.compose([Validators.required])],
-    },
-    {
-      validator: matchpasswordValidator("password","confirmpassword")
-    })
+    
   }
 
 }
