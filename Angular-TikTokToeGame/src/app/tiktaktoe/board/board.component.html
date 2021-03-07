@@ -1,8 +1,15 @@
 <div class="container-fluid">
   <div class="container">
     <h1 class="title">Tik Tak Toe</h1>
+    <div class="dashboard">
+      <h2>Current player <span class="badge badge-primary"> {{player}} </span></h2> 
+      <button class="btn btn-success" (click)="freshGame()">Restart</button>
+    </div>
+    <h2 *ngIf="gamewon">
+      Player <span class="badge badge-danger"> {{gamewon}} </span>  won the game!
+  </h2>
     <div class="board">
-      <app-box *ngFor="let box of board"></app-box>
+      <app-box  *ngFor="let box of board; let i = index" [value]="box" (click)="selectBox(i)"></app-box>
     </div>
   </div>
 </div>
