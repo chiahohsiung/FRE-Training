@@ -1,1 +1,27 @@
-TS is a JS superset. Browser cannot execute TS. It's a powerful compiler -> JS
+TS is a JS superset. Browser cannot execute TS. It's a powerful compiler -> JS**
+
+* GETTING STARTED
+
+** BASICS
+
+** COMPLIER AND CONFIGURATION
+
+** NEXT GEN JS COCDE
+
+** CLASSES & INTERFACE
+
+* ADVANCED TS:
+
+** GENERICS
+
+** DECORATORS
+
+* BUILD PROJECT
+
+** NAMESPACES & MODULES
+
+** WEBPACK
+
+** 3RD PARTY LIBRARIES
+
+* REACT | NODEJS | TS

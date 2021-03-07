@@ -1,0 +1,25 @@
+.reactive-form {
+    background-color: azure;
+    width: 90%;
+    margin: 10px;
+}
+
+.reactive-form div {
+    display: flex;
+    flex-direction: column;
+    margin: 15px 0px;
+}
+
+.reactive-form input{
+    margin-top: 5px; padding: 5px;
+    border-style: solid;
+    border-color: rgb(211, 206, 206);
+    border-width: thin;
+}
+
+.reactive-form button {
+    padding: 5px;
+    background-color: rgb(5, 150, 5);
+    color: white;
+    border-style: none;
+}
