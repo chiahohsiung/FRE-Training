@@ -66,4 +66,4 @@
     <button class="btn btn-primary" [disabled]="nForm.invalid">Submit</button>
 </form>
 <button class="btn btn-primary" (click)="addSkill()">Add Skill</button>
-<app-show-form [nameList]= nameList></app-show-form>
+<app-show-form [nameList]= "getList()"></app-show-form>

@@ -31,12 +31,8 @@ export class FormComponent implements OnInit {
     return this.nForm.get('matchpassword')
   }
 
-  getserviceService():FormserviceService{
-    return this.fService;
-  }
-
   getList():User[]{
-    return this.getserviceService().getList();
+    return this.fService.getList();
   }
 
   newSkills():FormGroup{
@@ -54,8 +50,7 @@ export class FormComponent implements OnInit {
     user.password = nFormValue.matchpassword.password;
     user.confirmpassword = nFormValue.matchpassword.confirmpassword;
     user.skills.push(nFormValue.skills);
-    this.getserviceService().setUser(user);
-    this.nameList = this.getList();
+    this.fService.setUser(user);
     this.nForm.reset();
     this.skills.clear();
   }
