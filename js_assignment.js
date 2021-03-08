@@ -317,12 +317,12 @@ console.log("Q18:");
 let binarySearch = (array, target) => {
     let left = 0;
     let right = array.length -1;
-    while (left < right -1) {
-        let mid =  Math.floor((left - right)/2);
+    while (left <= right) {
+        let mid =  Math.floor((left + right)/2);
         if (array[mid] > target) {
-            right = mid;
+            right = mid -1;
         } else if (array[mid] < target){
-            left = mid;
+            left = mid +1;
         } else {
             return mid;
         }
@@ -336,6 +336,7 @@ let binarySearch = (array, target) => {
 }
 let myArray = [1, 2, 3, 5, 6, 7, 10, 11, 14, 15, 17, 19, 20, 22, 23];
 let q18 = binarySearch(myArray, 6);
+console.log(q18);
  
  
 // 19. Write a JavaScript function that returns array elements larger than a number. 
@@ -512,8 +513,8 @@ console.log(q22);
      return longest_string.length > str.length ? longest_string: str;
  }
 
- q25 = longestSubstr("find the longest substring");
- console.log(q25);
+ q26 = longestSubstr("find the longest substring");
+ console.log(q26);
 
  
 // 27. Write a JavaScript function that returns the longest palindrome in a given string. 
@@ -528,9 +529,51 @@ console.log(q22);
 // substrings (that is, allsubstrings that are themselves palindromes and cannot be extended to 
 // larger palindromicsubstrings) rather than returning only one substring or returning the 
 // maximum length of apalindromic substring.
- 
+ console.log("Q27: ");
+ let isPalindrome = (str) => {
+     let rev = str.split("").reverse().join("");
+     return str == rev;
+ }
+
+ let longestPalindrome = (str) => {
+     let max_length = 0;
+     maxp = "";
+     for (let i =0; i<str.length; i++){
+         let subs = str.substr(i, str.length);
+         for (let j=subs.length; j>=0; j--) {
+             let sub_sub_str = subs.substr(0,j);
+             if (sub_sub_str.length<=1)
+             continue;
+             if (isPalindrome(sub_sub_str)){
+                 if(sub_sub_str.length > max_length) {
+                     max_length = sub_sub_str.length;
+                     maxp = sub_sub_str;
+                 }
+             }
+         }
+     }
+     return maxp;
+ }
+
+ let q27 = longestPalindrome("abracadabra");
+ console.log(q27);
  
 // 28. Write a JavaScript program to pass a 'JavaScript function' as parameter. 
- 
+ console.log("Q28: ");
+ let function1 = (id, callback) => {
+     callback();
+ }
+
+ let function2 = () => {
+     console.log("this is the callback function");
+ }
+
+ let q28 = function1(1, function2);
  
 // 29. Write a JavaScript function to get the function name. 
+console.log("Q29: ");
+let functionSample = () => {
+    console.log(functionSample.name);
+}
+
+let q29 = functionSample();
