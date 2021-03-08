@@ -1,0 +1,77 @@
+<h1>Welcome to Reactive Forms!</h1>
+<form class = "form-horizontal" [formGroup] = "form" (ngSubmit)="addUser()" noValidate>
+    <div class = "form-group">
+        <label>Name:</label>
+        <input type="text" formControlName="name" class = "form-control">
+        <div *ngIf ="form.get('name')!.touched">
+            <div *ngIf ="form.get('name')!.hasError('required')" class = "alert alert-danger">
+                Name is required!
+            </div>
+        </div>
+    </div>
+    <div class="form-group">
+        <label>Contact (Mobile No.):</label>
+        <input type="text" formControlName="contact" class="form-control">
+        <div *ngIf="form.get('contact')!.touched">
+            <div *ngIf="form.get('contact')!.hasError('required')" class="alert alert-danger">
+                Contact number is required!
+            </div>
+            <div *ngIf="form.get('contact')!.hasError('minlength') || form.get('contact')!.hasError('maxlength')" class="alert alert-danger">
+                Contact number should be 10 digits!
+            </div>
+            <div *ngIf="form.get('contact')!.hasError('pattern')" class="alert alert-danger">
+                Invalid contact number!
+            </div>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label>Email: </label>
+        <input type="text" formControlName="email" class="form-control">
+        <div *ngIf="form.get('email')!.touched">
+            <div *ngIf="form.get('email')!.hasError('required')" class="alert alert-danger">
+                Email is required!
+            </div>
+            <div *ngIf="form.get('email')!.hasError('email')" class="alert alert-danger">
+                Invalid email!
+            </div>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label>Password: </label>
+        <input type="password" formControlName="password" class="form-control">
+        <div *ngIf="form.get('password')!.touched ">
+            <div *ngIf="form.get('password')!.hasError('required')" class="alert alert-danger">
+                Password is required!
+            </div>
+            <div *ngIf="form.get('password')!.hasError('minlength')" class="alert alert-danger">
+                Password needs to be at least 8 characters!
+            </div>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label>Confirm Password: </label>
+        <input type="password" formControlName="cPassword" class="form-control">
+        <div *ngIf="form.get('cPassword')?.touched && form.errors?.passwordError" class="alert alert-danger">
+            Password doesn't match!
+        </div>
+    </div>
+
+    <div class="form-group">
+        <button type="submit" name="button" [disabled]="!form.valid" class="btn btn-primary">
+            Add User
+        </button>
+    </div>
+
+</form>
+<ul class = "list-group">
+    <li *ngFor="let user of users" class="list-group-item">
+        <B>Name: </B>{{user.name}}
+        <B>Contact: </B>{{user.contact}}
+        <B>Email: </B>{{user.email}}
+        <B>Password: </B>{{user.password}}
+        <B>Confirm Password: </B>{{user.cPassword}}
+    </li>
+</ul>
