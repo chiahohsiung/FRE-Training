@@ -1,0 +1,18 @@
+<div class="container">
+  <h1>{{"pipes" | uppercase}}</h1>
+  <div class="row">
+    <div class="col-sm-4">
+      <hr>
+      <h5>{{user.name | uppercase}}</h5>
+      <hr>
+      <hr>
+      <h5>{{user.date | date:"longDate"}}</h5>
+      <hr>
+      <hr>
+      <h5>{{user.salary | currency:'USD':'USD':'3.2'}}</h5>
+      <hr>
+      <hr>
+      <h5 [innerHTML]="user.description | strongtext"></h5>
+    </div>
+  </div>
+</div>

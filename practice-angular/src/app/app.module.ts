@@ -7,6 +7,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ReactiveformsComponent } from './practiceforms/reactiveforms/reactiveforms.component';
 import { ReactiveformbuilderComponent } from './practiceforms/reactiveforms/reactiveformbuilder/reactiveformbuilder.component';
 import { ReactiveformarrayComponent } from './practiceforms/reactiveforms/reactiveformarray/reactiveformarray.component';
+import { PipesComponent } from './practicePipes/pipes/pipes.component';
+import { StrongtextPipe } from './practicePipes/strongtext.pipe';
 
 @NgModule({
   declarations: [
@@ -14,7 +16,9 @@ import { ReactiveformarrayComponent } from './practiceforms/reactiveforms/reacti
     TemplateformsComponent,
     ReactiveformsComponent,
     ReactiveformbuilderComponent,
-    ReactiveformarrayComponent
+    ReactiveformarrayComponent,
+    PipesComponent,
+    StrongtextPipe
   ],
   imports: [
     BrowserModule,

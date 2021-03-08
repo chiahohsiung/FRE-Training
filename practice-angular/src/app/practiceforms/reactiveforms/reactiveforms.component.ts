@@ -16,10 +16,8 @@ export class ReactiveformsComponent implements OnInit {
     this.forms.get('name').valueChanges.subscribe(data=>{console.log(data)})
   }
   addUser(){
-    console.log("jjjjjjjj")
     this.userList.push(this.forms.value)
     console.log(this.userList)
-
   }
   ngOnInit(): void {
     this.forms = new FormGroup({
@@ -27,9 +25,7 @@ export class ReactiveformsComponent implements OnInit {
       contact: new FormControl('',[Validators.required,Validators.pattern('[0-9]*'),Validators.minLength(10),Validators.maxLength(10)]),
     email: new  FormControl('',[Validators.required,Validators.email]),
     })
-    // Tracking value change in the form
     this.forms.get('name').valueChanges.subscribe(data=>{console.log("Value change from ngOnInit:"+data)})
-    // Tracking status change in the form
     this.forms.statusChanges.subscribe(data=>console.log("Status changes from ngOnInit:" + data))
   }
 }
