@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "ParentToChild": {
+    "CustomValidation": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
@@ -20,7 +20,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/ParentToChild",
+            "outputPath": "dist/CustomValidation",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -68,18 +68,18 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "ParentToChild:build"
+            "browserTarget": "CustomValidation:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "ParentToChild:build:production"
+              "browserTarget": "CustomValidation:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "ParentToChild:build"
+            "browserTarget": "CustomValidation:build"
           }
         },
         "test": {
@@ -116,16 +116,16 @@
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
             "protractorConfig": "e2e/protractor.conf.js",
-            "devServerTarget": "ParentToChild:serve"
+            "devServerTarget": "CustomValidation:serve"
           },
           "configurations": {
             "production": {
-              "devServerTarget": "ParentToChild:serve:production"
+              "devServerTarget": "CustomValidation:serve:production"
             }
           }
         }
       }
     }
   },
-  "defaultProject": "ParentToChild"
+  "defaultProject": "CustomValidation"
 }
