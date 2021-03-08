@@ -77,7 +77,7 @@ promise1.then(data =>{
 .catch(err =>{
     console.log(err);
 });
-
+/*
 console.log("new promise");
 const prom = new Promise((resolve, reject)=>{
     resolve("poggers");
@@ -86,6 +86,10 @@ const prom = new Promise((resolve, reject)=>{
 })
 .then(data =>{
     console.log(data);
+    return data;
+})
+.then(data =>{
+  console.log(data);
 })
 
-
+*/
