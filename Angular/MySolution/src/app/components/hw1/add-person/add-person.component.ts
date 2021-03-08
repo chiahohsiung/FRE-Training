@@ -6,11 +6,11 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./add-person.component.scss'],
 })
 export class AddPersonComponent implements OnInit {
-  nameList: String[] = ['Tom'];
+  personList: String[] = ['Tom'];
 
   addName(event: Event): void {
     const newName = document.getElementById('name-input') as HTMLInputElement;
-    this.nameList.push(newName.value);
+    this.personList.push(newName.value);
   }
 
   constructor() {}

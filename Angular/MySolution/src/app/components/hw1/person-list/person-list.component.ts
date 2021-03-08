@@ -7,7 +7,7 @@ import { Component, Input, OnInit } from '@angular/core';
 })
 export class PersonListComponent implements OnInit {
   @Input()
-  nameList!: String[];
+  personList!: String[];
 
   constructor() {}
 
