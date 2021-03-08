@@ -1,0 +1,57 @@
+
+<form [formGroup]="myForm" (ngSubmit)="onSubmit()">
+    <div class="form-control">
+        <label>
+            Name
+            <input type="text" formControlName="name">
+        </label>
+    </div>
+    <div class="form-control">
+        <label>
+            Contact(Mobile No.)
+            <input type="text" formControlName="number">
+        </label>
+    </div>
+    <div class="form-control"> 
+        <label>
+            Email
+            <input type="text" formControlName="email">
+        </label>
+    </div>
+    <div class="form-control">
+        <label>
+            Password
+            <input type="password" formControlName="password">
+        </label>
+    </div>
+    <div class="form-control">
+        <label>
+            Confirm Password
+            <input type="password" formControlName="confirmPassword">
+        </label>
+        <div *ngIf="(confirmPassword.touched || confirmPassword.dirty) && myForm.errors?.passwordNotMatch">
+            Password Not Match
+        </div>
+    </div>
+    <div class="submit-area">
+        <button type="submit" [disabled] = "!myForm.valid">Add User</button>
+    </div>
+    <div class="info-area">
+        <p>
+            <b>Name:</b>  {{resultForm.get('name')}}
+        </p>
+        <p>
+            <b>Contact(Mobile No.):</b>{{resultForm.get('number')}}
+        </p>
+        <p>
+            <b>Email:</b>  {{resultForm.get('email')}}
+        </p>
+        <p>
+            <b>Password:</b>  {{resultForm.get('password')}}
+        </p>
+        <p>
+            <b>Confirm Password:</b>  {{resultForm.get('confirmPassword')}}
+        </p>
+
+    </div>
+</form>

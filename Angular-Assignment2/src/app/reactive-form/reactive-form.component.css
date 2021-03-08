@@ -1,0 +1,15 @@
+input{
+    width: 100%;
+}
+form{
+    width: 100%;
+    font-size: 10px;
+}
+
+.form-control{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+
+}
