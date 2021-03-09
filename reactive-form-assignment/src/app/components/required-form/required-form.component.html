@@ -39,9 +39,7 @@
         <div
             class="text-danger"
             *ngIf="
-                requiredForm
-                    .get('mobileNumber')
-                    ?.hasError('required') &&
+                requiredForm.get('mobileNumber')?.hasError('required') &&
                 requiredForm.get('mobileNumber')?.touched
             "
         >
@@ -50,9 +48,7 @@
         <div
             class="text-danger"
             *ngIf="
-                requiredForm
-                    .get('mobileNumber')
-                    ?.hasError('pattern') &&
+                requiredForm.get('mobileNumber')?.hasError('pattern') &&
                 requiredForm.get('mobileNumber')?.touched
             "
         >
@@ -61,9 +57,7 @@
         <div
             class="text-danger"
             *ngIf="
-                requiredForm
-                    .get('mobileNumber')
-                    ?.hasError('minlength') &&
+                requiredForm.get('mobileNumber')?.hasError('minlength') &&
                 requiredForm.get('mobileNumber')?.touched
             "
         >
@@ -159,13 +153,15 @@
 <div class="ctn" *ngIf="open">
     <ul class="form-data list-group">
         <li class="data-item list-group-item">
-            <b>Name:</b>{{ requiredForm.get("name")?.value }}
-            <b>Mobile No:</b
-            >{{ requiredForm.get("mobileNumber")?.value }}
-            <b>Email:</b>{{ requiredForm.get("email")?.value }}
-            <b>Password:</b>{{ requiredForm.get("password")?.value }}
-            <b>Confirmed Password:</b
-            >{{ requiredForm.get("password2")?.value }}
+            <b>Name:</b>
+            {{ requiredForm.get("name")?.value }}
+            <b>Mobile No:</b>
+            {{ requiredForm.get("mobileNumber")?.value }}
+            <b>Email:</b>
+            {{ requiredForm.get("email")?.value }}
+            <b>Password:</b>
+            {{ requiredForm.get("password")?.value }}
+            <b>Confirmed Password:</b>{{ requiredForm.get("password2")?.value }}
         </li>
     </ul>
 </div>
