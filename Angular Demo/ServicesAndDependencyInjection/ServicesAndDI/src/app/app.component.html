@@ -1,0 +1,24 @@
+<div class="container">
+  <h2>{{title}}</h2>
+  <hr/>
+  <button type="button" (click)="getProductList()">Get Products</button>
+
+  <div class="table-responsive">
+    <table class="table">
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Name</th>
+          <th>Price</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let products of products">
+          <td>{{products.productID}}</td>
+          <td>{{products.name}}</td>
+          <td>{{products.price}}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
