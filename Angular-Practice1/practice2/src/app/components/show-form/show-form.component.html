@@ -1,10 +1,14 @@
-<div class="card" style="width: 18rem;" *ngFor="let user of nameList">
+<div class="form-group">
+  <label>Search: </label>
+  <input type="text" [(ngModel)]="search" placeholder="search...">
+</div>
+<div class="card" style="width: 18rem;" *ngFor="let user of nameList | custompipe : search">
     <div class="card-body">
       <h5 class="card-title">{{user.name}}</h5>
       <h6 class="card-subtitle mb-2 text-muted">{{user.contact}}</h6>
       
       <p class="card-text" *ngFor="let item of user.skills[0]">Skill: {{item.skill}}</p>
       <a href="#" class="card-link">{{user.email}}</a>
-      <!-- <a href="#" class="card-link">Another link</a> -->
+      <a href="#" class="card-link">Another link</a>
     </div>
   </div>

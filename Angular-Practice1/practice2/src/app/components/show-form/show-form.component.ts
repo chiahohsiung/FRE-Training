@@ -6,20 +6,16 @@ import { Component, OnInit , Input, SimpleChanges} from '@angular/core';
   styleUrls: ['./show-form.component.scss']
 })
 export class ShowFormComponent implements OnInit {
-  @Input() nameList:any[] = [];
+  @Input() nameList!:any[];
 
+  search!:string;
   constructor() { }
 
   ngOnInit(): void {
   }
 
   ngOnChanges(changes: SimpleChanges) {
-    // console.log(this.nameList)
-    // if(changes.nameList.currentValue){
-    //   this.nameList = changes.nameList.currentValue
-    // }
-    // console.log(this.nameList)
-
+    
   }
 
 }
