@@ -1,21 +1,47 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    <h1>typescript</h1>
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
 
-    <div id="message"></div>
-    <button id="startGame">START</button>
+        <link
+            href="https://fonts.googleapis.com/css2?family=Caveat&display=swap"
+            rel="stylesheet"
+        />
+        <link rel="stylesheet" href="./index.css" />
+    </head>
+    <body>
+        <header class="header">MultiMath</header>
+        <main>
+            <form action="" class="form">
+                <div class="row">
+                    Player Name
+                    <input type="text" placeholder="Player Name" />
+                </div>
+                <div class="row">
+                    Factor
+                    <input type="text" placeholder="5" />
+                </div>
+                <div class="row">
+                    Number of Problems
+                    <input type="text" placeholder="Number of Problems" />
+                </div>
+                <div class="row">
+                    <button class="start" id="startGame" onclick="nodefault()">
+                        Start Game
+                    </button>
+                    <button class="getscore" onclick="nodefault()">
+                        Calculate Score
+                    </button>
+                </div>
+                <div class="row scoreboard">Scoreboard</div>
+                <div class="row">No scores yet</div>
+                <div class="row" id="message"></div>
+            </form>
+        </main>
 
-    <ul>
-        <li>npm install typescript --save-dev</li>
-    </ul>
-
-    <script src="./index.js"></script>
-</body>
+        <script src="./index.js"></script>
+    </body>
 </html>

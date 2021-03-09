@@ -1,0 +1,82 @@
+:root {
+    --height-header: 60px;
+
+    --color-header: rgb(237, 94, 15);
+    --color-btn-red: rgb(193,75,12);
+    --color-btn-green: rgb(134,201,149);
+}
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Caveat", cursive;
+}
+body {
+    overflow: hidden;
+}
+.header {
+    position: fixed;
+    background-color: var(--color-header);
+    color: white;
+    font-size: 2rem;
+    letter-spacing: 1.5px;
+    padding-left: 10px;
+    width: 100vw;
+    height: var(--height-header);
+    line-height: var(--height-header);
+}
+main {
+    position: absolute;
+    top: var(--height-header);
+    height: calc(100vh - var(--height-header));
+}
+.form {
+    
+    display: flex;
+    justify-content: space-around;
+    flex-direction: column;
+    width: 350px;
+}
+.form .row {
+    display: flex;
+    justify-content: flex-end;
+    margin: 10px 20px;
+}
+.form .row input,
+.form .row button {
+    margin-left: 20px;
+}
+.form .row input {
+    outline: none;
+    border-radius: 200px;
+    border-width: .5px;
+    padding-left: 10px;
+    height: 30px;
+    width: 150px;
+}
+.form .row button {
+    padding: 5px 10px;
+    border-style: none;
+    outline: none;
+    border-radius: 200px;
+}
+.form .row button:hover {
+    box-shadow: 1px 1px 2px black;
+}
+.form .row button:active {
+    box-shadow: .5px .5px 1px black;
+}
+
+.start {
+    background-color: var(--color-btn-red);
+    color: white;
+}
+.getscore {
+    background-color: var(--color-btn-green);
+    color: white;
+}
+.scoreboard {
+    font-size: 1.5rem;
+}
+
+
