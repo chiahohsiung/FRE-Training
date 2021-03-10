@@ -7,13 +7,19 @@ import { DatabaseComponent } from './components/database/database.component';
 import { FilterPipe } from './pipe/filter.pipe';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { FormComponent } from './components/form/form.component';
+import { HomeComponent } from './components/home/home.component';
+import { LoginComponent } from './components/login/login.component';
+import { SignoutComponent } from './components/signout/signout.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     DatabaseComponent,
     FilterPipe,
-    FormComponent
+    FormComponent,
+    HomeComponent,
+    LoginComponent,
+    SignoutComponent
   ],
   imports: [
     BrowserModule,

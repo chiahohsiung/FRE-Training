@@ -19,7 +19,7 @@
             Contact should contains only 0-9!
         </div>
         <div class="text-danger" *ngIf="nForm.get('contact')!.hasError('minlength') && nForm.get('contact')!.touched">
-            Contact min Length is 2
+            Contact min Length is 3
         </div>
         <div class="text-danger" *ngIf="nForm.get('contact')!.hasError('maxlength') && nForm.get('contact')!.touched">
             Contact max Length is 3

@@ -12,7 +12,6 @@ export class DatabaseComponent implements OnInit {
 
   ngOnInit(): void {
     this.httpService.getApi().subscribe(res=>this.database=res)
-    console.log(this.database)
   }
 
   
