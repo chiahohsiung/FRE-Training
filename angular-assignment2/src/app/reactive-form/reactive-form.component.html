@@ -15,9 +15,13 @@
           (form.get('name').touched || form.get('name').dirty)
         "
       >
-        <div *ngIf="form.get('name').errors.required">Input name.</div>
-        <div *ngIf="form.get('name').errors.minlength">Name is too short.</div>
-        <div *ngIf="!form.get('name').errors.maxlength">Name is too long.</div>
+        <div *ngIf="form.get('name').hasError('required')">Input name.</div>
+        <div *ngIf="form.get('name').hasError('minlength')">
+          Name is too short.
+        </div>
+        <div *ngIf="!form.get('name').hasError('maxlength')">
+          Name is too long.
+        </div>
       </div>
     </div>
   </div>
@@ -36,16 +40,16 @@
           (form.get('contact').touched || form.get('contact').dirty)
         "
       >
-        <div *ngIf="form.get('contact').errors.required">
+        <div *ngIf="form.get('contact').hasError('required')">
           Input Phone Number
         </div>
-        <div *ngIf="form.get('contact').errors.minlength">
+        <div *ngIf="form.get('contact').hasError('minlength')">
           Phone number is too short.
         </div>
         <div
           *ngIf="
-            form.get('contact').errors.checkIfInteger ||
-            form.get('contact').errors.maxLength
+            form.get('contact').hasError('pattern') ||
+            form.get('contact').hasError('maxlength')
           "
         >
           Invalid phone number format.
@@ -68,12 +72,14 @@
           (form.get('email').touched || form.get('email').dirty)
         "
       >
-        <div *ngIf="form.get('email').errors.required">Input email.</div>
-        <div *ngIf="form.get('email').errors.email">Invalid email format.</div>
+        <div *ngIf="form.get('email').hasError('required')">Input email.</div>
+        <div *ngIf="form.get('email').hasError('email')">
+          Invalid email format.
+        </div>
       </div>
     </div>
   </div>
-  <div formGroupName="passwords">
+  <div>
     <div class="form-group">
       <label for="password">Password</label>
       <input
@@ -85,12 +91,11 @@
       <div class="text-danger">
         <div
           *ngIf="
-            form.get('passwords.password').invalid &&
-            (form.get('passwords.password').touched ||
-              form.get('passwords.password').dirty)
+            form.get('password').invalid &&
+            (form.get('password').touched || form.get('password').dirty)
           "
         >
-          <div *ngIf="form.get('passwords.password').errors.minlength">
+          <div *ngIf="form.get('password').hasError('minlength')">
             Invalid Password Length
           </div>
         </div>
@@ -107,11 +112,11 @@
       <div class="text-danger">
         <div
           *ngIf="
-            form.get('passwords.confirmPassword').touched ||
-            form.get('passwords.confirmPassword').dirty
+            form.get('confirmPassword').touched ||
+            form.get('confirmPassword').dirty
           "
         >
-          <div *ngIf="form.get('passwords').errors">
+          <div *ngIf="form.get('confirmPassword')!.hasError('mustMatch')">
             Passwords do not match.
           </div>
         </div>
@@ -120,7 +125,7 @@
   </div>
   <button type="submit" class="btn btn-primary">Submit</button>
 </form>
-<div class="info">
+<div class="info" *ngIf="isSubmit">
   {{
     "Name: " +
       name +

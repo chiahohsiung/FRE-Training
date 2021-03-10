@@ -17,26 +17,44 @@ export class ReactiveFormComponent implements OnInit {
   ngOnInit(): void {
     this.form = this.formBuilder.group({
       name: ['', [Validators.minLength(2), Validators.required, Validators.max(40)]],
-      contact: ['', [Validators.required, Validators.minLength(10), Validators.maxLength(10), this.checkIfInteger]],
+      contact: ['', [Validators.required, Validators.minLength(10), Validators.maxLength(10), Validators.pattern('[0-9]*')]],
       email: ['', [Validators.required, Validators.email]],
-      passwords: this.formBuilder.group({
-        password:['', [Validators.required, Validators.minLength(5)]],
-        confirmPassword:['',[Validators.required]]},
-        { validator : this.matchPassword}),
+      password: ['', [Validators.required, Validators.minLength(4)]],
+      confirmPassword: ['',[Validators.required]]
+    },
+    {
+      validator: this.passwordValidator("password", "confirmPassword")
     });
+    
   }
   checkIfInteger(control:AbstractControl): ValidationErrors | null{
     if(Number.isInteger(+control.value))
       return null;
     else
-      return {"checkIfInteger": {value: control.value}}
+      return {notInteger: {value:true}}
   }
   matchPassword(control: AbstractControl) :ValidationErrors | null {
     if(control.get('password').value ===  control.get('confirmPassword').value){
       return null;
     }
     else{
-      return {"matchPassword": {value: true}}
+      return {matchPassword: {value: true}}
+    }
+  }
+  passwordValidator(passwordControlName:string, confirmPasswordControlName:string){
+    return (formGroup: FormGroup) =>{
+      const passwordControl = formGroup.controls[passwordControlName];
+      const confirmPasswordControl = formGroup.controls[confirmPasswordControlName];
+      if(!passwordControl || !confirmPasswordControl)
+        return null;
+      if(confirmPasswordControl.errors && !confirmPasswordControl.errors.mustMatch)
+        return null;
+      if(passwordControl.value !== confirmPasswordControl.value){
+        confirmPasswordControl.setErrors({mustMatch:true});
+      }
+      else{
+        confirmPasswordControl.setErrors(null);
+      }
     }
   }
   onSubmit():void{
@@ -45,7 +63,7 @@ export class ReactiveFormComponent implements OnInit {
     this.name = this.form.value.name;
     this.contact = this.form.value.contact;
     this.email = this.form.value.email;
-    this.password = this.form.value.passwords.password;
-    this.confirmPassword = this.form.value.passwords.confirmPassword;
+    this.password = this.form.value.password;
+    this.confirmPassword = this.form.value.confirmPassword;
   }
 }
