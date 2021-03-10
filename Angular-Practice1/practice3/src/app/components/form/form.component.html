@@ -1,0 +1,79 @@
+<form [formGroup]="nForm" (ngSubmit)="onSubmit()">
+    <div class="form-group">
+        <label>Name: </label>
+        <input type="text" class="form-control" name="name" placeholder="name..." formControlName="name">
+        <div class="text-danger" *ngIf="nForm.get('name')!.hasError('required') && nForm.get('name')!.touched">
+            Name is required!
+        </div>
+        <div class="text-danger" *ngIf="nForm.get('name')!.hasError('pattern') && nForm.get('name')!.touched">
+            Name should contains only a-z or A-Z!
+        </div>
+    </div>
+    <div class="form-group">
+        <label>Contact: </label>
+        <input type="text" class="form-control" name="contact" placeholder="contact..." formControlName="contact">
+        <div class="text-danger" *ngIf="nForm.get('contact')!.hasError('required') && nForm.get('contact')!.touched">
+            Contact is required!
+        </div>
+        <div class="text-danger" *ngIf="nForm.get('contact')!.hasError('pattern') && nForm.get('contact')!.touched">
+            Contact should contains only 0-9!
+        </div>
+        <div class="text-danger" *ngIf="nForm.get('contact')!.hasError('minlength') && nForm.get('contact')!.touched">
+            Contact min Length is 2
+        </div>
+        <div class="text-danger" *ngIf="nForm.get('contact')!.hasError('maxlength') && nForm.get('contact')!.touched">
+            Contact max Length is 3
+        </div>
+    </div>
+    <div formGroupName="matchpassword">
+        <div class="form-group">
+            <label>Paasword: </label>
+            <input type="text" class="form-control" name="password" placeholder="passowrd..." formControlName="password">
+            <div class="text-danger" *ngIf="matchpassword.get('password')!.hasError('required') && matchpassword.get('password')!.touched">
+                Password is required!
+            </div>
+        </div>
+        <div class="form-group">
+            <label>Confirm Password: </label>
+            <input type="text" class="form-control" name="confirmpassword" placeholder="confirmpassword..." formControlName="confirmpassword">
+            <div class="text-danger" *ngIf="matchpassword.get('confirmpassword')!.hasError('required') && matchpassword.get('confirmpassword')!.touched">
+                Confirm Password is required!
+            </div>
+        </div>
+        <div *ngIf="matchpassword!.invalid && (matchpassword.get('password')!.dirty || matchpassword.get('password')!.touched) 
+        && (matchpassword.get('confirmpassword')!.dirty || matchpassword.get('confirmpassword')!.touched)">
+            <div class="text-danger" *ngIf="matchpassword!.errors!.gte">
+                {{matchpassword!.errors!.message}}
+            </div>
+        </div>
+    </div>
+    <div formArrayName="skills" *ngFor="let skill of skills.controls; let index = index">
+        <div class="form-group" [formGroupName]="index">
+            <label>Skill: </label>
+            <input type="text" name="skill" placeholder="skill..." formControlName="skill">
+            <div class="text-danger" *ngIf="skill.get('skill')!.hasError('required') && skill.get('skill')!.touched">
+                Skill is required!
+            </div>
+            <label>Exp: </label>
+            <input type="text" name="exp" placeholder="exp..." formControlName="exp">
+            <div class="text-danger" *ngIf="skill.get('exp')!.hasError('required') && skill.get('exp')!.touched">
+                Exp is required!
+            </div>
+        </div>
+    </div>
+    <button class="btn btn-primary">Submit</button>
+</form>
+<button class="btn btn-primary" (click)="addSkill()">Add</button>
+<hr>
+<div class="card" style="width: 18rem;" *ngFor="let user of getUsers()">
+  <div class="card-body">
+    <h5 class="card-title">{{user.name}}</h5>
+    <h6 class="card-subtitle mb-2 text-muted">{{user.contact}}</h6>
+    <div *ngFor="let skill of user.skills[0]">
+        <B>Skill: <span>{{skill.skill}}, </span></B>
+        <B>Exp: <span>{{skill.exp}}, </span></B>
+    </div>
+    <a href="#" class="card-link">{{user.password}}</a>
+    <a href="#" class="card-link">{{user.confirmpassword}}</a>
+  </div>
+</div>

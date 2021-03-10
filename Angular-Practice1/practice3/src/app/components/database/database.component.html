@@ -1,0 +1,18 @@
+<div class="input-group mb-3">
+    <input type="text" class="form-control" [(ngModel)]="filtername" placeholder="Search..." aria-label="Recipient's username" aria-describedby="basic-addon2">
+  </div>
+<hr>
+<div class="container">
+    Search:
+</div>
+<div class="showcard">
+<div class="card" style="width: 18rem;" *ngFor="let comment of database | filter:filtername">
+    <div class="card-body">
+      <h5 class="card-title">{{comment.name}}</h5>
+      <!-- <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6> -->
+      <p class="card-text">{{comment.body}}</p>
+      <a href="#" class="card-link">{{comment.email}}</a>
+      <!-- <a href="#" class="card-link">Another link</a> -->
+    </div>
+  </div>
+</div>
