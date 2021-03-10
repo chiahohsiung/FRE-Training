@@ -1,0 +1,43 @@
+<div class="container">
+    <h2>Reactive Form Array Example</h2>
+    <form [formGroup]="skillForm" (ngSubmit)="onSubmit()">
+        <div class="form-group">
+            <label>Name: </label>
+            <input type="text" class="form-control" formControlName="name">
+            <div class="text-danger" *ngIf="skillForm.get('name')!.hasError('required') && skillForm.get('name')!.touched">
+                Name is required....
+            </div>
+            <div class="text-danger" *ngIf="skillForm.get('name')!.hasError('minlength') && skillForm.get('name')!.touched">
+                Minimum 2 charators are required....
+            </div>
+            <div class="text-danger" *ngIf="skillForm.get('name')!.hasError('maxlength') && skillForm.get('name')!.touched">
+                Maximum 30 charators are required....
+            </div>
+        </div>
+        <hr>
+        <hr>
+        <div class="form-group">
+            <label>Skills: </label>
+            <div formArrayName="skills">
+                <div *ngFor="let skill of skills.controls; let i = index">
+                    <div [formGroup]="skill">
+                        No. {{i}}
+                        Skill Name: 
+                        <input type="text" class="form-control" formControlName="skillname">
+                        <div class="text-danger" *ngIf="skill.get('skillname')!.hasError('required') && skill.get('skillname')!.touched">
+                            Field is required....
+                        </div>
+                        Experience:
+                        <input type="text" class="form-control" formControlName="exp">
+                        <div class="text-danger" *ngIf="skill.get('exp')!.hasError('required') && skill.get('exp')!.touched">
+                            Name is required....
+                        </div>
+                        <button class="btn btn-danger" (click)="removeSkills(i)">Remove</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <button class="btn btn-info" type="button" (click)="addSkills()">Add</button>
+        <button class="btn btn-success" type="submit">Submit</button>
+    </form>
+</div>

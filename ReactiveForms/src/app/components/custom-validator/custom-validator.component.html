@@ -1,0 +1,22 @@
+<div class="container">
+    <h2>Simple Custom Validator</h2>
+    <form [formGroup]="myForm" (ngSubmit)="onSubmit()" novalidate>
+        <div class="form-group">
+            <label>Number: </label>
+            <input type="text" class="form-control" formControlName="numVal">
+            <div *ngIf="myForm.get('numVal')?.invalid && (myForm.get('numVal')?.touched || myForm.get('numVal')?.dirty)">
+                <div class="alert alert-danger" *ngIf="myForm.get('numVal')?.hasError('required')">
+                    Input required....
+                </div>
+                <div class="alert alert-danger" *ngIf="myForm.get('numVal')?.errors?.gte">
+                    The number should be greater than {{myForm.get('numVal')?.errors?.requiredValue}}
+                </div>
+            </div>
+        </div>
+        <button type="submit" class="btn btn-info" [disabled]="myForm?.invalid">Submit</button>
+    </form>
+
+    <p class="alert alert-info">
+        The form is valid: {{ myForm.get('numVal').valid }}
+    </p>
+</div>

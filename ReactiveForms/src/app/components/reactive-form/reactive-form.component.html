@@ -1,5 +1,5 @@
 <div class="container">
-    <h2 class="text-info" style="text-align: center;">Assignment 2 Reactive Form </h2>
+    <h2 class="text-info" style="text-align: center;"> Reactive Form </h2>
     <form [formGroup]="forms" (ngSubmit)='addUser()'>
         <div class="form-group">
             <label for="name">Name: </label>
@@ -71,7 +71,7 @@
             </div>
         </div>
 
-        <button type="submit" name="button" class="btn btn-info" [disabled]="forms.invalid">Submit</button>
+        <button type="submit" name="button" class="btn btn-info" [disabled]="forms.invalid || (forms.get('confirm_password')!.value !== forms.get('password')!.value)">Submit</button>
     </form>
 
     <hr>
