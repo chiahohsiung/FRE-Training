@@ -1,0 +1,3 @@
+[submodule "searchalbum"]
+	path = searchalbum
+	url = ../../AngularProjects/searchalbum
