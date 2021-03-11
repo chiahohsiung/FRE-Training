@@ -12,6 +12,11 @@ export class ParentService {
   }
 
   getContactLists():Contact[]{
+    console.log(this.contactLists)
     return this.contactLists;
+  }
+
+  getRemoveIndex(index:number):void{
+    this.contactLists = this.contactLists.filter(contact=>this.contactLists.indexOf(contact) !== +index)
   }
 }

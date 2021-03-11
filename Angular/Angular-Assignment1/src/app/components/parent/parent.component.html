@@ -5,7 +5,7 @@
         <button>Add</button>
     </form>
     <div class="contact-information">
-        <app-child [contacts]="getContactLists()"></app-child>
+        <app-child [contacts]="contacts" (sendIndex)="getRemoveIndex($event)"></app-child>
     </div>
     
 </section>

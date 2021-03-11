@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, ComponentFactoryResolver, OnInit } from '@angular/core';
 import { ParentService } from './parent.service';
 import { FormGroup, FormControl } from '@angular/forms';
 import { Contact } from './contact.model';
@@ -27,12 +27,15 @@ export class ParentComponent implements OnInit {
       this.parentService.setContact(this.contactForm.value.name);
       this.contactForm.reset();
     }
+    this.getContactLists();
   }
 
-  getContactLists():Contact[]{
-    return this.parentService.getContactLists();
+  getContactLists(){
+    this.contacts= this.parentService.getContactLists();
   }
 
-  
+  getRemoveIndex(index:number):void{
+    this.parentService.getRemoveIndex(index)
+  }
 
 }
