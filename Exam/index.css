@@ -41,6 +41,8 @@ h1 {
     display:grid;
     grid-template-columns: auto auto auto auto auto auto auto auto auto auto auto;
     padding: 10px;
+    margin: auto;
+    
 }
  
 .album_name {

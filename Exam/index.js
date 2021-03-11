@@ -34,7 +34,7 @@ window.addEventListener("DOMContentLoaded", () => {
               console.log(list); 
           })
           .catch(error => console.log('error', error));
-          
+          t
     }
    
   searchBar.addEventListener("submit", submitInput);
