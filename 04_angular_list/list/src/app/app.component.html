@@ -1,6 +1,16 @@
-<form #form="ngForm" (ngSubmit)="submit(defaultTodo.task)">
-  <input placeholder="Add to List" name="addTask" [(ngModel)]="defaultTodo.task" />
-  <button>Add to List</button>
-</form>
+<div class="container-fluid">
+  <div class="row min-vh-100">
+    <div class="col-2 bg-info text-dark">
+      <app-main-nav></app-main-nav>
+    </div>
+    <div class="col-10 bg-warning">
+      <div class="container h-100 col-5 my-5">
+        <!-- router added here -->
+        <router-outlet></router-outlet>
+      </div>
+    </div>
+  </div>
+</div>
 
-<app-load-list [loadList]="todoList"></app-load-list>
+<!-- <app-main-home></app-main-home> -->
+<!-- <app-todo-main></app-todo-main> -->

@@ -1,0 +1,12 @@
+<nav>
+  <h2 class="my-4 text-center font-weight-bold text-white">{{ title }}</h2>
+  <!-- ok this is coming from the class component -->
+  <!-- have to create a link to the router -->
+  <button
+    class="btn btn-lg btn-block btn-light"
+    *ngFor="let link of links"
+    [routerLink]="link.path"
+  >
+    {{ link.title }}
+  </button>
+</nav>

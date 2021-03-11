@@ -1,0 +1,7 @@
+<div *ngIf="loadList.length > 0">
+  <ul class="list-group list-group-flush">
+    <li *ngFor="let item of loadList" class="list-group-item my-2 rounded">
+      {{ item.task }}
+    </li>
+  </ul>
+</div>

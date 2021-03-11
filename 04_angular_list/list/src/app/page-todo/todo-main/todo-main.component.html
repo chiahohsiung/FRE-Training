@@ -1,0 +1,21 @@
+<div class="container-fluid">
+  <h1 class="font-weight-bold">{{ todoTitle }}</h1>
+</div>
+<form #form="ngForm" (ngSubmit)="submit(defaultTodo.task)">
+  <div class="d-flex">
+    <div class="col-10">
+      <input
+        class="form-control"
+        placeholder="Add to List"
+        name="addTask"
+        [(ngModel)]="defaultTodo.task"
+      />
+    </div>
+    <div class="col-3">
+      <button class="btn btn-primary">Add to List</button>
+    </div>
+  </div>
+</form>
+<div class="container-fluid mt-4">
+  <app-load-list [loadList]="todoList"></app-load-list>
+</div>
