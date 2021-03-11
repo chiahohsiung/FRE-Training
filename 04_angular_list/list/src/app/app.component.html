@@ -1,0 +1,6 @@
+<form #form="ngForm" (ngSubmit)="submit(defaultTodo.task)">
+  <input placeholder="Add to List" name="addTask" [(ngModel)]="defaultTodo.task" />
+  <button>Add to List</button>
+</form>
+
+<app-load-list [loadList]="todoList"></app-load-list>
