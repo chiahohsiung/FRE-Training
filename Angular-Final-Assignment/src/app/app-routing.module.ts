@@ -4,8 +4,9 @@ import { Routes, RouterModule } from '@angular/router';
 import { AlbumsListComponent } from './albums-list/albums-list.component';
 
 const routes: Routes = [
-  { path: 'albumlist', component: AlbumsListComponent },
-  { path: '', redirectTo: '/albumlist', pathMatch: 'full' }
+  { path: '', redirectTo: '/albumlist', pathMatch: 'full' },
+  { path: 'albumlist', component: AlbumsListComponent }
+  
 ];
 
 @NgModule({
