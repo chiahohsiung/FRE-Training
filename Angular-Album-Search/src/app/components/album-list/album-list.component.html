@@ -9,7 +9,8 @@
 
   <div class="main_container">
     <div class="search_results">
-      <p class="search_result_title">Search Albums by Artist Name:</p>
+      <p class="search_result_title" *ngIf="!searched">Search Albums by Artist Name:</p>
+      <p class="search_result_title" *ngIf="searched">Total {{searches}} results found for "{{input}}" </p>
       <div *ngFor="let album of albums" class="results">
         <div class="card">
            <p class="artist_name">{{album.artistName}}</p>

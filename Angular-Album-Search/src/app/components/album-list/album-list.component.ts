@@ -11,9 +11,10 @@ import {Album} from './album'
 export class AlbumListComponent implements OnInit {
   input!:string;
   albums= new Array<Album>();
+  searched:boolean=false;
+  searches:number=0;
 
   constructor(private httpClient: HttpClient, private albumService:AlbumService){
-
   }
 
   ngOnInit(): void {
@@ -25,16 +26,16 @@ export class AlbumListComponent implements OnInit {
 
   getAlbums(): void{
     this.albumService.getAlbums(this.input).subscribe( resp => {
+      this.searches = resp.results.length;
       this.albums = resp.results.map( (album:any) => {
-        console.log(album.artworkUrl100)
         return new Album(
           album.collectionName,
           album.artistName,
           album.artworkUrl100
         )
       })
-      
     }) 
+    this.searched = true;
   }
 
 }
