@@ -1,0 +1,37 @@
+<div class="d-flex flex-column align-items-center justify-content-center m-3">
+  <input
+    type="text"
+    id="album-search"
+    placeholder="Enter artist name"
+    [(ngModel)]="artistName"
+    (keyup.enter)="goSearch()"
+  />
+  <p class="hint m-2" *ngIf="!showResult">
+    Search Albums by ArtistName:
+  </p>
+  <div class="result-summary m-2" *ngIf="showResult">
+    <p>Total {{resultCount}} results for {{artistName}}...</p>
+    <label>
+      Select Page Size:
+      <select class="btn btn-info dropdown-toggle" [(ngModel)]="pageSize">
+        <option value="5" selected>5</option>
+        <option value="10" selected>10</option>
+        <option value="20">20</option>
+        <option value="50">50</option>
+      </select>
+    </label>
+    <div class="pagination d-flex flex-row align-items-center justify-content-center">
+      <button class="btn btn-dark align-middle m-2" (click)="pagePrevious()" *ngIf="currentPage>1">&laquo;</button>
+      <p class="m-2"><b>Current Page: {{currentPage}} </b></p>
+      <button class="btn btn-dark align-middle m-2" (click)="pageNext()">&raquo;</button>
+    </div>
+  </div>
+</div>
+
+
+<section class="container d-flex justify-content-between flex-wrap border border-3" [hidden]="!showResult">
+  <app-album-overview *ngFor="let a of albums | pagination: pageSize: currentPage" [album]="a">
+  </app-album-overview>
+</section>
+
+

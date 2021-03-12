@@ -1,0 +1,8 @@
+<div class="card" *ngIf="album">
+  <img class="mx-auto" src={{album.artworkUrl100}} alt="album cover">
+  <div class="container">
+    <p class="album-name"><b>{{album.collectionName}}</b></p>
+    <p class="artist-name">{{album.artistName}}</p>
+    <p>{{album.releaseDate | date : 'shortDate' }}</p>
+  </div>
+</div>
