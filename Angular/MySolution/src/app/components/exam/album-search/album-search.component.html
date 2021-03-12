@@ -1,0 +1,37 @@
+<header class="header m-0 p-0">
+  <div class="search-bar m-0 py-0 px-3">
+    <input
+      type="text"
+      class="search-input m-0 p-0"
+      placeholder="Search..."
+      [(ngModel)]="searchValue"
+      (keyup.enter)="onEnter()"
+    />
+    <svg class="search-icon p-0" viewBox="0 0 24 24">
+      <circle cx="11" cy="11" r="8"></circle>
+      <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+    </svg>
+  </div>
+</header>
+<div class="content p-0 mx-0">
+  <div class="query p-0 m-0">
+    <b class="col-3 p-0 m-0">Search Albums by ArtistName: {{ artist }}</b>
+    <label class="p-0 m-0"><b>Page Size:</b></label>
+    <select class="form-control ml-3 col-1" [(ngModel)]="pageSize">
+        <option>10</option>
+        <option>25</option>
+        <option>50</option>
+        <option>100</option>
+        <option>200</option>
+        <option>500</option>
+    </select>
+  </div>
+
+  <section class="result p-0 my-0 mx-auto">
+      <div class="card p-0 m-3" *ngFor="let album of albums | scaleSize:pageSize">
+        <img class="cover" [src]="album.cover">
+        <p class="info m-1 text-center">{{album.artist}}</p>
+        <p class="info m-1 text-center">{{album.collection}}</p>
+      </div>
+  </section>
+</div>

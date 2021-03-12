@@ -1,0 +1,115 @@
+<main class="container p-5">
+  <h2>Welcome to Templated Form</h2>
+  <form #tform="ngForm" (ngSubmit)="onSubmit(tform)">
+    <div class="form-group col-8">
+      <label>Name</label>
+      <input
+        type="text"
+        name="name"
+        class="form-control"
+        [(ngModel)]="curUser.name"
+        #name="ngModel"
+        required
+      />
+      <p class="text-danger my-1" *ngIf="name.touched && name.invalid">
+        Name is required!
+      </p>
+    </div>
+
+    <div class="form-group col-8">
+      <label>Contact</label>
+      <input
+        type="tel"
+        name="contact"
+        class="form-control"
+        [(ngModel)]="curUser.email"
+        #contact="ngModel"
+        required
+      />
+      <p class="text-danger my-1" *ngIf="email.touched && email.invalid">
+        Contact is required
+      </p>
+    </div>
+
+    <div class="form-group col-8">
+      <label>Email</label>
+      <input
+        type="email"
+        name="email"
+        class="form-control"
+        [(ngModel)]="curUser.email"
+        #email="ngModel"
+        required
+        email
+      />
+      <p
+        class="text-danger my-1"
+        *ngIf="email.touched && email.hasError('required')"
+      >
+        Email is required
+      </p>
+      <p
+        class="text-danger my-1"
+        *ngIf="email.touched && email.hasError('email')"
+      >
+        Must be a valid email address!
+      </p>
+    </div>
+
+    <div class="form-group col-8">
+      <label>Password</label>
+      <input
+        type="password"
+        name="password"
+        class="form-control"
+        [(ngModel)]="curUser.password"
+        #password="ngModel"
+        minlength="6"
+        required
+      />
+      <p
+        class="text-danger my-1"
+        *ngIf="password.touched && password.hasError('required')"
+      >
+        Password is required!
+      </p>
+      <p
+        class="text-danger my-1"
+        *ngIf="password.touched && password.hasError('minlength')"
+      >
+        Password must be at least 6 characters long!
+      </p>
+    </div>
+    <div class="form-group col-8">
+      <label>Confirm Password</label>
+      <input
+        type="password"
+        name="confirm"
+        class="form-control"
+        [(ngModel)]="curUser.password"
+        #confirm="ngModel"
+        required
+      />
+      <p
+        class="text-danger my-1"
+        *ngIf="password.touched && password.hasError('required')"
+      >
+        Password is required!
+      </p>
+    </div>
+    <button
+      type="submit"
+      class="btn btn-primary ml-3"
+      [disabled]="tform.invalid"
+    >
+      Submit
+    </button>
+  </form>
+  <div class="result mt-3">
+    <p class="my-0 pl-3" *ngFor="let user of users">
+      <b>Name: </b>{{ user.name }} &nbsp; <b>Contact: </b
+      >{{ user.contact }} &nbsp; <b>Email: </b>{{ user.email }} &nbsp;
+      <b>Password: </b>{{ user.password }}
+    </p>
+  </div>
+</main>

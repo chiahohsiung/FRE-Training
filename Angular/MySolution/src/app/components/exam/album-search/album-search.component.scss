@@ -1,0 +1,100 @@
+$header-height: 90px;
+$header-color: rgb(0, 128, 128);
+
+$search-bar-height: 30px;
+$search-bar-color: rgb(240, 238, 238);
+
+$query-height: 60px;
+
+$card-width: 160px;
+
+.header {
+  position: fixed;
+  top: 0;
+  height: $header-height;
+  width: 100%;
+  box-sizing: border-box;
+  background-color: $header-color;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 2;
+  .search-bar {
+    width: 25%;
+    height: $search-bar-height;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: $search-bar-color;
+    transition: width 0.1s linear;
+    border-radius: 15px;
+    .search-input {
+      width: 85%;
+      height: 100%;
+      box-sizing: border-box;
+      border: none;
+      outline: none;
+      font: 1rem/1rem Arial, sans-serif;
+      background-color: $search-bar-color;
+    }
+    &:focus-within {
+      width: 30%;
+      transition: width 0.1s linear;
+    }
+    .search-icon {
+      width: 10%;
+      height: 90%;
+      fill: none;
+      stroke: grey;
+      stroke-width: 2px;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+  }
+}
+
+.content {
+  width: 100%;
+  height: 100%;
+  margin-top: $header-height;
+  box-sizing: border-box;
+  .query {
+    width: 100%;
+    height: $query-height;
+    box-sizing: border-box;
+    border-bottom: 1px solid $header-color;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .result {
+    width: 100%;
+    box-sizing: border-box;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    .card {
+      width: $card-width;
+      box-sizing: border-box;
+      border: 1px solid $header-color;
+      background-color: $search-bar-color;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      border-radius: 5px;
+      box-shadow: 3px 3px 3px $header-color;
+      &:hover {
+        transform: translateY(-5px) scale(1.005) translateZ(0);
+      }
+      .cover {
+        width: 100%;
+        border-radius: 5px 5px 0 0;
+      }
+      .info {
+        width: 100%;
+        font: bold 0.8rem/1rem Arial, sans-serif;
+      }
+    }
+  }
+}

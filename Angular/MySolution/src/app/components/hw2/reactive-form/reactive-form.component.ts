@@ -5,8 +5,8 @@ import {
   FormGroup,
   Validators,
 } from '@angular/forms';
-import { passwordMatch } from 'src/app/directives/password-match';
-import { User } from 'src/app/models/user';
+import { User } from '../user';
+import { passwordMatch } from './password-match';
 
 @Component({
   selector: 'app-reactive-form',
