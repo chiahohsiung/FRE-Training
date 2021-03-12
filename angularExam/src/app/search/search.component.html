@@ -1,0 +1,45 @@
+<div class="navbar navbar-dark bg-dark">
+  <form class="form-inline navForm">
+    <input 
+      class="form-control mr-sm-2 col-6"
+      [formControl]="searchInput"
+      (keyup.enter)="search()"
+      placeholder="Search"
+      aria-label="Search">
+    <i id="search" class="bi bi-search"></i>
+  </form>
+</div>
+<div class='container'>
+  <div class="infoGroup">
+    <div id='info'>
+      Search Albums by ArtistName: <b>{{artist}}</b>
+    </div>
+    <select 
+    *ngIf="artist !== null" 
+    [(ngModel)]="displaySelected"
+    (change)="reDisplay()"
+    >
+      <option [value]="500" selected>All</option>
+      <option [value]="5">5 items</option>
+      <option [value]="10">10 items</option>
+      <option [value]="20">20 items</option>
+    </select>
+  </div>
+  <div class="row">
+    <ng-template ngFor let-item [ngForOf]="result" let-i="index">
+      <div class="col-lg-3 col-md-4 col-sm-10" *ngIf="i<+displaySelected">
+        <div class="card">
+          <img class="card-img-top" src={{item!.artworkUrl100}} alt="Card image cap">
+          <div class="card-body">
+            <h5 class="card-title">{{item!.artistName}}</h5>
+            <p class="card-text">{{item!.collectionName}}</p>
+            <div class="likeGroup">
+              <i class="bi bi-hand-thumbs-up"></i>
+              <i class="bi bi-hand-thumbs-down"></i>
+            </div>
+          </div>
+        </div>
+      </div>
+    </ng-template>
+  </div>
+</div>

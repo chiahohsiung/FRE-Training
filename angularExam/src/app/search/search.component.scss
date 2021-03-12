@@ -1,0 +1,45 @@
+
+#search {
+  color: aliceblue;
+}
+i {
+  font-size:larger;
+  font-weight: bold;
+}
+
+.navForm {
+  width: 30%;
+  margin: 10px auto;
+  justify-content: center;
+}
+.navForm:focus-within{
+  width: 60%;
+  transition: 0.5s;
+}
+
+.infoGroup {
+  text-align: center;
+  background-color: rgb(197, 248, 195);
+  border: none;
+  padding: 10px;
+  border-radius: 5px;
+  box-shadow: 5px 5px 20px rgb(197, 248, 195);
+  justify-content: center;
+  div{
+    margin: 5px 15px;
+    display:inline-block;
+  }
+}
+
+select{
+  border-radius: 5px;
+}
+
+.card {
+  margin: 5px;
+  padding: 10px 5px;
+  background-color: rgb(214, 155, 65);
+}
+.card:hover{
+  box-shadow: 0px 0px 30px rgb(197, 216, 252);
+}
