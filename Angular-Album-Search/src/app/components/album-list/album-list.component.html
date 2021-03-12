@@ -1,14 +1,22 @@
 <div class="container">
-  <h1>Album List</h1>
-  <form>
-    <input type="text" placeholder="Search" (keyup.enter)="getAlbums()" name="input" [(ngModel)]="input" >
-    <button (click)="getAlbums()">Search</button>
-  </form>
-</div>
-<div>
-  <div *ngFor="let album of albums" class="card">
-    <p>{{album.collectionName}}</p>
-    <p>{{album.artistName}}</p>
-    <img src="{{album.artworkUrl100}}">
+  <header class="container_header">
+    <form class="form">
+      <input type="text" placeholder="Search" class="input" (keyup.enter)="getAlbums()" name="input" [(ngModel)]="input" >
+      <button (click)="getAlbums()" class="submit_btn"><i class="fas fa-search"></i></button>
+    </form>
+  </header>
+
+  <div class="main_container">
+    <div class="search_results">
+      <p class="search_result_title">Search Albums by Artist Name:</p>
+      <div *ngFor="let album of albums" class="results">
+        <div class="card">
+          <p>{{album.collectionName}}</p>
+          <p>{{album.artistName}}</p>
+          <img src="{{album.artworkUrl100}}">
+         </div>
+      </div>
+    </div>
   </div>
+
 </div>
