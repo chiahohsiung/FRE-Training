@@ -3,6 +3,7 @@ import { Injectable } from "@angular/core"
 import { Observable } from "rxjs"
 import { Album } from "./albums/album"
 import { Result } from "./albums/Result"
+import { LocalStorageService } from "./local-storage.service"
 
 @Injectable({
     providedIn: "root",
@@ -11,7 +12,10 @@ export class ArtistsService {
     artist: string
     albums: Album[]
     count: Number
-    constructor(private http: HttpClient) {
+    constructor(
+        private http: HttpClient,
+        private ls: LocalStorageService
+    ) {
         this.artist = ""
         this.albums = []
         this.count = 0
@@ -20,21 +24,18 @@ export class ArtistsService {
         return `https://itunes.apple.com/search?term=${artistName}&media=music&entity=album&attribute=artistTerm&limit=500`
     }
     public getAlbums(): Observable<Result> {
-        console.log(this.artist)
         let url = this.baseUrl(this.artist)
         return this.http.get<Result>(url)
     }
-
     public saveValue(value: string) {
         console.log(value)
         this.artist = value
         this.getAlbums().subscribe((albums: Result) => {
-            console.log(albums)
             this.count = albums.resultCount
             this.albums = albums.results
+            this.ls.setItem("albums", JSON.stringify(this.albums))
+            this.ls.setItem("count", JSON.stringify(this.count))
+            this.ls.setItem("artist", JSON.stringify(this.artist))
         })
-    }
-    public artistAlbums() {
-        return this.albums
     }
 }

@@ -2,6 +2,7 @@ import { Component, OnInit } from "@angular/core"
 import { Album } from "../albums/album"
 import { Result } from "../albums/Result"
 import { ArtistsService } from "../artists.service"
+import { LocalStorageService } from "../local-storage.service"
 
 @Component({
     selector: "app-form",
@@ -13,14 +14,19 @@ export class FormComponent implements OnInit {
     albums: Album[]
     count: Number
     artist: string
-    constructor(private artists: ArtistsService) {
+    constructor(
+        private artists: ArtistsService,
+        private ls: LocalStorageService
+    ) {
         this.input = ""
-        this.count = 0
+        this.count = 0 || JSON.parse(this.ls.getItem("count")!)
         this.albums = []
-        this.artist = ""
+        this.artist = "" || JSON.parse(this.ls.getItem("artist")!)
     }
 
-    ngOnInit(): void {}
+    ngOnInit(): void {
+        this.albums = JSON.parse(this.ls.getItem("albums")!)
+    }
 
     logInput(event: Event): void {
         event.preventDefault()
