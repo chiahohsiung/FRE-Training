@@ -16,15 +16,21 @@ import { HeroService } from "../hero.service"
     </div>`,
 })
 export class DashboardComponent implements OnInit {
-    heroes: Hero[] = []
-    constructor(private heroService: HeroService) {}
+    heroes: Hero[]
+    constructor(private heroService: HeroService) {
+        this.heroes = []
+    }
 
     ngOnInit(): void {
         this.getHeroes()
     }
     getHeroes(): void {
-        this.heroService
-            .getHeroes()
-            .subscribe((heroes) => (this.heroes = heroes.slice(1, 5)))
+        let observer = {
+            next: (heroes: Hero[]) =>
+                (this.heroes = heroes.slice(1, 5)),
+            error: (err) => console.log(err),
+            complete: () => {},
+        }
+        this.heroService.getHeroes().subscribe(observer)
     }
 }

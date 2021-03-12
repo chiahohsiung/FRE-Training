@@ -154,14 +154,15 @@
     <ul class="form-data list-group">
         <li class="data-item list-group-item">
             <b>Name:</b>
-            {{ requiredForm.get("name")?.value }}
+            {{ requiredForm.get("name")?.value || null }}
             <b>Mobile No:</b>
-            {{ requiredForm.get("mobileNumber")?.value }}
+            {{ requiredForm.get("mobileNumber")?.value || null }}
             <b>Email:</b>
-            {{ requiredForm.get("email")?.value }}
+            {{ requiredForm.get("email")?.value || null }}
             <b>Password:</b>
-            {{ requiredForm.get("password")?.value }}
-            <b>Confirmed Password:</b>{{ requiredForm.get("password2")?.value }}
+            {{ requiredForm.get("password")?.value || null }}
+            <b>Confirmed Password:</b
+            >{{ requiredForm.get("password2")?.value || null }}
         </li>
     </ul>
 </div>
