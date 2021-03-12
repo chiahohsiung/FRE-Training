@@ -1,0 +1,30 @@
+<header class="search">
+    <form (ngSubmit)="onSubmit()"class="search_container">
+        <input type="text" class="searchbox" placeholder="Search..." [(ngModel)]='input' name="input">
+        <button class="search_button">
+            <i class="material-icons">search</i>
+        </button>
+    </form>
+</header>
+<main class="content">
+<div class="info">
+    <div *ngIf="!fullAlbums" [innerHTML]="info"></div>
+    <div *ngIf="fullAlbums" class="size" >
+        <div  [innerHTML]="info"></div>
+        <div>
+            <select id="sizeSelect" [(ngModel)]="selectSize" (change)="render(selectSize)">
+                <option *ngFor="let num of size" >{{ num }}</option>
+            </select>
+        </div>
+    </div>
+</div>
+    <section class="result">
+        <div class="resultGrid">
+            <div *ngFor='let result of albums' class="card">
+                <div class="card_content">{{result.collectionName}}</div>
+                <div class="card_subtitle">{{result.artistName}}</div>
+                <img class="card_img" src={{result.artworkUrl100}}>
+            </div>
+        </div>
+    </section>
+</main>
