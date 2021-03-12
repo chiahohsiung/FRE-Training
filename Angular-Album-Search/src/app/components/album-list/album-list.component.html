@@ -1,4 +1,5 @@
 <div class="container">
+
   <header class="container_header">
     <form class="form">
       <input type="text" placeholder="Search" class="input" (keyup.enter)="getAlbums()" name="input" [(ngModel)]="input" >
@@ -11,9 +12,11 @@
       <p class="search_result_title">Search Albums by Artist Name:</p>
       <div *ngFor="let album of albums" class="results">
         <div class="card">
-          <p>{{album.collectionName}}</p>
-          <p>{{album.artistName}}</p>
-          <img src="{{album.artworkUrl100}}">
+           <p class="artist_name">{{album.artistName}}</p>
+          <p class="album_name">{{album.collectionName}}</p>
+          <img src="{{album.artworkUrl100}}" alt="albumImg" class="card_img">
+          <button class="like_btn">Like</button>
+          <button class="dislike_btn">Dislike</button>
          </div>
       </div>
     </div>
