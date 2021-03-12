@@ -1,0 +1,33 @@
+<header class="header">
+  <form id="form" autocomplete="off" (ngSubmit)="onClick($event)">
+    <input type="text" class="search__input" id="input" [(ngModel)]="inputArtist" name="inputArtist" value="" placeholder="Search..." required>
+    <button id="submit" ></button>
+  </form>
+</header>
+<section class="section">
+  <div class="albums__container">
+    
+    <div class="text">
+      <span *ngIf="!inputArtist; else elseBlock" id='text'> Search Album by Artist Name: </span>
+      <ng-template #elseBlock>
+        <span>Total {{displayAlbums.length}} results for "{{inputArtist}}" |</span> Select page size:
+        <select [(ngModel)] ="selectedSize" class="dropdown" name="selectedSize" (change)="valueChange($event)"> 
+        <option [ngValue]="undefined"  disabled> </option>
+        <option *ngFor="let size of sizes" [ngValue]="size" [selected]="size == selectedSize"> {{size}} </option>
+        </select>
+      </ng-template> 
+    </div>
+
+    <div class="container" id="continer">
+      <ng-container class="" *ngFor="let card of displayAlbums;index as i">
+        <div class="card">
+          <span class="content">{{card.artistName}}</span>
+          <span class="content--collection">{{card.collectionName}}</span>
+          <img class="image" src="{{card.artworkUrl100}}" alt="{{card.collectionName}}">
+          <div class="likebuttons"><button>Like</button><button>Dislike</button></div>
+        </div>
+      </ng-container>
+    </div>
+  </div>  
+</section>
+<script src="index.js"></script> 
