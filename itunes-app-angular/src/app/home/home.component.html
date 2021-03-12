@@ -1,0 +1,76 @@
+<div class="navbar">
+  <mat-form-field class="search-input" appearance="fill">
+    <input [formControl]="artist" matInput />
+  </mat-form-field>
+  <mat-icon class="search" (click)="query()">search</mat-icon>
+</div>
+
+<div class="results">
+  <ng-container
+    *ngIf="
+      artist.value.length > 0 && artist.value === getArtist();
+      else elseTemplate
+    "
+  >
+    <p>
+      {{ results.length }} result{{ results.length > 1 ? "s" : "" }} for
+      {{ artist.value }}
+    </p>
+  </ng-container>
+  <ng-template #elseTemplate>
+    <p #alt>Enter a value to search ☝</p>
+  </ng-template>
+  <span class="divider"></span>
+  <p>| Select page size:</p>
+  <mat-form-field
+    (ngModelChange)="changePageSize()"
+    [formControl]="pageSizeControl"
+    appearance="legacy"
+  >
+    <mat-label>Page Size</mat-label>
+    <mat-select (ngModelChange)="changePageSize()" [(value)]="pageSize">
+      <mat-option value="one">5</mat-option>
+      <mat-option value="ten">10</mat-option>
+      <mat-option value="twenty">20</mat-option>
+      <mat-option value="fifty">50</mat-option>
+      <mat-option value="seventy-five">75</mat-option>
+      <mat-option value="one-hundred">100</mat-option>
+    </mat-select>
+  </mat-form-field>
+</div>
+<div class="everything">
+  <div *ngFor="let element of results" class="element">
+    <mat-card>
+      <img
+        mat-card-image
+        src="{{ element.artwork }}"
+        alt="{{ element.collectionName }}"
+      />
+      <mat-card-title
+        >{{ element.collectionName }}
+        <mat-icon *ngIf="element.collectionExplicitness === 'explicit'"
+          >explicit</mat-icon
+        >
+      </mat-card-title>
+      <mat-card-content>
+        {{ element.artistName }}
+      </mat-card-content>
+      <mat-card-actions>
+        <mat-icon>play_circle_filled</mat-icon>
+
+        <mat-chip-list>
+          <mat-chip class="{{ element.genre }}">{{
+            element.primaryGenreName
+          }}</mat-chip>
+        </mat-chip-list>
+        <mat-icon
+          class="like"
+          (click)="likeThis(element)"
+          aria-hidden="false"
+          aria-label="Like icon"
+          >{{ element.like ? "favorite" : "favorite_border" }}</mat-icon
+        >
+      </mat-card-actions>
+    </mat-card>
+  </div>
+</div>

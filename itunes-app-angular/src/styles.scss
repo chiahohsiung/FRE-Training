@@ -1,0 +1,131 @@
+/* You can add global styles to this file, and also import other style files */
+
+// import palette stylesheet
+@import "style/palette";
+
+:root {
+  --background: #fef9ff;
+  --dark: #462255;
+  --text: #231f20;
+}
+
+:root {
+  --pop: #eca72c;
+  --rock: rgb(126, 164, 252);
+  --alternative: rgb(145, 172, 150);
+  --classical: #94fbabff;
+  --country: rgb(204, 100, 40);
+  --jazz: rgb(214, 147, 99);
+  --electronic: #8d99aeff;
+  --dance: #e7bb41ff;
+  --r-b-soul: rgb(241, 125, 90);
+  --reggae: #f3a712ff;
+  --metal: #64f58dff;
+  --blues: #22aed1ff;
+  --holiday: #9cec5bff;
+  --k-pop: rgb(255, 123, 118);
+  --soundtrack: #c2eabdff;
+  --hip-hop-rap: rgb(188, 197, 157);
+  --french-pop: #9bbec7ff;
+
+  --emerald: #59cd90ff;
+  --house: #ef8354ff;
+  --indie-pop: rgb(48, 200, 202);
+  --rhythm: #857c8dff;
+  --aquamarine: #5dfdcbff;
+  --latin: #90d7ffff;
+  --aero: #6bbaecff;
+}
+.indie-pop {
+  background-color: var(--indie-pop);
+}
+.house {
+  background-color: var(--house);
+}
+.french-pop {
+  background-color: var(--french-pop);
+}
+.hip-hop-rap {
+  background-color: var(--hip-hop-rap);
+}
+.soundtrack {
+  background-color: var(--soundtrack);
+}
+.pop {
+  background-color: var(--pop);
+}
+.rock {
+  background-color: var(--rock);
+}
+.alternative {
+  background-color: var(--alternative);
+}
+.classical {
+  background-color: var(--classical);
+}
+.country {
+  background-color: var(--country);
+}
+.jazz {
+  background-color: var(--jazz);
+}
+.electronic {
+  background-color: var(--electronic);
+}
+.dance {
+  background-color: var(--dance);
+}
+.r-b-soul {
+  background-color: var(--r-b-soul);
+}
+.reggae {
+  background-color: var(--reggae);
+}
+.metal {
+  background-color: var(--metal);
+}
+.blues {
+  background-color: var(--blues);
+}
+.holiday {
+  background-color: var(--holiday);
+}
+.k-pop {
+  background-color: var(--k-pop);
+}
+
+html,
+body {
+  height: 100%;
+}
+body {
+  margin: 0;
+  background-color: var(--background);
+  font-family: ff-tisa-sans-web-pro, sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  color: var(--text);
+}
+* {
+  font-family: ff-tisa-sans-web-pro, sans-serif;
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: var(--background);
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: var(--dark);
+  border-radius: 3px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #462255;
+}
