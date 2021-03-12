@@ -43,6 +43,11 @@ export class HomeComponent implements OnInit {
   constructor(private fetchService: FetchService) { }
 
   ngOnInit(): void {
+
+    this.filteredAlbums = JSON.parse(localStorage.getItem('filteredAlbums'));
+    this.num_album = JSON.parse(localStorage.getItem('num_album'));
+    this.fixArtistName = JSON.parse(localStorage.getItem('fixArtistName'));
+
   }
 
   searchArtist(){
@@ -54,13 +59,21 @@ export class HomeComponent implements OnInit {
     this.num_album = this.artistProfile.resultCount;
     this.albums = this.artistProfile.results;
     this.filteredAlbums = this.albums.slice(0, this.num_page);
+    //
+    localStorage.setItem('filteredAlbums', JSON.stringify(this.filteredAlbums));
+    localStorage.setItem('num_album', JSON.stringify(this.num_album));
+    //
     this.fixArtistName = this.artistName;
+    localStorage.setItem('fixArtistName', JSON.stringify(this.fixArtistName));
     
   }
 
   onNumPageSelected(e:any) {
     this.num_page = e.target.value;
     this.filteredAlbums = this.albums.slice(0, this.num_page);
+    //
+    localStorage.setItem('filteredAlbums', JSON.stringify(this.filteredAlbums));
+    //
   }
 
 }

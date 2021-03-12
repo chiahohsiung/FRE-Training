@@ -7,10 +7,10 @@
         <button type="submit" class="btn btn-secondary btn-sm">SEARCH</button>
     </form>
 </nav>
-<div *ngIf="artistProfile === undefined" class="container mt-3 d-flex justify-content-center">
+<div *ngIf="filteredAlbums === undefined || filteredAlbums === null" class="container mt-3 d-flex justify-content-center">
     Search Album by Artist Name
 </div>
-<div *ngIf="artistProfile !== undefined" class="container mt-3 d-flex justify-content-center">
+<div *ngIf="filteredAlbums !== undefined && filteredAlbums !== null" class="container mt-3 d-flex justify-content-center">
     <div class="container text-right">
         Total {{num_album}} found for `{{fixArtistName}}`
     </div>
@@ -26,5 +26,5 @@
 
 <div class="container">
     <hr class="bg-info mt-3 mb-3">
-    <app-cards *ngIf="artistProfile !== undefined" [filteredAlbums]="filteredAlbums"></app-cards>
+    <app-cards *ngIf="filteredAlbums !== undefined && filteredAlbums !== null" [filteredAlbums]="filteredAlbums"></app-cards>
 </div>
