@@ -19,7 +19,16 @@
         <header>
             Total results {{ count }} found for "{{ artist }}"
         </header>
-
+        <select
+            name="filter"
+            id="filter"
+            (change)="updateList($event)"
+            [(ngModel)]="filter"
+        >
+            <option *ngFor="let option of options" [value]="option">
+                {{ option }}
+            </option>
+        </select>
         <div class="grid">
             <div class="card" *ngFor="let album of albums">
                 <div class="card-header">

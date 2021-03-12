@@ -14,6 +14,9 @@ export class FormComponent implements OnInit {
     albums: Album[]
     count: Number
     artist: string
+    filter: number
+
+    options = [10, 25, 50]
     constructor(
         private artists: ArtistsService,
         private ls: LocalStorageService
@@ -22,6 +25,7 @@ export class FormComponent implements OnInit {
         this.count = 0 || JSON.parse(this.ls.getItem("count")!)
         this.albums = []
         this.artist = "" || JSON.parse(this.ls.getItem("artist")!)
+        this.filter = 0
     }
 
     ngOnInit(): void {
@@ -34,6 +38,10 @@ export class FormComponent implements OnInit {
         this.artists.saveValue(this.input)
         this.fetch()
         this.artist = this.artists.artist
+    }
+    updateList(event: Event) {
+        this.albums = [...this.albums].slice(1, this.filter)
+        console.log(this.filter)
     }
 
     fetch() {
