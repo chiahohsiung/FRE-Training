@@ -36,9 +36,7 @@ export class AlbumsListComponent implements OnInit {
 
   fetchResults() {
     if(this.queryName) {
-      console.log("Query name is not empty!");
       this.itunesService.fetchData(this.queryName).subscribe(response => {
-        console.log(response);
         this.fullResults = response;
         this.render(this.selectValue);
       });
@@ -46,7 +44,6 @@ export class AlbumsListComponent implements OnInit {
   }
 
   render(num: number) {
-    console.log(num);
     this.resultInfo = `Total ${this.fullResults.resultCount} results found for "${this.queryName}" | Select Page Size: `;
     if(!num || num > this.fullResults.resultCount) {
       this.showResults = this.fullResults.results;
