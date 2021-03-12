@@ -16,7 +16,6 @@ export class DataService {
 
   getCard(artist:string): Observable<[]> {
 
-    console.log("In sevice", this.endpoint(artist))
     return this.http.get<[]>(this.endpoint(artist));
   }
 

@@ -20,22 +20,15 @@ export class ChildComponent implements OnInit {
       this.inputArtist = localStorage.getItem("artist");
       this.getAlbums()
     }
-    console.log("intputartist",this.inputArtist)
   }
 
   valueChange(event){
     event.preventDefault();
-
-    console.log("selected value",event.target.value ,
-    'value of selected',this.selectedSize);
-    console.log("11111albums: ",this.albums)
     this.filterAlbums();
   }
   filterAlbums() {
     console.log("this isn the sel ", this.selectedSize)
-    console.log("this is the arrrrrayyyyy ", this.albums.slice(0,this.selectedSize))
     this.displayAlbums = this.albums.slice(0,this.selectedSize)
-    console.log("albums: ",this.displayAlbums)
   }
   
   onClick(event) {
@@ -43,15 +36,6 @@ export class ChildComponent implements OnInit {
     localStorage.setItem("artist",this.inputArtist);
     this.getAlbums();
   }
-
-  // onClick(event) {
-  // event.preventDefault();
-  // localStorage.setItem("artist",this.inputArtist);
-  //   this.getAlbums()
-  // setTimeout(() => {
-  //   console.log("this.albums", this.albums[0])
-  // }, 1000);
-  // }
 
   async getAlbums() {
     try {
