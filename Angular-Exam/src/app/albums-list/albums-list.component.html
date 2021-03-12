@@ -1,0 +1,30 @@
+<div class="search-bar">
+    <app-search-bar></app-search-bar>
+</div>
+
+<main class="content-container">
+    <section class="search-result">
+        <div class="result-info">
+            <div *ngIf="!fullResults" [innerHTML]="resultInfo"></div>
+            <div *ngIf="fullResults" class="select-list" >
+                <div  [innerHTML]="resultInfo"></div>
+                <div>
+                    <select id="num-select" [(ngModel)]="selectValue" (change)="render(selectValue)">
+                        <option *ngFor="let num of selectNum" >{{ num }}</option>
+                    </select>
+                </div>
+            </div> 
+        </div>
+    </section>
+
+    <section class="result-detail">
+        <div *ngFor="let item of showResults" class="card">
+            <img [src]="item.artworkUrl100">
+            <p>{{ item.collectionName }}</p>
+            <button class = "btn-like">Like</button> 
+            <button class = "btn-like">Decline</button>
+        </div>
+        
+        <div *ngFor="let num of [0,1,2,3,4,5,6,7,8,9]" class="emptyCard"></div>
+    </section>
+</main>
