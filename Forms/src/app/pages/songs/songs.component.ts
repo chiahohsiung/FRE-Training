@@ -1,5 +1,6 @@
-import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
+import { FormControl, Validators } from '@angular/forms';
+import { ItunesService } from 'src/app/services/itunes.service';
 
 @Component({
   selector: 'app-songs',
@@ -7,21 +8,17 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./songs.component.scss'],
 })
 export class SongsComponent implements OnInit {
-  artist = 'linkin park';
-  url: string = `https://itunes.apple.com/search?term=${this.artist}&media=music&entity=album&attribute=artistTerm&limit=500`;
+  artist = new FormControl('', [Validators.required]);
   results!: Result[];
-  constructor(public http: HttpClient) {}
+  constructor(private api: ItunesService) {}
 
-  ngOnInit(): void {
-    this.http.get(this.url).subscribe((data) => console.log(data));
-
-    this.http.get<any>(this.url).subscribe((data) => {
-      console.log(data['results']);
+  ngOnInit(): void {}
+  query() {
+    this.api.getAll(this.artist.value).subscribe((data) => {
+      console.log(data);
       this.results = data.results;
-      console.log(this.results);
     });
   }
-
   // Using fetch
   // fetchData() {
   //   let request = fetch(this.url);

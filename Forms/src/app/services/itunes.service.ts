@@ -21,6 +21,6 @@ export class ItunesService {
 
     let params = parameters.toString();
 
-    this.http.get(this.url + params);
+    return this.http.get<any>(this.url + params); // Observable
   }
 }

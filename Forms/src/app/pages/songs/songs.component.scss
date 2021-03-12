@@ -1,11 +1,29 @@
 div.everything {
   display: flex;
-  justify-content: space-evenly;
-  align-content: space-between;
-  flex-wrap: wrap-reverse;
+  justify-content: space-around;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  //   flex: 1;
 }
 
 div.element {
-  width: 20%;
-  padding: 1%;
+  width: 31%;
+  margin: 1%;
+  align-self: flex-start;
+}
+mat-card {
+  background-color: #f0ec57;
+}
+
+div.navbar {
+  display: flex;
+  //   flex-direction: column;
+  justify-content: center;
+  margin: 3%;
+  align-items: center;
+}
+button.searchBtn {
+  width: 10%;
+  background-color: #a53860;
+  color: #ffeedb;
 }
