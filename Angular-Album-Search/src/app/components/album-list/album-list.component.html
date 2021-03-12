@@ -10,7 +10,17 @@
   <div class="main_container">
     <div class="search_results">
       <p class="search_result_title" *ngIf="!searched">Search Albums by Artist Name:</p>
-      <p class="search_result_title" *ngIf="searched">Total {{searches}} results found for "{{input}}" </p>
+      <p class="search_result_title" *ngIf="searched">Total {{searches}} results found for "{{input}}" | Select page size:  
+        <select name="pageSize" id="pageSize"> 
+          <option value=""></option>
+            <option value="5">5</option>
+            <option value="10">10</option>
+            <option value="20">20</option>
+            <option value="50">50</option>
+            <option value="100">100</option>
+            <option value="200">200</option>
+        </select>    
+       </p>
       <div *ngFor="let album of albums" class="results">
         <div class="card">
            <p class="artist_name">{{album.artistName}}</p>
