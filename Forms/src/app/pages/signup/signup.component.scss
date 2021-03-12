@@ -1,0 +1,15 @@
+div.page {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  flex-direction: column;
+  div.content {
+    width: fit-content;
+    flex-direction: column;
+    display: flex;
+  }
+  mat-form-field {
+    padding: 2%;
+  }
+}

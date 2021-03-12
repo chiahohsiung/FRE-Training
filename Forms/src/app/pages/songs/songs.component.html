@@ -1,0 +1,31 @@
+<div class="everything">
+  <div *ngFor="let element of results" class="element">
+    <mat-card>
+      <mat-card-header>
+        <mat-card-title>{{ element.collectionName }}</mat-card-title>
+      </mat-card-header>
+      <img
+        mat-card-image
+        src="{{ element.artworkUrl100 }}"
+        alt="{{ element.collectionName }}"
+      />
+      <mat-card-content>
+        <p>
+          {{ element.collectionName }}
+        </p>
+      </mat-card-content>
+      <mat-card-actions>
+        <a href="{{ element.collectionViewUrl }}"
+          ><button mat-button>Listen</button></a
+        >
+        <mat-icon
+          (click)="likeThis(element)"
+          aria-hidden="false"
+          aria-label="Example home icon"
+          >{{ element.like ? "favorite" : "favorite_border" }}</mat-icon
+        >
+      </mat-card-actions>
+    </mat-card>
+  </div>
+</div>
+<!-- [svgIcon]="element.like ? 'Favorite' : FavoriteBorder" -->
