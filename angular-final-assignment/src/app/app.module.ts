@@ -5,12 +5,10 @@ import { AppRoutingModule } from "./app-routing.module"
 import { AppComponent } from "./app.component"
 import { FormComponent } from "./form/form.component"
 import { HttpClientModule } from "@angular/common/http"
-import { AlbumsComponent } from "./albums/albums.component"
 import { FormsModule } from "@angular/forms"
-// import { NgbModule } from "@ng-bootstrap/ng-bootstrap"
 
 @NgModule({
-    declarations: [AppComponent, FormComponent, AlbumsComponent],
+    declarations: [AppComponent, FormComponent],
     imports: [
         BrowserModule,
         AppRoutingModule,

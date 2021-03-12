@@ -25,6 +25,7 @@ export class FormComponent implements OnInit {
         this.artists.saveValue(this.input)
         this.fetch()
     }
+
     fetch() {
         this.artists.getAlbums().subscribe((albums: Result) => {
             console.log(albums)

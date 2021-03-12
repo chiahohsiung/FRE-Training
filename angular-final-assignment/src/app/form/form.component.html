@@ -9,26 +9,33 @@
                 aria-label="Search"
                 [(ngModel)]="input"
             />
-            <i class="material-icons">search</i>
         </form>
+        <i class="material-icons">search</i>
     </nav>
 </header>
+<main>
+    <header>Showing# of Albums: {{ count }}</header>
+    <div *ngIf="count && albums">
+        <div class="grid">
+            <div class="card" *ngFor="let album of albums">
+                <div class="card-header">
+                    {{ album.artistName }}
+                    <hr />
+                    <p>{{ album.collectionName }}</p>
+                </div>
+                <div class="card-body">
+                    <img
+                        class="card-img-top img"
+                        src="{{ album.artworkUrl100 }}"
+                        alt="Card image top"
+                    />
+                </div>
 
-<header>Showing# of Albums: {{ count }}</header>
-<div *ngIf="count && albums">
-    <div class="grid">
-        <div class="card" *ngFor="let album of albums">
-            <div class="card-header">{{ album.artistName }}</div>
-            <div class="card-header">{{ album.collectionName }}</div>
-            <img
-                class="card-img-top img"
-                src="{{ album.artworkUrl100 }}"
-                alt="Card image top"
-            />
-            <div class="card-footer">
-                <button>Like</button>
-                <button>Dislike</button>
+                <div class="card-footer">
+                    <button>Like</button>
+                    <button>Dislike</button>
+                </div>
             </div>
         </div>
     </div>
-</div>
+</main>
