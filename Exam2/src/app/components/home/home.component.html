@@ -11,10 +11,10 @@
     Search Album by Artist Name
 </div>
 <div *ngIf="artistProfile !== undefined" class="container mt-3 d-flex justify-content-center">
-    <div class="container">
-        Total {{num_album}} found for `{{artistName}}`
+    <div class="container text-right">
+        Total {{num_album}} found for `{{fixArtistName}}`
     </div>
-    <div class="container">
+    <div class="container text-left">
         <select (change)="onNumPageSelected($event)">
             <option selected disabled>SELECT</option>
             <option *ngFor="let ps of pageSelect" [value] ="ps._num">
