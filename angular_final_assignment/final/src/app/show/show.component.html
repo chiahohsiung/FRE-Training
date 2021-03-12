@@ -1,3 +1,4 @@
+ <p class="container_num" *ngIf="(albums | async).length != 0">Showing {{ (albums | async).length }} results</p>
 <div class="container_result" *ngIf="albums">
   <app-album-card *ngFor="let album of albums | async" [album]="album"></app-album-card>
 </div>

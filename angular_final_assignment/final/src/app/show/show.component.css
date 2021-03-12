@@ -7,3 +7,9 @@
   border-top: 1px solid teal;
   padding: 5px;
 }
+.container_num {
+  margin-top: 10px;
+  text-align: center;
+  font-size: 25px;
+  padding: 5px;
+}
