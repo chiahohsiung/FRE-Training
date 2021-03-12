@@ -1,0 +1,40 @@
+<header class="header">
+    <div class="header-form">
+        <input type="text" (keyup.enter)="getApi()" [(ngModel)]="searchname" value={{searchname}}
+            placeholder="search..." />
+        <button (click)="getApi()" class="search-button"><img src="https://www.w3schools.com/css/searchicon.png"
+                alt="Search"></button>
+    </div>
+</header>
+<div class="container">
+    <div class="search-result">
+        <div class="search-info">
+            <div *ngIf="!renderdata.length" class="search-size">
+                <p>{{searchresult}}</p>
+            </div>
+            <div *ngIf="renderdata.length" class="sizeselection">
+                {{searchresult}}|&nbsp;
+                <p>Select page sizes:</p>
+                <select (change)="selectChange($event)">
+                    <option selected="" value="">Select...</option>
+                    <option [ngValue]="s" *ngFor="let s of size">
+                        <p>{{s.size}}</p>
+                    </option>
+                </select>
+            </div>
+        </div>
+        <div class="search-albums">
+            <div class="card" *ngFor="let item of renderdata; let index = index">
+                <div class="card-body">
+                    <p class="card-title">{{ item.artistName }}</p>
+                    <p class="card-text">{{ item.collectionCensoredName }}</p>
+                </div>
+                <img class="card-img-top" src="{{ item.artworkUrl100 }}" alt="Card image cap" />
+                <div class="like">
+                    <button>LIKE</button>
+                    <button>DISLIKE</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
