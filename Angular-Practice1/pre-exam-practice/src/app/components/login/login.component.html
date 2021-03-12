@@ -1,0 +1,8 @@
+<label>Name: </label>
+<input type="text" [(ngModel)]="username" placeholder="username">
+<label>Paasword: </label>
+<input type="text" [(ngModel)]="password" placeholder="password">
+<button (click)="login()">Login</button>
+<div class="text-danger">
+    {{this.msg}}
+</div>

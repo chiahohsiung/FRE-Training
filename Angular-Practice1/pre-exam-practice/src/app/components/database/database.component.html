@@ -1,0 +1,21 @@
+<div class="inputField">
+    <div class="input">
+        <input type="text" (keyup.enter)="getApi($event)" placeholder="search..." />
+    </div>
+</div>
+
+<div class="container">
+    <hr/>
+    <div class="searchby">
+        <h1>Search by:</h1>
+    </div>
+    <div class="show">
+        <div class="card" style="width: 10rem" *ngFor="let item of data; let index = index">
+            <img class="card-img-top" src="{{ item.artworkUrl100 }}" alt="Card image cap" />
+            <div class="card-body">
+                <h5 class="card-title">{{ item.artistName }}</h5>
+                <p class="card-text">{{ item.collectionCensoredName }}</p>
+            </div>
+        </div>
+    </div>
+</div>
