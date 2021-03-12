@@ -18,18 +18,21 @@
     </p>
   </ng-container>
   <ng-template #elseTemplate>
-    <p #alt>Enter a value to search ☝</p>
+    <p #alt>Enter something and press search to see results ☝</p>
   </ng-template>
   <span class="divider"></span>
   <p>| Select page size:</p>
-  <mat-form-field
-    (ngModelChange)="changePageSize()"
-    [formControl]="pageSizeControl"
-    appearance="legacy"
-  >
+  <mat-form-field>
     <mat-label>Page Size</mat-label>
-    <mat-select (ngModelChange)="changePageSize()" [(value)]="pageSize">
-      <mat-option value="one">5</mat-option>
+    <mat-select
+      name="pgSz"
+      [formControl]="pageSizeControl"
+      appearance="legacy"
+      (ngModelChange)="changeFn($event)"
+      name="pageSize"
+      [value]="pageSize"
+    >
+      <mat-option value="five">5</mat-option>
       <mat-option value="ten">10</mat-option>
       <mat-option value="twenty">20</mat-option>
       <mat-option value="fifty">50</mat-option>
@@ -39,7 +42,7 @@
   </mat-form-field>
 </div>
 <div class="everything">
-  <div *ngFor="let element of results" class="element">
+  <div *ngFor="let element of results.slice(0, getPageSize())" class="element">
     <mat-card>
       <img
         mat-card-image

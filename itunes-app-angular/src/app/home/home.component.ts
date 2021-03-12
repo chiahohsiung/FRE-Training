@@ -58,10 +58,34 @@ export class HomeComponent implements OnInit, OnChanges {
     element.likeVal = element.like ? 'Favorite' : 'FavoriteBorder';
   }
 
-  changePageSize() {
-    console.log(this.pageSize);
+  changeFn(event: any) {
+    console.log(event);
+    this.pageSize = event;
   }
-
+  getPageSize() {
+    let pg = this.pageSize;
+    let size = 0;
+    switch (this.pageSize) {
+      case 'five':
+        size = 5;
+        break;
+      case 'ten':
+        size = 10;
+        break;
+      case 'twenty':
+        size = 20;
+        break;
+      case 'fifty':
+        size = 10;
+        break;
+      case 'one-hundred':
+        size = 10;
+        break;
+      default:
+        break;
+    }
+    return size;
+  }
   ngOnInit(): void {
     let artist = localStorage.getItem('artist');
     this.artist = new FormControl(artist ? artist : '', [Validators.required]);
