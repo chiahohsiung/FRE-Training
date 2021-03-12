@@ -16,7 +16,7 @@ export class FormComponent implements OnInit {
     artist: string
     filter: number
 
-    options = [10, 25, 50]
+    options = [10, 25, 50, 100, 200]
     constructor(
         private artists: ArtistsService,
         private ls: LocalStorageService
@@ -39,8 +39,10 @@ export class FormComponent implements OnInit {
         this.fetch()
         this.artist = this.artists.artist
     }
-    updateList(event: Event) {
-        this.albums = [...this.albums].slice(1, this.filter)
+    updateList() {
+        this.albums = [
+            ...JSON.parse(this.ls.getItem("albums")!),
+        ].slice(1, this.filter)
         console.log(this.filter)
     }
 

@@ -22,7 +22,7 @@
         <select
             name="filter"
             id="filter"
-            (change)="updateList($event)"
+            (change)="updateList()"
             [(ngModel)]="filter"
         >
             <option *ngFor="let option of options" [value]="option">
