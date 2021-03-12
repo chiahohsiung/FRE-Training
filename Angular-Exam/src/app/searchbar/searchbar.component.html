@@ -1,0 +1,40 @@
+<!-- <header class="container_header">
+  <input type="text" id="search__input" placeholder="Search...">
+  <button class="search_button">
+    <i class="fas fa-search"></i>
+  </button>
+</header> -->
+<header class="container_header">
+  <form #form="ngForm">
+    <input id="search__input" matInput type="text"
+      placeholder="Search..." name="search_input"
+      [(ngModel)]="text"
+      (keyup.enter)="ITunesAPI(text)">
+    <button class="search_button">
+        <i id = "icon" class="fa fa-search" aria-hidden="true"></i>
+    </button>
+  </form>
+</header>
+
+
+<div class="container_content">
+  <div id = "info" class="searchResult_info"> Search Albums by ArtistName: <span *ngIf="count">"{{text}}"</span>
+    <mat-select [(ngModel)]="numShows" name="item">
+      <mat-option id="option"  *ngFor="let item of items" [value]="item">
+        {{item}}
+      </mat-option>
+    </mat-select>
+  </div>
+
+  <div class = "albums">
+    <div *ngIf="allAlbum">
+      <div *ngFor="let album of allAlbum; let i = index">
+        <div class="card" *ngIf="i < numShows">
+          <p class = "card_content">{{album.artistName}}</p>
+          <p class = "card_content">{{album.collectionName}}</p>
+          <img src="{{album.artworkUrl100}}" alt="{{album.collectionName}}" width="101" height="110">
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
