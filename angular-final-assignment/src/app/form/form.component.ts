@@ -12,7 +12,7 @@ import { LocalStorageService } from "../local-storage.service"
 export class FormComponent implements OnInit {
     input: string
     albums: Album[]
-    count: Number
+    count: number
     artist: string
     filter: number
 
@@ -47,7 +47,6 @@ export class FormComponent implements OnInit {
 
     fetch() {
         this.artists.getAlbums().subscribe((albums: Result) => {
-            console.log(albums)
             this.count = albums.resultCount
             this.albums = albums.results
         })

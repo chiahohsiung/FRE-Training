@@ -1,4 +1,6 @@
+import { Album } from "./album"
+
 export interface Result {
-    resultCount: Number
-    results: []
+    resultCount: number
+    results: Album[]
 }

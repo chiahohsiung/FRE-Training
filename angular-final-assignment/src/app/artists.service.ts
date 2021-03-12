@@ -11,7 +11,7 @@ import { LocalStorageService } from "./local-storage.service"
 export class ArtistsService {
     artist: string
     albums: Album[]
-    count: Number
+    count: number
     constructor(
         private http: HttpClient,
         private ls: LocalStorageService
