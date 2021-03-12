@@ -9,15 +9,15 @@ import { Result } from "./Result"
     styleUrls: ["./albums.component.css"],
 })
 export class AlbumsComponent implements OnInit {
-    count: Number
-    albums: Album[]
-    constructor(private artists: ArtistsService) {
-        this.count = 0
-        this.albums = []
-    }
+    albums!: Album[]
+    count!: Number
+    constructor(private artists: ArtistsService) {}
 
     ngOnInit(): void {
-        this.artists.getAlbums("sam").subscribe((albums: Result) => {
+        this.getAlbums()
+    }
+    getAlbums() {
+        this.artists.getAlbums().subscribe((albums: Result) => {
             console.log(albums)
             this.count = albums.resultCount
             this.albums = albums.results

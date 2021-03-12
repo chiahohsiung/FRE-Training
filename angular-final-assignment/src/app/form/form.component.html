@@ -1,12 +1,13 @@
 <header class="header">
     <nav class="navigation">
-        <form action="">
+        <form action="" (submit)="logInput($event)">
             <input
                 type="text"
                 id="search-input"
                 name="search"
                 class="search-input"
                 aria-label="Search"
+                [(ngModel)]="input"
             />
             <i class="material-icons">search</i>
         </form>
