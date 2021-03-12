@@ -43,7 +43,6 @@ export class FormComponent implements OnInit {
         this.albums = [
             ...JSON.parse(this.ls.getItem("albums")!),
         ].slice(1, this.filter)
-        console.log(this.filter)
     }
 
     fetch() {
