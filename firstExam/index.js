@@ -3,7 +3,7 @@ const AppApi = (() => {
     const urlpart2 = '}&media=music&entity=album&attribute=artistTerm&limit=500';
 
     const getAllAlbums = (albumName) =>
-        fetch([urlpart1, albumName, urlpart2].join(''))
+        fetchJsonp([urlpart1, albumName, urlpart2].join(''))
             .then(response => response.json());
 
     return {
