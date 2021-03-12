@@ -33,7 +33,7 @@ export class ListingPageComponent implements OnInit {
        console.log(this.id)
        this.dataService.fetchData(this.id)
        .subscribe(response => {
-         console.log(response)
+         //console.log(response)
          this.dataFetch = response;
 
        });
@@ -50,9 +50,9 @@ export class ListingPageComponent implements OnInit {
      if(this.input.nativeElement.value){
      this.dataService.fetchData(this.input.nativeElement.value)
      .subscribe(response => {
-       console.log(response)
+       //console.log(response)
        this.dataFetch = response;
-      //  this.router.navigate([`/${this.input.nativeElement.value}`])
+       this.router.navigate([`/${this.input.nativeElement.value}`])
      });
      }
    }
@@ -64,6 +64,7 @@ export class ListingPageComponent implements OnInit {
       console.log(this.id)
       this.dataService.fetchData(this.id)
       .subscribe(response => {
+        console.log(response)
         this.dataFetch = response;
         this.dataFetch.resultCount = this.select.nativeElement.value;
         this.dataFetch.results = this.dataFetch.results.slice(0,this.select.nativeElement.value);
@@ -78,7 +79,7 @@ export class ListingPageComponent implements OnInit {
         this.dataFetch = response;
         this.dataFetch.resultCount = this.select.nativeElement.value;
         this.dataFetch.results = this.dataFetch.results.slice(0,this.select.nativeElement.value);
-        // this.router.navigate([`/${this.input.nativeElement.value}`])
+        this.router.navigate([`/${this.input.nativeElement.value}`])
       });
       }
     }
