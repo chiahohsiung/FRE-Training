@@ -1,0 +1,36 @@
+header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-basis: 6rem;
+  width: 100%;
+  background-color: teal;
+  padding: 10px;
+}
+
+form {
+  display: flex;
+  flex-basis: 40%;
+  align-items: center;
+  justify-content: center;
+}
+
+input {
+  border: none;
+  background-color: #F0EEEE;
+  padding: .7rem 2rem;
+  border-radius: 100px;
+  width: 80%;
+  transition: all .2s;
+  margin-right: -2.6rem;
+}
+
+input:focus {
+  width: 90%;
+}
+
+button {
+  border: none;
+  background-color: #F0EEEE;
+  padding: 9px;
+}

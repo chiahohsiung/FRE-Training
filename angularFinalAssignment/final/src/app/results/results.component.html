@@ -1,0 +1,20 @@
+<main>
+  <section>
+      <div id="content">
+          <div id="description" *ngIf="!keyword">Search Albums by ArtistName:</div>
+          <div id="description" *ngIf="keyword" [formGroup]="select">
+            Total {{data['resultCount'] || 0}} results for "{{keyword}}" |
+            <label for="page">Select Page Size: </label>
+            <select name="page" formControlName="page" (change)="pageChange()">
+              <option value="5">5</option>
+              <option value="10">10</option>
+              <option value="15">15</option>
+              <option value="20">20</option>
+            </select>
+          </div>
+          <div class="results">
+            <app-card *ngFor="let result of albums" [data]="result"></app-card>
+          </div>
+      </div>
+  </section>
+</main>

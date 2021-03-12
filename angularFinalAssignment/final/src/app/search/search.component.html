@@ -1,0 +1,7 @@
+<header>
+  <form [formGroup]="form" (ngSubmit)="onSubmit()">
+      <input id="search" type="text" placeholder="Search..." required formControlName="search">
+      <button id="submit" type="submit"><i class="fas fa-search"></i></button>
+  </form>
+</header>
+<app-results [keyword]="keyword"></app-results>

@@ -1,0 +1,52 @@
+.card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin: 1rem;
+  border-bottom: 2px solid #d4d4d4;
+  border-top: .5px solid #F0EEEE;
+  border-left: 2px solid #F0EEEE;
+  border-right: 2px solid #F0EEEE;
+  border-radius: 3px;
+  flex-basis: 10rem;
+  height: 250px;
+  width: 10rem;
+}
+
+.card>img {
+  padding: .5rem;
+}
+
+.card>p {
+  text-align: left;
+  padding: 0 .5rem .5rem;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.title {
+  font-size: 1rem;
+}
+
+.album {
+  font-size: 0.7rem;
+}
+
+.buttons {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+.buttons>button {
+  width: 100%;
+  padding: 2px;
+  background-color: white;
+  border: 0px;
+}
+
+.buttons>button:hover {
+  background-color: #F0EEEE;
+}
+
