@@ -15,12 +15,11 @@ export class AlbumListComponent implements OnInit {
 
   ngOnInit(){}
 
-  fetchAlbums() {
-    if(this.artist) {
-      this.albumSerivce.getAlbumsAPI(this.artist).subscribe(resp => {
-       console.log("in album-list", resp)
-      });
-    }
+  getAlbums() {
+    this.albumSerivce.getAlbumsAPI(this.artist).subscribe(resp => {
+      console.log("in album-list", resp)
+    });
+    
   }
 
   
