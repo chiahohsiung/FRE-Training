@@ -82,10 +82,13 @@ export class HomeComponent implements OnInit, OnChanges {
         size = 20;
         break;
       case 'fifty':
-        size = 10;
+        size = 50;
+        break;
+      case 'seventy-five':
+        size = 75;
         break;
       case 'one-hundred':
-        size = 10;
+        size = 100;
         break;
       default:
         break;
