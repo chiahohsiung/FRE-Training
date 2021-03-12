@@ -14,7 +14,7 @@ export class AlbumsListComponent implements OnInit {
   queryName!: string;
   fullResults!: any;
   showResults: any[] = [];
-  selectNum: number[] = [10, 50, 200, 500];
+  selectNum: number[] = [10, 50, 100, 200, 500];
   selectValue!: number;
 
   constructor(
