@@ -25,6 +25,7 @@
             (change)="updateList()"
             [(ngModel)]="filter"
         >
+            <option value="200">Select:</option>
             <option *ngFor="let option of options" [value]="option">
                 {{ option }}
             </option>
