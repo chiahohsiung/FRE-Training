@@ -62,6 +62,12 @@ export class HomeComponent implements OnInit, OnChanges {
     console.log(event);
     this.pageSize = event;
   }
+
+  enter(event: any) {
+    if (event.code === 'Enter') {
+      this.query();
+    }
+  }
   getPageSize() {
     let pg = this.pageSize;
     let size = 0;
