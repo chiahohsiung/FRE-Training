@@ -1,0 +1,30 @@
+<nav class="navbar navbar-dark bg-info navbar-expand-sm d-flex justify-content-center">
+    <form class="form-inline" (submit)="searchArtist()">
+        <div class="form-group">
+            <input [(ngModel)]="artistName" name="artist" class="form-control mr-3" size="40" type="text"
+                placeholder="">
+        </div>
+        <button type="submit" class="btn btn-secondary btn-sm">SEARCH</button>
+    </form>
+</nav>
+<div *ngIf="artistProfile === undefined" class="container mt-3 d-flex justify-content-center">
+    Search Album by Artist Name
+</div>
+<div *ngIf="artistProfile !== undefined" class="container mt-3 d-flex justify-content-center">
+    <div class="container">
+        Total {{num_album}} found for `{{artistName}}`
+    </div>
+    <div class="container">
+        <select (change)="onNumPageSelected($event)">
+            <option selected disabled>SELECT</option>
+            <option *ngFor="let ps of pageSelect" [value] ="ps._num">
+              {{ps._num}}
+            </option>
+        </select>
+    </div>
+</div>
+
+<div class="container">
+    <hr class="bg-info mt-3 mb-3">
+    <app-cards *ngIf="artistProfile !== undefined" [filteredAlbums]="filteredAlbums"></app-cards>
+</div>

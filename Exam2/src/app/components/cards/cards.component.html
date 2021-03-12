@@ -1,0 +1,11 @@
+<div class="container d-flex flex-wrap">
+    <div *ngFor="let ab of filteredAlbums" class="card m-2" style="width: 13rem;">
+        <div class="card-header bg-secondary text-white" style="height: 6rem; font-size: small;">
+            <div class="text-center font-weight-bold">{{ab.artistName}}</div>
+            <div class="text-center">{{ab.collectionName}}</div>
+        </div>
+        <div class="card-body d-flex justify-content-center">
+            <img [src]="ab.artworkUrl100" class="img-fluid">
+        </div>
+    </div>
+</div>
