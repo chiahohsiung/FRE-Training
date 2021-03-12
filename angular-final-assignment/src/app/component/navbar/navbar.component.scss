@@ -1,0 +1,26 @@
+.navbar_body{
+    text-align: center;
+    background-color: teal;
+    top: 0;
+    position:sticky;
+    padding-block:3vh;
+}
+.navbar_input{
+    padding: 10px;
+    width: 40%;
+    height: 10px;
+    border: 0px solid transparent;
+    border-radius: 100px;
+    margin-right: -40px;
+    transition: all .2s ease-out;
+}
+
+.navbar_input:focus{
+    outline-width: 0;
+    padding: 10px;
+    width: 40%;
+    height: 10px;
+    border: 0px solid transparent;
+    border-radius: 100px;
+    outline-width: 0;
+}
