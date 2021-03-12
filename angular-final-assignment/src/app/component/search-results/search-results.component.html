@@ -1,22 +1,23 @@
-<div class = "result_summary">Total {{resultCount}} for "{{searchWord}}" | Select Page Size 
-    <select [(ngModel)] = "pageNumber" >
-        <option *ngFor = "let number of pageAmountOptions">{{number}}</option>
-    </select>
+<div class="result_summary">
+  Total {{ resultCount }} for "{{ searchWord }}" | Select Page Size
+  <select [(ngModel)]="pageNumber">
+    <option *ngFor="let number of pageAmountOptions">{{ number }}</option>
+  </select>
 </div>
-<div *ngIf ="results" class = "result_container">
-    <div *ngFor = "let result of results.slice(0,pageNumber)" class = "result_items">
-        <div>
-            <div class = "result_artist">
-            {{result.artistName}}
-            </div>
-            <div class = "result_album">
-            {{result.collectionName}}
-            </div>
-            <img src = {{result.artworkUrl100}}>
-            <div class = "result_button">
-            <button>Like</button>
-            <button>Dislike</button>
-            </div>
+<div *ngIf="results" class="result_container">
+  <div *ngFor="let result of results.slice(0, pageNumber)" class="result_items">
+      <div class="result_artist">
+        {{ result.artistName }}
+      </div>
+      <div class="result_album">
+        {{ result.collectionName }}
+      </div>
+      <div class = "result_format_bottom">
+        <img src="{{ result.artworkUrl100 }}" />
+        <div class="result_button">
+          <button class="result_button_style">Like</button>
+          <button class="result_button_style">Dislike</button>
         </div>
-    </div>
+      </div>
+  </div>
 </div>
