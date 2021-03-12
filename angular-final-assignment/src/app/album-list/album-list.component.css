@@ -1,0 +1,47 @@
+.result-header{
+    height: var(--height-result-header);
+    border-bottom: 1px solid violet;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10px;
+    padding-bottom: 10px;
+}
+
+#selectBar{
+    margin-top: 3px;
+    margin-left: 5px;
+}
+
+#result-content{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.card {
+    /* Add shadows to create the "card" effect */
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    transition: 0.3s;
+    height: 200px;
+    width: 100px;
+    margin: 10px;
+  }
+  
+  /* On mouse-over, add a deeper shadow */
+  .card:hover {
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+  }
+  
+  /* Add some padding inside the card container */
+  .container {
+    padding: 2px 16px;
+    overflow: hidden;
+    height:100px;
+    text-align: right;
+  }
+
+  .card-text{
+    font-size: 1px;
+  }

@@ -1,0 +1,20 @@
+<div class="result-header" *ngIf="albumCount !== 0">
+    <p>We find totally {{albumCount}} songs | Select Page Size</p>
+    <select id="selectBar" [(ngModel)]="selectedOption" (change)="onSelect()">
+        <option *ngFor="let option of options"
+        >{{option.name}}</option>
+    </select>
+</div>
+<div class="result-header" *ngIf="albumCount === 0">Go search for albums!</div>
+
+<div id="result-content">
+    <div class="card" *ngFor="let album of albums">
+        <div class="container">
+            <p class="card-text"><b>{{album.albumName}}</b></p>
+            <p class="card-text">{{album.artistName}}</p>
+        </div>
+        <img [src]= "album.coverUrl" alt="Avatar" style="width:100%">
+    </div>
+</div>
+
+

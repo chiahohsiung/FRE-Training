@@ -1,0 +1,6 @@
+<nav>
+  <app-search-bar (searchResult) = "handleResult($event)" [style.width.%]="50"></app-search-bar>
+</nav>
+<main>
+  <app-album-list [listResult] = "result" [style.width.%]="80"></app-album-list>
+</main>

@@ -1,0 +1,22 @@
+form{
+    background-color: white;
+    height:25px;
+    border-radius: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+input{
+    border:none;
+    margin-left: 10px;
+    outline:none;
+    width: 100%;
+}
+
+button{
+    border: none;
+    margin-right: 10px;
+    background-color: white;
+    outline:none;
+}
