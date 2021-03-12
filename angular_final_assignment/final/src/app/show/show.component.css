@@ -1,0 +1,9 @@
+.container_result {
+  display: flex;
+  flex-wrap: wrap;
+  width: 80%;
+  margin: auto;
+  justify-content: center;
+  border-top: 1px solid teal;
+  padding: 5px;
+}

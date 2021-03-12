@@ -1,0 +1,28 @@
+.search_bar {
+  background-color: white;
+  border-radius: 25px;
+  border-style: none;
+  height: 30px;
+  margin-left: auto;
+  margin-right: auto;
+  width: 35%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-left: 10px;
+  padding-right: 10px;
+  transition: width 0.3s;
+}
+.container_header {
+  margin:0px;
+  background-color: teal;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  position: sticky;
+  top: -1px;
+}
+.search_bar:focus {
+  outline:none;
+  width: 50%;
+}

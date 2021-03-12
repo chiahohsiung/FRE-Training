@@ -1,0 +1,3 @@
+<div class="container_result" *ngIf="albums">
+  <app-album-card *ngFor="let album of albums | async" [album]="album"></app-album-card>
+</div>
