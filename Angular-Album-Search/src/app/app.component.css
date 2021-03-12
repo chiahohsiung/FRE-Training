@@ -1,0 +1,52 @@
+body{
+  height: 100%;
+  box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
+  margin: 0 auto;
+  line-height: 1.4
+}
+
+.container{
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+
+.main_container {
+  position: relative;
+  width: 100%;
+}
+
+.search_results{
+  position: relative;
+  width: 80%;
+  margin: auto;
+  padding: 1rem;
+}
+
+.search_result_title{
+  text-align: center;
+  border-bottom: 1px solid teal;
+  width: 90%;
+  padding: 0.4rem 1rem;
+  font-size: 1.2rem;
+  margin: auto auto 1rem;
+}
+
+.results{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.card {
+  margin: 1rem;
+  height: 12rem;
+  width: 6rem;
+  justify-content: center;
+  background-color: #f0eeee;
+  border-radius: 3px;
+  border: 1px solid teal;
+  padding: 0 .5rem;
+}
