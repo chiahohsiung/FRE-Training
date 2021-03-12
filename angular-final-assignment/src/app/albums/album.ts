@@ -1,15 +1,15 @@
 export interface Album {
-    amgArtistId: Number
-    artistId: Number
+    amgArtistId: number
+    artistId: number
     artistName: string
     artistViewUrl: string
     artworkUrl60: string
     artworkUrl100: string
     collectionCensoredName: string
     collectionExplicitness: string
-    collectionId: Number
+    collectionId: number
     collectionName: string
-    collectionPrice: Number
+    collectionPrice: number
     collectionType: string
     collectionViewUrl: string
     copyright: string
@@ -17,6 +17,6 @@ export interface Album {
     currency: string
     primaryGenreName: string
     releaseDate: Date
-    trackCount: Number
+    trackCount: number
     wrapperType: string
 }
