@@ -28,7 +28,6 @@ export class ArtistsService {
         return this.http.get<Result>(url)
     }
     public saveValue(value: string) {
-        console.log(value)
         this.artist = value
         this.getAlbums().subscribe((albums: Result) => {
             this.count = albums.resultCount
