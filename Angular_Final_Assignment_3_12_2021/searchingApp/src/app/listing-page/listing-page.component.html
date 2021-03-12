@@ -1,0 +1,49 @@
+<body>
+  <div id="root">
+      <div class="container">
+          <header class='container_header'>
+              <form class="search" ngNativeValidate >
+                  <input type="text"   (Keydown.enter)="fetchdata()" #inputContent class="search_input" placeholder="Search....." id="search_input"  required>
+                  <button class="search_button"  >
+                    <svg (click)="fetchdata()" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
+                      <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/>
+                    </svg>
+                  </button>
+
+              </form>
+
+          </header>
+          <main class="container_content">
+              <section class="searchResult">
+                  <div id="info" class="searchResult_info" *ngIf="!dataFetch">Search Albums by ArtistName:</div>
+                  <div id="info" class="searchResult_info" *ngIf="!!dataFetch && input.nativeElement.value !==''">{{dataFetch.resultCount}} results for {{input.nativeElement.value}} | Select Page Size:
+
+                      <select ngModel  #select (change)="display()">
+                        <!-- <option [value]="input.nativeElement.value" >Select an option</option> -->
+                        <option *ngFor="let choice of choices"  [value]="choice" #option>{{choice}}</option>
+                     </select>
+                  </div>
+
+
+                  <div id="info" class="searchResult_info" *ngIf="!!dataFetch && input.nativeElement.value =='' && id !== '' ">{{dataFetch.resultCount}} results for {{id}} | Select Page Size:
+                    <select ngModel  #select (change)="display()">
+                      <!-- <option [value]="id">Select an option</option> -->
+                      <option *ngFor="let choice of choices"  [value]="choice" #option>{{choice}}</option>
+                   </select>
+                  </div>
+                  <div class="flexGrid" *ngIf="!!dataFetch">
+                  <div class="card" *ngFor="let item of dataFetch.results;let i = index">
+                    <div class="card_content" *ngIf="this.input.nativeElement.value !== '' " >{{this.input.nativeElement.value | uppercase}}</div>
+                    <div class="card_content" *ngIf="id !== ''" >{{id | uppercase}}</div>
+                    <div class="card_content" >{{item.collectionName}}</div>
+                    <img class="card_img" [src]="item.artworkUrl100">
+
+                  </div>
+                  </div>
+              </section>
+
+          </main>
+      </div>
+  </div>
+
+</body>

@@ -1,0 +1,145 @@
+div {
+  display: block;
+}
+
+button {
+  appearance: auto;
+  text-rendering: auto;
+  letter-spacing: normal;
+  word-spacing: normal;
+  text-transform: none;
+  text-indent: 0px;
+  text-shadow: none;
+  display: inline-block;
+  text-align: center;
+  align-items: flex-start;
+  cursor: default;
+  box-sizing: border-box;
+  margin: 0em;
+  font: 400 13.3333px Arial;
+  padding: 1px 6px;
+  border-width: 2px;
+  border-style: outset;
+  border-image: initial;
+}
+
+.search_button {
+  border: none;
+  background-color: #f0eeee;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+}
+
+.container_header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: 0 0 6rem;
+  width: 100%;
+  background-color: rgb(55, 66, 218);
+}
+
+.search {
+  flex: 0 0 40%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.search_input {
+  background-color: #f0eeee;
+  border: none;
+  padding: 0.7rem 2rem;
+  border-radius: 100px;
+  width: 70%;
+  transition: all 0.2s;
+  margin-right: -3.25rem;
+}
+
+.search_input:focus {
+  outline: none;
+  width: 100%;
+}
+
+.search_button {
+  border: none;
+  background-color: #f0eeee;
+}
+
+.container_content {
+  position: relative;
+  flex: 1 1 auto;
+  overflow-y: auto;
+  width: 100%;
+}
+
+.searchResult {
+  width: 50%;
+  margin: auto;
+  padding: 1rem;
+}
+
+.searchResult_info {
+  width: 90%;
+  padding: 1rem;
+  color: #333;
+  font-size: 2rem;
+  text-align: center;
+  border-bottom: 1px solid teal;
+  margin: auto auto 1rem;
+}
+
+.flexGrid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.flexGrid > .card {
+  margin: 1rem;
+  margin-top: 1rem;
+  margin-right: 1rem;
+  margin-bottom: 1rem;
+  margin-left: 1rem;
+}
+
+.card {
+  background-color: #f0eeee;
+  border: 1px solid teal;
+  border-radius: 3px;
+  flex: 0 0 10rem;
+  flex-grow: 0;
+  flex-shrink: 0;
+  flex-basis: 10rem;
+}
+
+.card_img {
+  padding: 0.5rem;
+}
+
+.card_content {
+  color: #333;
+  text-align: center;
+  padding: 0.5rem;
+  font-size: 1.2rem;
+  font-weight: 700;
+}
+
+.searchResult_info {
+  width: 90%;
+  padding: 1rem;
+  color: #333;
+  font-size: 2rem;
+  text-align: center;
+  border-bottom: 1px solid teal;
+  margin: auto auto 1rem;
+}
+
+@media only screen and (max-width: 500px) {
+  .search {
+    flex: 0 0 80%;
+  }
+}
