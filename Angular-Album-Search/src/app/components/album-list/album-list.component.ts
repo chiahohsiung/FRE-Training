@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { AlbumService } from '../../album.service';
+import {HttpClient} from '@angular/common/http'
+import { AlbumService } from 'src/app/album.service';
+import {Album} from './album'
 
 @Component({
   selector: 'app-album-list',
@@ -7,20 +9,32 @@ import { AlbumService } from '../../album.service';
   styleUrls: ['./album-list.component.css']
 })
 export class AlbumListComponent implements OnInit {
-  artist:string='';
-  anyAlbums: any;
-  albums:any;
+  input!:string;
+  albums= new Array<Album>();
 
-  constructor(private albumSerivce: AlbumService) { }
+  constructor(private httpClient: HttpClient, private albumService:AlbumService){
 
-  ngOnInit(){}
-
-  getAlbums() {
-    this.albumSerivce.getAlbumsAPI(this.artist).subscribe(resp => {
-      console.log("in album-list", resp)
-    });
-    
   }
 
-  
+  ngOnInit(): void {
+     if (localStorage.getItem("name") != null) {
+      this.input = localStorage.getItem("name")!
+      this.getAlbums()
+    }
+  }
+
+  getAlbums(): void{
+    this.albumService.getAlbums(this.input).subscribe( resp => {
+      this.albums = resp.results.map( (album:any) => {
+        console.log(album.artworkUrl100)
+        return new Album(
+          album.collectionName,
+          album.artistName,
+          album.artworkUrl100
+        )
+      })
+      
+    }) 
+  }
+
 }

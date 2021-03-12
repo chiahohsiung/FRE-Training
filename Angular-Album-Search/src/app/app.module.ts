@@ -1,17 +1,14 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import {HttpClientModule} from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import {HttpClientModule} from '@angular/common/http';
-import {AlbumService} from './album.service';
-import {FormsModule} from '@angular/forms';
-import { SearchArtistComponent } from './components/search-artist/search-artist.component';
+import { FormsModule } from '@angular/forms';
 import { AlbumListComponent } from './components/album-list/album-list.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    SearchArtistComponent,
     AlbumListComponent
   ],
   imports: [
@@ -20,7 +17,7 @@ import { AlbumListComponent } from './components/album-list/album-list.component
     HttpClientModule,
     FormsModule
   ],
-  providers: [AlbumService],
+  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

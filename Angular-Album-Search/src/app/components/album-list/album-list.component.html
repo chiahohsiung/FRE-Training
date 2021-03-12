@@ -1,9 +1,14 @@
- <div class="main_container">
-  <div class="search_results">
-          <h1 class="search_result_title" *ngIf="!anyAlbums">Search Album by Artist Name:</h1>
-          <h1  *ngIf="anyAlbums" class="search_result_title">Total results found for "title name"</h1>
-          <ul class="results">
-            <li *ngFor="let album of albums" class="card">{{album.artistName}}</li>
-          </ul>
+<div class="container">
+  <h1>Album List</h1>
+  <form>
+    <input type="text" placeholder="Search" (keyup.enter)="getAlbums()" name="input" [(ngModel)]="input" >
+    <button (click)="getAlbums()">Search</button>
+  </form>
+</div>
+<div>
+  <div *ngFor="let album of albums" class="card">
+    <p>{{album.collectionName}}</p>
+    <p>{{album.artistName}}</p>
+    <img src="{{album.artworkUrl100}}">
   </div>
 </div>
