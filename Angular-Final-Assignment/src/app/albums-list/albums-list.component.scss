@@ -1,69 +1,67 @@
 .search-bar {
-    height: var(--height-header);
-    width: 100%;
+  height: var(--height-header);
+  width: 100%;
 }
 
 .content-container {
-    width: 100%;
-    overflow-y: auto;
-    position: relative;
-    flex: 1 1 auto;
-    display: flex;
-    flex-direction: column;
+  width: 100%;
+  overflow-y: auto;
+  position: relative;
+  flex: 1 1 auto;
+  display: flex;
+  flex-direction: column;
 }
 
 .search-result {
-    display: flex;
-    width: 80%;
-    align-items: center;
-    justify-content: center;
-    margin: auto;
+  display: flex;
+  width: 80%;
+  align-items: center;
+  justify-content: center;
+  margin: auto;
 }
 
 .result-info {
-    width: 100%;
-    padding: 1rem;
-    color: #333;
-    font-size: 1.5rem;
-    text-align: center;
-    border-bottom: 1px solid teal;
+  width: 100%;
+  padding: 1rem;
+  color: #333;
+  font-size: 1.5rem;
+  text-align: center;
+  border-bottom: 1px solid teal;
 }
 
 .select-list {
-    display: flex;
-    justify-content: center;
-    font-size: 1.5rem;
+  display: flex;
+  justify-content: center;
+  font-size: 1.5rem;
 }
 
 #num-select {
-    margin-left: 10px;
+  margin-left: 10px;
 }
 
 .result-detail {
-    margin: 10px auto;
-    display: flex;
-    width: 80%;
-    overflow-y: auto;
-    flex-wrap: wrap;
-    justify-content: center;
+  margin: 10px auto;
+  display: flex;
+  width: 90%;
+  overflow-y: auto;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 
-.result-detail:last-child {
-    flex-direction: row;
-}
-
-.card, .emptyCard {
-    margin: 1rem;
-    height: 200px;
-    width: 125px;
-    padding: 10px;
-    border: 1px solid teal;
-    border-radius: 5px;
-    text-align: center;
-    overflow: hidden;
+.card,
+.emptyCard {
+  margin: 1rem;
+  height: 200px;
+  width: 125px;
+  padding: 10px;
+  border: 1px solid teal;
+  border-radius: 5px;
+  text-align: center;
+  overflow: hidden;
 }
 
 .emptyCard {
-   border: none;
-   user-select: none;
+  border: none;
+  user-select: none;
+  height: 100px;
 }
