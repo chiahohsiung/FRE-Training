@@ -1,0 +1,12 @@
+<h2 class="text-info">User List</h2>
+<div class="container" *ngIf="users !== undefined && users !== null">
+    <ul *ngFor="let user of users" class="list-group">
+        <li class="list-group-item">{{user.first}} 
+                                    {{user.last}}
+                                    {{user.email}}
+                                    {{user.address}}
+                                    {{user.created | date}}
+                                    {{user.balance}}
+        </li>
+    </ul>
+</div>

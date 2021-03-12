@@ -20,6 +20,7 @@
             <label>Skills: </label>
             <div formArrayName="skills">
                 <div *ngFor="let skill of skills.controls; let i = index">
+                <!-- <div *ngFor="let skill of skillForm.get('skills'); let i = index"> -->
                     <div [formGroup]="skill">
                         No. {{i}}
                         Skill Name: 

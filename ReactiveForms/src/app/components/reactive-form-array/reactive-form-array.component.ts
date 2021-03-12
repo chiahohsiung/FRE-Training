@@ -28,7 +28,9 @@ export class ReactiveFormArrayComponent implements OnInit {
 
   onSubmit(){
     console.log(this.skillForm.value);
-    console.log(this.skillForm.controls.skills)
+    console.log(this.skillForm.controls.skills);
+    // console.log(this.skillForm.get('skills').controls);
+    console.log(this.skills.controls);
   }
 
   newSkill(): FormGroup{

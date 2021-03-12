@@ -23,6 +23,10 @@ export class CustomValidatorComponent implements OnInit {
 
   onSubmit(){
     console.log(this.myForm.value);
+    console.log(this.myForm.get('numVal'));
+    console.log(this.myForm.get('numVal').value);
+    console.log(this.myForm.get('numVal').errors);
+    console.log(this.myForm.get('numVal').hasError('gte'));
   }
 
 }

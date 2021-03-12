@@ -18,13 +18,26 @@ export class ReactiveFormBuilderComponent implements OnInit {
   ];
   constructor(private fb: FormBuilder) { }
 
+  // ngOnInit(): void {
+
+  //   this.rForm = this.fb.group({
+  //     firstname: ["", Validators.compose([Validators.required, Validators.minLength(2), Validators.maxLength(30)])],
+  //     lastname: ["", Validators.compose([Validators.required, Validators.minLength(2), Validators.maxLength(30)])],
+  //     address: this.fb.group({
+  //       city: ["", Validators.compose([Validators.required])],
+  //       state: ["", Validators.required]
+  //     })
+  //   })
+
+  // }
+
   ngOnInit(): void {
 
     this.rForm = this.fb.group({
-      firstname: ["", Validators.compose([Validators.required, Validators.minLength(2), Validators.maxLength(30)])],
-      lastname: ["", Validators.compose([Validators.required, Validators.minLength(2), Validators.maxLength(30)])],
+      firstname: ["", [Validators.required, Validators.minLength(2), Validators.maxLength(30)]],
+      lastname: ["", [Validators.required, Validators.minLength(2), Validators.maxLength(30)]],
       address: this.fb.group({
-        city: ["", Validators.compose([Validators.required])],
+        city: ["", [Validators.required]],
         state: ["", Validators.required]
       })
     })
