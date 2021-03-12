@@ -1,7 +1,7 @@
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
 import { SearchAlbumService } from '../search-album.service';
-import {Observable, Subject} from 'rxjs';
+import { faSearch } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-search-bar',
@@ -15,7 +15,7 @@ export class SearchBarComponent implements OnInit {
   myForm = this.fb.group({
     content:['', Validators.required]
   })
-
+  faSearch = faSearch;
   constructor(private fb:FormBuilder, private albumService: SearchAlbumService) { }
 
   ngOnInit(): void {
