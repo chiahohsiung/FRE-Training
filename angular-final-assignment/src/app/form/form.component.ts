@@ -26,6 +26,7 @@ export class FormComponent implements OnInit {
 
     ngOnInit(): void {
         this.albums = JSON.parse(this.ls.getItem("albums")!)
+        this.input = JSON.parse(this.ls.getItem("artist")!)
     }
 
     logInput(event: Event): void {
