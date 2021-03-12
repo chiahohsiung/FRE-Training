@@ -12,10 +12,12 @@ export class FormComponent implements OnInit {
     input: string
     albums: Album[]
     count: Number
+    artist: string
     constructor(private artists: ArtistsService) {
         this.input = ""
         this.count = 0
         this.albums = []
+        this.artist = ""
     }
 
     ngOnInit(): void {}
@@ -24,6 +26,7 @@ export class FormComponent implements OnInit {
         event.preventDefault()
         this.artists.saveValue(this.input)
         this.fetch()
+        this.artist = this.artists.artist
     }
 
     fetch() {

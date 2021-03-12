@@ -8,14 +8,18 @@
                 class="search-input"
                 aria-label="Search"
                 [(ngModel)]="input"
+                autocomplete="off"
             />
         </form>
         <i class="material-icons">search</i>
     </nav>
 </header>
 <main>
-    <header>Showing# of Albums: {{ count }}</header>
     <div *ngIf="count && albums">
+        <header>
+            Total results {{ count }} found for "{{ artist }}"
+        </header>
+
         <div class="grid">
             <div class="card" *ngFor="let album of albums">
                 <div class="card-header">
