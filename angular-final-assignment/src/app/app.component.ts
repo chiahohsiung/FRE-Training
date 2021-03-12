@@ -7,7 +7,7 @@ import { Result } from './Result';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  result: Result = { resultCount:"0", results:[]};
+  result: Result = { resultCount:"0", results:[], isInital:true};
   handleResult( rawResult ){
     let resultCount = rawResult.resultCount;
     let results = rawResult.results.map(
@@ -19,7 +19,8 @@ export class AppComponent {
     )
     this.result = {
       resultCount: resultCount,
-      results: results
+      results: results,
+      isInital: false
     }
   }
 }

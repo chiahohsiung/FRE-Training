@@ -18,13 +18,17 @@ export class AlbumListComponent implements OnChanges {
     {name:"100", value: 100},
     {name:"200", value: 200},
   ]
-  albumCount: number;
-  albums: Album[];
+  albumCount: number = localStorage.getItem("albumCount") ? +localStorage.getItem("albumCount") : 0;
+  albums: Album[] = localStorage.getItem("albums") ? JSON.parse(localStorage.getItem("albums")) : [];
   constructor() { }
   ngOnChanges(): void {
+    if(this.albumResult.isInital){
+      return;
+    }
     this.albumCount = +this.albumResult.resultCount;
     this.albums = this.selectedOption? this.albumResult.results.slice(0,this.selectedOption) : this.albumResult.results
-    console.log(this.albums);
+    localStorage.setItem("albumCount", this.albumResult.resultCount);
+    localStorage.setItem("albums", JSON.stringify(this.albums));
   }
   onSelect(){
     this.albums = this.selectedOption? this.albumResult.results.slice(0,this.selectedOption) : this.albumResult.results
