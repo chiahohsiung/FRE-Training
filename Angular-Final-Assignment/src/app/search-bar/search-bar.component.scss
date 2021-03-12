@@ -1,0 +1,38 @@
+.search-bar {
+    
+    height: var(--height-header);
+    width: 100%;
+    background-color: teal;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.search-input, .search-input:focus {
+    width: 40%;
+    border: none;
+    outline: none;
+    border-radius: 100px;
+    padding: 0.5rem 2rem;
+    margin-right: -3.25rem;
+}
+
+.search-input:focus {
+    width: 60%;
+    transition: all 0.2s;
+}
+
+.btn-search {
+    border: none;
+    outline: none;
+    background-color: white;
+}
+
+.btn-search:active {
+    transform: translateY(2px);
+}
+
+.search-icon {
+    height: 1.3rem;
+    width: 2rem;
+    fill: #777;
+}
