@@ -8,7 +8,7 @@ export const REMOVE_ALBUM = '[ALBUM] Remove'
 
 export class AddAlbum implements Action {
   readonly type = ADD_ALBUM
-  constructor(public payload: Album) {}
+  constructor(public payload: Object) {}
 }
 
 export class RemoveAlbum implements Action {

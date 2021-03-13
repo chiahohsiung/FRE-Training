@@ -1,4 +1,14 @@
- <p class="container_num" *ngIf="(albums | async).length != 0">Showing {{ (albums | async).length }} results</p>
+<div>
+  <p class="container_num" *ngIf="(albums | async).length != 0">Showing {{ (albums | async).length > limit ? limit : (albums | async).length }} results
+    <span>
+      <select *ngIf="(albums | async).length != 0" [(ngModel)]="limit">
+        <option *ngFor="let i of options" [ngValue]="i">{{i}}</option>
+      </select>
+    </span>
+  </p>
+</div>
 <div class="container_result" *ngIf="albums">
-  <app-album-card *ngFor="let album of albums | async" [album]="album"></app-album-card>
+  <div *ngFor="let album of albums | async; let i = index">
+    <app-album-card *ngIf="i < limit" [album]="album"></app-album-card>
+  </div>
 </div>

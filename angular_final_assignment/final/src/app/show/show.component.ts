@@ -11,9 +11,13 @@ import { AppState } from './../app.state';
 })
 export class ShowComponent implements OnInit {
   albums: Observable<Album[]>;
+  limit: number;
+  options: number[];
 
   constructor(private store: Store<AppState>) {
     this.albums = store.select('album');
+    this.limit = 500;
+    this.options = [10, 25, 50, 100, 200, 300, 400, 500];
   }
 
   ngOnInit(): void {
