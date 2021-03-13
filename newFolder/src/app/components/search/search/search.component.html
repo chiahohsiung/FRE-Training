@@ -1,0 +1,36 @@
+  <header class="header-container">
+    <form class="input-container" (ngSubmit)="submitSearch()">
+      <input
+        type="text"
+        onkeyup="saveInput(this);"
+        class="search-input"
+        placeholder="Search"
+        name="term"
+        [(ngModel)]="term"
+      />
+      <button type="submit">Search</button>
+    </form>
+  </header>
+  <div class="main-top" *ngIf="!results">
+    <h2 class="status-text">Search Albums by ArtistName:</h2>
+    <hr />
+  </div>
+  <main class="main">
+    <div class="content-container">
+      <section id="items">
+        <div class="item" *ngFor="let res of results.results">
+          <a [routerLink]="" [queryParams]="">
+            <div class="name-container">
+              <p class="artist-name">{{ res.artistName }}</p>
+            </div>
+            <div class="album-container">
+              <p class="album-name">{{ res.collectionName }}</p>
+            </div>
+            <div class="cover-img-container">
+              <img class="cover-img" src="{{ res.artworkUrl100 }}" />
+            </div>
+          </a>
+        </div>
+      </section>
+    </div>
+  </main>
