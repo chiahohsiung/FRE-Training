@@ -1,0 +1,13 @@
+.search-bar__container {
+  height: 4em;
+  /* width: 10em; */
+  display: grid;
+  grid-template-columns: auto 25em auto;
+  background-color: #377E7F;
+}
+
+.search-bar__input {
+  height: 1.2em;
+  grid-column: 2/3;
+  align-self: center;
+}

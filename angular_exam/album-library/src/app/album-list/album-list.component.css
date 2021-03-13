@@ -1,0 +1,26 @@
+ul {
+    list-style-type: none;
+}
+
+.album-card {
+    border-radius: 5px;
+    border: 1px solid black;
+    box-shadow: 1px 1px gray;
+    height: 15em;
+    width: 10em;
+    margin: 1em;
+}
+
+.album-gallery {
+    
+    padding-left: 5em;
+    padding-right: 5em;
+    /* display: grid; */
+    /* grid-template-columns: repeat(7, 10em); */
+    display: flex;
+    flex-direction: row;
+    /* gap: 1em 1em; */
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    
+}

@@ -6,10 +6,14 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./panel.component.css']
 })
 export class PanelComponent implements OnInit {
-
-  constructor() { }
+  message: string;
+  constructor() { 
+    this.message = "Search Albums by ArtistName:";
+  }
 
   ngOnInit(): void {
+
   }
+
 
 }
