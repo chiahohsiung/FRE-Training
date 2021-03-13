@@ -14,7 +14,7 @@ export class SearchService {
           albumArr.push(new Album(album["artistName"], album["artworkUrl100"], album["collectionName"]));
       });
       return albumArr;
-      // console.log(albumArr);
+      console.log(json);
     });
   }
 }
