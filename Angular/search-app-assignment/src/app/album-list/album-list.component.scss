@@ -1,0 +1,45 @@
+.content header{
+    text-align: center;
+    width: 80%;
+    margin: 10px auto;
+    padding: 10px;
+    font-size: 25px;
+    color: gray;
+    border-bottom-style: solid ;
+    border-bottom-width: thin;
+    border-bottom-color: rgb(0,128,128);
+}
+
+.results{
+    display: flex;
+    flex-wrap: wrap;
+    width: 90%;
+    margin: 10px auto
+}
+.album{
+    width: 200px;
+    text-align: center;
+    border-style: solid;
+    border-color: var(--color-blue);
+    border-width: thin;
+    display: flex;
+    flex-direction: column;
+    margin: 10px;
+    padding: 5px;
+}
+.albumName, .artistName{
+    height: 60px;
+    overflow: auto;
+}
+.artistName{
+    font-weight: bold;
+    font-size: 20px;
+    
+    border-bottom-style: solid ;
+    border-bottom-width: thin;
+    
+}
+
+.album img{
+    height: 180px;
+}

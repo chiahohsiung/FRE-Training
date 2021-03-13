@@ -1,0 +1,85 @@
+.app-header {
+    height: 80px;
+    background-color: rgb(0,128,128);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+form{
+    padding: 5px;
+    border-radius: 15px;
+    background-color: white;
+    padding:  5px 15px;
+}
+#search_button{
+    border-style: none;
+    background-color: white;
+    font-size: 18px;
+}
+
+#search_input, #search_input:focus{
+    border-style: none;
+    outline-width: 0px;
+}
+
+.notification span {
+    color: red;
+    font-weight: bold;
+}
+.filter {
+   text-align: center;
+    margin: 20px auto;
+}
+.filter span{
+    margin-right: 10px;
+}
+
+.content header{
+    text-align: center;
+    width: 80%;
+    margin: 10px auto;
+    padding: 10px;
+    font-size: 25px;
+    color: gray;
+    border-bottom-style: solid ;
+    border-bottom-width: thin;
+    border-bottom-color: rgb(0,128,128);
+}
+
+.results{
+    display: flex;
+    flex-wrap: wrap;
+    width: 90%;
+    margin: 10px auto
+}
+.album{
+    width: 200px;
+    text-align: center;
+    border-style: solid;
+    border-width: thin;
+    display: flex;
+    flex-direction: column;
+    margin: 10px;
+    padding: 5px;
+}
+.albumName, .artistName{
+    height: 60px;
+    overflow: auto;
+}
+.artistName{
+    font-weight: bold;
+    font-size: 20px;
+    border-bottom-style: solid ;
+    border-bottom-width: thin;
+}
+
+.albumName{
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    color: rgb(119, 107, 36);
+}
+
+.album img{
+    height: 180px;
+}

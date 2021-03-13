@@ -1,0 +1,37 @@
+<div class="content">
+    <header>
+        <p class="default">Search Albums by Artist Name</p>
+        <p class="notification">{{lis.length}}</p>
+    </header>
+    
+    <div class="results">
+
+        <div class="album" *ngFor="let e of lis">
+            <p class='artistName'>{{e.artistName}}</p>
+            <p class="albumName">{{e.collectionName}}</p>
+            <img src='{{e.artworkUrl100}}'/>
+
+        </div>
+        
+
+    </div>
+</div>
+
+<!--
+    <table class="table">
+            <thead>
+                <tr>
+                    <th scope="col">Artist Name</th>
+                    <th scope="col">Album</th>
+                    <th scope="col">URL</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let e of lis">
+                    <td>{{e.artistName}}</td>
+                    <td>{{e.collectionName}}</td>
+                    <td>{{e.artworkUrl60}}</td>
+                </tr>
+            </tbody>
+        </table>
+-->

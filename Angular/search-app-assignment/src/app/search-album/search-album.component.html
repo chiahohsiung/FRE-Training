@@ -1,0 +1,36 @@
+<header class="app-header">
+    <form  id='search-form' (submit)="onSearchSubmit($event)">
+        <input type="text" id="search_input" class='input' placeholder="Search..."/>
+        <button type='submit' id='search_button'>
+           <fa-icon [icon]="faSearch"></fa-icon>
+        </button>
+    </form>
+</header>
+
+<div class="content">
+    <header>
+        <p class="default">Search Albums by Artist Name</p>
+        <p *ngIf="lis.length>0"class="notification"><span>{{lis.length}}</span> results found for <span>{{searchTerm}}</span></p>
+    </header>
+    <div class="filter">
+        <span>Items per page: </span>
+        <select #select id='select' (change)="onSelect($event,select.value)">
+            <option value="Default">Default</option>
+            <option value="10">10</option>
+            <option value="20">20</option>
+            <option value="50">50</option>
+            <option value="100">100</option>
+        </select>
+    </div>
+    
+    <div class="results">
+
+        <div class="album" *ngFor="let e of results">
+            <p class='artistName'>{{e.artistName}}</p>
+            <p class="albumName">{{e.collectionName}}</p>
+            <img src='{{e.artworkUrl100}}'/>
+
+        </div>
+        
+    </div>
+</div>
