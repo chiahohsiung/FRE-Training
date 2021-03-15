@@ -9,8 +9,8 @@ import { AddPersonComponent } from './components/hw1/add-person/add-person.compo
 import { PersonListComponent } from './components/hw1/person-list/person-list.component';
 import { ReactiveFormComponent } from './components/hw2/reactive-form/reactive-form.component';
 import { TemplatedFormComponent } from './components/hw2/templated-form/templated-form.component';
-import { AlbumSearchComponent } from './components/exam/album-search/album-search.component';
-import { ScaleSizePipe } from './components/exam/album-search/scale-size.pipe';
+import { AlbumSearchComponent } from './components/album-search/album-search.component';
+import { ScaleSizePipe } from './components/album-search/scale-size.pipe';
 
 @NgModule({
   declarations: [
