@@ -1,0 +1,31 @@
+<app-search></app-search>
+
+<main class="container-content">
+    <section class="searchResult">
+        <div class="resultHint">
+            <div *ngIf="!resultsAll" [innerHTML]="resultHint"></div>
+            <div *ngIf="resultsAll" class="select-list" >
+                <div  [innerHTML]="resultHint"></div>
+                <div>
+                    <select id="num-select" [(ngModel)]="selectValue" (change)="hint(selectValue)">
+                        <option *ngFor="let num of selectNum" >{{ num }}</option>
+                    </select>
+                </div>
+            </div> 
+        </div>
+    </section>
+
+    <section class="result-detail">
+        <div *ngFor="let item of resultsCur" class="card">
+            <div>
+                <p class="artistName">{{ item.artistName }}</p>
+                <p class="collectionName">{{ item.collectionName }}</p>
+            </div>
+            <div>
+                <img [src]="item.artworkUrl100">
+                <button class = "btn-like">Like</button> 
+                <button class = "btn-like">Decline</button>
+            </div>
+        </div>
+    </section>
+</main>
